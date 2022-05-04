@@ -78,13 +78,44 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.callform(new Main());
         }
 
-        private void btnGiaoDich_Click(object sender, EventArgs e)
+        private void btnTrangChu_Leave(object sender, EventArgs e)
         {
-            pnlNav.Height = btnGiaoDich.Height;
-            pnlNav.Top = btnGiaoDich.Top;
-            pnlNav.Left = btnGiaoDich.Left;
-            btnGiaoDich.BackColor = Color.FromArgb(46, 51, 73);
-            this.callform(new GiaoDich());
+            btnTrangChu.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnSanPham.Height;
+            pnlNav.Top = btnSanPham.Top;
+            pnlNav.Left = btnSanPham.Left;
+            btnSanPham.BackColor = Color.FromArgb(46, 51, 73);
+        }
+
+        private void btnCamDo_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnCamDo.Height;
+            pnlNav.Top = btnCamDo.Top;
+            pnlNav.Left = btnCamDo.Left;
+            btnCamDo.BackColor = Color.FromArgb(46, 51, 73);
+        }
+
+        private void btnDongLai_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnDongLai.Height;
+            pnlNav.Top = btnDongLai.Top;
+            pnlNav.Left = btnDongLai.Left;
+            btnDongLai.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void btnThanhLy_Click(object sender, EventArgs e)
@@ -101,14 +132,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             pnlNav.Top = btnDoanhThu.Top;
             pnlNav.Left = btnDoanhThu.Left;
             btnDoanhThu.BackColor = Color.FromArgb(46, 51, 73);
-        }
-
-        private void btnSanPham_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnSanPham.Height;
-            pnlNav.Top = btnSanPham.Top;
-            pnlNav.Left = btnSanPham.Left;
-            btnSanPham.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
@@ -128,14 +151,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             btnBaoCao.BackColor = Color.FromArgb(46, 51, 73);
         }
 
-        private void btnTrangChu_Leave(object sender, EventArgs e)
+        private void btnSanPham_Leave(object sender, EventArgs e)
         {
-            btnTrangChu.BackColor = Color.FromArgb(24, 30, 54);
+            btnSanPham.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void btnGiaoDich_Leave(object sender, EventArgs e)
+        private void btnCamDo_Leave(object sender, EventArgs e)
         {
-            btnGiaoDich.BackColor = Color.FromArgb(24, 30, 54);
+            btnCamDo.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnDongLai_Leave(object sender, EventArgs e)
+        {
+            btnDongLai.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void btnThanhLy_Leave(object sender, EventArgs e)
@@ -148,11 +176,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             btnDoanhThu.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void btnSanPham_Leave(object sender, EventArgs e)
-        {
-            btnSanPham.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
         private void btnKhachHang_Leave(object sender, EventArgs e)
         {
             btnKhachHang.BackColor = Color.FromArgb(24, 30, 54);
@@ -161,17 +184,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void btnBaoCao_Leave(object sender, EventArgs e)
         {
             btnBaoCao.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMini_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
         }
     }
 }

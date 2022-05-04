@@ -31,38 +31,40 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnBaoCao = new System.Windows.Forms.Button();
-            this.btnKhachHang = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnSanPham = new System.Windows.Forms.Button();
-            this.btnDoanhThu = new System.Windows.Forms.Button();
-            this.btnThanhLy = new System.Windows.Forms.Button();
-            this.btnGiaoDich = new System.Windows.Forms.Button();
-            this.btnTrangChu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnMini = new System.Windows.Forms.Button();
+            this.btnBaoCao = new System.Windows.Forms.Button();
+            this.btnKhachHang = new System.Windows.Forms.Button();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnThanhLy = new System.Windows.Forms.Button();
+            this.btnDongLai = new System.Windows.Forms.Button();
+            this.btnCamDo = new System.Windows.Forms.Button();
+            this.btnSanPham = new System.Windows.Forms.Button();
+            this.btnTrangChu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnBaoCao);
+            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnKhachHang);
-            this.panel1.Controls.Add(this.btnThoat);
-            this.panel1.Controls.Add(this.btnSanPham);
             this.panel1.Controls.Add(this.btnDoanhThu);
+            this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnThanhLy);
-            this.panel1.Controls.Add(this.btnGiaoDich);
+            this.panel1.Controls.Add(this.btnDongLai);
+            this.panel1.Controls.Add(this.btnCamDo);
+            this.panel1.Controls.Add(this.btnSanPham);
             this.panel1.Controls.Add(this.btnTrangChu);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -78,157 +80,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(3, 100);
             this.pnlNav.TabIndex = 3;
-            // 
-            // btnBaoCao
-            // 
-            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCao.FlatAppearance.BorderSize = 0;
-            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_edit_pie_chart_report_30px;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 497);
-            this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
-            this.btnBaoCao.TabIndex = 8;
-            this.btnBaoCao.Text = "Báo cáo";
-            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnBaoCao.UseVisualStyleBackColor = true;
-            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
-            this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKhachHang.FlatAppearance.BorderSize = 0;
-            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnKhachHang.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 441);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(207, 56);
-            this.btnKhachHang.TabIndex = 7;
-            this.btnKhachHang.Text = "Khách hàng";
-            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnKhachHang.UseVisualStyleBackColor = true;
-            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
-            this.btnKhachHang.Leave += new System.EventHandler(this.btnKhachHang_Leave);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThoat.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_multiply_30px_1;
-            this.btnThoat.Location = new System.Drawing.Point(0, 794);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(207, 56);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnSanPham
-            // 
-            this.btnSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSanPham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSanPham.FlatAppearance.BorderSize = 0;
-            this.btnSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSanPham.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_product_30px;
-            this.btnSanPham.Location = new System.Drawing.Point(0, 385);
-            this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(207, 56);
-            this.btnSanPham.TabIndex = 5;
-            this.btnSanPham.Text = "Sản phẩm";
-            this.btnSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSanPham.UseVisualStyleBackColor = true;
-            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
-            this.btnSanPham.Leave += new System.EventHandler(this.btnSanPham_Leave);
-            // 
-            // btnDoanhThu
-            // 
-            this.btnDoanhThu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDoanhThu.FlatAppearance.BorderSize = 0;
-            this.btnDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDoanhThu.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_money_bag_30px;
-            this.btnDoanhThu.Location = new System.Drawing.Point(0, 329);
-            this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.Size = new System.Drawing.Size(207, 56);
-            this.btnDoanhThu.TabIndex = 4;
-            this.btnDoanhThu.Text = "Doanh thu";
-            this.btnDoanhThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDoanhThu.UseVisualStyleBackColor = true;
-            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
-            this.btnDoanhThu.Leave += new System.EventHandler(this.btnDoanhThu_Leave);
-            // 
-            // btnThanhLy
-            // 
-            this.btnThanhLy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThanhLy.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThanhLy.FlatAppearance.BorderSize = 0;
-            this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhLy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThanhLy.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_trolley_30px;
-            this.btnThanhLy.Location = new System.Drawing.Point(0, 273);
-            this.btnThanhLy.Name = "btnThanhLy";
-            this.btnThanhLy.Size = new System.Drawing.Size(207, 56);
-            this.btnThanhLy.TabIndex = 3;
-            this.btnThanhLy.Text = "Thanh lý";
-            this.btnThanhLy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnThanhLy.UseVisualStyleBackColor = true;
-            this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
-            this.btnThanhLy.Leave += new System.EventHandler(this.btnThanhLy_Leave);
-            // 
-            // btnGiaoDich
-            // 
-            this.btnGiaoDich.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGiaoDich.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGiaoDich.FlatAppearance.BorderSize = 0;
-            this.btnGiaoDich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGiaoDich.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaoDich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnGiaoDich.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnGiaoDich.Location = new System.Drawing.Point(0, 217);
-            this.btnGiaoDich.Name = "btnGiaoDich";
-            this.btnGiaoDich.Size = new System.Drawing.Size(207, 56);
-            this.btnGiaoDich.TabIndex = 2;
-            this.btnGiaoDich.Text = "Giao dịch";
-            this.btnGiaoDich.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnGiaoDich.UseVisualStyleBackColor = true;
-            this.btnGiaoDich.Click += new System.EventHandler(this.btnGiaoDich_Click);
-            this.btnGiaoDich.Leave += new System.EventHandler(this.btnGiaoDich_Leave);
-            // 
-            // btnTrangChu
-            // 
-            this.btnTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTrangChu.FlatAppearance.BorderSize = 0;
-            this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrangChu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnTrangChu.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_home_30px_1;
-            this.btnTrangChu.Location = new System.Drawing.Point(0, 161);
-            this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(207, 56);
-            this.btnTrangChu.TabIndex = 1;
-            this.btnTrangChu.Text = "Trang chủ";
-            this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTrangChu.UseVisualStyleBackColor = true;
-            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
-            this.btnTrangChu.Leave += new System.EventHandler(this.btnTrangChu_Leave);
             // 
             // panel2
             // 
@@ -264,17 +115,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label1.Text = "Cầm đồ AD ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_home_80px;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -307,6 +147,187 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnMini.UseVisualStyleBackColor = false;
             this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
+            // btnBaoCao
+            // 
+            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 553);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
+            this.btnBaoCao.TabIndex = 9;
+            this.btnBaoCao.Text = "Báo cáo";
+            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
+            this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            // 
+            // btnKhachHang
+            // 
+            this.btnKhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachHang.FlatAppearance.BorderSize = 0;
+            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnKhachHang.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 497);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(207, 56);
+            this.btnKhachHang.TabIndex = 8;
+            this.btnKhachHang.Text = "Khách hàng";
+            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
+            this.btnKhachHang.Leave += new System.EventHandler(this.btnKhachHang_Leave);
+            // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDoanhThu.FlatAppearance.BorderSize = 0;
+            this.btnDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDoanhThu.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_money_bag_30px;
+            this.btnDoanhThu.Location = new System.Drawing.Point(0, 441);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(207, 56);
+            this.btnDoanhThu.TabIndex = 7;
+            this.btnDoanhThu.Text = "Doanh thu";
+            this.btnDoanhThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+            this.btnDoanhThu.Leave += new System.EventHandler(this.btnDoanhThu_Leave);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThoat.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_multiply_30px_1;
+            this.btnThoat.Location = new System.Drawing.Point(0, 794);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(207, 56);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnThanhLy
+            // 
+            this.btnThanhLy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThanhLy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThanhLy.FlatAppearance.BorderSize = 0;
+            this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhLy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThanhLy.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_trolley_30px;
+            this.btnThanhLy.Location = new System.Drawing.Point(0, 385);
+            this.btnThanhLy.Name = "btnThanhLy";
+            this.btnThanhLy.Size = new System.Drawing.Size(207, 56);
+            this.btnThanhLy.TabIndex = 5;
+            this.btnThanhLy.Text = "Thanh lý";
+            this.btnThanhLy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThanhLy.UseVisualStyleBackColor = true;
+            this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
+            this.btnThanhLy.Leave += new System.EventHandler(this.btnThanhLy_Leave);
+            // 
+            // btnDongLai
+            // 
+            this.btnDongLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDongLai.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDongLai.FlatAppearance.BorderSize = 0;
+            this.btnDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDongLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDongLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDongLai.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_estimates_30px;
+            this.btnDongLai.Location = new System.Drawing.Point(0, 329);
+            this.btnDongLai.Name = "btnDongLai";
+            this.btnDongLai.Size = new System.Drawing.Size(207, 56);
+            this.btnDongLai.TabIndex = 4;
+            this.btnDongLai.Text = "Đóng lãi";
+            this.btnDongLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDongLai.UseVisualStyleBackColor = true;
+            this.btnDongLai.Click += new System.EventHandler(this.btnDongLai_Click);
+            this.btnDongLai.Leave += new System.EventHandler(this.btnDongLai_Leave);
+            // 
+            // btnCamDo
+            // 
+            this.btnCamDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCamDo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCamDo.FlatAppearance.BorderSize = 0;
+            this.btnCamDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCamDo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCamDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnCamDo.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_add_new_30px;
+            this.btnCamDo.Location = new System.Drawing.Point(0, 273);
+            this.btnCamDo.Name = "btnCamDo";
+            this.btnCamDo.Size = new System.Drawing.Size(207, 56);
+            this.btnCamDo.TabIndex = 3;
+            this.btnCamDo.Text = "Cầm đồ";
+            this.btnCamDo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCamDo.UseVisualStyleBackColor = true;
+            this.btnCamDo.Click += new System.EventHandler(this.btnCamDo_Click);
+            this.btnCamDo.Leave += new System.EventHandler(this.btnCamDo_Leave);
+            // 
+            // btnSanPham
+            // 
+            this.btnSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSanPham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSanPham.FlatAppearance.BorderSize = 0;
+            this.btnSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSanPham.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_product_30px;
+            this.btnSanPham.Location = new System.Drawing.Point(0, 217);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.Size = new System.Drawing.Size(207, 56);
+            this.btnSanPham.TabIndex = 9;
+            this.btnSanPham.Text = "Sản phẩm";
+            this.btnSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSanPham.UseVisualStyleBackColor = true;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
+            this.btnSanPham.Leave += new System.EventHandler(this.btnSanPham_Leave);
+            // 
+            // btnTrangChu
+            // 
+            this.btnTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTrangChu.FlatAppearance.BorderSize = 0;
+            this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrangChu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnTrangChu.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_home_30px_1;
+            this.btnTrangChu.Location = new System.Drawing.Point(0, 161);
+            this.btnTrangChu.Name = "btnTrangChu";
+            this.btnTrangChu.Size = new System.Drawing.Size(207, 56);
+            this.btnTrangChu.TabIndex = 1;
+            this.btnTrangChu.Text = "Trang chủ";
+            this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTrangChu.UseVisualStyleBackColor = true;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
+            this.btnTrangChu.Leave += new System.EventHandler(this.btnTrangChu_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_home_80px;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,8 +344,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,16 +358,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTrangChu;
-        private System.Windows.Forms.Button btnKhachHang;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnSanPham;
         private System.Windows.Forms.Button btnDoanhThu;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnThanhLy;
-        private System.Windows.Forms.Button btnGiaoDich;
-        private System.Windows.Forms.Button btnBaoCao;
+        private System.Windows.Forms.Button btnDongLai;
+        private System.Windows.Forms.Button btnCamDo;
+        private System.Windows.Forms.Button btnSanPham;
+        private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnMini;
+        private System.Windows.Forms.Button btnBaoCao;
     }
 }

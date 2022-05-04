@@ -57,12 +57,6 @@
     <Compile Include="Design\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\GiaoDich.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\GiaoDich.Designer.cs">
-      <DependentUpon>GiaoDich.cs</DependentUpon>
-    </Compile>
     <Compile Include="Design\KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +87,6 @@
     </Compile>
     <EmbeddedResource Include="Design\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\GiaoDich.resx">
-      <DependentUpon>GiaoDich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
@@ -203,6 +194,11 @@
   <ItemGroup>
     <None Include="Resources\About-Token.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_add_new_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_estimates_30px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

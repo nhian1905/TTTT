@@ -112,8 +112,10 @@ create table ChiTiet_PhieuChuoc
 	TienLai float not null,
 	TongTien float,
 	CONSTRAINT pk_CTPC PRIMARY KEY (MaPhieuChuoc, MaSP),
-	foreign key(MaSP) references SanPham(MaSP)
+	foreign key(MaSP) references SanPham(MaSP),
+	foreign key(MaPhieuChuoc) references PhieuChuoc(MaPhieuChuoc)
 )
-
+insert into Quyen values ('admin')
+insert into TaiKhoan values ('admin',123,1)
 
 
