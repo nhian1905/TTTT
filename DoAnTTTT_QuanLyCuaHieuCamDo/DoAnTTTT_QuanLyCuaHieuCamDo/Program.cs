@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DoAnTTTT_QuanLyCuaHieuCamDo
+namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrangChu());
+            Application.Run(new DangNhap());
         }
     }
 }

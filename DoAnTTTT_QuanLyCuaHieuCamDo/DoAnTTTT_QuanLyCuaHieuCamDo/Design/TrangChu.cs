@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
+using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
+using System.Data.SqlClient;
 
 namespace DoAnTTTT_QuanLyCuaHieuCamDo
 {
@@ -24,15 +27,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         int nHeightEllipse
     );
 
-        public TrangChu()
+        public TrangChu(AccountDTO Acc)
         {
+            this.Loginacc = Acc;
             InitializeComponent();
+            Quyen();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = btnTrangChu.Height;
             pnlNav.Top = btnTrangChu.Top;
             pnlNav.Left = btnTrangChu.Left;
             btnTrangChu.BackColor = Color.FromArgb(46, 51, 73);
             this.callform(new Main());
+        }
+
+        private AccountDTO loginacc;
+
+        public AccountDTO Loginacc
+        {
+            get { return loginacc; }
+            set { loginacc = value; }
+        }
+
+      
+        void Quyen()
+        {
+            
         }
         public void callform(object formhija)
         {
