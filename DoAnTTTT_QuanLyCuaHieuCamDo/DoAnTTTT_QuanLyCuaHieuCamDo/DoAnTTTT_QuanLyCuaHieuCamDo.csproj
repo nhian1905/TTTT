@@ -86,6 +86,11 @@
     <Compile Include="Design\TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyCamDoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCamDoDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Design\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +130,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyCamDoDataSet.xsc">
+      <DependentUpon>QuanLyCamDoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCamDoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyCamDoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyCamDoDataSet.xss">
+      <DependentUpon>QuanLyCamDoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icons8_home_60px.png" />
   </ItemGroup>
   <ItemGroup>
