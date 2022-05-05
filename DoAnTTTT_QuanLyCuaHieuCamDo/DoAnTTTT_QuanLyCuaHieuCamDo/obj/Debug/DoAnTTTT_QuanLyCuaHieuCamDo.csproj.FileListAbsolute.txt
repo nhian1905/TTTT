@@ -38,3 +38,5 @@ E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\Do
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.CoreCompileInputs.cache
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.exe
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.pdb
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\Guna.UI2.dll
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.CopyComplete

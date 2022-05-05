@@ -29,15 +29,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlNav = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnMini = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -46,11 +41,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnCamDo = new System.Windows.Forms.Button();
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnMini = new System.Windows.Forms.Button();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,80 +75,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel1.Size = new System.Drawing.Size(207, 850);
             this.panel1.TabIndex = 0;
             // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 173);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 100);
-            this.pnlNav.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(207, 161);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(45, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nâng tầm dịch vụ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(60, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cầm đồ AD ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(207, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1243, 807);
-            this.panel3.TabIndex = 3;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnMini);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(207, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1243, 43);
-            this.panel7.TabIndex = 2;
-            // 
-            // btnMini
-            // 
-            this.btnMini.BackColor = System.Drawing.Color.Transparent;
-            this.btnMini.BackgroundImage = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_subtract_30px;
-            this.btnMini.FlatAppearance.BorderSize = 0;
-            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMini.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnMini.Location = new System.Drawing.Point(1201, 9);
-            this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(30, 31);
-            this.btnMini.TabIndex = 5;
-            this.btnMini.UseVisualStyleBackColor = false;
-            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
-            // 
             // btnBaoCao
             // 
             this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -165,6 +93,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnBaoCao.UseVisualStyleBackColor = true;
             this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.pnlNav.Location = new System.Drawing.Point(0, 173);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 100);
+            this.pnlNav.TabIndex = 3;
             // 
             // btnKhachHang
             // 
@@ -317,6 +253,40 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             this.btnTrangChu.Leave += new System.EventHandler(this.btnTrangChu_Leave);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(207, 161);
+            this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label2.Location = new System.Drawing.Point(45, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nâng tầm dịch vụ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.label1.Location = new System.Drawing.Point(60, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cầm đồ AD ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_home_80px;
@@ -327,6 +297,44 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(207, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1243, 807);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnMini);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(207, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1243, 43);
+            this.panel7.TabIndex = 2;
+            // 
+            // btnMini
+            // 
+            this.btnMini.BackColor = System.Drawing.Color.Transparent;
+            this.btnMini.BackgroundImage = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_subtract_30px;
+            this.btnMini.FlatAppearance.BorderSize = 0;
+            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMini.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnMini.Location = new System.Drawing.Point(1201, 9);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(30, 31);
+            this.btnMini.TabIndex = 5;
+            this.btnMini.UseVisualStyleBackColor = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panel7;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // TrangChu
             // 
@@ -344,8 +352,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,5 +378,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnMini;
         private System.Windows.Forms.Button btnBaoCao;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }
