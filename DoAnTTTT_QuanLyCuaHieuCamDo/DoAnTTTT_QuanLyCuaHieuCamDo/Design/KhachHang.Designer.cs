@@ -32,6 +32,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayCapCMND = new System.Windows.Forms.DateTimePicker();
             this.btnAnhKH = new System.Windows.Forms.Button();
@@ -59,13 +62,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.gbKhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -73,7 +75,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTenKhachHang
@@ -84,7 +85,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtTenKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtTenKhachHang.Location = new System.Drawing.Point(212, 72);
+            this.txtTenKhachHang.Location = new System.Drawing.Point(212, 80);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.Size = new System.Drawing.Size(362, 22);
             this.txtTenKhachHang.TabIndex = 0;
@@ -98,7 +99,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 71);
+            this.label1.Location = new System.Drawing.Point(29, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 22);
             this.label1.TabIndex = 5;
@@ -120,6 +121,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.gbKhachHang.Controls.Add(this.pictureBox5);
             this.gbKhachHang.Controls.Add(this.label6);
             this.gbKhachHang.Controls.Add(this.pictureBox6);
+            this.gbKhachHang.Controls.Add(this.btnLuu);
             this.gbKhachHang.Controls.Add(this.btnXoaKH);
             this.gbKhachHang.Controls.Add(this.txtDiaChi);
             this.gbKhachHang.Controls.Add(this.btnSuaKH);
@@ -140,6 +142,41 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.gbKhachHang.TabIndex = 10;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin khách hàng";
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.AccessibleDescription = "";
+            this.txtMaKH.AccessibleName = "";
+            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.ForeColor = System.Drawing.Color.White;
+            this.txtMaKH.Location = new System.Drawing.Point(212, 31);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(362, 22);
+            this.txtMaKH.TabIndex = 29;
+            this.txtMaKH.Tag = "";
+            this.txtMaKH.Text = "QSADASD";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(29, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 22);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Mã khách hàng";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox8.Location = new System.Drawing.Point(175, 27);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox8.TabIndex = 31;
+            this.pictureBox8.TabStop = false;
             // 
             // dtpNgaySinh
             // 
@@ -178,6 +215,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnAnhKH.TabIndex = 26;
             this.btnAnhKH.Text = "Chọn ảnh";
             this.btnAnhKH.UseVisualStyleBackColor = false;
+            this.btnAnhKH.Click += new System.EventHandler(this.btnAnhKH_Click);
             // 
             // pictureBox7
             // 
@@ -270,12 +308,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(463, 247);
+            this.btnXoaKH.Location = new System.Drawing.Point(396, 247);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
             this.btnXoaKH.TabIndex = 13;
             this.btnXoaKH.Text = "Xóa";
             this.btnXoaKH.UseVisualStyleBackColor = false;
+            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // txtDiaChi
             // 
@@ -299,12 +338,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(321, 247);
+            this.btnSuaKH.Location = new System.Drawing.Point(254, 247);
             this.btnSuaKH.Name = "btnSuaKH";
             this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
             this.btnSuaKH.TabIndex = 12;
             this.btnSuaKH.Text = "Sửa";
             this.btnSuaKH.UseVisualStyleBackColor = false;
+            this.btnSuaKH.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // btnThemKH
             // 
@@ -313,12 +353,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Location = new System.Drawing.Point(175, 247);
+            this.btnThemKH.Location = new System.Drawing.Point(108, 247);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.Size = new System.Drawing.Size(99, 38);
             this.btnThemKH.TabIndex = 11;
             this.btnThemKH.Text = "Thêm ";
             this.btnThemKH.UseVisualStyleBackColor = false;
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // label4
             // 
@@ -378,7 +419,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox1.Location = new System.Drawing.Point(175, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(175, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 30);
             this.pictureBox1.TabIndex = 6;
@@ -435,6 +476,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader1.Text = "Năm Sinh";
             this.columnHeader1.Width = 134;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Địa Chỉ";
+            this.columnHeader7.Width = 178;
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Ngày Cấp CMND";
@@ -445,45 +491,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader6.Text = "Hình Ảnh";
             this.columnHeader6.Width = 192;
             // 
-            // columnHeader7
+            // btnLuu
             // 
-            this.columnHeader7.Text = "Địa Chỉ";
-            this.columnHeader7.Width = 178;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.AccessibleDescription = "";
-            this.txtMaKH.AccessibleName = "";
-            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.ForeColor = System.Drawing.Color.White;
-            this.txtMaKH.Location = new System.Drawing.Point(212, 31);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(362, 22);
-            this.txtMaKH.TabIndex = 29;
-            this.txtMaKH.Tag = "";
-            this.txtMaKH.Text = "QSADASD";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(29, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 22);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Mã khách hàng";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox8.Location = new System.Drawing.Point(175, 27);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox8.TabIndex = 31;
-            this.pictureBox8.TabStop = false;
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(539, 247);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(99, 38);
+            this.btnLuu.TabIndex = 13;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // KhachHang
             // 
@@ -500,6 +521,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.Load += new System.EventHandler(this.KhachHang_Load);
             this.gbKhachHang.ResumeLayout(false);
             this.gbKhachHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -507,7 +529,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +571,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

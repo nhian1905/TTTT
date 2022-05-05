@@ -38,5 +38,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+        public bool InsertCustomer(string TenKH, int SDT, int CMND, DateTime NamSinh, string DiaChi, DateTime NgayCapCMND, string HinhAnh)
+        {
+            string query = string.Format("insert KhachHang( TenKH ,SDT,CMND ,NamSinh,DiaChi,NgayCapCMND,HinhAnh) values (N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}')", TenKH, SDT, CMND, NamSinh, DiaChi, NgayCapCMND, HinhAnh);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+        public bool DeleteCustomer(int MaKH)
+        {
+            string query = string.Format("Delete KhachHang where MaKH = N'{0}'", MaKH);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool UpdateCustomer(int MaKH, string TenKH, int SDT, int CMND, DateTime NamSinh, string DiaChi, DateTime NgayCapCMND, string HinhAnh)
+        {
+            string query = string.Format("Update KhachHang set TenKH = N'{0}', SDT = N'{1}', CMND = N'{2}', NamSinh = N'{3}', DiaChi = N'{4}', NgayCapCMND = N'{5}', HinhAnh = N'{6}' where MaKH = N'{7}'", TenKH,SDT,CMND,NamSinh,DiaChi,NgayCapCMND,HinhAnh,MaKH);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }
