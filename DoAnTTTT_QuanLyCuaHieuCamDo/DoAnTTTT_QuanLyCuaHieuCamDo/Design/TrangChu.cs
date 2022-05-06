@@ -146,10 +146,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnBaoCao.Height;
-            pnlNav.Top = btnBaoCao.Top;
-            pnlNav.Left = btnBaoCao.Left;
-            btnBaoCao.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = btnLoaiSP.Height;
+            pnlNav.Top = btnLoaiSP.Top;
+            pnlNav.Left = btnLoaiSP.Left;
+            btnLoaiSP.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void btnSanPham_Leave(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnBaoCao_Leave(object sender, EventArgs e)
         {
-            btnBaoCao.BackColor = Color.FromArgb(24, 30, 54);
+            btnLoaiSP.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

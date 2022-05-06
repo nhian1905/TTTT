@@ -32,6 +32,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             foreach (SanPhamDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());

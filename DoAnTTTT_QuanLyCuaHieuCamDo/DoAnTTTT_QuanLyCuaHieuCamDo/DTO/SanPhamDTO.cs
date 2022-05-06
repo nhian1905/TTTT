@@ -9,6 +9,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
     public class SanPhamDTO
     {
         private int maSP;
+        private string tenLoai;
         private string tenSP;
         private float dinhGia;
         private float giaThanhLy;
@@ -23,6 +24,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private bool daThanhLy;
 
         public int MaSP { get => maSP; set => maSP = value; }
+        public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
         public float DinhGia { get => dinhGia; set => dinhGia = value; }
         public float GiaThanhLy { get => giaThanhLy; set => giaThanhLy = value; }
@@ -35,11 +37,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public bool DaChuoc { get => daChuoc; set => daChuoc = value; }
         public bool ThanhLy { get => thanhLy; set => thanhLy = value; }
         public bool DaThanhLy { get => daThanhLy; set => daThanhLy = value; }
-       
+        
 
-        public SanPhamDTO(int MaSP, string TenSP, float DinhGia,float GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , string MaRieng, bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
+        public SanPhamDTO(int MaSP, string TenLoai, string TenSP, float DinhGia,float GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , string MaRieng, bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
         {
             this.MaSP = MaSP;
+            this.TenLoai = TenLoai;
             this.TenSP = TenSP;
             this.DinhGia = DinhGia;
             this.GiaThanhLy = GiaThanhLy;
@@ -57,6 +60,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public SanPhamDTO(DataRow row)
         {
             this.MaSP = (int)row["MaSP"];
+            this.TenLoai = row["TenLoai"].ToString();
             this.TenSP = row["TenSP"].ToString();
             this.DinhGia = (float)Convert.ToDouble(row["DinhGia"]);
             this.GiaThanhLy = (float)Convert.ToDouble(row["GiaThanhLy"]);

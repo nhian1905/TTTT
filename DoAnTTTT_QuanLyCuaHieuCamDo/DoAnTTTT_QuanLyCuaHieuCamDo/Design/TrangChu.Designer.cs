@@ -31,7 +31,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBaoCao = new System.Windows.Forms.Button();
+            this.btnLoaiSP = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl5 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnBaoCao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +64,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.btnBaoCao);
+            this.panel1.Controls.Add(this.btnLoaiSP);
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnDoanhThu);
@@ -79,24 +81,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel1.Size = new System.Drawing.Size(207, 850);
             this.panel1.TabIndex = 0;
             // 
-            // btnBaoCao
+            // btnLoaiSP
             // 
-            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCao.FlatAppearance.BorderSize = 0;
-            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 553);
-            this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
-            this.btnBaoCao.TabIndex = 9;
-            this.btnBaoCao.Text = "Báo cáo";
-            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnBaoCao.UseVisualStyleBackColor = true;
-            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
-            this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            this.btnLoaiSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoaiSP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoaiSP.FlatAppearance.BorderSize = 0;
+            this.btnLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLoaiSP.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
+            this.btnLoaiSP.Location = new System.Drawing.Point(0, 553);
+            this.btnLoaiSP.Name = "btnLoaiSP";
+            this.btnLoaiSP.Size = new System.Drawing.Size(207, 56);
+            this.btnLoaiSP.TabIndex = 9;
+            this.btnLoaiSP.Text = "Loại Sản Phẩm";
+            this.btnLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLoaiSP.UseVisualStyleBackColor = true;
+            this.btnLoaiSP.Click += new System.EventHandler(this.btnBaoCao_Click);
+            this.btnLoaiSP.Leave += new System.EventHandler(this.btnBaoCao_Leave);
             // 
             // pnlNav
             // 
@@ -365,6 +367,23 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DragControl5.TargetControl = this.label2;
             this.guna2DragControl5.UseTransparentDrag = true;
             // 
+            // btnBaoCao
+            // 
+            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 609);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
+            this.btnBaoCao.TabIndex = 10;
+            this.btnBaoCao.Text = "Báo cáo";
+            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,11 +425,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnMini;
-        private System.Windows.Forms.Button btnBaoCao;
+        private System.Windows.Forms.Button btnLoaiSP;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl4;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl5;
+        private System.Windows.Forms.Button btnBaoCao;
     }
 }
