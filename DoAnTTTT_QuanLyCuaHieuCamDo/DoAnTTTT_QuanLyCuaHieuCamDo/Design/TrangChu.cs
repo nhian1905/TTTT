@@ -12,7 +12,7 @@ using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
 using System.Data.SqlClient;
 
-namespace DoAnTTTT_QuanLyCuaHieuCamDo
+namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     public partial class TrangChu : Form
     {
@@ -100,6 +100,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             pnlNav.Top = btnSanPham.Top;
             pnlNav.Left = btnSanPham.Left;
             btnSanPham.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new SanPham());
         }
 
         private void btnCamDo_Click(object sender, EventArgs e)

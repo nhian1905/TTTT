@@ -18,7 +18,6 @@ C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\Do
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.KhachHang.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Main.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.resources
-C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.TrangChu.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.GenerateResource.cache
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.CoreCompileInputs.cache
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.exe
@@ -41,3 +40,5 @@ E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\Gu
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.CopyComplete
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\Guna.UI2.dll
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.csproj.CopyComplete
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.SanPham.resources
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.TrangChu.resources

@@ -1,5 +1,5 @@
 ﻿
-namespace DoAnTTTT_QuanLyCuaHieuCamDo
+namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     partial class TrangChu
     {

@@ -25,6 +25,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void KhachHang_Load(object sender, EventArgs e)
         {
             txtTenKhachHang.Text = "Tên khách hàng";
+            btnSuaKH.Enabled = false;
             LoadKhachHang();
         }
         string imagelocation = @"";
@@ -90,6 +91,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                 lvitem.SubItems.Add(item.HinhAnh.ToString());
                 LVKH.Items.Add(lvitem);
             }
+            
         }
 
         private void LVKH_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,7 +136,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
             }
             btnThemKH.Enabled = true;
-
+            btnSuaKH.Enabled = true;
         }
 
         private void btnXoaKH_Click(object sender, EventArgs e)
