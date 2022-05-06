@@ -49,6 +49,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnMini = new System.Windows.Forms.Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl5 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -263,6 +267,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(207, 161);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -336,6 +341,30 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DragControl1.TargetControl = this.panel7;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // guna2DragControl2
+            // 
+            this.guna2DragControl2.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl2.TargetControl = this.panel2;
+            this.guna2DragControl2.UseTransparentDrag = true;
+            // 
+            // guna2DragControl3
+            // 
+            this.guna2DragControl3.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl3.TargetControl = this.pictureBox1;
+            this.guna2DragControl3.UseTransparentDrag = true;
+            // 
+            // guna2DragControl4
+            // 
+            this.guna2DragControl4.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl4.TargetControl = this.label1;
+            this.guna2DragControl4.UseTransparentDrag = true;
+            // 
+            // guna2DragControl5
+            // 
+            this.guna2DragControl5.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl5.TargetControl = this.label2;
+            this.guna2DragControl5.UseTransparentDrag = true;
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +408,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Button btnMini;
         private System.Windows.Forms.Button btnBaoCao;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl4;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl5;
     }
 }

@@ -186,6 +186,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             btnBaoCao.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
