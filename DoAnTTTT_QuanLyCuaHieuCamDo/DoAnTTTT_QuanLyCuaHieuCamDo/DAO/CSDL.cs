@@ -20,7 +20,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         private CSDL()
         {
         }
-        public static string connectionStr = @" Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+        public static string connectionStr = @"Data Source=LAPTOP-V9IF4VVO\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

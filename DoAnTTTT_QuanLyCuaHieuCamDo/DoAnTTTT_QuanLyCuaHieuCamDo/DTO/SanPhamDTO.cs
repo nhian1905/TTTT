@@ -8,7 +8,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 {
     public class SanPhamDTO
     {
-        private int maSP;
+        private string maSP;
         private string tenLoai;
         private string tenSP;
         private float dinhGia;
@@ -17,13 +17,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string mauSac;
         private string hienTrang;
         private string nhanHieu;
-        private string maRieng;
         private bool quaHan;
         private bool daChuoc;
         private bool thanhLy;
         private bool daThanhLy;
 
-        public int MaSP { get => maSP; set => maSP = value; }
+        public string MaSP { get => maSP; set => maSP = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
         public float DinhGia { get => dinhGia; set => dinhGia = value; }
@@ -32,14 +31,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public string MauSac { get => mauSac; set => mauSac = value; }
         public string HienTrang { get => hienTrang; set => hienTrang = value; }
         public string NhanHieu { get => nhanHieu; set => nhanHieu = value; }
-        public string MaRieng { get => maRieng; set => maRieng = value; }
         public bool QuaHan { get => quaHan; set => quaHan = value; }
         public bool DaChuoc { get => daChuoc; set => daChuoc = value; }
         public bool ThanhLy { get => thanhLy; set => thanhLy = value; }
         public bool DaThanhLy { get => daThanhLy; set => daThanhLy = value; }
         
 
-        public SanPhamDTO(int MaSP, string TenLoai, string TenSP, float DinhGia,float GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , string MaRieng, bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
+        public SanPhamDTO(string MaSP, string TenLoai, string TenSP, float DinhGia,float GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
         {
             this.MaSP = MaSP;
             this.TenLoai = TenLoai;
@@ -50,7 +48,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.MauSac = MauSac;
             this.HienTrang = HienTrang;
             this.NhanHieu = NhangHieu;
-            this.MaRieng = MaRieng;
             this.QuaHan = QuaHan;
             this.DaChuoc = DaChuoc;
             this.ThanhLy = ThanhLy;
@@ -59,7 +56,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 
         public SanPhamDTO(DataRow row)
         {
-            this.MaSP = (int)row["MaSP"];
+            this.MaSP = row["MaSP"].ToString();
             this.TenLoai = row["TenLoai"].ToString();
             this.TenSP = row["TenSP"].ToString();
             this.DinhGia = (float)Convert.ToDouble(row["DinhGia"]);
@@ -68,7 +65,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.MauSac = row["MauSac"].ToString();
             this.HienTrang = row["HienTrang"].ToString();
             this.NhanHieu = row["NhangHieu"].ToString();
-            this.MaRieng = row["MaRieng"].ToString();
             this.QuaHan = (bool)row["QuaHan"];
             this.DaChuoc = (bool)row["DaChuoc"];
             this.ThanhLy = (bool)row["ThanhLy"];

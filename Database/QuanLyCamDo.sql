@@ -35,7 +35,7 @@ create table LoaiSP
 
 create table SanPham
 (
-	MaSP int identity(1,1) primary key,
+	MaSP nvarchar(50) primary key,
 	TenSP nvarchar(100) not null,
 	DinhGia float not null,
 	GiaThanhLy float null,
@@ -44,7 +44,6 @@ create table SanPham
 	MauSac nvarchar(max),
 	HienTrang nvarchar(max),
 	NhangHieu nvarchar(max),
-	MaRieng nvarchar(max),
 	QuaHan bit,
 	DaChuoc bit,
 	ThanhLy bit,
@@ -64,7 +63,7 @@ create table ThanhLy
 create table ChiTiet_ThanhLy
 (
 	MaThanhLy int not null,
-	MaSP int not null
+	MaSP nvarchar(50) not null
 	CONSTRAINT pk_HDTL PRIMARY KEY (MaThanhLy, MaSP),
 	foreign key(MaThanhLy) references ThanhLy(MaThanhLy),
 	foreign key(MaSP) references SanPham(MaSP)
@@ -83,7 +82,7 @@ create table HoaDonCam
 create table ChiTiet_HoaDonCam
 (	
 	MaHoaDonCam int not null ,
-	MaSP int not null,
+	MaSP nvarchar(50) not null,
 	CONSTRAINT pk_CTHDC PRIMARY KEY (MaHoaDonCam, MaSP),
 	foreign key(MaHoaDonCam) references HoaDonCam(MaHoaDonCam),
 	foreign key(MaSP) references SanPham(MaSP)
@@ -108,7 +107,7 @@ create table PhieuChuoc
 create table ChiTiet_PhieuChuoc
 (
 	MaPhieuChuoc int not null,
-	MaSP int not null ,
+	MaSP nvarchar(50) not null ,
 	TienLai float not null,
 	TongTien float,
 	CONSTRAINT pk_CTPC PRIMARY KEY (MaPhieuChuoc, MaSP),
@@ -118,4 +117,13 @@ create table ChiTiet_PhieuChuoc
 insert into Quyen values ('admin')
 insert into TaiKhoan values ('admin',123,1)
 
+insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
 
+insert into LoaiSP values (N'DT',5)
+insert into LoaiSP values (N'MT',3)
+
+insert into SanPham values ('IP',N'Điện Thoại',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N'iphone 10',0,0,0,0)
+insert into SanPham values ('LT',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,0,0)

@@ -26,10 +26,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         private LoaiSPDAO() { }
 
-        public List<LoaiSPDTO> LoadListKH()
+        public List<LoaiSPDTO> LoadListLoaiSP()
         {
             List<LoaiSPDTO> LoadList = new List<LoaiSPDTO>();
-            string query = "select * from KhachHang";
+            string query = "select * from LoaiSP";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
