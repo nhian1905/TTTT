@@ -109,6 +109,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             pnlNav.Top = btnCamDo.Top;
             pnlNav.Left = btnCamDo.Left;
             btnCamDo.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new CamDo());
         }
 
         private void btnDongLai_Click(object sender, EventArgs e)
@@ -125,6 +126,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             pnlNav.Top = btnThanhLy.Top;
             pnlNav.Left = btnThanhLy.Left;
             btnThanhLy.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new ThanhLy());
+
         }
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
@@ -146,10 +149,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnLoaiSP.Height;
-            pnlNav.Top = btnLoaiSP.Top;
-            pnlNav.Left = btnLoaiSP.Left;
-            btnLoaiSP.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = btnBaoCao.Height;
+            pnlNav.Top = btnBaoCao.Top;
+            pnlNav.Left = btnBaoCao.Left;
+            btnBaoCao.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void btnSanPham_Leave(object sender, EventArgs e)
@@ -184,13 +187,29 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnBaoCao_Leave(object sender, EventArgs e)
         {
-            btnLoaiSP.BackColor = Color.FromArgb(24, 30, 54);
+            btnBaoCao.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void btnChuoSP_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnChuoSP.Height;
+            pnlNav.Top = btnChuoSP.Top;
+            pnlNav.Left = btnChuoSP.Left;
+            btnChuoSP.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new ChuocSP());
+        }
+
+        private void btnChuoSP_Leave(object sender, EventArgs e)
+        {
+            btnChuoSP.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        
     }
 }
 

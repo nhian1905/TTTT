@@ -63,6 +63,18 @@
     <Compile Include="DAO\LoaiSPDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\TypeAccountDAO.cs" />
+    <Compile Include="Design\CamDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\CamDo.Designer.cs">
+      <DependentUpon>CamDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\ChuocSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ChuocSP.Designer.cs">
+      <DependentUpon>ChuocSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     <Compile Include="Design\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\ThanhLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ThanhLy.Designer.cs">
+      <DependentUpon>ThanhLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiSPDTO.cs" />
@@ -105,6 +123,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCamDoDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Design\CamDo.resx">
+      <DependentUpon>CamDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ChuocSP.resx">
+      <DependentUpon>ChuocSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ThanhLy.resx">
+      <DependentUpon>ThanhLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

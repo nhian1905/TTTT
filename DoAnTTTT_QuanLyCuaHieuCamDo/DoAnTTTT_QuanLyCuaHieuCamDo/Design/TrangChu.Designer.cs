@@ -31,7 +31,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLoaiSP = new System.Windows.Forms.Button();
+            this.btnBaoCao = new System.Windows.Forms.Button();
+            this.btnChuoSP = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl5 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnBaoCao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,9 +63,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.btnBaoCao);
-            this.panel1.Controls.Add(this.btnLoaiSP);
             this.panel1.Controls.Add(this.pnlNav);
+            this.panel1.Controls.Add(this.btnBaoCao);
+            this.panel1.Controls.Add(this.btnChuoSP);
             this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnDoanhThu);
             this.panel1.Controls.Add(this.btnThoat);
@@ -78,34 +78,53 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 850);
+            this.panel1.Size = new System.Drawing.Size(207, 1000);
             this.panel1.TabIndex = 0;
             // 
-            // btnLoaiSP
+            // btnBaoCao
             // 
-            this.btnLoaiSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLoaiSP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLoaiSP.FlatAppearance.BorderSize = 0;
-            this.btnLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnLoaiSP.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnLoaiSP.Location = new System.Drawing.Point(0, 553);
-            this.btnLoaiSP.Name = "btnLoaiSP";
-            this.btnLoaiSP.Size = new System.Drawing.Size(207, 56);
-            this.btnLoaiSP.TabIndex = 9;
-            this.btnLoaiSP.Text = "Loại Sản Phẩm";
-            this.btnLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLoaiSP.UseVisualStyleBackColor = true;
-            this.btnLoaiSP.Click += new System.EventHandler(this.btnBaoCao_Click);
-            this.btnLoaiSP.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 609);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
+            this.btnBaoCao.TabIndex = 10;
+            this.btnBaoCao.Text = "Báo cáo";
+            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
+            this.btnBaoCao.Leave += new System.EventHandler(this.btnBaoCao_Leave);
+            // 
+            // btnChuoSP
+            // 
+            this.btnChuoSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnChuoSP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChuoSP.FlatAppearance.BorderSize = 0;
+            this.btnChuoSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuoSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuoSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnChuoSP.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
+            this.btnChuoSP.Location = new System.Drawing.Point(0, 553);
+            this.btnChuoSP.Name = "btnChuoSP";
+            this.btnChuoSP.Size = new System.Drawing.Size(207, 56);
+            this.btnChuoSP.TabIndex = 9;
+            this.btnChuoSP.Text = "Chuộc sản phẩm";
+            this.btnChuoSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnChuoSP.UseVisualStyleBackColor = true;
+            this.btnChuoSP.Click += new System.EventHandler(this.btnChuoSP_Click);
+            this.btnChuoSP.Leave += new System.EventHandler(this.btnChuoSP_Leave);
             // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.pnlNav.Location = new System.Drawing.Point(0, 173);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 100);
+            this.pnlNav.Size = new System.Drawing.Size(3, 500);
             this.pnlNav.TabIndex = 3;
             // 
             // btnKhachHang
@@ -155,7 +174,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnThoat.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_multiply_30px_1;
-            this.btnThoat.Location = new System.Drawing.Point(0, 794);
+            this.btnThoat.Location = new System.Drawing.Point(0, 944);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(207, 56);
             this.btnThoat.TabIndex = 6;
@@ -310,7 +329,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(207, 43);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1243, 807);
+            this.panel3.Size = new System.Drawing.Size(1343, 957);
             this.panel3.TabIndex = 3;
             // 
             // panel7
@@ -319,7 +338,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(207, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1243, 43);
+            this.panel7.Size = new System.Drawing.Size(1343, 43);
             this.panel7.TabIndex = 2;
             // 
             // btnMini
@@ -330,7 +349,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMini.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnMini.Location = new System.Drawing.Point(1201, 9);
+            this.btnMini.Location = new System.Drawing.Point(1301, 9);
             this.btnMini.Name = "btnMini";
             this.btnMini.Size = new System.Drawing.Size(30, 31);
             this.btnMini.TabIndex = 5;
@@ -367,29 +386,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DragControl5.TargetControl = this.label2;
             this.guna2DragControl5.UseTransparentDrag = true;
             // 
-            // btnBaoCao
-            // 
-            this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCao.FlatAppearance.BorderSize = 0;
-            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 609);
-            this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
-            this.btnBaoCao.TabIndex = 10;
-            this.btnBaoCao.Text = "Báo cáo";
-            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnBaoCao.UseVisualStyleBackColor = true;
-            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1450, 850);
+            this.ClientSize = new System.Drawing.Size(1550, 1000);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
@@ -425,7 +427,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnMini;
-        private System.Windows.Forms.Button btnLoaiSP;
+        private System.Windows.Forms.Button btnChuoSP;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
