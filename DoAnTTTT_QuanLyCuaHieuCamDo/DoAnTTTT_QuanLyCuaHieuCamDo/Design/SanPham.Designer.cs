@@ -51,16 +51,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cbDaChuoc = new System.Windows.Forms.CheckBox();
             this.cbQuaHan = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnXoaKH = new System.Windows.Forms.Button();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-            this.btnThemKH = new System.Windows.Forms.Button();
+            this.btnXoaLoaiSP = new System.Windows.Forms.Button();
+            this.btnSuaLoaiSP = new System.Windows.Forms.Button();
+            this.btnThemLoaiSP = new System.Windows.Forms.Button();
             this.txtLaiSuat = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.LVLoaiSP = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtHienTrang = new System.Windows.Forms.TextBox();
@@ -86,6 +86,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
+            this.txtMaLoai = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -210,6 +212,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnLoc.TabIndex = 34;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // groupBox1
             // 
@@ -270,13 +273,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnXoaKH);
-            this.groupBox2.Controls.Add(this.btnSuaKH);
-            this.groupBox2.Controls.Add(this.btnThemKH);
+            this.groupBox2.Controls.Add(this.txtMaLoai);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.btnXoaLoaiSP);
+            this.groupBox2.Controls.Add(this.btnSuaLoaiSP);
+            this.groupBox2.Controls.Add(this.btnThemLoaiSP);
             this.groupBox2.Controls.Add(this.txtLaiSuat);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.LVLoaiSP);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtTenLoai);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -287,48 +292,50 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại sản phẩm";
             // 
-            // btnXoaKH
+            // btnXoaLoaiSP
             // 
-            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaKH.FlatAppearance.BorderSize = 0;
-            this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(418, 296);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaKH.TabIndex = 36;
-            this.btnXoaKH.Text = "Xóa";
-            this.btnXoaKH.UseVisualStyleBackColor = false;
+            this.btnXoaLoaiSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXoaLoaiSP.FlatAppearance.BorderSize = 0;
+            this.btnXoaLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaLoaiSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaLoaiSP.ForeColor = System.Drawing.Color.White;
+            this.btnXoaLoaiSP.Location = new System.Drawing.Point(418, 296);
+            this.btnXoaLoaiSP.Name = "btnXoaLoaiSP";
+            this.btnXoaLoaiSP.Size = new System.Drawing.Size(99, 38);
+            this.btnXoaLoaiSP.TabIndex = 36;
+            this.btnXoaLoaiSP.Text = "Xóa";
+            this.btnXoaLoaiSP.UseVisualStyleBackColor = false;
+            this.btnXoaLoaiSP.Click += new System.EventHandler(this.btnXoaLoaiSP_Click);
             // 
-            // btnSuaKH
+            // btnSuaLoaiSP
             // 
-            this.btnSuaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSuaKH.FlatAppearance.BorderSize = 0;
-            this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(276, 296);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaKH.TabIndex = 35;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = false;
+            this.btnSuaLoaiSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSuaLoaiSP.FlatAppearance.BorderSize = 0;
+            this.btnSuaLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaLoaiSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaLoaiSP.ForeColor = System.Drawing.Color.White;
+            this.btnSuaLoaiSP.Location = new System.Drawing.Point(276, 296);
+            this.btnSuaLoaiSP.Name = "btnSuaLoaiSP";
+            this.btnSuaLoaiSP.Size = new System.Drawing.Size(99, 38);
+            this.btnSuaLoaiSP.TabIndex = 35;
+            this.btnSuaLoaiSP.Text = "Sửa";
+            this.btnSuaLoaiSP.UseVisualStyleBackColor = false;
+            this.btnSuaLoaiSP.Click += new System.EventHandler(this.btnSuaLoaiSP_Click);
             // 
-            // btnThemKH
+            // btnThemLoaiSP
             // 
-            this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThemKH.FlatAppearance.BorderSize = 0;
-            this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Location = new System.Drawing.Point(130, 296);
-            this.btnThemKH.Name = "btnThemKH";
-            this.btnThemKH.Size = new System.Drawing.Size(99, 38);
-            this.btnThemKH.TabIndex = 34;
-            this.btnThemKH.Text = "Thêm ";
-            this.btnThemKH.UseVisualStyleBackColor = false;
-            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
+            this.btnThemLoaiSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThemLoaiSP.FlatAppearance.BorderSize = 0;
+            this.btnThemLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemLoaiSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemLoaiSP.ForeColor = System.Drawing.Color.White;
+            this.btnThemLoaiSP.Location = new System.Drawing.Point(130, 296);
+            this.btnThemLoaiSP.Name = "btnThemLoaiSP";
+            this.btnThemLoaiSP.Size = new System.Drawing.Size(99, 38);
+            this.btnThemLoaiSP.TabIndex = 34;
+            this.btnThemLoaiSP.Text = "Thêm ";
+            this.btnThemLoaiSP.UseVisualStyleBackColor = false;
+            this.btnThemLoaiSP.Click += new System.EventHandler(this.btnThemLoaiSP_Click);
             // 
             // txtLaiSuat
             // 
@@ -370,6 +377,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVLoaiSP.TabIndex = 31;
             this.LVLoaiSP.UseCompatibleStateImageBehavior = false;
             this.LVLoaiSP.View = System.Windows.Forms.View.Details;
+            this.LVLoaiSP.SelectedIndexChanged += new System.EventHandler(this.LVLoaiSP_SelectedIndexChanged);
             // 
             // columnHeader9
             // 
@@ -386,19 +394,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader16.Text = "Lãi Xuất";
             this.columnHeader16.Width = 109;
             // 
-            // textBox6
+            // txtTenLoai
             // 
-            this.textBox6.AccessibleDescription = "";
-            this.textBox6.AccessibleName = "";
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(248, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(256, 22);
-            this.textBox6.TabIndex = 29;
-            this.textBox6.Tag = "";
+            this.txtTenLoai.AccessibleDescription = "";
+            this.txtTenLoai.AccessibleName = "";
+            this.txtTenLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTenLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenLoai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLoai.ForeColor = System.Drawing.Color.White;
+            this.txtTenLoai.Location = new System.Drawing.Point(248, 31);
+            this.txtTenLoai.Name = "txtTenLoai";
+            this.txtTenLoai.Size = new System.Drawing.Size(256, 22);
+            this.txtTenLoai.TabIndex = 29;
+            this.txtTenLoai.Tag = "";
             // 
             // label9
             // 
@@ -617,6 +625,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThanhLy.TabIndex = 36;
             this.btnThanhLy.Text = "Thanh Lý";
             this.btnThanhLy.UseVisualStyleBackColor = false;
+            this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
             // btnXoaSP
             // 
@@ -631,6 +640,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXoaSP.TabIndex = 36;
             this.btnXoaSP.Text = "Xóa";
             this.btnXoaSP.UseVisualStyleBackColor = false;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // btnSuaSP
             // 
@@ -645,6 +655,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaSP.TabIndex = 35;
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = false;
+            this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
             // btnThemSP
             // 
@@ -736,6 +747,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
             // 
+            // txtMaLoai
+            // 
+            this.txtMaLoai.AccessibleDescription = "";
+            this.txtMaLoai.AccessibleName = "";
+            this.txtMaLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txtMaLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaLoai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoai.ForeColor = System.Drawing.Color.White;
+            this.txtMaLoai.Location = new System.Drawing.Point(551, 47);
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(10, 22);
+            this.txtMaLoai.TabIndex = 37;
+            this.txtMaLoai.Tag = "";
+            this.txtMaLoai.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(535, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 22);
+            this.label12.TabIndex = 38;
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,11 +824,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.TextBox txtLaiSuat;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView LVLoaiSP;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTenLoai;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnXoaKH;
-        private System.Windows.Forms.Button btnSuaKH;
-        private System.Windows.Forms.Button btnThemKH;
+        private System.Windows.Forms.Button btnXoaLoaiSP;
+        private System.Windows.Forms.Button btnSuaLoaiSP;
+        private System.Windows.Forms.Button btnThemLoaiSP;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtHienTrang;
         private System.Windows.Forms.Label label11;
@@ -820,5 +856,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.Button btnXuat;
+        private System.Windows.Forms.TextBox txtMaLoai;
+        private System.Windows.Forms.Label label12;
     }
 }

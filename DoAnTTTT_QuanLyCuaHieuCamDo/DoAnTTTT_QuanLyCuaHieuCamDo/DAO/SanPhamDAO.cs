@@ -43,5 +43,41 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public bool DeleteSP(string MaSP)
+        {
+            string query = string.Format("delete SanPham where MaSP = N'{0}'",MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool UpdateSP(string MaSP, int MaLoai, string TenSP, float DinhGia, float GiaThanhLy, string MoTa, string MauSac, string HienTrang, string NhangHieu)
+        {
+            string query = string.Format("update SanPham set MaLoai =N'{0}' , TenSP=N'{1}', DinhGia=N'{2}', GiaThanhLy=N'{3}' , MoTa=N'{4}' ,MauSac=N'{5}',HienTrang=N'{6}',NhangHieu=N'{7}' where MaSP=N'{8}'",  MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhangHieu, MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool ThanhLySP(string MaSP,bool ThanhLy)
+        {
+            string query = string.Format("update SanPham set ThanhLy = N'{0}' where MaSP = N'{1}'", ThanhLy, MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+
+        public List<SanPhamDTO> TimKiem(bool ThanhLy , bool QuaHan , bool DaChuoc , bool DaThanhLy)
+        {
+            List<SanPhamDTO> ListSP = new List<SanPhamDTO>();
+            string query = string.Format("select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy LIKE 1 or a.DaThanhLy LIKE 1  or a.QuaHan like 1 or a.DaChuoc Like 1 ", ThanhLy,QuaHan,DaChuoc,DaThanhLy);
+            
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                SanPhamDTO tk = new SanPhamDTO(item);
+                ListSP.Add(tk);
+            }
+            return ListSP;
+        }
     }
 }

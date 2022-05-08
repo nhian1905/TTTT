@@ -38,5 +38,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+        public bool InsertLoaiSP( string TenLoai , float LaiXuat)
+        {
+            string query = string.Format("insert LoaiSP(  TenLoai , LaiXuat) values (N'{0}',N'{1}')", TenLoai,LaiXuat);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool UpdateLoaiSP(int MaLoai, string TenLoai, float LaiXuat)
+        {
+            string query = string.Format("update LoaiSP set TenLoai=N'{0}' , LaiXuat=N'{1}' where MaLoai=N'{2}'",  TenLoai, LaiXuat,MaLoai);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool DeleteLoaiSP(int MaLoai)
+        {
+            string query = string.Format("delete LoaiSP where MaSP = N'{0}'", MaLoai);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }
