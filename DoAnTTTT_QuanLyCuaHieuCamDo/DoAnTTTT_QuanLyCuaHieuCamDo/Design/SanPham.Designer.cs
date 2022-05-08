@@ -57,6 +57,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtLaiSuat = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.LVLoaiSP = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -82,9 +85,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -114,7 +115,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVSP.HideSelection = false;
             this.LVSP.Location = new System.Drawing.Point(12, 450);
             this.LVSP.Name = "LVSP";
-            this.LVSP.Size = new System.Drawing.Size(1302, 495);
+            this.LVSP.Size = new System.Drawing.Size(1302, 450);
             this.LVSP.TabIndex = 0;
             this.LVSP.UseCompatibleStateImageBehavior = false;
             this.LVSP.View = System.Windows.Forms.View.Details;
@@ -369,6 +370,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVLoaiSP.TabIndex = 31;
             this.LVLoaiSP.UseCompatibleStateImageBehavior = false;
             this.LVLoaiSP.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Mã Loại";
+            this.columnHeader9.Width = 112;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Tên Loại";
+            this.columnHeader15.Width = 323;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Lãi Xuất";
+            this.columnHeader16.Width = 109;
             // 
             // textBox6
             // 
@@ -706,20 +722,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label2.TabIndex = 30;
             this.label2.Text = "Mã SP";
             // 
-            // columnHeader9
+            // btnXuat
             // 
-            this.columnHeader9.Text = "Mã Loại";
-            this.columnHeader9.Width = 112;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Tên Loại";
-            this.columnHeader15.Width = 323;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Lãi Xuất";
-            this.columnHeader16.Width = 109;
+            this.btnXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXuat.FlatAppearance.BorderSize = 0;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Location = new System.Drawing.Point(1215, 907);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(99, 38);
+            this.btnXuat.TabIndex = 35;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.UseVisualStyleBackColor = false;
             // 
             // SanPham
             // 
@@ -727,6 +742,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
+            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -803,5 +819,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.Button btnXuat;
     }
 }

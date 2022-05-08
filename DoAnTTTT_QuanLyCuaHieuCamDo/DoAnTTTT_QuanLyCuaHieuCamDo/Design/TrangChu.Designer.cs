@@ -31,11 +31,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnChuoSP = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnKhachHang = new System.Windows.Forms.Button();
-            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThanhLy = new System.Windows.Forms.Button();
             this.btnDongLai = new System.Windows.Forms.Button();
@@ -67,7 +66,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel1.Controls.Add(this.btnBaoCao);
             this.panel1.Controls.Add(this.btnChuoSP);
             this.panel1.Controls.Add(this.btnKhachHang);
-            this.panel1.Controls.Add(this.btnDoanhThu);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnThanhLy);
             this.panel1.Controls.Add(this.btnDongLai);
@@ -81,6 +79,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.panel1.Size = new System.Drawing.Size(207, 1000);
             this.panel1.TabIndex = 0;
             // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.pnlNav.Location = new System.Drawing.Point(0, 173);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 500);
+            this.pnlNav.TabIndex = 3;
+            // 
             // btnBaoCao
             // 
             this.btnBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -90,7 +96,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnBaoCao.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 609);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 553);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(207, 56);
             this.btnBaoCao.TabIndex = 10;
@@ -109,7 +115,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnChuoSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuoSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnChuoSP.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_bill_30px;
-            this.btnChuoSP.Location = new System.Drawing.Point(0, 553);
+            this.btnChuoSP.Location = new System.Drawing.Point(0, 497);
             this.btnChuoSP.Name = "btnChuoSP";
             this.btnChuoSP.Size = new System.Drawing.Size(207, 56);
             this.btnChuoSP.TabIndex = 9;
@@ -118,14 +124,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnChuoSP.UseVisualStyleBackColor = true;
             this.btnChuoSP.Click += new System.EventHandler(this.btnChuoSP_Click);
             this.btnChuoSP.Leave += new System.EventHandler(this.btnChuoSP_Leave);
-            // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 173);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 500);
-            this.pnlNav.TabIndex = 3;
             // 
             // btnKhachHang
             // 
@@ -136,7 +134,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnKhachHang.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 497);
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 441);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(207, 56);
             this.btnKhachHang.TabIndex = 8;
@@ -145,25 +143,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnKhachHang.UseVisualStyleBackColor = true;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             this.btnKhachHang.Leave += new System.EventHandler(this.btnKhachHang_Leave);
-            // 
-            // btnDoanhThu
-            // 
-            this.btnDoanhThu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDoanhThu.FlatAppearance.BorderSize = 0;
-            this.btnDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDoanhThu.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_money_bag_30px;
-            this.btnDoanhThu.Location = new System.Drawing.Point(0, 441);
-            this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.Size = new System.Drawing.Size(207, 56);
-            this.btnDoanhThu.TabIndex = 7;
-            this.btnDoanhThu.Text = "Doanh thu";
-            this.btnDoanhThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDoanhThu.UseVisualStyleBackColor = true;
-            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
-            this.btnDoanhThu.Leave += new System.EventHandler(this.btnDoanhThu_Leave);
             // 
             // btnThoat
             // 
@@ -416,7 +395,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTrangChu;
-        private System.Windows.Forms.Button btnDoanhThu;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnThanhLy;
         private System.Windows.Forms.Button btnDongLai;

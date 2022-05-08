@@ -63,6 +63,12 @@
     <Compile Include="DAO\LoaiSPDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\TypeAccountDAO.cs" />
+    <Compile Include="Design\BaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\BaoCao.Designer.cs">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\CamDo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCamDoDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Design\BaoCao.resx">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\CamDo.resx">
       <DependentUpon>CamDo.cs</DependentUpon>
     </EmbeddedResource>

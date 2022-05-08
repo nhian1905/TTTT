@@ -130,14 +130,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         }
 
-        private void btnDoanhThu_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnDoanhThu.Height;
-            pnlNav.Top = btnDoanhThu.Top;
-            pnlNav.Left = btnDoanhThu.Left;
-            btnDoanhThu.BackColor = Color.FromArgb(46, 51, 73);
-        }
-
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnKhachHang.Height;
@@ -153,6 +145,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             pnlNav.Top = btnBaoCao.Top;
             pnlNav.Left = btnBaoCao.Left;
             btnBaoCao.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new BaoCao());
         }
 
         private void btnSanPham_Leave(object sender, EventArgs e)
@@ -173,11 +166,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void btnThanhLy_Leave(object sender, EventArgs e)
         {
             btnThanhLy.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnDoanhThu_Leave(object sender, EventArgs e)
-        {
-            btnDoanhThu.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void btnKhachHang_Leave(object sender, EventArgs e)
