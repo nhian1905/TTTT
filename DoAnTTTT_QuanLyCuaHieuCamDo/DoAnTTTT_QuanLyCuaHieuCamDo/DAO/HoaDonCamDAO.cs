@@ -57,5 +57,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public bool UpdateTongTien(int MaHoaDonCam)
+        {
+            string query = string.Format("exec USP_UpdateTongTienHDC {0}", MaHoaDonCam);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }

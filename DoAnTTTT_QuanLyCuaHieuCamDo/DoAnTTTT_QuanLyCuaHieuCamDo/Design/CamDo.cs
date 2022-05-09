@@ -23,6 +23,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             LoadHoaDonCam();
             LoadCboKhachHang();
+            LoadCboLoaiSP();
         }
 
         void LoadCboKhachHang()
@@ -32,6 +33,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             cboKhachHang.ValueMember = "MaKH";
         }
 
+        void LoadCboLoaiSP()
+        {
+            cboLoaiSP.DataSource = LoaiSPDAO.Instance.LoadListLoaiSP();
+            cboLoaiSP.DisplayMember = "TenLoai";
+            cboLoaiSP.ValueMember = "MaLoai";
+        }
         void LoadHoaDonCam()
         {
             LvPhieuCam.Items.Clear();
@@ -45,6 +52,33 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 lvitem.SubItems.Add(item.TongTienCam.ToString());
                 LvPhieuCam.Items.Add(lvitem);
             }
+        }
+
+        void LoadCTHoaDonCam(int MaHDC)
+        {
+            LVCTHDC.Items.Clear();
+            List<ChiTietHoaDonCamDTO> list = ChiTietHoaDonCamDAO.Instance.LoadListCTHDC(MaHDC);
+            foreach (ChiTietHoaDonCamDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaHoaDonCam.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
+                lvitem.SubItems.Add(item.TenLoai.ToString());
+                lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.DinhGia.ToString());
+                lvitem.SubItems.Add(item.GiaThanhLy.ToString());
+                lvitem.SubItems.Add(item.MoTa.ToString());
+                lvitem.SubItems.Add(item.MauSac.ToString());
+                lvitem.SubItems.Add(item.HienTrang.ToString());
+                lvitem.SubItems.Add(item.NhanHieu.ToString());
+                LVCTHDC.Items.Add(lvitem);
+            }
+        }
+
+        void LoadTongTien()
+        {
+            int MaHoaDonCam = Convert.ToInt32(txtMaHDC.Text);
+            HoaDonCamDAO.Instance.UpdateTongTien(MaHoaDonCam);
+            LoadHoaDonCam();
         }
         private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -118,7 +152,34 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnXoaHoaDonCam_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("BẠN CÓ THẬT SỰ MUỐN XÓA HÓA ĐƠN", "THÔNG BÁO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    int MaHDC = Convert.ToInt32(txtMaHDC.Text);
+                    if (txtMaHDC.Text != "")
+                    {
+                        if (HoaDonCamDAO.Instance.DeleteHDC(MaHDC))
+                        {
+                            MessageBox.Show("Xóa Thành Công", "Thông báo");
+                            LoadHoaDonCam();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa Thất Bại");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chọn Hóa Đơn Cần Xóa");
+                    }
+                }
 
+                catch
+                {
+                    MessageBox.Show("Có lỗi Không Thể Xóa Do Sản Phẩm Đã Được Xuất ");
+                }
+            }
         }
 
         private void LvPhieuCam_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,6 +203,94 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             dtpNgayCamHD.Text =ngaylaphdc.ToString();
             dtpNgayHetHan.Text = ngayhethan.ToString();
             txtTongTien.Text = tongtiencam.ToString();
+
+
+            ListView.SelectedListViewItemCollection lvv = this.LvPhieuCam.SelectedItems;
+            int id = 0;
+            foreach (ListViewItem item in lvv)
+            {
+                id += Int32.Parse(item.SubItems[0].Text);
+            }
+            txtMaHDC.Text = id.ToString();
+            int MaHoaDonCam = int.Parse(txtMaHDC.Text);
+            LoadCTHoaDonCam(MaHoaDonCam);
+        }
+
+        private void LVCTHDC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection lv = this.LVCTHDC.SelectedItems;
+            int mahdc = 0;
+            string masp = "";
+            string maloai = "";
+            string tensp = "";
+            string dinhgia = "";
+            string giathanhly = "";
+            string mota = "";
+            string mausac = "";
+            string hientrang = "";
+            string nhanhieu = "";
+            foreach (ListViewItem item in lv)
+            {
+                mahdc += Int32.Parse(item.SubItems[0].Text);
+                masp += item.SubItems[1].Text;
+                maloai += item.SubItems[2].Text;
+                tensp += item.SubItems[3].Text;
+                dinhgia += item.SubItems[4].Text;
+                giathanhly += item.SubItems[5].Text;
+                mota += item.SubItems[6].Text;
+                mausac += item.SubItems[7].Text;
+                hientrang += item.SubItems[8].Text;
+                nhanhieu += item.SubItems[9].Text;
+            }
+            txtMaHDC.Text = mahdc.ToString();
+            txtMaSP.Text = masp.ToString();
+            txtTenSP.Text = tensp.ToString();
+            txtDinhGia.Text = dinhgia.ToString();
+            txtGiaThanhLy.Text = giathanhly.ToString();
+            cboLoaiSP.Text = maloai.ToString();
+            txtMoTa.Text = mota.ToString();
+            txtMauSac.Text = mausac.ToString();
+            txtHienTrang.Text = hientrang.ToString();
+            txtNhanHieu.Text = nhanhieu.ToString();
+        }
+
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtMaHDC.Text);
+            if (txtTenSP.Text != "" && txtMaSP.Text != "")
+            {
+                int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+                string MaSP = txtMaSP.Text;
+                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                string TenSP = txtTenSP.Text;
+                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+                string MoTa = txtMoTa.Text;
+                string MauSac = txtMauSac.Text;
+                string HienTrang = txtHienTrang.Text;
+                string NhanHieu = txtNhanHieu.Text;
+                bool QuaHan = (bool)Convert.ToBoolean(0);
+                bool DaChuoc = (bool)Convert.ToBoolean(0);
+                bool ThanhLy = (bool)Convert.ToBoolean(0);
+                bool DaThanhLy = (bool)Convert.ToBoolean(0);     
+                if (SanPhamDAO.Instance.InsertSP(MaSP,MaLoai,TenSP,DinhGia,GiaThanhLy,MoTa,MauSac,HienTrang,NhanHieu,QuaHan,DaChuoc,ThanhLy,DaThanhLy))
+                {
+                    if (ChiTietHoaDonCamDAO.Instance.InsertSPtoBillHDC(MaHoaDonCam, MaSP))
+                    {
+                        MessageBox.Show("Thêm Thành Công");
+                        LoadCTHoaDonCam(id);
+                        LoadTongTien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
+            }
         }
     }
 }

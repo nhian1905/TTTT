@@ -134,9 +134,27 @@ insert into SanPham values ('LT4',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn'
 
 insert into HoaDonCam values (1,'05/19/2020','06/19/2020',0)
 
+insert into ChiTiet_HoaDonCam values (1,'IP')
+
+
+
+create proc USP_UpdateTongTienHDC 
+@Id_HDC int
+as
+begin
+	declare @TT float
+	SELECT @TT = ISNULL(SUM(GiaThanhLy),0) FROM ChiTiet_HoaDonCam a , SanPham b  WHERE a.MaSP = b.MaSP and MaHoaDonCam = @Id_HDC 
+	update HoaDonCam set TongTienCam = @TT where MaHoaDonCam = @ID_HDC
+end
+go
+
+exec USP_UpdateTongTienHDC 4
+
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1
 
 select a.MaHoaDonCam , b.TenKH , a.NgayLap , a.NgayHetHan ,a.TongTienCam
 from HoaDonCam a , KhachHang b
 where a.MaKH = b.MaKH
-select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1
+select c.MaHoaDonCam, a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b , ChiTiet_HoaDonCam c, HoaDonCam d where a.MaLoai = b.MaLoai and a.MaSP = c.MaSP and c.MaHoaDonCam = d.MaHoaDonCam
+
+
