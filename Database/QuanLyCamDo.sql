@@ -130,6 +130,13 @@ insert into SanPham values ('LT',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',
 insert into SanPham values ('LT1',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,1,0,0)
 insert into SanPham values ('LT2',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',1,0,0,0)
 insert into SanPham values ('LT3',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,0,1)
+insert into SanPham values ('LT4',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,1,1)
+
+insert into HoaDonCam values (1,'05/19/2020','06/19/2020',0)
+
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1
 
+select a.MaHoaDonCam , b.TenKH , a.NgayLap , a.NgayHetHan ,a.TongTienCam
+from HoaDonCam a , KhachHang b
+where a.MaKH = b.MaKH
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1

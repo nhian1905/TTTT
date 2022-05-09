@@ -30,10 +30,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.dtpNgayCamHD = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
+            this.btnInHDCam = new System.Windows.Forms.Button();
+            this.LvPhieuCam = new System.Windows.Forms.ListView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btnXoaHoaDonCam = new System.Windows.Forms.Button();
+            this.btnSuaHoaDonCam = new System.Windows.Forms.Button();
+            this.btnThemHoaDonCam = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayCapCMND = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
@@ -41,26 +55,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnXoaKH = new System.Windows.Forms.Button();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-            this.btnThemKH = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbKhachHang = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnInHDCam = new System.Windows.Forms.Button();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.txtMauSac = new System.Windows.Forms.TextBox();
+            this.cbLoaiSap = new System.Windows.Forms.ComboBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtHienTrang = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -82,27 +91,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtMaSP = new System.Windows.Forms.TextBox();
-            this.cbLoaiSap = new System.Windows.Forms.ComboBox();
-            this.txtMauSac = new System.Windows.Forms.TextBox();
-            this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtMaHDC = new System.Windows.Forms.TextBox();
             this.gbKhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -110,31 +116,29 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // gbKhachHang
             // 
-            this.gbKhachHang.Controls.Add(this.dateTimePicker2);
+            this.gbKhachHang.Controls.Add(this.txtMaHDC);
+            this.gbKhachHang.Controls.Add(this.dtpNgayCamHD);
             this.gbKhachHang.Controls.Add(this.label10);
             this.gbKhachHang.Controls.Add(this.pictureBox11);
             this.gbKhachHang.Controls.Add(this.txtTongTien);
             this.gbKhachHang.Controls.Add(this.label8);
             this.gbKhachHang.Controls.Add(this.pictureBox9);
-            this.gbKhachHang.Controls.Add(this.dateTimePicker1);
+            this.gbKhachHang.Controls.Add(this.dtpNgayHetHan);
             this.gbKhachHang.Controls.Add(this.btnInHDCam);
-            this.gbKhachHang.Controls.Add(this.listView1);
+            this.gbKhachHang.Controls.Add(this.LvPhieuCam);
             this.gbKhachHang.Controls.Add(this.label7);
             this.gbKhachHang.Controls.Add(this.pictureBox1);
-            this.gbKhachHang.Controls.Add(this.cbKhachHang);
+            this.gbKhachHang.Controls.Add(this.cboKhachHang);
             this.gbKhachHang.Controls.Add(this.pictureBox8);
-            this.gbKhachHang.Controls.Add(this.btnXoaKH);
-            this.gbKhachHang.Controls.Add(this.btnSuaKH);
-            this.gbKhachHang.Controls.Add(this.btnThemKH);
+            this.gbKhachHang.Controls.Add(this.btnXoaHoaDonCam);
+            this.gbKhachHang.Controls.Add(this.btnSuaHoaDonCam);
+            this.gbKhachHang.Controls.Add(this.btnThemHoaDonCam);
             this.gbKhachHang.Controls.Add(this.dtpNgaySinh);
             this.gbKhachHang.Controls.Add(this.dtpNgayCapCMND);
-            this.gbKhachHang.Controls.Add(this.pictureBox7);
             this.gbKhachHang.Controls.Add(this.label2);
             this.gbKhachHang.Controls.Add(this.pictureBox2);
             this.gbKhachHang.Controls.Add(this.txtCMND);
@@ -158,6 +162,147 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu cầm";
             // 
+            // dtpNgayCamHD
+            // 
+            this.dtpNgayCamHD.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayCamHD.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayCamHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayCamHD.Location = new System.Drawing.Point(731, 21);
+            this.dtpNgayCamHD.Name = "dtpNgayCamHD";
+            this.dtpNgayCamHD.Size = new System.Drawing.Size(145, 29);
+            this.dtpNgayCamHD.TabIndex = 42;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(586, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 22);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Ngày cầm";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox11.Location = new System.Drawing.Point(693, 20);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox11.TabIndex = 41;
+            this.pictureBox11.TabStop = false;
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.AccessibleDescription = "";
+            this.txtTongTien.AccessibleName = "";
+            this.txtTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.ForeColor = System.Drawing.Color.White;
+            this.txtTongTien.Location = new System.Drawing.Point(211, 308);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(296, 22);
+            this.txtTongTien.TabIndex = 37;
+            this.txtTongTien.Tag = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(28, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 22);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Tổng tiền cầm";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox9.Location = new System.Drawing.Point(174, 304);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox9.TabIndex = 39;
+            this.pictureBox9.TabStop = false;
+            // 
+            // dtpNgayHetHan
+            // 
+            this.dtpNgayHetHan.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayHetHan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayHetHan.Location = new System.Drawing.Point(1167, 24);
+            this.dtpNgayHetHan.Name = "dtpNgayHetHan";
+            this.dtpNgayHetHan.Size = new System.Drawing.Size(145, 29);
+            this.dtpNgayHetHan.TabIndex = 36;
+            // 
+            // btnInHDCam
+            // 
+            this.btnInHDCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnInHDCam.FlatAppearance.BorderSize = 0;
+            this.btnInHDCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHDCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHDCam.ForeColor = System.Drawing.Color.White;
+            this.btnInHDCam.Location = new System.Drawing.Point(1208, 315);
+            this.btnInHDCam.Name = "btnInHDCam";
+            this.btnInHDCam.Size = new System.Drawing.Size(99, 38);
+            this.btnInHDCam.TabIndex = 34;
+            this.btnInHDCam.Text = "In";
+            this.btnInHDCam.UseVisualStyleBackColor = false;
+            // 
+            // LvPhieuCam
+            // 
+            this.LvPhieuCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.LvPhieuCam.FullRowSelect = true;
+            this.LvPhieuCam.GridLines = true;
+            this.LvPhieuCam.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.LvPhieuCam.HideSelection = false;
+            this.LvPhieuCam.Location = new System.Drawing.Point(590, 59);
+            this.LvPhieuCam.Name = "LvPhieuCam";
+            this.LvPhieuCam.Size = new System.Drawing.Size(722, 241);
+            this.LvPhieuCam.TabIndex = 33;
+            this.LvPhieuCam.UseCompatibleStateImageBehavior = false;
+            this.LvPhieuCam.View = System.Windows.Forms.View.Details;
+            this.LvPhieuCam.SelectedIndexChanged += new System.EventHandler(this.LvPhieuCam_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(998, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 22);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Ngày hết hạn";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox1.Location = new System.Drawing.Point(1129, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cboKhachHang
+            // 
+            this.cboKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cboKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboKhachHang.ForeColor = System.Drawing.Color.White;
+            this.cboKhachHang.FormattingEnabled = true;
+            this.cboKhachHang.Location = new System.Drawing.Point(212, 25);
+            this.cboKhachHang.Name = "cboKhachHang";
+            this.cboKhachHang.Size = new System.Drawing.Size(296, 30);
+            this.cboKhachHang.TabIndex = 32;
+            this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
@@ -166,6 +311,51 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox8.Size = new System.Drawing.Size(31, 30);
             this.pictureBox8.TabIndex = 31;
             this.pictureBox8.TabStop = false;
+            // 
+            // btnXoaHoaDonCam
+            // 
+            this.btnXoaHoaDonCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXoaHoaDonCam.FlatAppearance.BorderSize = 0;
+            this.btnXoaHoaDonCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaHoaDonCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaHoaDonCam.ForeColor = System.Drawing.Color.White;
+            this.btnXoaHoaDonCam.Location = new System.Drawing.Point(864, 315);
+            this.btnXoaHoaDonCam.Name = "btnXoaHoaDonCam";
+            this.btnXoaHoaDonCam.Size = new System.Drawing.Size(99, 38);
+            this.btnXoaHoaDonCam.TabIndex = 13;
+            this.btnXoaHoaDonCam.Text = "Xóa";
+            this.btnXoaHoaDonCam.UseVisualStyleBackColor = false;
+            this.btnXoaHoaDonCam.Click += new System.EventHandler(this.btnXoaHoaDonCam_Click);
+            // 
+            // btnSuaHoaDonCam
+            // 
+            this.btnSuaHoaDonCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSuaHoaDonCam.FlatAppearance.BorderSize = 0;
+            this.btnSuaHoaDonCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaHoaDonCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaHoaDonCam.ForeColor = System.Drawing.Color.White;
+            this.btnSuaHoaDonCam.Location = new System.Drawing.Point(759, 315);
+            this.btnSuaHoaDonCam.Name = "btnSuaHoaDonCam";
+            this.btnSuaHoaDonCam.Size = new System.Drawing.Size(99, 38);
+            this.btnSuaHoaDonCam.TabIndex = 12;
+            this.btnSuaHoaDonCam.Text = "Sửa";
+            this.btnSuaHoaDonCam.UseVisualStyleBackColor = false;
+            this.btnSuaHoaDonCam.Click += new System.EventHandler(this.btnSuaHoaDonCam_Click);
+            // 
+            // btnThemHoaDonCam
+            // 
+            this.btnThemHoaDonCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThemHoaDonCam.FlatAppearance.BorderSize = 0;
+            this.btnThemHoaDonCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemHoaDonCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDonCam.ForeColor = System.Drawing.Color.White;
+            this.btnThemHoaDonCam.Location = new System.Drawing.Point(654, 315);
+            this.btnThemHoaDonCam.Name = "btnThemHoaDonCam";
+            this.btnThemHoaDonCam.Size = new System.Drawing.Size(99, 38);
+            this.btnThemHoaDonCam.TabIndex = 11;
+            this.btnThemHoaDonCam.Text = "Thêm ";
+            this.btnThemHoaDonCam.UseVisualStyleBackColor = false;
+            this.btnThemHoaDonCam.Click += new System.EventHandler(this.btnThemHoaDonCam_Click);
             // 
             // dtpNgaySinh
             // 
@@ -190,15 +380,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.Name = "dtpNgayCapCMND";
             this.dtpNgayCapCMND.Size = new System.Drawing.Size(145, 29);
             this.dtpNgayCapCMND.TabIndex = 27;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(363, 162);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(145, 134);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 25;
-            this.pictureBox7.TabStop = false;
             // 
             // label2
             // 
@@ -233,7 +414,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtCMND.Size = new System.Drawing.Size(145, 22);
             this.txtCMND.TabIndex = 19;
             this.txtCMND.Tag = "";
-            this.txtCMND.Text = "QSADASD";
             // 
             // label5
             // 
@@ -275,20 +455,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox6.TabIndex = 18;
             this.pictureBox6.TabStop = false;
             // 
-            // btnXoaKH
-            // 
-            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaKH.FlatAppearance.BorderSize = 0;
-            this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(864, 315);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaKH.TabIndex = 13;
-            this.btnXoaKH.Text = "Xóa";
-            this.btnXoaKH.UseVisualStyleBackColor = false;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.AccessibleDescription = "";
@@ -302,35 +468,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDiaChi.Size = new System.Drawing.Size(296, 22);
             this.txtDiaChi.TabIndex = 13;
             this.txtDiaChi.Tag = "";
-            this.txtDiaChi.Text = "QSADASD";
-            // 
-            // btnSuaKH
-            // 
-            this.btnSuaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSuaKH.FlatAppearance.BorderSize = 0;
-            this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(759, 315);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaKH.TabIndex = 12;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = false;
-            // 
-            // btnThemKH
-            // 
-            this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThemKH.FlatAppearance.BorderSize = 0;
-            this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Location = new System.Drawing.Point(654, 315);
-            this.btnThemKH.Name = "btnThemKH";
-            this.btnThemKH.Size = new System.Drawing.Size(99, 38);
-            this.btnThemKH.TabIndex = 11;
-            this.btnThemKH.Text = "Thêm ";
-            this.btnThemKH.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -365,7 +502,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtSDT.Size = new System.Drawing.Size(296, 22);
             this.txtSDT.TabIndex = 10;
             this.txtSDT.Tag = "";
-            this.txtSDT.Text = "QSADASD";
             // 
             // label3
             // 
@@ -397,106 +533,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1.Size = new System.Drawing.Size(142, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tên khách hàng";
-            // 
-            // cbKhachHang
-            // 
-            this.cbKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhachHang.ForeColor = System.Drawing.Color.White;
-            this.cbKhachHang.FormattingEnabled = true;
-            this.cbKhachHang.Location = new System.Drawing.Point(212, 25);
-            this.cbKhachHang.Name = "cbKhachHang";
-            this.cbKhachHang.Size = new System.Drawing.Size(296, 30);
-            this.cbKhachHang.TabIndex = 32;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(590, 59);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(722, 241);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1167, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 29);
-            this.dateTimePicker1.TabIndex = 36;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(998, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 22);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Ngày hết hạn";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox1.Location = new System.Drawing.Point(1129, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnInHDCam
-            // 
-            this.btnInHDCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnInHDCam.FlatAppearance.BorderSize = 0;
-            this.btnInHDCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInHDCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHDCam.ForeColor = System.Drawing.Color.White;
-            this.btnInHDCam.Location = new System.Drawing.Point(1208, 315);
-            this.btnInHDCam.Name = "btnInHDCam";
-            this.btnInHDCam.Size = new System.Drawing.Size(99, 38);
-            this.btnInHDCam.TabIndex = 34;
-            this.btnInHDCam.Text = "In";
-            this.btnInHDCam.UseVisualStyleBackColor = false;
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.AccessibleDescription = "";
-            this.txtTongTien.AccessibleName = "";
-            this.txtTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.ForeColor = System.Drawing.Color.White;
-            this.txtTongTien.Location = new System.Drawing.Point(211, 308);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(296, 22);
-            this.txtTongTien.TabIndex = 37;
-            this.txtTongTien.Tag = "";
-            this.txtTongTien.Text = "QSADASD";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(28, 307);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 22);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Tổng tiền cầm";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox9.Location = new System.Drawing.Point(174, 304);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox9.TabIndex = 39;
-            this.pictureBox9.TabStop = false;
             // 
             // groupBox1
             // 
@@ -536,6 +572,99 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết phiếu cầm";
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.AccessibleDescription = "";
+            this.txtTenSP.AccessibleName = "";
+            this.txtTenSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTenSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSP.ForeColor = System.Drawing.Color.White;
+            this.txtTenSP.Location = new System.Drawing.Point(212, 119);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(296, 22);
+            this.txtTenSP.TabIndex = 46;
+            this.txtTenSP.Tag = "";
+            this.txtTenSP.Text = "QSADASD";
+            // 
+            // txtMoTa
+            // 
+            this.txtMoTa.AccessibleDescription = "";
+            this.txtMoTa.AccessibleName = "";
+            this.txtMoTa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMoTa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoTa.ForeColor = System.Drawing.Color.White;
+            this.txtMoTa.Location = new System.Drawing.Point(211, 423);
+            this.txtMoTa.Multiline = true;
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(296, 114);
+            this.txtMoTa.TabIndex = 43;
+            this.txtMoTa.Tag = "";
+            this.txtMoTa.Text = "QSADASD";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(29, 427);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 22);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "Mô tả";
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox19.Location = new System.Drawing.Point(174, 427);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox19.TabIndex = 45;
+            this.pictureBox19.TabStop = false;
+            // 
+            // txtMauSac
+            // 
+            this.txtMauSac.AccessibleDescription = "";
+            this.txtMauSac.AccessibleName = "";
+            this.txtMauSac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMauSac.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMauSac.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMauSac.ForeColor = System.Drawing.Color.White;
+            this.txtMauSac.Location = new System.Drawing.Point(212, 209);
+            this.txtMauSac.Name = "txtMauSac";
+            this.txtMauSac.Size = new System.Drawing.Size(295, 22);
+            this.txtMauSac.TabIndex = 42;
+            this.txtMauSac.Tag = "";
+            this.txtMauSac.Text = "QSADASD";
+            // 
+            // cbLoaiSap
+            // 
+            this.cbLoaiSap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cbLoaiSap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbLoaiSap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiSap.ForeColor = System.Drawing.Color.White;
+            this.cbLoaiSap.FormattingEnabled = true;
+            this.cbLoaiSap.Location = new System.Drawing.Point(212, 72);
+            this.cbLoaiSap.Name = "cbLoaiSap";
+            this.cbLoaiSap.Size = new System.Drawing.Size(296, 30);
+            this.cbLoaiSap.TabIndex = 41;
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.AccessibleDescription = "";
+            this.txtMaSP.AccessibleName = "";
+            this.txtMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSP.ForeColor = System.Drawing.Color.White;
+            this.txtMaSP.Location = new System.Drawing.Point(212, 30);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(296, 22);
+            this.txtMaSP.TabIndex = 40;
+            this.txtMaSP.Tag = "";
+            this.txtMaSP.Text = "QSADASD";
             // 
             // txtHienTrang
             // 
@@ -774,128 +903,45 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label16.TabIndex = 5;
             this.label16.Text = "Mã sản phẩm";
             // 
-            // txtMaSP
+            // columnHeader1
             // 
-            this.txtMaSP.AccessibleDescription = "";
-            this.txtMaSP.AccessibleName = "";
-            this.txtMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSP.ForeColor = System.Drawing.Color.White;
-            this.txtMaSP.Location = new System.Drawing.Point(212, 30);
-            this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(296, 22);
-            this.txtMaSP.TabIndex = 40;
-            this.txtMaSP.Tag = "";
-            this.txtMaSP.Text = "QSADASD";
+            this.columnHeader1.Text = "Mã HD Cầm";
+            this.columnHeader1.Width = 135;
             // 
-            // cbLoaiSap
+            // columnHeader2
             // 
-            this.cbLoaiSap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbLoaiSap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbLoaiSap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLoaiSap.ForeColor = System.Drawing.Color.White;
-            this.cbLoaiSap.FormattingEnabled = true;
-            this.cbLoaiSap.Location = new System.Drawing.Point(212, 72);
-            this.cbLoaiSap.Name = "cbLoaiSap";
-            this.cbLoaiSap.Size = new System.Drawing.Size(296, 30);
-            this.cbLoaiSap.TabIndex = 41;
+            this.columnHeader2.Text = "Tên Khách Hàng";
+            this.columnHeader2.Width = 169;
             // 
-            // txtMauSac
+            // columnHeader3
             // 
-            this.txtMauSac.AccessibleDescription = "";
-            this.txtMauSac.AccessibleName = "";
-            this.txtMauSac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMauSac.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMauSac.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMauSac.ForeColor = System.Drawing.Color.White;
-            this.txtMauSac.Location = new System.Drawing.Point(212, 209);
-            this.txtMauSac.Name = "txtMauSac";
-            this.txtMauSac.Size = new System.Drawing.Size(295, 22);
-            this.txtMauSac.TabIndex = 42;
-            this.txtMauSac.Tag = "";
-            this.txtMauSac.Text = "QSADASD";
+            this.columnHeader3.Text = "Ngày Lập";
+            this.columnHeader3.Width = 116;
             // 
-            // txtMoTa
+            // columnHeader4
             // 
-            this.txtMoTa.AccessibleDescription = "";
-            this.txtMoTa.AccessibleName = "";
-            this.txtMoTa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMoTa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTa.ForeColor = System.Drawing.Color.White;
-            this.txtMoTa.Location = new System.Drawing.Point(211, 423);
-            this.txtMoTa.Multiline = true;
-            this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(296, 114);
-            this.txtMoTa.TabIndex = 43;
-            this.txtMoTa.Tag = "";
-            this.txtMoTa.Text = "QSADASD";
+            this.columnHeader4.Text = "Ngày Hết Hạn";
+            this.columnHeader4.Width = 143;
             // 
-            // label17
+            // columnHeader5
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(29, 427);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 22);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "Mô tả";
+            this.columnHeader5.Text = "Tổng Tiền Cầm";
+            this.columnHeader5.Width = 154;
             // 
-            // pictureBox19
+            // txtMaHDC
             // 
-            this.pictureBox19.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox19.Location = new System.Drawing.Point(174, 427);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox19.TabIndex = 45;
-            this.pictureBox19.TabStop = false;
-            // 
-            // txtTenSP
-            // 
-            this.txtTenSP.AccessibleDescription = "";
-            this.txtTenSP.AccessibleName = "";
-            this.txtTenSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtTenSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.ForeColor = System.Drawing.Color.White;
-            this.txtTenSP.Location = new System.Drawing.Point(212, 119);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(296, 22);
-            this.txtTenSP.TabIndex = 46;
-            this.txtTenSP.Tag = "";
-            this.txtTenSP.Text = "QSADASD";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(731, 21);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(145, 29);
-            this.dateTimePicker2.TabIndex = 42;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(586, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 22);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Ngày cầm";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox11.Location = new System.Drawing.Point(693, 20);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox11.TabIndex = 41;
-            this.pictureBox11.TabStop = false;
+            this.txtMaHDC.AccessibleDescription = "";
+            this.txtMaHDC.AccessibleName = "";
+            this.txtMaHDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txtMaHDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHDC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHDC.ForeColor = System.Drawing.Color.White;
+            this.txtMaHDC.Location = new System.Drawing.Point(428, 190);
+            this.txtMaHDC.Name = "txtMaHDC";
+            this.txtMaHDC.Size = new System.Drawing.Size(10, 22);
+            this.txtMaHDC.TabIndex = 43;
+            this.txtMaHDC.Tag = "";
+            this.txtMaHDC.Visible = false;
             // 
             // CamDo
             // 
@@ -908,19 +954,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CamDo";
             this.Text = "CamDo";
+            this.Load += new System.EventHandler(this.CamDo_Load);
             this.gbKhachHang.ResumeLayout(false);
             this.gbKhachHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -928,8 +976,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -937,11 +983,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         #endregion
 
         private System.Windows.Forms.GroupBox gbKhachHang;
-        private System.Windows.Forms.ComboBox cbKhachHang;
+        private System.Windows.Forms.ComboBox cboKhachHang;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.DateTimePicker dtpNgayCapCMND;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtCMND;
@@ -956,18 +1001,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnXoaKH;
-        private System.Windows.Forms.Button btnSuaKH;
-        private System.Windows.Forms.Button btnThemKH;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnXoaHoaDonCam;
+        private System.Windows.Forms.Button btnSuaHoaDonCam;
+        private System.Windows.Forms.Button btnThemHoaDonCam;
+        private System.Windows.Forms.DateTimePicker dtpNgayHetHan;
         private System.Windows.Forms.Button btnInHDCam;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView LvPhieuCam;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpNgayCamHD;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -999,5 +1044,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtMaHDC;
     }
 }
