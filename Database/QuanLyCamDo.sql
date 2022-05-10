@@ -149,7 +149,17 @@ begin
 end
 go
 
-exec USP_UpdateTongTienHDC 4
+
+create proc USP_UpdateTongTienThanHLy 
+@MaThanhLy int
+as
+begin
+	declare @TT float
+	SELECT @TT = ISNULL(SUM(GiaThanhLy),0) FROM ChiTiet_ThanhLy a , SanPham b  WHERE a.MaSP = b.MaSP and MaThanhLy = @MaThanhLy 
+	update ThanhLy set TongTienThanhLy = @TT where MaThanhLy = @MaThanhLy
+end
+go
+
 
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1
 

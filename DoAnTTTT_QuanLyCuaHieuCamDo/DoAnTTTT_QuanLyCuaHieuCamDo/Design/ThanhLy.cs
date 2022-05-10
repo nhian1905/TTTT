@@ -43,8 +43,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         void LoadCTThanhLy(int MaThanhLy)
         {
             LVCTThanhLy.Items.Clear();
-            List<ChiTietHoaDonCamDTO> list = ChiTietHoaDonCamDAO.Instance.LoadListCTHDC(MaThanhLy);
-            foreach (ChiTietHoaDonCamDTO item in list)
+            List<ChiTietThanhLyDTO> list = ChiTietThanhLyDAO.Instance.LoadListCTThanhLy(MaThanhLy);
+            foreach (ChiTietThanhLyDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
@@ -68,7 +68,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             cbKhachHang.DisplayMember = "TenKH";
             cbKhachHang.ValueMember = "MaKH";
         }
-
+        void LoadTongTien()
+        {
+            int MaThanhLy = Convert.ToInt32(txtMaThanhLy.Text);
+            ThanhLyDAO.Instance.UpdateTongTien(MaThanhLy);
+            LoadThanhLy();
+        }
         private void cbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             string connectionStr = CSDL.connectionStr;
@@ -168,5 +173,134 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
         }
-    }
+
+        private void btnThemHDTL_Click(object sender, EventArgs e)
+        {
+            if (txtCMND.Text != "" && txtSDT.Text != "")
+            {
+                DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayLap.Value).Date;
+                float TongTienThanhLy = (float)Convert.ToDouble(0);
+                int MaKH = (cbKhachHang.SelectedItem as KhachHangDTO).MaKH;
+                if (ThanhLyDAO.Instance.InsertThanhLy(MaKH, NgayLap , TongTienThanhLy))
+                {
+                    MessageBox.Show("Thêm Hóa Đơn Thành Công");
+                    LoadThanhLy();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thật Bại");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Chọn Khách Hàng");
+            }
+        }
+
+        private void btnSuaHDTL_Click(object sender, EventArgs e)
+        {
+            if (txtMaThanhLy.Text != "")
+            {
+                int MaThanhLy = (int)Convert.ToInt32(txtMaThanhLy.Text);
+                DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayLap.Value).Date;
+                float TongTienThanhLy = (float)Convert.ToDouble(0);
+                int MaKH = (cbKhachHang.SelectedItem as KhachHangDTO).MaKH;
+                if (ThanhLyDAO.Instance.UpdateThanhLy(MaThanhLy, MaKH, NgayLap, TongTienThanhLy))
+                {
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo");
+                    LoadThanhLy();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa Thất Bại");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nhập Ngày Mới");
+            }
+        }
+
+        private void btnXoaHDTL_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("BẠN CÓ THẬT SỰ MUỐN XÓA HÓA ĐƠN", "THÔNG BÁO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    int MaThanhLy = Convert.ToInt32(txtMaThanhLy.Text);
+                    if (txtMaThanhLy.Text != "")
+                    {
+                        if (ThanhLyDAO.Instance.DeleteThanhLy(MaThanhLy))
+                        {
+                            MessageBox.Show("Xóa Thành Công", "Thông báo");
+                            LoadThanhLy();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa Thất Bại");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chọn Hóa Đơn Cần Xóa");
+                    }
+                }
+
+                catch
+                {
+                    MessageBox.Show("Có lỗi Không Thể Xóa Do Sản Phẩm Đã Được Xuất ");
+                }
+            }
+        }
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtMaThanhLy.Text);
+            if (txtTenSP.Text != "" && txtGiaThanhLy.Text != "")
+            {
+                int MaThanhLy =(int)Convert.ToInt32(txtMaThanhLy.Text);
+                string MaSP = cboMaSP.Text;    
+                if (ChiTietThanhLyDAO.Instance.InsertSPtoBillThanhLy(MaThanhLy,MaSP))
+                {
+                    MessageBox.Show("Thêm Thành Công");
+                    LoadCTThanhLy(id);
+                    LoadTongTien();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
+            }
+        }
+
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtMaThanhLy.Text);
+            int MaThanhLy = (int)Convert.ToInt32(txtMaThanhLy.Text);
+            if (txtTenSP.Text == null)
+            {
+                MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
+                return;
+            }
+            string MaSP = cboMaSP.Text;
+            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (tb == DialogResult.Yes)
+            {
+                if (ChiTietThanhLyDAO.Instance.DeletetoBillThanhLy(MaThanhLy,MaSP))
+                {
+                    LoadTongTien();
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            LoadCTThanhLy(id);
+        }
+    }   
 }

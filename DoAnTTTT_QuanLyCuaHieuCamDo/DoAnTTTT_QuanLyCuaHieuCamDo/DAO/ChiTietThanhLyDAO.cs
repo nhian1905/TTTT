@@ -36,5 +36,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+        public bool InsertSPtoBillThanhLy(int MaThanhLy, string MaSP)
+        {
+            string query = string.Format("insert ChiTiet_ThanhLy(MaThanhLy,MaSP) values(N'{0}',N'{1}')", MaThanhLy, MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+ 
+        public bool DeletetoBillThanhLy(int MaThanhLy ,string MaSP)
+        {
+            string query = string.Format("delete ChiTiet_ThanhLy where MaThanhLy = N'{0}' and MaSP =N'{1}'", MaThanhLy,MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }
