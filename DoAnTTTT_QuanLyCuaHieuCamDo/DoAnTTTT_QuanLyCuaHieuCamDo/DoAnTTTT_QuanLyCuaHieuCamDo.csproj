@@ -64,6 +64,7 @@
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\LoaiSPDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\ThanhLyDAO.cs" />
     <Compile Include="DAO\TypeAccountDAO.cs" />
     <Compile Include="Design\BaoCao.cs">
       <SubType>Form</SubType>
@@ -119,6 +120,7 @@
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiSPDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="DTO\ThanhLyDTO.cs" />
     <Compile Include="DTO\TypeAccountDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

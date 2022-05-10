@@ -44,7 +44,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+        public bool UpdateSPtoBillHDC(int MaHoaDonCam, string MaSP)
+        {
+            string query = string.Format("update ChiTiet_HoaDonCam set MaHoaDonCam =N'{0}' where MaSP =N'{1}'", MaHoaDonCam, MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
 
+        public bool DeletetoBillHDC(string MaSP)
+        {
+            string query = string.Format("delete ChiTiet_HoaDonCam where MaSP =N'{0}'",  MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
 
     }
 }

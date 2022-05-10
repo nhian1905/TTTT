@@ -196,7 +196,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 tenkh += item.SubItems[1].Text;
                 ngaylaphdc += DateTime.Parse(item.SubItems[2].Text);
                 ngayhethan += DateTime.Parse(item.SubItems[3].Text);
-            tongtiencam += item.SubItems[4].Text;
+                tongtiencam += item.SubItems[4].Text;
             }
             cboKhachHang.Text = tenkh.ToString();
             txtMaHDC.Text = mahoadoncam.ToString();
@@ -252,6 +252,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
+            txtMaSP.Enabled = false;
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -291,6 +292,71 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
             }
+        }
+
+        private void btnSuaSP_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtMaHDC.Text);
+            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+            string MaSP = txtMaSP.Text;
+            int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+            string TenSP = txtTenSP.Text;
+            float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+            float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+            string MoTa = txtMoTa.Text;
+            string MauSac = txtMauSac.Text;
+            string HienTrang = txtHienTrang.Text;
+            string NhanHieu = txtNhanHieu.Text;
+            if (MaSP != "")
+            {
+                if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
+                {
+                    if(ChiTietHoaDonCamDAO.Instance.UpdateSPtoBillHDC(MaHoaDonCam, MaSP))
+                    {
+                        MessageBox.Show("Sửa Thành Công");
+                        LoadCTHoaDonCam(id);
+                        LoadTongTien();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sửa Thất bại, Vui lòng nhập lại !", "thông Báo");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin");
+                return;
+            }
+            txtMaSP.Enabled = true;
+        }
+
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtMaHDC.Text);
+            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+            if (txtMaSP.Text == null)
+            {
+                MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
+                return;
+            }
+            string MaSP = txtMaSP.Text;
+            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (tb == DialogResult.Yes)
+            {
+                if(ChiTietHoaDonCamDAO.Instance.DeletetoBillHDC(MaSP))
+                {
+                    SanPhamDAO.Instance.DeleteSP(MaSP);
+                    LoadTongTien();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            
+            LoadCTHoaDonCam(id);
         }
     }
 }

@@ -136,6 +136,7 @@ insert into HoaDonCam values (1,'05/19/2020','06/19/2020',0)
 
 insert into ChiTiet_HoaDonCam values (1,'IP')
 
+insert into ThanhLy values(1,'05/19/2020',0)
 
 
 create proc USP_UpdateTongTienHDC 

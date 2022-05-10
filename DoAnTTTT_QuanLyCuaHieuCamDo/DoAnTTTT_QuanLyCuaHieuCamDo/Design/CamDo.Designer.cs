@@ -69,6 +69,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGiaThanhLy = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -80,9 +83,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.LVCTHDC = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnSuaSP = new System.Windows.Forms.Button();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -97,19 +110,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtGiaThanhLy = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -121,6 +121,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -129,7 +130,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // gbKhachHang
@@ -605,8 +605,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.LVCTHDC);
             this.groupBox1.Controls.Add(this.pictureBox12);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnXoaSP);
+            this.groupBox1.Controls.Add(this.btnSuaSP);
             this.groupBox1.Controls.Add(this.btnThemSP);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.pictureBox14);
@@ -629,6 +629,40 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết phiếu cầm";
+            // 
+            // txtGiaThanhLy
+            // 
+            this.txtGiaThanhLy.AccessibleDescription = "";
+            this.txtGiaThanhLy.AccessibleName = "";
+            this.txtGiaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtGiaThanhLy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGiaThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaThanhLy.ForeColor = System.Drawing.Color.White;
+            this.txtGiaThanhLy.Location = new System.Drawing.Point(211, 206);
+            this.txtGiaThanhLy.Name = "txtGiaThanhLy";
+            this.txtGiaThanhLy.Size = new System.Drawing.Size(252, 22);
+            this.txtGiaThanhLy.TabIndex = 4;
+            this.txtGiaThanhLy.Tag = "";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(28, 205);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(124, 22);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Giá Thánh Lý";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox7.Location = new System.Drawing.Point(174, 202);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox7.TabIndex = 49;
+            this.pictureBox7.TabStop = false;
             // 
             // txtTenSP
             // 
@@ -780,6 +814,56 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVCTHDC.View = System.Windows.Forms.View.Details;
             this.LVCTHDC.SelectedIndexChanged += new System.EventHandler(this.LVCTHDC_SelectedIndexChanged);
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mã HDC";
+            this.columnHeader6.Width = 103;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Mã SP";
+            this.columnHeader7.Width = 110;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Mã Loại";
+            this.columnHeader8.Width = 103;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Tên SP";
+            this.columnHeader9.Width = 113;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "ĐỊnh Giá";
+            this.columnHeader10.Width = 107;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Giá Thanh Lý";
+            this.columnHeader11.Width = 139;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Mô Tả";
+            this.columnHeader12.Width = 219;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Màu Sắc";
+            this.columnHeader13.Width = 103;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Hiện Trạng";
+            this.columnHeader14.Width = 231;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Nhãn Hiệu";
+            this.columnHeader15.Width = 115;
+            // 
             // pictureBox12
             // 
             this.pictureBox12.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
@@ -789,33 +873,35 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox12.TabIndex = 31;
             this.pictureBox12.TabStop = false;
             // 
-            // button2
+            // btnXoaSP
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1189, 490);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 38);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnXoaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXoaSP.FlatAppearance.BorderSize = 0;
+            this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
+            this.btnXoaSP.Location = new System.Drawing.Point(1189, 490);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
+            this.btnXoaSP.TabIndex = 13;
+            this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.UseVisualStyleBackColor = false;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
-            // button3
+            // btnSuaSP
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(990, 490);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 38);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSuaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSuaSP.FlatAppearance.BorderSize = 0;
+            this.btnSuaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaSP.ForeColor = System.Drawing.Color.White;
+            this.btnSuaSP.Location = new System.Drawing.Point(990, 490);
+            this.btnSuaSP.Name = "btnSuaSP";
+            this.btnSuaSP.Size = new System.Drawing.Size(99, 38);
+            this.btnSuaSP.TabIndex = 12;
+            this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.UseVisualStyleBackColor = false;
+            this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
             // btnThemSP
             // 
@@ -971,90 +1057,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label16.TabIndex = 5;
             this.label16.Text = "Mã sản phẩm";
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mã HDC";
-            this.columnHeader6.Width = 103;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Mã SP";
-            this.columnHeader7.Width = 110;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Mã Loại";
-            this.columnHeader8.Width = 103;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Tên SP";
-            this.columnHeader9.Width = 113;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "ĐỊnh Giá";
-            this.columnHeader10.Width = 107;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Giá Thanh Lý";
-            this.columnHeader11.Width = 139;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Mô Tả";
-            this.columnHeader12.Width = 219;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Màu Sắc";
-            this.columnHeader13.Width = 103;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Hiện Trạng";
-            this.columnHeader14.Width = 231;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Nhãn Hiệu";
-            this.columnHeader15.Width = 115;
-            // 
-            // txtGiaThanhLy
-            // 
-            this.txtGiaThanhLy.AccessibleDescription = "";
-            this.txtGiaThanhLy.AccessibleName = "";
-            this.txtGiaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtGiaThanhLy.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGiaThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaThanhLy.ForeColor = System.Drawing.Color.White;
-            this.txtGiaThanhLy.Location = new System.Drawing.Point(211, 206);
-            this.txtGiaThanhLy.Name = "txtGiaThanhLy";
-            this.txtGiaThanhLy.Size = new System.Drawing.Size(252, 22);
-            this.txtGiaThanhLy.TabIndex = 4;
-            this.txtGiaThanhLy.Tag = "";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(28, 205);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(124, 22);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Giá Thánh Lý";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox7.Location = new System.Drawing.Point(174, 202);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox7.TabIndex = 49;
-            this.pictureBox7.TabStop = false;
-            // 
             // CamDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1080,6 +1082,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -1088,7 +1091,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1141,8 +1143,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.ListView LVCTHDC;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnXoaSP;
+        private System.Windows.Forms.Button btnSuaSP;
         private System.Windows.Forms.Button btnThemSP;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox14;
