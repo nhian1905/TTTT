@@ -23,6 +23,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             LoadThanhLy();
             LoadCboKhachHang();
+            LoadCboSP();
         }
 
         void LoadThanhLy()
@@ -39,11 +40,28 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
-        void LoadCTThanhLy()
+        void LoadCTThanhLy(int MaThanhLy)
         {
-
+            LVCTThanhLy.Items.Clear();
+            List<ChiTietHoaDonCamDTO> list = ChiTietHoaDonCamDAO.Instance.LoadListCTHDC(MaThanhLy);
+            foreach (ChiTietHoaDonCamDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.GiaThanhLy.ToString());
+                lvitem.SubItems.Add(item.MauSac.ToString());
+                lvitem.SubItems.Add(item.NhanHieu.ToString());
+                lvitem.SubItems.Add(item.MoTa.ToString());
+                lvitem.SubItems.Add(item.HienTrang.ToString());
+                LVCTThanhLy.Items.Add(lvitem);
+            }
         }
-
+        void LoadCboSP()
+        {
+            cboMaSP.DataSource = SanPhamDAO.Instance.LoadListSPThanhLy();
+            cboMaSP.DisplayMember = "MaSP";
+            cboMaSP.ValueMember = "MaSP";
+        }
         void LoadCboKhachHang()
         {
             cbKhachHang.DataSource = KhachHangDAO.Instance.LoadListKH();
@@ -75,20 +93,80 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             ListView.SelectedListViewItemCollection lv = this.LVThanhLy.SelectedItems;
             int mathanhly = 0;
-            string tenkh = "";
+            string tenKH = "";
             string ngaylap = "";
             string tongtienthanhly = "";
             foreach (ListViewItem item in lv)
             {
                 mathanhly += Int32.Parse(item.SubItems[0].Text);
-                tenkh += item.SubItems[1].Text;
+                tenKH += item.SubItems[1].Text;
                 ngaylap += DateTime.Parse(item.SubItems[2].Text);
                 tongtienthanhly += item.SubItems[3].Text;
             }
             txtMaThanhLy.Text = mathanhly.ToString();
-            cbKhachHang.Text = tenkh.ToString();
+            cbKhachHang.Text = tenKH.ToString();
             dtpNgayLap.Text = ngaylap.ToString();
             txtTongTien.Text = tongtienthanhly.ToString();
+
+            ListView.SelectedListViewItemCollection lvv = this.LVThanhLy.SelectedItems;
+            int id = 0;
+            foreach (ListViewItem item in lvv)
+            {
+                id += Int32.Parse(item.SubItems[0].Text);
+            }
+            txtMaThanhLy.Text = id.ToString();
+            int MaThanhLy = int.Parse(txtMaThanhLy.Text);
+            LoadCTThanhLy(MaThanhLy);
+        }
+
+        private void cboMaSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string connectionStr = CSDL.connectionStr;
+            SqlConnection kn = new SqlConnection(connectionStr);
+            kn.Open();
+            string sql = "select * from SanPham where MaSP = '" + cboMaSP.SelectedValue.ToString() + "'";
+            SqlCommand cmdd = new SqlCommand(sql, kn);
+            SqlDataReader kq = cmdd.ExecuteReader();
+            if (kq.HasRows)
+            {
+                kq.Read();
+                txtTenSP.Text = kq.GetString(1).ToString();
+                txtGiaThanhLy.Text = kq.GetDouble(3).ToString();
+                txtMoTa.Text = kq.GetString(5).ToString();
+                txtMauSac.Text = kq.GetString(6).ToString();
+                txtHienTrang.Text = kq.GetString(7).ToString();
+                txtNhanHieu.Text = kq.GetString(8).ToString();
+            }
+            kn.Close();
+        }
+
+        private void LVCTThanhLy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection lv = this.LVCTThanhLy.SelectedItems;
+            string masp = "";
+            string tensp = "";
+            string giathanhly = "";
+            string mota = "";
+            string mausac = "";
+            string hientrang = "";
+            string nhanhieu = "";
+            foreach (ListViewItem item in lv)
+            { 
+                masp += item.SubItems[0].Text;
+                tensp += item.SubItems[1].Text;
+                giathanhly += item.SubItems[2].Text;
+                mausac += item.SubItems[3].Text;
+                nhanhieu += item.SubItems[4].Text;
+                mota += item.SubItems[5].Text;
+                hientrang += item.SubItems[6].Text;
+            }
+            cboMaSP.Text = masp.ToString();
+            txtTenSP.Text = tensp.ToString();
+            txtGiaThanhLy.Text = giathanhly.ToString();
+            txtMoTa.Text = mota.ToString();
+            txtMauSac.Text = mausac.ToString();
+            txtHienTrang.Text = hientrang.ToString();
+            txtNhanHieu.Text = nhanhieu.ToString();
         }
     }
 }

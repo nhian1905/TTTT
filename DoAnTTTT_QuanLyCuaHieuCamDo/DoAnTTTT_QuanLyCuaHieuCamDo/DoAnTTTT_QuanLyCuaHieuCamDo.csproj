@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\ChiTietHoaDonCamDAO.cs" />
+    <Compile Include="DAO\ChiTietThanhLyDAO.cs" />
     <Compile Include="DAO\CSDL.cs" />
     <Compile Include="DAO\HoaDonCamDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
@@ -116,6 +117,7 @@
     </Compile>
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonCamDTO.cs" />
+    <Compile Include="DTO\ChiTietThanhLyDTO.cs" />
     <Compile Include="DTO\HoaDonCamDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\LoaiSPDTO.cs" />
