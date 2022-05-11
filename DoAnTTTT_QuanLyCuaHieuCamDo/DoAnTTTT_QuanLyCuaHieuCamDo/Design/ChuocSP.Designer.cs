@@ -34,29 +34,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.cbMaSP = new System.Windows.Forms.ComboBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.btnXoaKH = new System.Windows.Forms.Button();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-=======
+            //this.cbMaSP = new System.Windows.Forms.ComboBox();
+            //this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            //this.label16 = new System.Windows.Forms.Label();
+            //this.listView3 = new System.Windows.Forms.ListView();
+            //this.btnXoaKH = new System.Windows.Forms.Button();
+            //this.btnSuaKH = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btnInHDCam = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.txtTienChuoc = new System.Windows.Forms.TextBox();
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             this.btnThemKH = new System.Windows.Forms.Button();
             this.btnInHDCam = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTienChuoc = new System.Windows.Forms.TextBox();
-=======
             this.textTenKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -80,7 +75,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -92,17 +86,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-=======
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -480,7 +471,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // button1
             // 
-<<<<<<< HEAD
             this.pictureBox6.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox6.Location = new System.Drawing.Point(191, 154);
             this.pictureBox6.Name = "pictureBox6";
@@ -571,13 +561,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbMaSP);
-            this.groupBox2.Controls.Add(this.pictureBox12);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.listView3);
-            this.groupBox2.Controls.Add(this.btnXoaKH);
-            this.groupBox2.Controls.Add(this.btnSuaKH);
-            this.groupBox2.Controls.Add(this.btnThemKH);
+            //this.groupBox2.Controls.Add(this.cbMaSP);
+            //this.groupBox2.Controls.Add(this.pictureBox12);
+            //this.groupBox2.Controls.Add(this.label16);
+            //this.groupBox2.Controls.Add(this.listView3);
+            //this.groupBox2.Controls.Add(this.btnXoaKH);
+            //this.groupBox2.Controls.Add(this.btnSuaKH);
+            //this.groupBox2.Controls.Add(this.btnThemKH);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(528, 342);
@@ -589,35 +579,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // cbMaSP
             // 
-            this.cbMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbMaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMaSP.ForeColor = System.Drawing.Color.White;
-            this.cbMaSP.FormattingEnabled = true;
-            this.cbMaSP.Location = new System.Drawing.Point(200, 33);
-            this.cbMaSP.Name = "cbMaSP";
-            this.cbMaSP.Size = new System.Drawing.Size(296, 30);
-            this.cbMaSP.TabIndex = 73;
+            
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox12.Location = new System.Drawing.Point(163, 32);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox12.TabIndex = 72;
-            this.pictureBox12.TabStop = false;
+            
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(13, 36);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(121, 22);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "Mã sản phẩm";
+            
             // 
             // listView3
             // 
@@ -630,31 +600,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // btnXoaKH
             // 
-            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaKH.FlatAppearance.BorderSize = 0;
-            this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(682, 543);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaKH.TabIndex = 70;
-            this.btnXoaKH.Text = "Xóa";
-            this.btnXoaKH.UseVisualStyleBackColor = false;
+            
             // 
             // btnSuaKH
             // 
-            this.btnSuaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSuaKH.FlatAppearance.BorderSize = 0;
-            this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(577, 543);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaKH.TabIndex = 69;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = false;
+            
             // 
             // btnThemKH
             // 
@@ -695,17 +645,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(18, 543);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 38);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Thêm ";
-            this.button4.UseVisualStyleBackColor = false;
+           
             // 
             // button3
             // 
@@ -720,7 +660,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.button3.TabIndex = 35;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = false;
-=======
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -733,7 +672,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.button1.Text = "Thêm ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
+
             // 
             // button2
             // 
@@ -751,11 +690,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // button3
             // 
-<<<<<<< HEAD
+
             this.groupBox1.Controls.Add(this.btnInHDCam);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
+            //this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.listView2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -800,7 +739,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTienChuoc.TabIndex = 68;
             this.txtTienChuoc.Tag = "";
             this.txtTienChuoc.Text = "QSADASD";
-=======
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -812,7 +750,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.button3.TabIndex = 93;
             this.button3.Text = "Thêm ";
             this.button3.UseVisualStyleBackColor = false;
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             // 
             // ChuocSP
             // 
@@ -856,11 +793,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-<<<<<<< HEAD
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.groupBox1.ResumeLayout(false);
-=======
->>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
+
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
