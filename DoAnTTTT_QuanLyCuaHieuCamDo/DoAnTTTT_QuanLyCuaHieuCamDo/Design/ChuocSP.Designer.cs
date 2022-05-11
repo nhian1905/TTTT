@@ -53,19 +53,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbMaSP = new System.Windows.Forms.ComboBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
-            this.btnInHDCam = new System.Windows.Forms.Button();
             this.btnXoaKH = new System.Windows.Forms.Button();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.btnThemKH = new System.Windows.Forms.Button();
+            this.btnInHDCam = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbMaSP = new System.Windows.Forms.ComboBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTienChuoc = new System.Windows.Forms.TextBox();
@@ -78,8 +78,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
@@ -353,6 +353,38 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết phiếu chuộc";
             // 
+            // cbMaSP
+            // 
+            this.cbMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cbMaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaSP.ForeColor = System.Drawing.Color.White;
+            this.cbMaSP.FormattingEnabled = true;
+            this.cbMaSP.Location = new System.Drawing.Point(200, 33);
+            this.cbMaSP.Name = "cbMaSP";
+            this.cbMaSP.Size = new System.Drawing.Size(296, 30);
+            this.cbMaSP.TabIndex = 73;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox12.Location = new System.Drawing.Point(163, 32);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox12.TabIndex = 72;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(13, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(121, 22);
+            this.label16.TabIndex = 71;
+            this.label16.Text = "Mã sản phẩm";
+            // 
             // listView3
             // 
             this.listView3.HideSelection = false;
@@ -361,20 +393,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.listView3.Size = new System.Drawing.Size(764, 458);
             this.listView3.TabIndex = 33;
             this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnInHDCam
-            // 
-            this.btnInHDCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnInHDCam.FlatAppearance.BorderSize = 0;
-            this.btnInHDCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInHDCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHDCam.ForeColor = System.Drawing.Color.White;
-            this.btnInHDCam.Location = new System.Drawing.Point(376, 543);
-            this.btnInHDCam.Name = "btnInHDCam";
-            this.btnInHDCam.Size = new System.Drawing.Size(99, 38);
-            this.btnInHDCam.TabIndex = 71;
-            this.btnInHDCam.Text = "In";
-            this.btnInHDCam.UseVisualStyleBackColor = false;
             // 
             // btnXoaKH
             // 
@@ -418,10 +436,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThemKH.Text = "Thêm ";
             this.btnThemKH.UseVisualStyleBackColor = false;
             // 
+            // btnInHDCam
+            // 
+            this.btnInHDCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnInHDCam.FlatAppearance.BorderSize = 0;
+            this.btnInHDCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHDCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHDCam.ForeColor = System.Drawing.Color.White;
+            this.btnInHDCam.Location = new System.Drawing.Point(376, 543);
+            this.btnInHDCam.Name = "btnInHDCam";
+            this.btnInHDCam.Size = new System.Drawing.Size(99, 38);
+            this.btnInHDCam.TabIndex = 71;
+            this.btnInHDCam.Text = "In";
+            this.btnInHDCam.UseVisualStyleBackColor = false;
+            // 
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(17, 36);
+            this.listView2.Location = new System.Drawing.Point(21, 31);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(458, 497);
             this.listView2.TabIndex = 33;
@@ -484,38 +516,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phiếu chuộc";
-            // 
-            // cbMaSP
-            // 
-            this.cbMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbMaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMaSP.ForeColor = System.Drawing.Color.White;
-            this.cbMaSP.FormattingEnabled = true;
-            this.cbMaSP.Location = new System.Drawing.Point(200, 33);
-            this.cbMaSP.Name = "cbMaSP";
-            this.cbMaSP.Size = new System.Drawing.Size(296, 30);
-            this.cbMaSP.TabIndex = 73;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox12.Location = new System.Drawing.Point(163, 32);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox12.TabIndex = 72;
-            this.pictureBox12.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(13, 36);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(121, 22);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "Mã sản phẩm";
             // 
             // pictureBox9
             // 
@@ -599,8 +599,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

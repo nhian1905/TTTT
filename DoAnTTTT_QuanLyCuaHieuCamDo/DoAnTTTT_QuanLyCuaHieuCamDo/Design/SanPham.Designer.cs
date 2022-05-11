@@ -46,6 +46,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbDaThanhLy = new System.Windows.Forms.CheckBox();
             this.cbThanhLy = new System.Windows.Forms.CheckBox();
             this.cbDaChuoc = new System.Windows.Forms.CheckBox();
@@ -88,7 +89,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -233,6 +233,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc sản phẩm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(18, 27);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(378, 32);
+            this.txtTimKiem.TabIndex = 35;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // cbDaThanhLy
             // 
@@ -397,6 +405,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader9,
             this.columnHeader15,
             this.columnHeader16});
+            this.LVLoaiSP.ForeColor = System.Drawing.Color.White;
             this.LVLoaiSP.FullRowSelect = true;
             this.LVLoaiSP.GridLines = true;
             this.LVLoaiSP.HideSelection = false;
@@ -777,14 +786,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.TabIndex = 35;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(18, 27);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(378, 32);
-            this.txtTimKiem.TabIndex = 35;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // SanPham
             // 
