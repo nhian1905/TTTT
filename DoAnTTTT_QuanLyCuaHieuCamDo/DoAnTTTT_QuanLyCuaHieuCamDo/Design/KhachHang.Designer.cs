@@ -66,6 +66,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -107,6 +108,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             // gbKhachHang
             // 
+            this.gbKhachHang.Controls.Add(this.textBox1);
             this.gbKhachHang.Controls.Add(this.txtMaKH);
             this.gbKhachHang.Controls.Add(this.label7);
             this.gbKhachHang.Controls.Add(this.pictureBox8);
@@ -141,7 +143,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.gbKhachHang.Size = new System.Drawing.Size(1198, 307);
             this.gbKhachHang.TabIndex = 10;
             this.gbKhachHang.TabStop = false;
-            this.gbKhachHang.Text = "Thông tin khách hàng";
+            this.gbKhachHang.Text = "v";
             // 
             // txtMaKH
             // 
@@ -344,7 +346,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtDiaChi.Size = new System.Drawing.Size(362, 22);
             this.txtDiaChi.TabIndex = 13;
             this.txtDiaChi.Tag = "";
-            this.txtDiaChi.Text = "QSADASD";
+            this.txtDiaChi.Text = "c";
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // btnSuaKH
             // 
@@ -506,6 +509,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader6.Text = "Hình Ảnh";
             this.columnHeader6.Width = 192;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(774, 257);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 32);
+            this.textBox1.TabIndex = 32;
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,5 +582,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

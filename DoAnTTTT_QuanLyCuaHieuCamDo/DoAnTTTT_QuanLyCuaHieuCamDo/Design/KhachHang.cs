@@ -190,6 +190,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                     if (KhachHangDAO.Instance.InsertCustomer(TenKH, SDT, CMND, NamSinh,DiaChi,NgayCapCMND,HinhAnh))
                     {
                         MessageBox.Show("Thêm Khách Hàng Thành Công", "Thông Báo");
+                        textBox1.Text = KhachHangDAO.Instance.LayMaKH(TenKH, NamSinh);
                     }
                     else
                     {
@@ -240,6 +241,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void btnAnhKH_Click(object sender, EventArgs e)
         {
             OpenImage();
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
