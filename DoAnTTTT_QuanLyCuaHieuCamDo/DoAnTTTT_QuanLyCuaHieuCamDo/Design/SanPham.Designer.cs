@@ -89,7 +89,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
             this.label13 = new System.Windows.Forms.Label();
+>>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -790,6 +793,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
             // 
+<<<<<<< HEAD
+=======
             // label13
             // 
             this.label13.AutoSize = true;
@@ -799,6 +804,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label13.TabIndex = 39;
             this.label13.Text = "label13";
             // 
+>>>>>>> c0845c8efc832e15c45bd839936a642a697113cc
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
