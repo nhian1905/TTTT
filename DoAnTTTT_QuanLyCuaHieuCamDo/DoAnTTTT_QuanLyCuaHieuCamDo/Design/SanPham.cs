@@ -320,156 +320,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if(cbThanhLy.Checked == true)
-            {
-                bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked);
-                //bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked );
-                //bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
-                //bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
-                LVSP.Items.Clear();
-                List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiemThanhLy(ThanhLy);
-                foreach (SanPhamDTO item in list)
-                {
-                    ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
-                    lvitem.SubItems.Add(item.TenLoai.ToString());
-                    lvitem.SubItems.Add(item.TenSP.ToString());
-                    lvitem.SubItems.Add(item.DinhGia.ToString());
-                    lvitem.SubItems.Add(item.GiaThanhLy.ToString());
-                    lvitem.SubItems.Add(item.MoTa.ToString());
-                    lvitem.SubItems.Add(item.MauSac.ToString());
-                    lvitem.SubItems.Add(item.HienTrang.ToString());
-                    lvitem.SubItems.Add(item.NhanHieu.ToString());
-                    lvitem.SubItems.Add(item.QuaHan.ToString());
-                    lvitem.SubItems.Add(item.DaChuoc.ToString());
-                    lvitem.SubItems.Add(item.ThanhLy.ToString());
-                    lvitem.SubItems.Add(item.DaThanhLy.ToString());
-                    LVSP.Items.Add(lvitem);
-                }
-            }
-
-            if (cbDaThanhLy.Checked == true)
-            {
-                //bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked);
-                //bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked );
-                //bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
-                bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
-                LVSP.Items.Clear();
-                List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiemDaThanhLy(DaThanhLy);
-                foreach (SanPhamDTO item in list)
-                {
-                    ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
-                    lvitem.SubItems.Add(item.TenLoai.ToString());
-                    lvitem.SubItems.Add(item.TenSP.ToString());
-                    lvitem.SubItems.Add(item.DinhGia.ToString());
-                    lvitem.SubItems.Add(item.GiaThanhLy.ToString());
-                    lvitem.SubItems.Add(item.MoTa.ToString());
-                    lvitem.SubItems.Add(item.MauSac.ToString());
-                    lvitem.SubItems.Add(item.HienTrang.ToString());
-                    lvitem.SubItems.Add(item.NhanHieu.ToString());
-                    lvitem.SubItems.Add(item.QuaHan.ToString());
-                    lvitem.SubItems.Add(item.DaChuoc.ToString());
-                    lvitem.SubItems.Add(item.ThanhLy.ToString());
-                    lvitem.SubItems.Add(item.DaThanhLy.ToString());
-                    LVSP.Items.Add(lvitem);
-                }
-            }
-
-            if (cbDaChuoc.Checked == true)
-            {
-                //bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked);
-                //bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked );
-                bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
-                //bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
-                LVSP.Items.Clear();
-                List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiemDaChuoc(DaChuoc);
-                foreach (SanPhamDTO item in list)
-                {
-                    ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
-                    lvitem.SubItems.Add(item.TenLoai.ToString());
-                    lvitem.SubItems.Add(item.TenSP.ToString());
-                    lvitem.SubItems.Add(item.DinhGia.ToString());
-                    lvitem.SubItems.Add(item.GiaThanhLy.ToString());
-                    lvitem.SubItems.Add(item.MoTa.ToString());
-                    lvitem.SubItems.Add(item.MauSac.ToString());
-                    lvitem.SubItems.Add(item.HienTrang.ToString());
-                    lvitem.SubItems.Add(item.NhanHieu.ToString());
-                    lvitem.SubItems.Add(item.QuaHan.ToString());
-                    lvitem.SubItems.Add(item.DaChuoc.ToString());
-                    lvitem.SubItems.Add(item.ThanhLy.ToString());
-                    lvitem.SubItems.Add(item.DaThanhLy.ToString());
-                    LVSP.Items.Add(lvitem);
-                }
-            }
-
-            if (cbQuaHan.Checked == true)
-            {
-                //bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked);
-                bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked );
-                //bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
-                //bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
-                LVSP.Items.Clear();
-                List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiemQuaHan(QuaHan);
-                foreach (SanPhamDTO item in list)
-                {
-                    ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
-                    lvitem.SubItems.Add(item.TenLoai.ToString());
-                    lvitem.SubItems.Add(item.TenSP.ToString());
-                    lvitem.SubItems.Add(item.DinhGia.ToString());
-                    lvitem.SubItems.Add(item.GiaThanhLy.ToString());
-                    lvitem.SubItems.Add(item.MoTa.ToString());
-                    lvitem.SubItems.Add(item.MauSac.ToString());
-                    lvitem.SubItems.Add(item.HienTrang.ToString());
-                    lvitem.SubItems.Add(item.NhanHieu.ToString());
-                    lvitem.SubItems.Add(item.QuaHan.ToString());
-                    lvitem.SubItems.Add(item.DaChuoc.ToString());
-                    lvitem.SubItems.Add(item.ThanhLy.ToString());
-                    lvitem.SubItems.Add(item.DaThanhLy.ToString());
-                    LVSP.Items.Add(lvitem);
-                }
-            }
-
-            if (cbThanhLy.Checked == true && cbDaThanhLy.Checked == true)
-            {
-                bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked);
-                //bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked);
-                //bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
-                bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
-                LVSP.Items.Clear();
-                List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiemThanhLyVaDaThanhLy(ThanhLy,DaThanhLy);
-                foreach (SanPhamDTO item in list)
-                {
-                    ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
-                    lvitem.SubItems.Add(item.TenLoai.ToString());
-                    lvitem.SubItems.Add(item.TenSP.ToString());
-                    lvitem.SubItems.Add(item.DinhGia.ToString());
-                    lvitem.SubItems.Add(item.GiaThanhLy.ToString());
-                    lvitem.SubItems.Add(item.MoTa.ToString());
-                    lvitem.SubItems.Add(item.MauSac.ToString());
-                    lvitem.SubItems.Add(item.HienTrang.ToString());
-                    lvitem.SubItems.Add(item.NhanHieu.ToString());
-                    lvitem.SubItems.Add(item.QuaHan.ToString());
-                    lvitem.SubItems.Add(item.DaChuoc.ToString());
-                    lvitem.SubItems.Add(item.ThanhLy.ToString());
-                    lvitem.SubItems.Add(item.DaThanhLy.ToString());
-                    LVSP.Items.Add(lvitem);
-                }
-            }
-        }
-
-        private void btnTatCa_Click(object sender, EventArgs e)
-        {
-            LoadSanPham();
-            cbDaChuoc.Checked = false;
-            cbQuaHan.Checked = false;
-            cbDaThanhLy.Checked = false;
-            cbThanhLy.Checked = false;
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            string name = txtTimKiem.Text;
+            bool ThanhLy = (bool)Convert.ToBoolean(cbThanhLy.Checked );
+            bool QuaHan = (bool)Convert.ToBoolean(cbQuaHan.Checked );
+            bool DaChuoc = (bool)Convert.ToBoolean(cbDaChuoc.Checked );
+            bool DaThanhLy = (bool)Convert.ToBoolean(cbDaThanhLy.Checked);
             LVSP.Items.Clear();
-            List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiem(name);
+            List<SanPhamDTO> list = SanPhamDAO.Instance.TimKiem(ThanhLy,QuaHan, DaChuoc,DaThanhLy);
             foreach (SanPhamDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
@@ -489,5 +345,4 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
     }
-    
 }

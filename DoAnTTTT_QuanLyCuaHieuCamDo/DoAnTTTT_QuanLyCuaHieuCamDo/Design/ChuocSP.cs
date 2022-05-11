@@ -16,20 +16,5 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             InitializeComponent();
         }
-
-        private void btnThemKH_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ChuocSP_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -105,25 +105,5 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return data;
         }
-        public object chaysql(string query)
-        {
-            string kqua;
-            using (SqlConnection connection = new SqlConnection(connectionStr))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader data = command.ExecuteReader();
-                StringBuilder kq = new StringBuilder();
-                while (data.Read())
-                {
-                    for (int i = 0; i < data.FieldCount; i++)
-                        kq.Append(data[i].ToString());
-                    kq.AppendLine();
-                }
-                kqua = kq.ToString();
-                connection.Close();
-            }
-            return kqua;
-        }
     }
 }

@@ -58,11 +58,5 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
-        public string LayMaKH(string TenKhachHang,DateTime NgaySinh)
-        {
-            string query = string.Format("select MaKH from KhachHang where TenKH='{0}' and NamSinh=N'{1}'", TenKhachHang, NgaySinh);
-            string ma= Convert.ToString(CSDL.Instance.chaysql(query));
-            return ma;
-        }
     }
 }
