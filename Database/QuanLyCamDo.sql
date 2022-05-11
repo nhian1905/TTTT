@@ -149,6 +149,17 @@ begin
 end
 go
 
+create proc USP_TimMaChuoc 
+@Id_HDC int,
+@NgayChuoc datetime
+as
+begin
+	declare @TT nvarchar(max)
+	SELECT @TT = MaPhieuChuoc FROM PhieuChuoc a , HoaDonCam b  WHERE a.NgayChuoc = @NgayChuoc and a.MaHoaDonCam = @Id_HDC and a.MaHoaDonCam=b.MaHoaDonCam
+
+end
+go
+
 
 create proc USP_UpdateTongTienThanHLy 
 @MaThanhLy int
