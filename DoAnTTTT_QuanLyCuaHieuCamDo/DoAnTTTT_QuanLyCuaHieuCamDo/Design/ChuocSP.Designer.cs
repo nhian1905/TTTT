@@ -29,7 +29,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         /// </summary>
         private void InitializeComponent()
         {
-            this.textTenKH = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
             this.dtpNgayChuoc = new System.Windows.Forms.DateTimePicker();
             this.LvHoaDonCam = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,6 +62,36 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.ThemSP = new System.Windows.Forms.Button();
             this.XoaSP = new System.Windows.Forms.Button();
             this.lbMaHDChuoc = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
+            this.txtMaHDC = new System.Windows.Forms.TextBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,19 +103,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textTenKH
+            // txtTenKH
             // 
-            this.textTenKH.AccessibleDescription = "";
-            this.textTenKH.AccessibleName = "";
-            this.textTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.textTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textTenKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTenKH.ForeColor = System.Drawing.Color.White;
-            this.textTenKH.Location = new System.Drawing.Point(1002, 75);
-            this.textTenKH.Name = "textTenKH";
-            this.textTenKH.Size = new System.Drawing.Size(296, 22);
-            this.textTenKH.TabIndex = 67;
-            this.textTenKH.Tag = "";
+            this.txtTenKH.AccessibleDescription = "";
+            this.txtTenKH.AccessibleName = "";
+            this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.ForeColor = System.Drawing.Color.White;
+            this.txtTenKH.Location = new System.Drawing.Point(1002, 75);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(296, 22);
+            this.txtTenKH.TabIndex = 67;
+            this.txtTenKH.Tag = "";
             // 
             // dtpNgayChuoc
             // 
@@ -99,6 +129,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LvHoaDonCam
             // 
+            this.LvHoaDonCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.LvHoaDonCam.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LvHoaDonCam.FullRowSelect = true;
             this.LvHoaDonCam.GridLines = true;
             this.LvHoaDonCam.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -109,6 +146,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LvHoaDonCam.TabIndex = 62;
             this.LvHoaDonCam.UseCompatibleStateImageBehavior = false;
             this.LvHoaDonCam.View = System.Windows.Forms.View.Details;
+            this.LvHoaDonCam.SelectedIndexChanged += new System.EventHandler(this.LvHoaDonCam_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -170,9 +208,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(802, 301);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 22);
+            this.label2.Size = new System.Drawing.Size(152, 22);
             this.label2.TabIndex = 56;
-            this.label2.Text = "Ngày cấp";
+            this.label2.Text = "Ngày cấp CMND";
             // 
             // pictureBox2
             // 
@@ -319,7 +357,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.LvCTPhieuChuoc);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.btnXoaKH);
+            this.groupBox2.Controls.Add(this.txtTongTien);
             this.groupBox2.Controls.Add(this.btnSuaKH);
             this.groupBox2.Controls.Add(this.btnThemKH);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,13 +373,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LvCTPhieuChuoc
             // 
+            this.LvCTPhieuChuoc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
             this.LvCTPhieuChuoc.FullRowSelect = true;
             this.LvCTPhieuChuoc.GridLines = true;
             this.LvCTPhieuChuoc.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.LvCTPhieuChuoc.HideSelection = false;
-            this.LvCTPhieuChuoc.Location = new System.Drawing.Point(18, 36);
+            this.LvCTPhieuChuoc.Location = new System.Drawing.Point(18, 31);
             this.LvCTPhieuChuoc.Name = "LvCTPhieuChuoc";
-            this.LvCTPhieuChuoc.Size = new System.Drawing.Size(763, 497);
+            this.LvCTPhieuChuoc.Size = new System.Drawing.Size(666, 497);
             this.LvCTPhieuChuoc.TabIndex = 33;
             this.LvCTPhieuChuoc.UseCompatibleStateImageBehavior = false;
             this.LvCTPhieuChuoc.View = System.Windows.Forms.View.Details;
@@ -351,7 +403,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(682, 543);
+            this.btnXoaKH.Location = new System.Drawing.Point(238, 543);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
             this.btnXoaKH.TabIndex = 70;
@@ -365,7 +417,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(577, 543);
+            this.btnSuaKH.Location = new System.Drawing.Point(133, 543);
             this.btnSuaKH.Name = "btnSuaKH";
             this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
             this.btnSuaKH.TabIndex = 69;
@@ -379,7 +431,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Location = new System.Drawing.Point(472, 543);
+            this.btnThemKH.Location = new System.Drawing.Point(28, 543);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.Size = new System.Drawing.Size(99, 38);
             this.btnThemKH.TabIndex = 68;
@@ -388,6 +440,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LvSanPham
             // 
+            this.LvSanPham.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader24,
+            this.columnHeader25});
             this.LvSanPham.FullRowSelect = true;
             this.LvSanPham.GridLines = true;
             this.LvSanPham.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -398,6 +460,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LvSanPham.TabIndex = 33;
             this.LvSanPham.UseCompatibleStateImageBehavior = false;
             this.LvSanPham.View = System.Windows.Forms.View.Details;
+            this.LvSanPham.SelectedIndexChanged += new System.EventHandler(this.LvSanPham_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -424,6 +487,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThemHDChuoc.TabIndex = 74;
             this.btnThemHDChuoc.Text = "Thêm ";
             this.btnThemHDChuoc.UseVisualStyleBackColor = false;
+            this.btnThemHDChuoc.Click += new System.EventHandler(this.btnThemHDChuoc_Click);
             // 
             // ThemSP
             // 
@@ -438,6 +502,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.ThemSP.TabIndex = 71;
             this.ThemSP.Text = "Thêm ";
             this.ThemSP.UseVisualStyleBackColor = false;
+            this.ThemSP.Click += new System.EventHandler(this.ThemSP_Click);
             // 
             // XoaSP
             // 
@@ -456,11 +521,193 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // lbMaHDChuoc
             // 
             this.lbMaHDChuoc.AutoSize = true;
-            this.lbMaHDChuoc.Location = new System.Drawing.Point(13, 276);
+            this.lbMaHDChuoc.ForeColor = System.Drawing.Color.Black;
+            this.lbMaHDChuoc.Location = new System.Drawing.Point(52, 276);
             this.lbMaHDChuoc.Name = "lbMaHDChuoc";
             this.lbMaHDChuoc.Size = new System.Drawing.Size(35, 13);
             this.lbMaHDChuoc.TabIndex = 75;
             this.lbMaHDChuoc.Text = "label8";
+            this.lbMaHDChuoc.Visible = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã HD Cầm";
+            this.columnHeader1.Width = 125;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên Khách Hàng";
+            this.columnHeader2.Width = 167;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày Lập";
+            this.columnHeader3.Width = 131;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ngày Hết Hạn";
+            this.columnHeader4.Width = 141;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tổng Tiền Cầm";
+            this.columnHeader5.Width = 148;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mã SP";
+            this.columnHeader6.Width = 97;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tên SP";
+            this.columnHeader7.Width = 134;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Giá Thanh Lý";
+            this.columnHeader8.Width = 151;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Màu Sắc";
+            this.columnHeader9.Width = 109;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Nhãn Hiệu";
+            this.columnHeader10.Width = 120;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Mô Tả";
+            this.columnHeader11.Width = 176;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Hiện Trạng";
+            this.columnHeader12.Width = 158;
+            // 
+            // cboMaKH
+            // 
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(758, 28);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(10, 21);
+            this.cboMaKH.TabIndex = 76;
+            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
+            // 
+            // txtMaHDC
+            // 
+            this.txtMaHDC.AccessibleDescription = "";
+            this.txtMaHDC.AccessibleName = "";
+            this.txtMaHDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaHDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHDC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHDC.ForeColor = System.Drawing.Color.White;
+            this.txtMaHDC.Location = new System.Drawing.Point(213, 271);
+            this.txtMaHDC.Name = "txtMaHDC";
+            this.txtMaHDC.Size = new System.Drawing.Size(10, 22);
+            this.txtMaHDC.TabIndex = 77;
+            this.txtMaHDC.Tag = "";
+            this.txtMaHDC.Visible = false;
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.AccessibleDescription = "";
+            this.txtMaSP.AccessibleName = "";
+            this.txtMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSP.ForeColor = System.Drawing.Color.White;
+            this.txtMaSP.Location = new System.Drawing.Point(283, 271);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(10, 22);
+            this.txtMaSP.TabIndex = 53;
+            this.txtMaSP.Tag = "";
+            this.txtMaSP.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(395, 552);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 22);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "Tổng Tiền";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.AccessibleDescription = "";
+            this.txtTongTien.AccessibleName = "";
+            this.txtTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.ForeColor = System.Drawing.Color.White;
+            this.txtTongTien.Location = new System.Drawing.Point(515, 553);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(145, 22);
+            this.txtTongTien.TabIndex = 78;
+            this.txtTongTien.Tag = "";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Mã PC";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Mã SP";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Tên SP";
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Giá Thanh Lý";
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Lãi Xuất";
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Tiền Lãi";
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Màu Sắc";
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Nhãn Hiệu";
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Mô Tả";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Hiện Trạng";
+            this.columnHeader22.Width = 144;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Tổng Tiền";
+            this.columnHeader23.Width = 131;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.DisplayIndex = 3;
+            this.columnHeader24.Text = "Lãi Xuất";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.DisplayIndex = 4;
+            this.columnHeader25.Text = "Tiền Lãi";
             // 
             // ChuocSP
             // 
@@ -468,12 +715,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1327, 957);
+            this.Controls.Add(this.txtMaHDC);
+            this.Controls.Add(this.cboMaKH);
             this.Controls.Add(this.lbMaHDChuoc);
             this.Controls.Add(this.XoaSP);
             this.Controls.Add(this.ThemSP);
             this.Controls.Add(this.btnThemHDChuoc);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textTenKH);
+            this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.LvHoaDonCam);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtpNgayChuoc);
@@ -493,12 +742,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.dtpNgayCapCMND);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChuocSP";
             this.Text = "ChuocSP";
+            this.Load += new System.EventHandler(this.ChuocSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -507,6 +758,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -515,7 +767,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         #endregion
 
-        private System.Windows.Forms.TextBox textTenKH;
+        private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.DateTimePicker dtpNgayChuoc;
         private System.Windows.Forms.ListView LvHoaDonCam;
         private System.Windows.Forms.Label label7;
@@ -548,5 +800,35 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Button ThemSP;
         private System.Windows.Forms.Button XoaSP;
         private System.Windows.Forms.Label lbMaHDChuoc;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ComboBox cboMaKH;
+        private System.Windows.Forms.TextBox txtMaHDC;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
     }
 }
