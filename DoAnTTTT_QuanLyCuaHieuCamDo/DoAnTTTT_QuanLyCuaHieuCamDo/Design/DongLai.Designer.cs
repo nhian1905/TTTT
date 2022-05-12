@@ -30,6 +30,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.btnDongLai = new System.Windows.Forms.Button();
             this.txtTienLai = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnIn = new System.Windows.Forms.Button();
-            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -128,6 +128,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabIndex = 12;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu cầm";
+            // 
+            // cboMaKH
+            // 
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(33, 474);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(39, 32);
+            this.cboMaKH.TabIndex = 77;
+            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             // 
             // txtTenKhachHang
             // 
@@ -560,15 +569,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIn.TabIndex = 48;
             this.btnIn.Text = "In phiếu";
             this.btnIn.UseVisualStyleBackColor = false;
-            // 
-            // cboMaKH
-            // 
-            this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(33, 474);
-            this.cboMaKH.Name = "cboMaKH";
-            this.cboMaKH.Size = new System.Drawing.Size(39, 32);
-            this.cboMaKH.TabIndex = 77;
-            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             // 
             // DongLai
             // 

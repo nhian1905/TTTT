@@ -161,12 +161,14 @@ select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia
 from ChiTiet_HoaDonCam, SanPham,LoaiSP,HoaDonCam
 where ChiTiet_HoaDonCam.MaSP=SanPham.MaSP and SanPham.MaLoai=LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam=3
 
-
-
+SELECT DATEDIFF(day,CONVERT(date, NgayDongLai,  103) , CONVERT(date, NgayDongLai,  103)) from HoaDonCam where HoaDonCam.MaHoaDonCam=3
+select GETDATE()
+select CONVERT(date, NgayHetHan,103)from HoaDonCam where MaHoaDonCam=3
+Select DATEDIFF(day,HoaDonCam.NgayDongLai,GETDATE()) from HoaDonCam where MaHoaDonCam=3
+SELECT HoaDonCam.NgayHetHan from HoaDonCam where MaHoaDonCam=3
 SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)*LoaiSP.LaiXuat*SanPham.DinhGia from HoaDonCam,SanPham,LoaiSP where MaHoaDonCam=3 and LoaiSP.MaLoai=LoaiSP.MaLoai 
-
-SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)from HoaDonCam where MaHoaDonCam=3 
-select NgayHetHan-NgayLap as Ngay from HoaDonCam where MaHoaDonCam=1
+SELECT DATEDIFF(day,CONVERT(date, HoaDonCam.NgayDongLai,  103) , CONVERT(date, GETDATE(),  103)) from HoaDonCam where HoaDonCam.MaHoaDonCam=3
+SELECT DATEDIFF(day,03/09/2008 , 03/011/2008 )
 
 select LoaiSP.LaiXuat*SanPham.DinhGia from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam 
 where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = 3 and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam

@@ -71,6 +71,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
 
             int MaHDC = Convert.ToInt32(txtMaHDC.Text);
+            DateTime ngaydong = DateTime.Now;
+            //double n = Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC, ngaydong));
             double TienLai = 0;
             string connectionStr = CSDL.connectionStr;
             SqlConnection kn = new SqlConnection(connectionStr);
@@ -85,7 +87,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 for (int i = 0; i < kq.FieldCount; i++)
                 {
-                    TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC)) * Convert.ToDouble(kq[i]) / 100;
+                    TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC,ngaydong)) * Convert.ToDouble(kq[i]) / 100;
                 }
 
             }
