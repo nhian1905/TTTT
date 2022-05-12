@@ -37,9 +37,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
-        public bool InsertHDC(int MaKH, DateTime NgayLap, DateTime NgayHetHan, float TongTienCam)
+        public bool InsertHDC(int MaKH, DateTime NgayLap, DateTime NgayHetHan, DateTime NgayDongLai, float TongTienCam)
         {
-            string query = string.Format("insert HoaDonCam( MaKH ,NgayLap,NgayHetHan ,TongTienCam) values (N'{0}',N'{1}',N'{2}',N'{3}')", MaKH, NgayLap, NgayHetHan, TongTienCam);
+            string query = string.Format("insert HoaDonCam( MaKH ,NgayLap,NgayHetHan,NgayDongLai ,TongTienCam) values (N'{0}',N'{1}',N'{2}',N'{3}',N'{4}')", MaKH, NgayLap, NgayHetHan,NgayDongLai, TongTienCam);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

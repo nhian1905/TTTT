@@ -118,6 +118,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             pnlNav.Top = btnDongLai.Top;
             pnlNav.Left = btnDongLai.Left;
             btnDongLai.BackColor = Color.FromArgb(46, 51, 73);
+            this.callform(new DongLai());
         }
 
         private void btnThanhLy_Click(object sender, EventArgs e)

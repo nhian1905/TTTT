@@ -12,6 +12,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string tenKH;
         private DateTime ngayLap;
         private DateTime ngayHetHan;
+        private DateTime ngayDongLai;
         private float tongTienCam;
 
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
@@ -19,14 +20,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }
         public DateTime NgayHetHan { get => ngayHetHan; set => ngayHetHan = value; }
         public float TongTienCam { get => tongTienCam; set => tongTienCam = value; }
+        public DateTime NgayDongLai { get => ngayDongLai; set => ngayDongLai = value; }
 
-        public HoaDonCamDTO(int MaHoaDonCam, string TenKH, DateTime NgayLap, DateTime NgayHetHan, float TongTienCam)
+
+        public HoaDonCamDTO(int MaHoaDonCam, string TenKH, DateTime NgayLap, DateTime NgayHetHan, DateTime NgayDongLai, float TongTienCam)
         {
             this.MaHoaDonCam = MaHoaDonCam;
             this.TenKH = TenKH;
             this.NgayLap = NgayLap;
             this.NgayHetHan = NgayHetHan;
+            this.NgayDongLai = NgayDongLai;
             this.TongTienCam = TongTienCam;
+            
         }
 
         public HoaDonCamDTO(DataRow row)

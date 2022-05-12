@@ -75,6 +75,7 @@ create table HoaDonCam
 	MaKH int not null,
 	NgayLap datetime ,
 	NgayHetHan datetime ,
+	NgayDongLai datetime ,
 	TongTienCam float,
 	foreign key(MaKH) references KhachHang(MaKH)
 )
