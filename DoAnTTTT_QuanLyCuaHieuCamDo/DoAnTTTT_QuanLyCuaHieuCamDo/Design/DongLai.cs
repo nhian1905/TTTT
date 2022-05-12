@@ -40,6 +40,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
+        void LoadPhieuLai(int MaHoaDonCam)
+        {
+            LVPhieuLai.Items.Clear();
+            List<PhieuLaiDTO> list = PhieuLaiDAO.Instance.LoadListPhieuLai(MaHoaDonCam);
+            foreach (PhieuLaiDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaPhieuLai.ToString());
+                lvitem.SubItems.Add(item.MaHoaDonCam.ToString());
+                lvitem.SubItems.Add(item.NgayDongLai.ToString());
+                lvitem.SubItems.Add(item.TongTien.ToString());
+                LVPhieuLai.Items.Add(lvitem);
+            }
+        }
+
         private void LvPhieuCam_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -94,13 +108,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
             kn.Close();
             txtTienLai.Text = Convert.ToString(TienLai);
+
+            //
+            ListView.SelectedListViewItemCollection lvv = this.LvPhieuCam.SelectedItems;
+            int id = 0;
+            foreach (ListViewItem item in lvv)
+            {
+                id += Int32.Parse(item.SubItems[0].Text);
+            }
+            txtMaHDC.Text = id.ToString();
+            int MaHoaDonCam = int.Parse(txtMaHDC.Text);
+            LoadPhieuLai(MaHoaDonCam);
         }
         void LoadCboKH()
         {
             cboMaKH.DataSource = KhachHangDAO.Instance.LoadListKH();
             cboMaKH.DisplayMember = "MaKH";
             cboMaKH.ValueMember = "MaKH";
-            cboMaKH.SelectedIndex = 0;
+            //cboMaKH.SelectedIndex = 0;
         }
         private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -37,7 +37,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
-      
+        public List<ChiTietPhieuChuocDTO> LoadListCTPhieuChuocByPC(int MaPhieuChuoc)
+        {
+            List<ChiTietPhieuChuocDTO> LoadList = new List<ChiTietPhieuChuocDTO>();
+            string query = "select  a.MaSP,a.TenSP,a.DinhGia,b.LaiXuat, c.TienLai,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu, c.TongTien from SanPham a  , LoaiSP b, ChiTiet_PhieuChuoc c, PhieuChuoc d where   a.MaSP = c.MaSP and c.MaPhieuChuoc = d.MaPhieuChuoc and a.MaLoai = b.MaLoai and c.MaPhieuChuoc =" +MaPhieuChuoc;
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                ChiTietPhieuChuocDTO SP = new ChiTietPhieuChuocDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
+
+
 
         public bool InsertSPtoBillPhieuChuoc(int MaPhieuChuoc, string MaSP, float TienLai , float TongTien)
         {

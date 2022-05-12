@@ -116,7 +116,10 @@ create table ChiTiet_PhieuChuoc
 	foreign key(MaPhieuChuoc) references PhieuChuoc(MaPhieuChuoc)
 )
 
-
+insert into PhieuChuoc values(1,'05/19/2020',0)
+insert into ChiTiet_PhieuChuoc values(1,'IP01',0,0)
+insert into PhieuChuoc values(2,'05/19/2020',0)
+insert into ChiTiet_PhieuChuoc values(2,'IP02',0,0)
 
 insert into Quyen values ('admin')
 insert into TaiKhoan values ('admin',123,1)
@@ -135,7 +138,7 @@ insert into SanPham values ('LT1',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn'
 insert into SanPham values ('LT2',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',1,0,0,0)
 insert into SanPham values ('LT3',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,0,1)
 
-insert into ChiTiet_PhieuChuoc values(4,'NhiAn',4000,7000)
+
 
 
 create proc USP_UpdateTienPhieuChuoc
@@ -147,6 +150,28 @@ as
 		update PhieuChuoc set TongTien = @TT where MaPhieuChuoc = @MaPC
 	end
 go
+
+
+create proc USP_UpdateTongTienHDC
+@Id_HDC int
+as
+	begin
+		declare @TT float
+		SELECT @TT = ISNULL(SUM(GiaThanhLy),0) FROM ChiTiet_HoaDonCam a , SanPham b  WHERE a.MaSP = b.MaSP and MaHoaDonCam = @Id_HDC 
+		update HoaDonCam set TongTienCam = @TT where MaHoaDonCam = @ID_HDC
+	end
+GO
+
+
+create proc USP_UpdateTongTienThanHLy
+@MaThanhLy int
+as
+	begin
+		declare @TT float
+		SELECT @TT = ISNULL(SUM(GiaThanhLy),0) FROM ChiTiet_ThanhLy a , SanPham b  WHERE a.MaSP = b.MaSP and MaThanhLy = @MaThanhLy 
+		update ThanhLy set TongTienThanhLy = @TT where MaThanhLy = @MaThanhLy
+	end
+GO
 
 
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1

@@ -38,6 +38,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
+        public List<PhieuLaiDTO> LoadListPhieuLai(int MaHoaDonCam)
+        {
+            List<PhieuLaiDTO> LoadList = new List<PhieuLaiDTO>();
+            string query = "select b.MaPhieuLai,a.MaHoaDonCam , b.NgayDongLai , b.ThanhTien from HoaDonCam a , PhieuLai b where a.MaHoaDonCam = b.MaHoaDonCam and b.MaHoaDonCam = "+MaHoaDonCam;
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                PhieuLaiDTO HDC = new PhieuLaiDTO(item);
+                LoadList.Add(HDC);
+            }
+            return LoadList;
+        }
+
         public bool InsertPhieuLai( int MaHoaDonCam,DateTime NgayDongLai, double ThanhTien)
         {
             string query = string.Format("insert PhieuLai(MaHoaDonCam,NgayDongLai ,ThanhTien) values (N'{0}',N'{1}',N'{2}')",MaHoaDonCam,NgayDongLai, ThanhTien);

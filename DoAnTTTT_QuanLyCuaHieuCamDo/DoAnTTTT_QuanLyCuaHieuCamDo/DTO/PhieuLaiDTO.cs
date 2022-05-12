@@ -18,19 +18,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
         public float TongTien { get => tongTien; set => tongTien = value; }
         public DateTime NgayDongLai { get => ngayDongLai; set => ngayDongLai = value; }
-        public PhieuLaiDTO(int MaPhieuLai, int MaHoaDonCam, DateTime NgayDongLai, float TongTien)
+        public PhieuLaiDTO(int MaPhieuLai, int MaHoaDonCam, DateTime NgayDongLai, float ThanhTien)
         {
             this.MaPhieuLai = MaPhieuLai;
             this.MaHoaDonCam = MaHoaDonCam;        
             this.NgayDongLai = NgayDongLai;
-            this.TongTien = TongTien;
+            this.TongTien = ThanhTien;
 
         }
         public PhieuLaiDTO(DataRow row)
         {
             this.MaPhieuLai = (int)row["MaPhieuLai"];
+            this.MaHoaDonCam = (int)row["MaHoaDonCam"];
             this.NgayDongLai = (DateTime)row["NgayDongLai"];
-            this.TongTien = (float)Convert.ToDouble(row["TongTien"]);
+            this.TongTien = (float)Convert.ToDouble(row["ThanhTien"]);
         }
     }
 }

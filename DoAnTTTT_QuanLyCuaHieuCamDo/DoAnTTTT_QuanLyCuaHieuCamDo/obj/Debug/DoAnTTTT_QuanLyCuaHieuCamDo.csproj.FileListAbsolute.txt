@@ -121,3 +121,4 @@ C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\Do
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.BaoCao.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.BaoCao.resources
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.DongLai.resources
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.DongLai.resources

@@ -36,6 +36,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+        public List<PhieuChuocDTO> LoadListPhieuChuoc()
+        {
+            List<PhieuChuocDTO> LoadList = new List<PhieuChuocDTO>();
+            string query = "select a.MaHoaDonCam, b.MaPhieuChuoc ,b.NgayChuoc, b.TongTien  from HoaDonCam a , PhieuChuoc b where a.MaHoaDonCam = b.MaHoaDonCam";
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                PhieuChuocDTO HDC = new PhieuChuocDTO(item);
+                LoadList.Add(HDC);
+            }
+            return LoadList;
+        }
         public bool InsertPhieuChuoc(int MaHoaDonCam, DateTime NgayChuoc, float TongTien)
         {
             string query = string.Format("insert PhieuChuoc( MaHoaDonCam ,NgayChuoc ,TongTien) values (N'{0}',N'{1}',N'{2}')", MaHoaDonCam, NgayChuoc, TongTien);
