@@ -38,9 +38,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
-        public bool InsertPhieuLai( DateTime NgayDongLai, float TongTien)
+        public bool InsertPhieuLai( int MaHoaDonCam,DateTime NgayDongLai, double ThanhTien)
         {
-            string query = string.Format("insert PhieuLai(NgayDongLai ,TongTien) values (N'{0}',N'{1}'')",NgayDongLai, TongTien);
+            string query = string.Format("insert PhieuLai(MaHoaDonCam,NgayDongLai ,ThanhTien) values (N'{0}',N'{1}',N'{2}')",MaHoaDonCam,NgayDongLai, ThanhTien);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

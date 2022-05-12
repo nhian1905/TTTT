@@ -80,6 +80,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             string sql = "select LoaiSP.LaiXuat * SanPham.DinhGia";
             sql += " from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam";
             sql += " where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = '" + MaHDC + "' and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam";
+            sql += " and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0";
             SqlCommand cmdd = new SqlCommand(sql, kn);
             SqlDataReader kq = cmdd.ExecuteReader();
             StringBuilder a = new StringBuilder();
@@ -124,8 +125,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnDongLai_Click(object sender, EventArgs e)
         {
-            
-            
+            PhieuLaiDAO.Instance.InsertPhieuLai(Convert.ToInt32(txtMaHDC.Text),DateTime.Now, Convert.ToDouble(txtTongTien.Text));
+
         }
     }
 }
