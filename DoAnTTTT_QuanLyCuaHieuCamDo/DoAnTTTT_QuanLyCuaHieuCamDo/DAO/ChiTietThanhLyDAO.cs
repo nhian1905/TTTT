@@ -50,5 +50,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public bool UpdateSPTL(string MaSP)
+        {
+            string query = string.Format("update SanPham set DaThanhLy = 1 where MaSP = N'{0}'", MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool UpdateXoaSPTL(string MaSP)
+        {
+            string query = string.Format("update SanPham set DaThanhLy = 0 where MaSP = N'{0}'", MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }

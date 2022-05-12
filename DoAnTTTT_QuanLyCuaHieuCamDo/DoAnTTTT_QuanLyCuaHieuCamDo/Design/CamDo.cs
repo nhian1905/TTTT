@@ -65,7 +65,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
-                lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
                 lvitem.SubItems.Add(item.MauSac.ToString());
                 lvitem.SubItems.Add(item.HienTrang.ToString());
@@ -224,7 +223,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             string maloai = "";
             string tensp = "";
             string dinhgia = "";
-            string giathanhly = "";
             string mota = "";
             string mausac = "";
             string hientrang = "";
@@ -236,17 +234,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 maloai += item.SubItems[2].Text;
                 tensp += item.SubItems[3].Text;
                 dinhgia += item.SubItems[4].Text;
-                giathanhly += item.SubItems[5].Text;
-                mota += item.SubItems[6].Text;
-                mausac += item.SubItems[7].Text;
-                hientrang += item.SubItems[8].Text;
-                nhanhieu += item.SubItems[9].Text;
+                mota += item.SubItems[5].Text;
+                mausac += item.SubItems[6].Text;
+                hientrang += item.SubItems[7].Text;
+                nhanhieu += item.SubItems[8].Text;
             }
             txtMaHDC.Text = mahdc.ToString();
             txtMaSP.Text = masp.ToString();
             txtTenSP.Text = tensp.ToString();
             txtDinhGia.Text = dinhgia.ToString();
-            txtGiaThanhLy.Text = giathanhly.ToString();
             cboLoaiSP.Text = maloai.ToString();
             txtMoTa.Text = mota.ToString();
             txtMauSac.Text = mausac.ToString();
@@ -265,7 +261,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                 string TenSP = txtTenSP.Text;
                 float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-                float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+                float GiaThanhLy = (float)Convert.ToDouble(0);
                 string MoTa = txtMoTa.Text;
                 string MauSac = txtMauSac.Text;
                 string HienTrang = txtHienTrang.Text;
@@ -302,7 +298,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
             string TenSP = txtTenSP.Text;
             float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-            float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+            float GiaThanhLy = (float)Convert.ToDouble(0);
             string MoTa = txtMoTa.Text;
             string MauSac = txtMauSac.Text;
             string HienTrang = txtHienTrang.Text;
@@ -357,6 +353,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
 
             LoadCTHoaDonCam(id);
+        }
+
+        private void LVCTHDC_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

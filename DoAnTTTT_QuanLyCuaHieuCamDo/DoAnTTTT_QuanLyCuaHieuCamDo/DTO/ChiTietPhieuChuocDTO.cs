@@ -8,10 +8,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 {
     public class ChiTietPhieuChuocDTO
     {
-        private int maPhieuChuoc;
+        //private int maPhieuChuoc;
         private string maSP;
         private string tenSP;
-        private float giaThanhLy;
+        private float dinhGia;
         private int laiXuat;
         private float tienLai;
         private string moTa;
@@ -20,10 +20,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string nhanHieu;
         private float tongTien;
 
-        public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
+        //public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
-        public float GiaThanhLy { get => giaThanhLy; set => giaThanhLy = value; }
+        public float DinhGia { get => dinhGia; set => dinhGia = value; }
 
         public int LaiXuat { get => laiXuat; set => laiXuat = value; }
         public float TienLai { get => tienLai; set => tienLai = value; }
@@ -34,12 +34,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public float TongTien { get => tongTien; set => tongTien = value; }
        
 
-        public ChiTietPhieuChuocDTO(int MaPhieuChuoc, string MaSP, string TenSP, float GiaThanhLy,int LaiXuat,float TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, float TongTien)
+        public ChiTietPhieuChuocDTO(/*int MaPhieuChuoc,*/ string MaSP, string TenSP, float DinhGia,int LaiXuat,float TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, float TongTien)
         {
-            this.MaPhieuChuoc = MaPhieuChuoc;
+            //this.MaPhieuChuoc = MaPhieuChuoc;
             this.MaSP = MaSP;
             this.TenSP = TenSP;
-            this.GiaThanhLy = GiaThanhLy;
+            this.DinhGia = DinhGia;
             this.LaiXuat = LaiXuat;
             this.TienLai = TienLai;
             this.MoTa = MoTa;
@@ -51,10 +51,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 
         public ChiTietPhieuChuocDTO(DataRow row)
         {
-            this.MaPhieuChuoc = (int)row["MaPhieuChuoc"];
+            //this.MaPhieuChuoc = (int)row["MaPhieuChuoc"];
             this.MaSP = row["MaSP"].ToString();
             this.TenSP = row["TenSP"].ToString();
-            this.GiaThanhLy = (float)Convert.ToDouble(row["GiaThanhLy"]);
+            this.DinhGia = (float)Convert.ToDouble(row["DinhGia"]);
             this.LaiXuat = (int)row["LaiXuat"];
             this.TienLai = (float)Convert.ToDouble(row["TienLai"]);
             this.MoTa = row["MoTa"].ToString();

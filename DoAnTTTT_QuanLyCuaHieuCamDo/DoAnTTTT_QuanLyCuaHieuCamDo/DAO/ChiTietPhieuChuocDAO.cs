@@ -27,7 +27,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<ChiTietPhieuChuocDTO> LoadListCTPhieuChuoc()
         {
             List<ChiTietPhieuChuocDTO> LoadList = new List<ChiTietPhieuChuocDTO>();
-            string query = "select c.MaPhieuChuoc, a.MaSP,a.TenSP,a.GiaThanhLy,b.LaiXuat, a.DaThanhLy * b.LaiXuat as TienLai,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu, c.TongTien from SanPham a  , LoaiSP b, ChiTiet_PhieuChuoc c, PhieuChuoc d where   a.MaSP = c.MaSP and c.MaPhieuChuoc = d.MaPhieuChuoc and a.MaLoai = b.MaLoai ";
+            string query = "select  a.MaSP,a.TenSP,a.DinhGia,b.LaiXuat, c.TienLai,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu, c.TongTien from SanPham a  , LoaiSP b, ChiTiet_PhieuChuoc c, PhieuChuoc d where   a.MaSP = c.MaSP and c.MaPhieuChuoc = d.MaPhieuChuoc and a.MaLoai = b.MaLoai ";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {

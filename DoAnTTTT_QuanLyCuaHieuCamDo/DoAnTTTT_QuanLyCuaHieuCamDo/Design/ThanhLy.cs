@@ -263,8 +263,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 if (ChiTietThanhLyDAO.Instance.InsertSPtoBillThanhLy(MaThanhLy, MaSP))
                 {
                     MessageBox.Show("Thêm Thành Công");
+                    ChiTietThanhLyDAO.Instance.UpdateSPTL(MaSP);
                     LoadCTThanhLy(id);
                     LoadTongTien();
+                    LoadCboSP();
                 }
                 else
                 {
@@ -292,7 +294,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 if (ChiTietThanhLyDAO.Instance.DeletetoBillThanhLy(MaThanhLy, MaSP))
                 {
+                    ChiTietThanhLyDAO.Instance.UpdateXoaSPTL(MaSP);
                     LoadTongTien();
+                    LoadCboSP();
                 }
                 else
                 {

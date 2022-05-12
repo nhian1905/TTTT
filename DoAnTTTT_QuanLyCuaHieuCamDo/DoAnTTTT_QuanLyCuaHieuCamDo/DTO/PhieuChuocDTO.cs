@@ -18,6 +18,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public DateTime NgayChuoc { get => ngayChuoc; set => ngayChuoc = value; }
         public float TongTien { get => tongTien; set => tongTien = value; }
 
+
         public PhieuChuocDTO(int MaPhieuChuoc, int MaHoaDonCam, DateTime NgayChuoc, float TongTien)
         {
             this.MaPhieuChuoc = MaPhieuChuoc;
