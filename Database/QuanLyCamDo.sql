@@ -157,6 +157,20 @@ from PhieuChuoc
 where MaHoaDonCam = 4 and NgayChuoc = '2022-05-11 00:00:00.000'
 
 
-select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1
+select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia
+from ChiTiet_HoaDonCam, SanPham,LoaiSP,HoaDonCam
+where ChiTiet_HoaDonCam.MaSP=SanPham.MaSP and SanPham.MaLoai=LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam=3
 
+
+
+SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)*LoaiSP.LaiXuat*SanPham.DinhGia from HoaDonCam,SanPham,LoaiSP where MaHoaDonCam=3 and LoaiSP.MaLoai=LoaiSP.MaLoai 
+
+SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)from HoaDonCam where MaHoaDonCam=3 
+select NgayHetHan-NgayLap as Ngay from HoaDonCam where MaHoaDonCam=1
+
+select LoaiSP.LaiXuat*SanPham.DinhGia from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam 
+where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = 3 and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam
+
+select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1
+SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)from HoaDonCam where MaHoaDonCam=3
 select c.MaPhieuChuoc, a.MaSP,a.TenSP,a.GiaThanhLy,b.LaiXuat, a.DaThanhLy * b.LaiXuat as TienLai ,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu, c.TongTien from SanPham a  , LoaiSP b, ChiTiet_PhieuChuoc c, PhieuChuoc d where   a.MaSP = c.MaSP and c.MaPhieuChuoc = d.MaPhieuChuoc and a.MaLoai = b.MaLoai

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 {
-    class PhieuLaiDTO
+    public class PhieuLaiDTO
     {
         private int maPhieuLai;
         private int maHoaDonCam;

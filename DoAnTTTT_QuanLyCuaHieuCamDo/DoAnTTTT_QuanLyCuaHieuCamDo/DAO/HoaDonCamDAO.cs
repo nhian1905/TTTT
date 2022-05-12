@@ -64,5 +64,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+        public bool UpdateMoney(int MaHoaDonCam, double TongTien)
+        {
+            string query = string.Format("Update HoaDonCam set TongTienCam=N'{1}' where MaHoaDonCam =N'{0}'", MaHoaDonCam, TongTien);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }

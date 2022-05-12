@@ -25,15 +25,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         private PhieuLaiDAO() { }
 
-        public List<PhieuLaiDTO> LoadListPhieuLai()
+        public List<HoaDonCamDTO> LoadListHoaDonCam()
         {
-            List<PhieuLaiDTO> LoadList = new List<PhieuLaiDTO>();
-            string query = "select MaPhieuLai ,NgayDongLai ,TongTien from PhieuLai";
+            List<HoaDonCamDTO> LoadList = new List<HoaDonCamDTO>();
+            string query = "select a.MaHoaDonCam , b.TenKH , a.NgayLap , a.NgayHetHan ,a.TongTienCam from HoaDonCam a , KhachHang b where a.MaKH = b.MaKH";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
-                PhieuLaiDTO HDL = new PhieuLaiDTO(item);
-                LoadList.Add(HDL);
+                HoaDonCamDTO HDC = new HoaDonCamDTO(item);
+                LoadList.Add(HDC);
             }
             return LoadList;
         }
@@ -43,6 +43,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string query = string.Format("insert PhieuLai(NgayDongLai ,TongTien) values (N'{0}',N'{1}'')",NgayDongLai, TongTien);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
+        }
+        public string MaKH(int MaHoaDonCam)
+        {
+            string query = string.Format("select MaKH from HoaDonCam where MaHoaDonCam =N'{0}'", MaHoaDonCam);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
+        public string Ngay(int MaHoaDonCam)
+        {
+            string query = string.Format("SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan) from HoaDonCam where HoaDonCam.MaHoaDonCam=N'{0}' ", MaHoaDonCam);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
         }
     }
 }

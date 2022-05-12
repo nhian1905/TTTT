@@ -30,13 +30,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
+            this.btnDongLai = new System.Windows.Forms.Button();
+            this.txtTienLai = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.txtMaHDC = new System.Windows.Forms.TextBox();
             this.dtpNgayCamHD = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
-            this.btnDongLai = new System.Windows.Forms.Button();
             this.LvPhieuCam = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,15 +68,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnIn = new System.Windows.Forms.Button();
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.gbKhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -79,15 +82,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // gbKhachHang
             // 
+            this.gbKhachHang.Controls.Add(this.cboMaKH);
             this.gbKhachHang.Controls.Add(this.txtTenKhachHang);
             this.gbKhachHang.Controls.Add(this.btnDongLai);
-            this.gbKhachHang.Controls.Add(this.textBox1);
+            this.gbKhachHang.Controls.Add(this.txtTienLai);
             this.gbKhachHang.Controls.Add(this.label9);
             this.gbKhachHang.Controls.Add(this.pictureBox7);
             this.gbKhachHang.Controls.Add(this.txtMaHDC);
@@ -127,6 +129,69 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu cầm";
             // 
+            // txtTenKhachHang
+            // 
+            this.txtTenKhachHang.AccessibleDescription = "";
+            this.txtTenKhachHang.AccessibleName = "";
+            this.txtTenKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTenKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhachHang.ForeColor = System.Drawing.Color.White;
+            this.txtTenKhachHang.Location = new System.Drawing.Point(212, 38);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(296, 22);
+            this.txtTenKhachHang.TabIndex = 47;
+            this.txtTenKhachHang.Tag = "";
+            // 
+            // btnDongLai
+            // 
+            this.btnDongLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDongLai.FlatAppearance.BorderSize = 0;
+            this.btnDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDongLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDongLai.ForeColor = System.Drawing.Color.White;
+            this.btnDongLai.Location = new System.Drawing.Point(1193, 468);
+            this.btnDongLai.Name = "btnDongLai";
+            this.btnDongLai.Size = new System.Drawing.Size(99, 38);
+            this.btnDongLai.TabIndex = 34;
+            this.btnDongLai.Text = "Đóng lãi";
+            this.btnDongLai.UseVisualStyleBackColor = false;
+            this.btnDongLai.Click += new System.EventHandler(this.btnDongLai_Click);
+            // 
+            // txtTienLai
+            // 
+            this.txtTienLai.AccessibleDescription = "";
+            this.txtTienLai.AccessibleName = "";
+            this.txtTienLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTienLai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTienLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienLai.ForeColor = System.Drawing.Color.White;
+            this.txtTienLai.Location = new System.Drawing.Point(213, 444);
+            this.txtTienLai.Name = "txtTienLai";
+            this.txtTienLai.Size = new System.Drawing.Size(296, 22);
+            this.txtTienLai.TabIndex = 44;
+            this.txtTienLai.Tag = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(30, 443);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 22);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Tiền lãi";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox7.Location = new System.Drawing.Point(173, 436);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox7.TabIndex = 46;
+            this.pictureBox7.TabStop = false;
+            // 
             // txtMaHDC
             // 
             this.txtMaHDC.AccessibleDescription = "";
@@ -151,6 +216,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCamHD.Name = "dtpNgayCamHD";
             this.dtpNgayCamHD.Size = new System.Drawing.Size(145, 29);
             this.dtpNgayCamHD.TabIndex = 42;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(29, 310);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 22);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Ngày cầm";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
+            this.pictureBox11.Location = new System.Drawing.Point(174, 310);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox11.TabIndex = 41;
+            this.pictureBox11.TabStop = false;
             // 
             // txtTongTien
             // 
@@ -196,20 +281,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayHetHan.Size = new System.Drawing.Size(145, 29);
             this.dtpNgayHetHan.TabIndex = 36;
             // 
-            // btnDongLai
-            // 
-            this.btnDongLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDongLai.FlatAppearance.BorderSize = 0;
-            this.btnDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDongLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDongLai.ForeColor = System.Drawing.Color.White;
-            this.btnDongLai.Location = new System.Drawing.Point(1193, 468);
-            this.btnDongLai.Name = "btnDongLai";
-            this.btnDongLai.Size = new System.Drawing.Size(99, 38);
-            this.btnDongLai.TabIndex = 34;
-            this.btnDongLai.Text = "Đóng lãi";
-            this.btnDongLai.UseVisualStyleBackColor = false;
-            // 
             // LvPhieuCam
             // 
             this.LvPhieuCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -228,6 +299,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LvPhieuCam.TabIndex = 33;
             this.LvPhieuCam.UseCompatibleStateImageBehavior = false;
             this.LvPhieuCam.View = System.Windows.Forms.View.Details;
+            this.LvPhieuCam.SelectedIndexChanged += new System.EventHandler(this.LvPhieuCam_SelectedIndexChanged);
+            this.LvPhieuCam.Click += new System.EventHandler(this.LvPhieuCam_Click);
             // 
             // columnHeader1
             // 
@@ -460,74 +533,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1.TabIndex = 5;
             this.label1.Text = "Tên khách hàng";
             // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox11.Location = new System.Drawing.Point(174, 310);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox11.TabIndex = 41;
-            this.pictureBox11.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(29, 310);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 22);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Ngày cầm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.AccessibleDescription = "";
-            this.textBox1.AccessibleName = "";
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(213, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 22);
-            this.textBox1.TabIndex = 44;
-            this.textBox1.Tag = "";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(30, 443);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 22);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Tiền lãi";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox7.Location = new System.Drawing.Point(173, 436);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox7.TabIndex = 46;
-            this.pictureBox7.TabStop = false;
-            // 
-            // txtTenKhachHang
-            // 
-            this.txtTenKhachHang.AccessibleDescription = "";
-            this.txtTenKhachHang.AccessibleName = "";
-            this.txtTenKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtTenKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtTenKhachHang.Location = new System.Drawing.Point(212, 38);
-            this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(296, 22);
-            this.txtTenKhachHang.TabIndex = 47;
-            this.txtTenKhachHang.Tag = "";
-            // 
             // listView1
             // 
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -556,6 +561,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIn.Text = "In phiếu";
             this.btnIn.UseVisualStyleBackColor = false;
             // 
+            // cboMaKH
+            // 
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(33, 474);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(39, 32);
+            this.cboMaKH.TabIndex = 77;
+            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
+            // 
             // DongLai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,6 +585,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Load += new System.EventHandler(this.DongLai_Load);
             this.gbKhachHang.ResumeLayout(false);
             this.gbKhachHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -579,8 +595,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,7 +604,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.GroupBox gbKhachHang;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Button btnDongLai;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTienLai;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox txtMaHDC;
@@ -628,5 +642,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.ComboBox cboMaKH;
     }
 }

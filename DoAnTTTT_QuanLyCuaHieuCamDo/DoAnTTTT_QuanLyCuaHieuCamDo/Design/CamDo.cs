@@ -73,12 +73,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
-        void LoadTongTien()
-        {
-            int MaHoaDonCam = Convert.ToInt32(txtMaHDC.Text);
-            HoaDonCamDAO.Instance.UpdateTongTien(MaHoaDonCam);
-            LoadHoaDonCam();
-        }
+        
         private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             string connectionStr = CSDL.connectionStr;
@@ -251,9 +246,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtNhanHieu.Text = nhanhieu.ToString();
             txtMaSP.Enabled = false;
         }
-
+        //void LoadTongTien()
+        //{
+        //    int MaHoaDonCam = Convert.ToInt32(txtMaHDC.Text);
+        //    HoaDonCamDAO.Instance.UpdateTongTien(MaHoaDonCam);
+        //    LoadHoaDonCam();
+        //}
         private void btnThemSP_Click(object sender, EventArgs e)
         {
+            
             int id = int.Parse(txtMaHDC.Text);
             if (txtTenSP.Text != "" && txtMaSP.Text != "")
             {
@@ -271,13 +272,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 bool DaChuoc = (bool)Convert.ToBoolean(0);
                 bool ThanhLy = (bool)Convert.ToBoolean(0);
                 bool DaThanhLy = (bool)Convert.ToBoolean(0);
+                double tongtien = DinhGia+Convert.ToDouble(txtTongTien.Text);
                 if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
                 {
                     if (ChiTietHoaDonCamDAO.Instance.InsertSPtoBillHDC(MaHoaDonCam, MaSP))
                     {
                         MessageBox.Show("Thêm Thành Công");
                         LoadCTHoaDonCam(id);
-                        LoadTongTien();
+                        
+                        txtTongTien.Text = Convert.ToString(tongtien);
+                        HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam,tongtien);
+                        LoadHoaDonCam();
                     }
                     else
                     {
@@ -312,7 +317,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     {
                         MessageBox.Show("Sửa Thành Công");
                         LoadCTHoaDonCam(id);
-                        LoadTongTien();
+                        //LoadTongTien();
                     }
                 }
                 else
@@ -345,7 +350,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 if (ChiTietHoaDonCamDAO.Instance.DeletetoBillHDC(MaSP))
                 {
                     SanPhamDAO.Instance.DeleteSP(MaSP);
-                    LoadTongTien();
+                    //LoadTongTien();
                 }
                 else
                 {

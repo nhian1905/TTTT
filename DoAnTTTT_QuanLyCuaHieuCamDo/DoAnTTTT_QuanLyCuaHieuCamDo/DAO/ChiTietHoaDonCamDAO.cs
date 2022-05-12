@@ -40,7 +40,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         public bool InsertSPtoBillHDC(int MaHoaDonCam, string MaSP)
         {
-            string query = string.Format("insert ChiTiet_HoaDonCam(MaHoaDonCam,MaSP) values('{0}',N'{1}')", MaHoaDonCam, MaSP);
+            string query = string.Format("insert into ChiTiet_HoaDonCam(MaHoaDonCam,MaSP) values('{0}',N'{1}')", MaHoaDonCam, MaSP);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
@@ -57,6 +57,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
-
+        
     }
 }
