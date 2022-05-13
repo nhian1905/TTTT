@@ -197,8 +197,12 @@ SELECT DATEDIFF(day,03/09/2008 , 03/011/2008 )
 
 select LoaiSP.LaiXuat*SanPham.DinhGia from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam 
 where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = 3 and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam 
-and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0
+and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0 and SanPham.MaSP=7
 
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1
 SELECT DATEDIFF(day,HoaDonCam.NgayLap , HoaDonCam.NgayHetHan)from HoaDonCam where MaHoaDonCam=3
 select c.MaPhieuChuoc, a.MaSP,a.TenSP,a.GiaThanhLy,b.LaiXuat, a.DaThanhLy * b.LaiXuat as TienLai ,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu, c.TongTien from SanPham a  , LoaiSP b, ChiTiet_PhieuChuoc c, PhieuChuoc d where   a.MaSP = c.MaSP and c.MaPhieuChuoc = d.MaPhieuChuoc and a.MaLoai = b.MaLoai
+
+select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang  
+from ChiTiet_HoaDonCam a,SanPham b,LoaiSP c, KhachHang d,HoaDonCam e
+where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH                 and b.DaChuoc=0 and b.DaThanhLy=0 and b.QuaHan=0 and b.ThanhLy=0
