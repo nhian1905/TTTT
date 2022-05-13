@@ -81,43 +81,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             dtpNgayHetHan.Text = ngayhethan.ToString();
             txtTongTien.Text = tongtiencam.ToString();
             cboMaKH.Text = PhieuLaiDAO.Instance.MaKH(mahoadoncam);
-
-
-
-            int MaHDC = Convert.ToInt32(txtMaHDC.Text);
-            DateTime ngaydong = DateTime.Now;
-            //double n = Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC, ngaydong));
-            double TienLai = 0;
-            string connectionStr = CSDL.connectionStr;
-            SqlConnection kn = new SqlConnection(connectionStr);
-            kn.Open();
-            string sql = "select LoaiSP.LaiXuat * SanPham.DinhGia";
-            sql += " from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam";
-            sql += " where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = '" + MaHDC + "' and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam";
-            sql += " and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0";
-            SqlCommand cmdd = new SqlCommand(sql, kn);
-            SqlDataReader kq = cmdd.ExecuteReader();
-            StringBuilder a = new StringBuilder();
-            while (kq.Read())
-            {
-                for (int i = 0; i < kq.FieldCount; i++)
-                {
-                    TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC,ngaydong)) * Convert.ToDouble(kq[i]) / 100;
-                }
-
-            }
-            kn.Close();
-            txtTienLai.Text = Convert.ToString(TienLai);
-
-            //
-            ListView.SelectedListViewItemCollection lvv = this.LvPhieuCam.SelectedItems;
-            int id = 0;
-            foreach (ListViewItem item in lvv)
-            {
-                id += Int32.Parse(item.SubItems[0].Text);
-            }
-            txtMaHDC.Text = id.ToString();
             int MaHoaDonCam = int.Parse(txtMaHDC.Text);
+            DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayCamHD.Text);
+            DateTime NgayDongLai =(DateTime)Convert.ToDateTime(DateTime.Now);
+            txtTienLai.Text =Convert.ToString(PhieuLaiDAO.Instance.TienLai(NgayLap,NgayDongLai, MaHoaDonCam));
             LoadPhieuLai(MaHoaDonCam);
         }
         void LoadCboKH()
@@ -150,8 +117,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnDongLai_Click(object sender, EventArgs e)
         {
-            PhieuLaiDAO.Instance.InsertPhieuLai(Convert.ToInt32(txtMaHDC.Text),DateTime.Now, Convert.ToDouble(txtTongTien.Text));
-
+            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+            if(PhieuLaiDAO.Instance.InsertPhieuLai(Convert.ToInt32(txtMaHDC.Text),DateTime.Now, Convert.ToDouble(txtTienLai.Text)))
+            {
+                MessageBox.Show("Đóng Lãi Thành Công");
+                LoadPhieuLai(MaHoaDonCam);
+            }
         }
     }
 }

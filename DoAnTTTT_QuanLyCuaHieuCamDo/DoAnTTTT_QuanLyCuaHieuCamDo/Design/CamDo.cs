@@ -246,12 +246,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
         }
-        //void LoadTongTien()
-        //{
-        //    int MaHoaDonCam = Convert.ToInt32(txtMaHDC.Text);
-        //    HoaDonCamDAO.Instance.UpdateTongTien(MaHoaDonCam);
-        //    LoadHoaDonCam();
-        //}
+        void LoadTongTien()
+        {
+            int MaHoaDonCam = Convert.ToInt32(txtMaHDC.Text);
+            HoaDonCamDAO.Instance.UpdateTongTien(MaHoaDonCam);
+            LoadHoaDonCam();
+        }
         private void btnThemSP_Click(object sender, EventArgs e)
         {
             
@@ -279,10 +279,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     {
                         MessageBox.Show("Thêm Thành Công");
                         LoadCTHoaDonCam(id);
-                        
-                        txtTongTien.Text = Convert.ToString(tongtien);
-                        HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam,tongtien);
-                        LoadHoaDonCam();
+                        LoadTongTien();
+                        //txtTongTien.Text = Convert.ToString(tongtien);
+                        //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam,tongtien);
                     }
                     else
                     {
@@ -317,7 +316,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     {
                         MessageBox.Show("Sửa Thành Công");
                         LoadCTHoaDonCam(id);
-                        //LoadTongTien();
+                        //txtTongTien.Text = Convert.ToString(tongtien);
+                        //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
+                        LoadTongTien();
                     }
                 }
                 else
@@ -337,7 +338,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
             int id = int.Parse(txtMaHDC.Text);
-            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
             if (txtMaSP.Text == null)
             {
                 MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
@@ -350,7 +350,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 if (ChiTietHoaDonCamDAO.Instance.DeletetoBillHDC(MaSP))
                 {
                     SanPhamDAO.Instance.DeleteSP(MaSP);
-                    //LoadTongTien();
+                    //txtTongTien.Text = Convert.ToString(tongtien);
+                    //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
+                    LoadTongTien();
                 }
                 else
                 {

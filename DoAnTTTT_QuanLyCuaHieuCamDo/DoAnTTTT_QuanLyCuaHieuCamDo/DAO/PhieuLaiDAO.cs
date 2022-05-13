@@ -63,9 +63,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }
-        public string Ngay(int MaHoaDonCam,DateTime ngaydong)
+        public string Ngay(int MaHoaDonCam, DateTime ngaydong)
         {
-            string query = string.Format("SELECT DATEDIFF(day,HoaDonCam.NgayDongLai , N'{1}') from HoaDonCam where HoaDonCam.MaHoaDonCam=N'{0}' ", MaHoaDonCam,ngaydong);
+            string query = string.Format("SELECT DATEDIFF(day,HoaDonCam.NgayDongLai , N'{1}') from HoaDonCam where HoaDonCam.MaHoaDonCam=N'{0}' ", MaHoaDonCam, ngaydong);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
+
+        public string TienLai( DateTime NgayLap , DateTime NgayDongLai,int MaHoaDonCam)
+        {
+            string query = string.Format("exec USP_TinhTienLai1 '{0}','{1}',{2}", NgayLap,NgayDongLai, MaHoaDonCam);
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }

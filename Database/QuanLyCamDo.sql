@@ -157,11 +157,12 @@ create proc USP_UpdateTongTienHDC
 as
 	begin
 		declare @TT float
-		SELECT @TT = ISNULL(SUM(GiaThanhLy),0) FROM ChiTiet_HoaDonCam a , SanPham b  WHERE a.MaSP = b.MaSP and MaHoaDonCam = @Id_HDC 
+		SELECT @TT = ISNULL(SUM(b.DinhGia),0) FROM ChiTiet_HoaDonCam a , SanPham b  WHERE a.MaSP = b.MaSP and a.MaHoaDonCam = @Id_HDC 
 		update HoaDonCam set TongTienCam = @TT where MaHoaDonCam = @ID_HDC
 	end
 GO
 
+exec USP_UpdateTongTienHDC 4
 
 create proc USP_UpdateTongTienThanHLy
 @MaThanhLy int
@@ -172,6 +173,44 @@ as
 		update ThanhLy set TongTienThanhLy = @TT where MaThanhLy = @MaThanhLy
 	end
 GO
+
+create proc USP_TinhTienLai
+@NgayCam Datetime, @NgayDongLai Datetime , @MaHDC int
+
+as
+	begin
+		declare @SoNgayDaCam float , @TienLai float
+		 select @SoNgayDaCam =  DATEDIFF(day,@NgayCam,@NgayDongLai) from HoaDonCam a , PhieuLai b 
+			where a.MaHoaDonCam = b.MaHoaDonCam  and b.MaHoaDonCam = @MaHDC
+		 select @TienLai = @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d 
+			where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = @MaHDC and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
+		update PhieuLai  set ThanhTien = @TienLai where MaHoaDonCam = @MaHDC
+	end
+go
+
+
+create proc USP_TinhTienLai1
+@NgayCam Datetime, @NgayDongLai Datetime , @MaHDC int
+
+as
+	begin
+		declare @SoNgayDaCam float 
+		 select @SoNgayDaCam =  DATEDIFF(day,@NgayCam,@NgayDongLai) from HoaDonCam a , PhieuLai b 
+			where a.MaHoaDonCam = b.MaHoaDonCam  and b.MaHoaDonCam = @MaHDC
+		 select  @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d 
+			where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = @MaHDC and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
+	end
+go
+
+
+exec USP_TinhTienLai1 '2022-04-12','2022-05-12',4
+
+
+select DATEDIFF(day,a.NgayLap,b.NgayDongLai) from HoaDonCam a , PhieuLai b where a.MaHoaDonCam = b.MaHoaDonCam and  b.MaHoaDonCam = 2
+
+select 30*(c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c,HoaDonCam d 
+where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = 2 and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
+
 
 
 select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1
@@ -205,4 +244,4 @@ select c.MaPhieuChuoc, a.MaSP,a.TenSP,a.GiaThanhLy,b.LaiXuat, a.DaThanhLy * b.La
 
 select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang  
 from ChiTiet_HoaDonCam a,SanPham b,LoaiSP c, KhachHang d,HoaDonCam e
-where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH                 and b.DaChuoc=0 and b.DaThanhLy=0 and b.QuaHan=0 and b.ThanhLy=0
+where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH and b.DaChuoc=0 and b.DaThanhLy=0 and b.QuaHan=0 and b.ThanhLy=0

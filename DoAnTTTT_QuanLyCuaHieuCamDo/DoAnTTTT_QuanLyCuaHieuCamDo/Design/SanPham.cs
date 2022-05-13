@@ -215,6 +215,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 return;
             }
             LoadSanPham();
+            
         }
         private void btnThanhLy_Click(object sender, EventArgs e)
         {
