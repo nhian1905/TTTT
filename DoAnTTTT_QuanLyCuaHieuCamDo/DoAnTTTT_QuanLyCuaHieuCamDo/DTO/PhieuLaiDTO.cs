@@ -13,12 +13,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         //private int maHoaDonCam;
         private string tenKH;
         private DateTime ngayDongLai;
-        private float tongTien;
+        private double tongTien;
 
         public int MaPhieuLai { get => maPhieuLai; set => maPhieuLai = value; }
         public string TenKH { get => tenKH; set => tenKH = value; }
         //public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public double TongTien { get => tongTien; set => tongTien = value; }
         public DateTime NgayDongLai { get => ngayDongLai; set => ngayDongLai = value; }
         
 
