@@ -70,11 +70,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LVPhieuLai = new System.Windows.Forms.ListView();
-            this.btnIn = new System.Windows.Forms.Button();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnIn = new System.Windows.Forms.Button();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -565,6 +565,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVPhieuLai.UseCompatibleStateImageBehavior = false;
             this.LVPhieuLai.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mã Phiếu Lãi";
+            this.columnHeader6.Width = 160;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tên Khách Hàng";
+            this.columnHeader7.Width = 181;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Ngày Đóng Lãi";
+            this.columnHeader8.Width = 160;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Thành Tiền";
+            this.columnHeader9.Width = 181;
+            // 
             // btnIn
             // 
             this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
@@ -578,26 +598,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIn.TabIndex = 48;
             this.btnIn.Text = "In phiếu";
             this.btnIn.UseVisualStyleBackColor = false;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mã Phiếu Lãi";
-            this.columnHeader6.Width = 160;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Mã Hóa Đơn Cầm";
-            this.columnHeader7.Width = 181;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Ngày Đóng Lãi";
-            this.columnHeader8.Width = 160;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Thành Tiền";
-            this.columnHeader9.Width = 181;
             // 
             // DongLai
             // 

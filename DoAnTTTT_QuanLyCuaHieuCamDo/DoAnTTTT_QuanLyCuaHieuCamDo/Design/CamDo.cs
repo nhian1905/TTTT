@@ -24,6 +24,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadHoaDonCam();
             LoadCboKhachHang();
             LoadCboLoaiSP();
+            
         }
 
         void LoadCboKhachHang()
@@ -176,7 +177,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 }
             }
         }
-
+        
         private void LvPhieuCam_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection lv = this.LvPhieuCam.SelectedItems;
@@ -244,7 +245,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
-            txtMaSP.Enabled = false;
         }
         //void LoadTongTien()
         //{

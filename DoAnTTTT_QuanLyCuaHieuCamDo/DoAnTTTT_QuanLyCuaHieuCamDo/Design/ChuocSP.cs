@@ -44,7 +44,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         void LoadSP(int MaHDC)
         {
             LvSanPham.Items.Clear();
-            List<ChiTietHoaDonCamDTO> list = ChiTietHoaDonCamDAO.Instance.LoadListCTHDC(MaHDC);
+            List<ChiTietHoaDonCamDTO> list = ChiTietHoaDonCamDAO.Instance.LoadListSP(MaHDC);
             foreach (ChiTietHoaDonCamDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
@@ -59,10 +59,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
-        void LoadCTPC()
+        void LoadCTPhieuChuoc(int MaPhieuChuoc)
         {
             LvCTPhieuChuoc.Items.Clear();
-            List<ChiTietPhieuChuocDTO> list = ChiTietPhieuChuocDAO.Instance.LoadListCTPhieuChuoc();
+            List<ChiTietPhieuChuocDTO> list = ChiTietPhieuChuocDAO.Instance.LoadListCTPhieuChuocByPC(MaPhieuChuoc);
             foreach (ChiTietPhieuChuocDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
@@ -122,13 +122,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMaHDC.Text = mahoadoncam.ToString();
             cboMaKH.Text = PhieuChuocDAO.Instance.MaKH(mahoadoncam);
 
-            ListView.SelectedListViewItemCollection lvv = this.LvHoaDonCam.SelectedItems;
-            int id = 0;
-            foreach (ListViewItem item in lvv)
-            {
-                id += Int32.Parse(item.SubItems[0].Text);
-            }
-            txtMaHDC.Text = id.ToString();
             int MaHoaDonCam = int.Parse(txtMaHDC.Text);
             LoadSP(MaHoaDonCam);
         }
@@ -148,6 +141,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             if (dtpNgayChuoc.Text != "")
             {
+                string MaSP = txtMaSP.Text;
                 DateTime NgayChuoc = (DateTime)Convert.ToDateTime(dtpNgayChuoc.Value).Date;
                 float TongTien = (float)Convert.ToDouble(0);
                 int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
@@ -155,6 +149,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 {
                     MessageBox.Show("Thêm Hóa Đơn Thành Công");
                     lbMaHDChuoc.Text = PhieuChuocDAO.Instance.MaPC(MaHoaDonCam, NgayChuoc);
+                    int MaPhieuChuoc = (int)Convert.ToInt32(lbMaHDChuoc.Text);
+                    LoadCTPhieuChuoc(MaPhieuChuoc);
+                    
                 }
                 else
                 {
@@ -170,8 +167,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void ThemSP_Click(object sender, EventArgs e)
         {
-            
-            
+            int MaHDC = (int)Convert.ToInt32(txtMaHDC.Text);
             int MaPC = (int)Convert.ToInt32(lbMaHDChuoc.Text);
             string MaSP = txtMaSP.Text;
             float TienLai = (float)Convert.ToDouble(0);
@@ -179,13 +175,44 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             if (ChiTietPhieuChuocDAO.Instance.InsertSPtoBillPhieuChuoc(MaPC, MaSP,TienLai, TongTien))
             {
                 MessageBox.Show("Thêm Thành Công");
-                //LoadCTPC();
+                ChiTietPhieuChuocDAO.Instance.UpdateSPDaChuoc(MaSP);
+                LoadCTPhieuChuoc(MaPC);
                 LoadTongTien();
+                LoadSP(MaHDC);
             }
             else
             {
                 MessageBox.Show("Thêm thất bại");
             }
+        }
+
+        private void XoaSP_Click(object sender, EventArgs e)
+        {
+            int MaHDChuoc = int.Parse(lbMaHDChuoc.Text);
+            if (txtMaSP.Text == null)
+            {
+                MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
+                return;
+            }
+            string MaSP = txtMaSP.Text;
+            int MaHDC = (int)Convert.ToInt32(txtMaHDC.Text);
+            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (tb == DialogResult.Yes)
+            {
+                if (ChiTietPhieuChuocDAO.Instance.DeletetoBillThanhLy(MaSP))
+                {
+                    MessageBox.Show("Xóa Thành Công");
+                    LoadSP(MaHDC);
+                    LoadTongTien();
+                    ChiTietPhieuChuocDAO.Instance.UpdateXoaSPDaChuoc(MaSP);
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            LoadCTPhieuChuoc(MaHDChuoc);
         }
     }
 }

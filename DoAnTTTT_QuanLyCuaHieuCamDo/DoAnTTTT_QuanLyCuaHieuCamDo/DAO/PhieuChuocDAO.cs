@@ -49,6 +49,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+       
+
         public bool InsertPhieuChuoc(int MaHoaDonCam, DateTime NgayChuoc, float TongTien)
         {
             string query = string.Format("insert PhieuChuoc( MaHoaDonCam ,NgayChuoc ,TongTien) values (N'{0}',N'{1}',N'{2}')", MaHoaDonCam, NgayChuoc, TongTien);
@@ -75,5 +78,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }
+
+        
     }
 }

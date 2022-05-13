@@ -41,7 +41,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<PhieuLaiDTO> LoadListPhieuLai(int MaHoaDonCam)
         {
             List<PhieuLaiDTO> LoadList = new List<PhieuLaiDTO>();
-            string query = "select b.MaPhieuLai,a.MaHoaDonCam , b.NgayDongLai , b.ThanhTien from HoaDonCam a , PhieuLai b where a.MaHoaDonCam = b.MaHoaDonCam and b.MaHoaDonCam = "+MaHoaDonCam;
+            string query = "select b.MaPhieuLai,c.TenKH , b.NgayDongLai , b.ThanhTien from HoaDonCam a , PhieuLai b ,KhachHang c where a.MaHoaDonCam = b.MaHoaDonCam and a.MaKH = c.MaKH and b.MaHoaDonCam = "+MaHoaDonCam;
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {

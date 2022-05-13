@@ -59,9 +59,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq > 0;
         }
 
-        public bool DeletetoBillThanhLy(int MaThanhLy, string MaSP)
+        public bool DeletetoBillThanhLy( string MaSP)
         {
-            string query = string.Format("delete ChiTiet_ThanhLy where MaThanhLy = N'{0}' and MaSP =N'{1}'", MaThanhLy, MaSP);
+            string query = string.Format("delete ChiTiet_PhieuChuoc where MaSP = N'{0}'", MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+        public bool UpdateSPDaChuoc(string MaSP)
+        {
+            string query = string.Format("update SanPham set DaChuoc= 1  where MaSP=N'{0}'", MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
+
+        public bool UpdateXoaSPDaChuoc(string MaSP)
+        {
+            string query = string.Format("update SanPham set DaChuoc= 0  where MaSP=N'{0}'", MaSP);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

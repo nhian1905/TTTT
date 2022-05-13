@@ -69,10 +69,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
-            this.btnXoaKH = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-            this.btnThemKH = new System.Windows.Forms.Button();
+            this.btnIN = new System.Windows.Forms.Button();
             this.LvSanPham = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -382,10 +380,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             this.groupBox2.Controls.Add(this.LvCTPhieuChuoc);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.btnXoaKH);
             this.groupBox2.Controls.Add(this.txtTongTien);
-            this.groupBox2.Controls.Add(this.btnSuaKH);
-            this.groupBox2.Controls.Add(this.btnThemKH);
+            this.groupBox2.Controls.Add(this.btnIN);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(617, 342);
@@ -466,25 +462,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(395, 552);
+            this.label8.Location = new System.Drawing.Point(26, 552);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 22);
             this.label8.TabIndex = 79;
             this.label8.Text = "Tổng Tiền";
-            // 
-            // btnXoaKH
-            // 
-            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaKH.FlatAppearance.BorderSize = 0;
-            this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(238, 543);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaKH.TabIndex = 70;
-            this.btnXoaKH.Text = "Xóa";
-            this.btnXoaKH.UseVisualStyleBackColor = false;
             // 
             // txtTongTien
             // 
@@ -494,39 +476,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.ForeColor = System.Drawing.Color.White;
-            this.txtTongTien.Location = new System.Drawing.Point(515, 553);
+            this.txtTongTien.Location = new System.Drawing.Point(146, 553);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(145, 22);
+            this.txtTongTien.Size = new System.Drawing.Size(200, 22);
             this.txtTongTien.TabIndex = 78;
             this.txtTongTien.Tag = "";
             // 
-            // btnSuaKH
+            // btnIN
             // 
-            this.btnSuaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSuaKH.FlatAppearance.BorderSize = 0;
-            this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Location = new System.Drawing.Point(133, 543);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaKH.TabIndex = 69;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = false;
-            // 
-            // btnThemKH
-            // 
-            this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThemKH.FlatAppearance.BorderSize = 0;
-            this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Location = new System.Drawing.Point(28, 543);
-            this.btnThemKH.Name = "btnThemKH";
-            this.btnThemKH.Size = new System.Drawing.Size(99, 38);
-            this.btnThemKH.TabIndex = 68;
-            this.btnThemKH.Text = "Thêm ";
-            this.btnThemKH.UseVisualStyleBackColor = false;
+            this.btnIN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnIN.FlatAppearance.BorderSize = 0;
+            this.btnIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIN.ForeColor = System.Drawing.Color.White;
+            this.btnIN.Location = new System.Drawing.Point(582, 543);
+            this.btnIN.Name = "btnIN";
+            this.btnIN.Size = new System.Drawing.Size(99, 38);
+            this.btnIN.TabIndex = 68;
+            this.btnIN.Text = "In";
+            this.btnIN.UseVisualStyleBackColor = false;
             // 
             // LvSanPham
             // 
@@ -650,6 +618,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.XoaSP.TabIndex = 71;
             this.XoaSP.Text = "Xóa";
             this.XoaSP.UseVisualStyleBackColor = false;
+            this.XoaSP.Click += new System.EventHandler(this.XoaSP_Click);
             // 
             // lbMaHDChuoc
             // 
@@ -782,9 +751,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView LvCTPhieuChuoc;
-        private System.Windows.Forms.Button btnXoaKH;
-        private System.Windows.Forms.Button btnSuaKH;
-        private System.Windows.Forms.Button btnThemKH;
+        private System.Windows.Forms.Button btnIN;
         private System.Windows.Forms.ListView LvSanPham;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnThemHDChuoc;

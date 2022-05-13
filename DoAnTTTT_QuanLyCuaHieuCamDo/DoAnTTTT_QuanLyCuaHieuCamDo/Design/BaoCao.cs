@@ -156,7 +156,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             foreach (PhieuLaiDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaPhieuLai.ToString());
-                lvitem.SubItems.Add(item.MaHoaDonCam.ToString());
+                lvitem.SubItems.Add(item.TenKH.ToString());
                 lvitem.SubItems.Add(item.NgayDongLai.ToString());
                 lvitem.SubItems.Add(item.TongTien.ToString());
                 LVPhieuLai.Items.Add(lvitem);
