@@ -987,6 +987,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.TabIndex = 37;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // BaoCao
             // 

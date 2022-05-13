@@ -53,7 +53,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         public bool UpdateSPTL(string MaSP)
         {
-            string query = string.Format("update SanPham set DaThanhLy = 1 where MaSP = N'{0}'", MaSP);
+            string query = string.Format("update SanPham set DaThanhLy = 1,ThanhLy=0 where MaSP = N'{0}'", MaSP);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

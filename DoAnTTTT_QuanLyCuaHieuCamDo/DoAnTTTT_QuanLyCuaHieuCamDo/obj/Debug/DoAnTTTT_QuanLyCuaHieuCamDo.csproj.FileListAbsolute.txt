@@ -122,3 +122,9 @@ E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\Do
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.BaoCao.resources
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.DongLai.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.DongLai.resources
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\EPPlus.dll
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\EPPlus.Interfaces.dll
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\EPPlus.System.Drawing.dll
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\EPPlus.xml
+E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
