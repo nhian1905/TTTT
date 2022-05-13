@@ -54,6 +54,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
+        void LoadNgayDongLaiHDC()
+        {
+            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+            DateTime NgayDongLai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            PhieuLaiDAO.Instance.UpdateNgayLap(NgayDongLai, MaHoaDonCam);
+            LoadHoaDonCam();
+        }
         private void LvPhieuCam_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -82,9 +89,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtTongTien.Text = tongtiencam.ToString();
             cboMaKH.Text = PhieuLaiDAO.Instance.MaKH(mahoadoncam);
             int MaHoaDonCam = int.Parse(txtMaHDC.Text);
-            DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayCamHD.Text);
-            DateTime NgayDongLai =(DateTime)Convert.ToDateTime(DateTime.Now);
-            txtTienLai.Text =Convert.ToString(PhieuLaiDAO.Instance.TienLai(NgayLap,NgayDongLai, MaHoaDonCam));
+            DateTime NgayHienTai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            txtTienLai.Text =Convert.ToString(PhieuLaiDAO.Instance.TienLai( NgayHienTai, MaHoaDonCam));
             LoadPhieuLai(MaHoaDonCam);
         }
         void LoadCboKH()
@@ -122,6 +128,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 MessageBox.Show("Đóng Lãi Thành Công");
                 LoadPhieuLai(MaHoaDonCam);
+                LoadNgayDongLaiHDC();
+                txtTienLai.Clear();
             }
         }
     }

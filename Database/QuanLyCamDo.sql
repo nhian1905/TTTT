@@ -162,7 +162,7 @@ as
 	end
 GO
 
-exec USP_UpdateTongTienHDC 4
+
 
 create proc USP_UpdateTongTienThanHLy
 @MaThanhLy int
@@ -174,42 +174,34 @@ as
 	end
 GO
 
+
 create proc USP_TinhTienLai
-@NgayCam Datetime, @NgayDongLai Datetime , @MaHDC int
+
+ @NgayHienTai Datetime , @MaHDC int
 
 as
 	begin
-		declare @SoNgayDaCam float , @TienLai float
-		 select @SoNgayDaCam =  DATEDIFF(day,@NgayCam,@NgayDongLai) from HoaDonCam a , PhieuLai b 
-			where a.MaHoaDonCam = b.MaHoaDonCam  and b.MaHoaDonCam = @MaHDC
-		 select @TienLai = @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d 
-			where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = @MaHDC and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
-		update PhieuLai  set ThanhTien = @TienLai where MaHoaDonCam = @MaHDC
-	end
-go
-
-
-create proc USP_TinhTienLai1
-@NgayCam Datetime, @NgayDongLai Datetime , @MaHDC int
-
-as
-	begin
-		declare @SoNgayDaCam float 
-		 select @SoNgayDaCam =  DATEDIFF(day,@NgayCam,@NgayDongLai) from HoaDonCam a , PhieuLai b 
-			where a.MaHoaDonCam = b.MaHoaDonCam  and b.MaHoaDonCam = @MaHDC
+		declare @SoNgayDaCam int 
+		 select @SoNgayDaCam =  DATEDIFF(day,a.NgayDongLai,@NgayHienTai) from HoaDonCam a 
+			where  a.MaHoaDonCam = @MaHDC
 		 select  @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d 
 			where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = @MaHDC and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
 	end
 go
 
+exec USP_TinhTienLai '2022-5-12',1
 
-exec USP_TinhTienLai1 '2022-04-12','2022-05-12',4
 
+create proc USP_UpdateNgayDongLaiHDC
+@MaHDC int
 
-select DATEDIFF(day,a.NgayLap,b.NgayDongLai) from HoaDonCam a , PhieuLai b where a.MaHoaDonCam = b.MaHoaDonCam and  b.MaHoaDonCam = 2
-
-select 30*(c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c,HoaDonCam d 
-where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = 2 and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
+as
+	begin
+		declare @NgayDongLai date
+		select @NgayDongLai = NgayDongLai from PhieuLai where MaHoaDonCam = @MaHDC
+		update HoaDonCam set NgayDongLai = @NgayDongLai where MaHoaDonCam = @MaHDC
+	end
+go
 
 
 

@@ -79,8 +79,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThemHDChuoc = new System.Windows.Forms.Button();
             this.ThemSP = new System.Windows.Forms.Button();
@@ -418,44 +416,61 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // columnHeader14
             // 
             this.columnHeader14.Text = "Mã SP";
+            this.columnHeader14.Width = 119;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Tên SP";
+            this.columnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader15.Width = 147;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Định Giá";
+            this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader16.Width = 152;
             // 
             // columnHeader17
             // 
             this.columnHeader17.Text = "Lãi Xuất";
+            this.columnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader17.Width = 166;
             // 
             // columnHeader18
             // 
             this.columnHeader18.Text = "Tiền Lãi";
+            this.columnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader18.Width = 186;
             // 
             // columnHeader19
             // 
             this.columnHeader19.Text = "Màu Sắc";
+            this.columnHeader19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader19.Width = 149;
             // 
             // columnHeader20
             // 
             this.columnHeader20.Text = "Nhãn Hiệu";
+            this.columnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader20.Width = 158;
             // 
             // columnHeader21
             // 
             this.columnHeader21.Text = "Mô Tả";
+            this.columnHeader21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader21.Width = 247;
             // 
             // columnHeader22
             // 
             this.columnHeader22.Text = "Hiện Trạng";
-            this.columnHeader22.Width = 144;
+            this.columnHeader22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader22.Width = 288;
             // 
             // columnHeader23
             // 
             this.columnHeader23.Text = "Tổng Tiền";
-            this.columnHeader23.Width = 131;
+            this.columnHeader23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader23.Width = 177;
             // 
             // label8
             // 
@@ -505,9 +520,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader24,
-            this.columnHeader25});
+            this.columnHeader12});
             this.LvSanPham.FullRowSelect = true;
             this.LvSanPham.GridLines = true;
             this.LvSanPham.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -523,45 +536,43 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // columnHeader6
             // 
             this.columnHeader6.Text = "Mã SP";
-            this.columnHeader6.Width = 97;
+            this.columnHeader6.Width = 116;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Tên SP";
-            this.columnHeader7.Width = 134;
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 118;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Định Giá";
-            this.columnHeader8.Width = 151;
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 134;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Màu Sắc";
-            this.columnHeader9.Width = 109;
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 113;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Nhãn Hiệu";
-            this.columnHeader10.Width = 120;
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader10.Width = 127;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Mô Tả";
-            this.columnHeader11.Width = 176;
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 244;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Hiện Trạng";
-            this.columnHeader12.Width = 158;
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "Lãi Xuất";
-            // 
-            // columnHeader25
-            // 
-            this.columnHeader25.Text = "Tiền Lãi";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 200;
             // 
             // groupBox1
             // 
@@ -785,7 +796,5 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
-        private System.Windows.Forms.ColumnHeader columnHeader24;
-        private System.Windows.Forms.ColumnHeader columnHeader25;
     }
 }

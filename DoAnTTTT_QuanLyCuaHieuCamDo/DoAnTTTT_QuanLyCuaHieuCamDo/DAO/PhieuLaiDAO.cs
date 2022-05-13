@@ -70,11 +70,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq;
         }
 
-        public string TienLai( DateTime NgayLap , DateTime NgayDongLai,int MaHoaDonCam)
+        public string TienLai( DateTime NgayDongLai,int MaHoaDonCam)
         {
-            string query = string.Format("exec USP_TinhTienLai1 '{0}','{1}',{2}", NgayLap,NgayDongLai, MaHoaDonCam);
+            string query = string.Format("exec USP_TinhTienLai '{0}',{1}", NgayDongLai, MaHoaDonCam);
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
+        }
+
+        public bool UpdateNgayLap( DateTime NgayDongLai, int MaHoaDonCam)
+        {
+            string query = string.Format("Update HoaDonCam set NgayDongLai = N'{0}' where MaHoaDonCam = N'{1}'", NgayDongLai, MaHoaDonCam);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
         }
     }
 }

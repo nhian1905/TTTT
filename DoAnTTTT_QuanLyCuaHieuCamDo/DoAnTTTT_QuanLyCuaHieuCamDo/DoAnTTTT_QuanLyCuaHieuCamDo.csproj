@@ -143,6 +143,9 @@
     </Compile>
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BaoCaoCamDTO.cs" />
+    <Compile Include="DTO\BaoCaoChuocDTO.cs" />
+    <Compile Include="DTO\BaoCaoLaiDTO.cs" />
+    <Compile Include="DTO\BaoCaoThanhLyDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonCamDTO.cs" />
     <Compile Include="DTO\ChiTietPhieuChuocDTO.cs" />
     <Compile Include="DTO\ChiTietThanhLyDTO.cs" />
