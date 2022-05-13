@@ -44,13 +44,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTatCa = new System.Windows.Forms.Button();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbDaThanhLy = new System.Windows.Forms.CheckBox();
-            this.cbThanhLy = new System.Windows.Forms.CheckBox();
-            this.cbDaChuoc = new System.Windows.Forms.CheckBox();
-            this.cbQuaHan = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMaLoai = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnXoaLoaiSP = new System.Windows.Forms.Button();
             this.btnSuaLoaiSP = new System.Windows.Forms.Button();
             this.btnThemLoaiSP = new System.Windows.Forms.Button();
@@ -86,8 +83,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.txtMaLoai = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.rboQuaHan = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboDaChuoc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboDaThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -198,29 +197,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnTatCa.TabIndex = 11;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
-            // 
-            // btnLoc
-            // 
-            this.btnLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(1066, 21);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(99, 38);
-            this.btnLoc.TabIndex = 34;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.UseVisualStyleBackColor = false;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbDaThanhLy);
-            this.groupBox1.Controls.Add(this.btnLoc);
-            this.groupBox1.Controls.Add(this.cbThanhLy);
-            this.groupBox1.Controls.Add(this.cbDaChuoc);
-            this.groupBox1.Controls.Add(this.cbQuaHan);
+            this.groupBox1.Controls.Add(this.rboDaThanhLy);
+            this.groupBox1.Controls.Add(this.rboThanhLy);
+            this.groupBox1.Controls.Add(this.rboDaChuoc);
+            this.groupBox1.Controls.Add(this.rboQuaHan);
             this.groupBox1.Controls.Add(this.btnTatCa);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -230,46 +214,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc sản phẩm";
-            // 
-            // cbDaThanhLy
-            // 
-            this.cbDaThanhLy.AutoSize = true;
-            this.cbDaThanhLy.Location = new System.Drawing.Point(755, 31);
-            this.cbDaThanhLy.Name = "cbDaThanhLy";
-            this.cbDaThanhLy.Size = new System.Drawing.Size(131, 28);
-            this.cbDaThanhLy.TabIndex = 3;
-            this.cbDaThanhLy.Text = "Đã thanh lý";
-            this.cbDaThanhLy.UseVisualStyleBackColor = true;
-            // 
-            // cbThanhLy
-            // 
-            this.cbThanhLy.AutoSize = true;
-            this.cbThanhLy.Location = new System.Drawing.Point(504, 31);
-            this.cbThanhLy.Name = "cbThanhLy";
-            this.cbThanhLy.Size = new System.Drawing.Size(106, 28);
-            this.cbThanhLy.TabIndex = 2;
-            this.cbThanhLy.Text = "Thanh lý";
-            this.cbThanhLy.UseVisualStyleBackColor = true;
-            // 
-            // cbDaChuoc
-            // 
-            this.cbDaChuoc.AutoSize = true;
-            this.cbDaChuoc.Location = new System.Drawing.Point(250, 31);
-            this.cbDaChuoc.Name = "cbDaChuoc";
-            this.cbDaChuoc.Size = new System.Drawing.Size(113, 28);
-            this.cbDaChuoc.TabIndex = 1;
-            this.cbDaChuoc.Text = "Đã chuộc";
-            this.cbDaChuoc.UseVisualStyleBackColor = true;
-            // 
-            // cbQuaHan
-            // 
-            this.cbQuaHan.AutoSize = true;
-            this.cbQuaHan.Location = new System.Drawing.Point(15, 31);
-            this.cbQuaHan.Name = "cbQuaHan";
-            this.cbQuaHan.Size = new System.Drawing.Size(105, 28);
-            this.cbQuaHan.TabIndex = 0;
-            this.cbQuaHan.Text = "Quá hạn";
-            this.cbQuaHan.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -291,6 +235,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại sản phẩm";
+            // 
+            // txtMaLoai
+            // 
+            this.txtMaLoai.AccessibleDescription = "";
+            this.txtMaLoai.AccessibleName = "";
+            this.txtMaLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txtMaLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaLoai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoai.ForeColor = System.Drawing.Color.White;
+            this.txtMaLoai.Location = new System.Drawing.Point(551, 47);
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(10, 22);
+            this.txtMaLoai.TabIndex = 37;
+            this.txtMaLoai.Tag = "";
+            this.txtMaLoai.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(535, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 22);
+            this.label12.TabIndex = 38;
             // 
             // btnXoaLoaiSP
             // 
@@ -746,31 +715,83 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.TabIndex = 35;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
-            // txtMaLoai
+            // rboQuaHan
             // 
-            this.txtMaLoai.AccessibleDescription = "";
-            this.txtMaLoai.AccessibleName = "";
-            this.txtMaLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txtMaLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaLoai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLoai.ForeColor = System.Drawing.Color.White;
-            this.txtMaLoai.Location = new System.Drawing.Point(551, 47);
-            this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(10, 22);
-            this.txtMaLoai.TabIndex = 37;
-            this.txtMaLoai.Tag = "";
-            this.txtMaLoai.Visible = false;
+            this.rboQuaHan.AutoSize = true;
+            this.rboQuaHan.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboQuaHan.CheckedState.BorderThickness = 0;
+            this.rboQuaHan.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboQuaHan.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboQuaHan.CheckedState.InnerOffset = -4;
+            this.rboQuaHan.Location = new System.Drawing.Point(33, 31);
+            this.rboQuaHan.Name = "rboQuaHan";
+            this.rboQuaHan.Size = new System.Drawing.Size(104, 28);
+            this.rboQuaHan.TabIndex = 35;
+            this.rboQuaHan.Text = "Quá hạn";
+            this.rboQuaHan.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboQuaHan.UncheckedState.BorderThickness = 2;
+            this.rboQuaHan.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboQuaHan.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboQuaHan.CheckedChanged += new System.EventHandler(this.rboQuaHan_CheckedChanged);
             // 
-            // label12
+            // rboDaChuoc
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(535, 31);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 22);
-            this.label12.TabIndex = 38;
+            this.rboDaChuoc.AutoSize = true;
+            this.rboDaChuoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaChuoc.CheckedState.BorderThickness = 0;
+            this.rboDaChuoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaChuoc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboDaChuoc.CheckedState.InnerOffset = -4;
+            this.rboDaChuoc.Location = new System.Drawing.Point(217, 31);
+            this.rboDaChuoc.Name = "rboDaChuoc";
+            this.rboDaChuoc.Size = new System.Drawing.Size(112, 28);
+            this.rboDaChuoc.TabIndex = 36;
+            this.rboDaChuoc.Text = "Đã chuộc";
+            this.rboDaChuoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboDaChuoc.UncheckedState.BorderThickness = 2;
+            this.rboDaChuoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboDaChuoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboDaChuoc.CheckedChanged += new System.EventHandler(this.rboDaChuoc_CheckedChanged);
+            // 
+            // rboThanhLy
+            // 
+            this.rboThanhLy.AutoSize = true;
+            this.rboThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboThanhLy.CheckedState.BorderThickness = 0;
+            this.rboThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboThanhLy.CheckedState.InnerOffset = -4;
+            this.rboThanhLy.Location = new System.Drawing.Point(454, 31);
+            this.rboThanhLy.Name = "rboThanhLy";
+            this.rboThanhLy.Size = new System.Drawing.Size(105, 28);
+            this.rboThanhLy.TabIndex = 37;
+            this.rboThanhLy.Text = "Thanh lý";
+            this.rboThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboThanhLy.UncheckedState.BorderThickness = 2;
+            this.rboThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboThanhLy.CheckedChanged += new System.EventHandler(this.rboThanhLy_CheckedChanged);
+            // 
+            // rboDaThanhLy
+            // 
+            this.rboDaThanhLy.AutoSize = true;
+            this.rboDaThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaThanhLy.CheckedState.BorderThickness = 0;
+            this.rboDaThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboDaThanhLy.CheckedState.InnerOffset = -4;
+            this.rboDaThanhLy.Location = new System.Drawing.Point(688, 31);
+            this.rboDaThanhLy.Name = "rboDaThanhLy";
+            this.rboDaThanhLy.Size = new System.Drawing.Size(130, 28);
+            this.rboDaThanhLy.TabIndex = 38;
+            this.rboDaThanhLy.Text = "Đã thanh lý";
+            this.rboDaThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboDaThanhLy.UncheckedState.BorderThickness = 2;
+            this.rboDaThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboDaThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboDaThanhLy.CheckedChanged += new System.EventHandler(this.rboDaThanhLy_CheckedChanged);
             // 
             // SanPham
             // 
@@ -814,12 +835,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Button btnTatCa;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbDaThanhLy;
-        private System.Windows.Forms.CheckBox cbThanhLy;
-        private System.Windows.Forms.CheckBox cbDaChuoc;
-        private System.Windows.Forms.CheckBox cbQuaHan;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtLaiSuat;
         private System.Windows.Forms.Label label10;
@@ -858,5 +874,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.TextBox txtMaLoai;
         private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2RadioButton rboDaThanhLy;
+        private Guna.UI2.WinForms.Guna2RadioButton rboThanhLy;
+        private Guna.UI2.WinForms.Guna2RadioButton rboDaChuoc;
+        private Guna.UI2.WinForms.Guna2RadioButton rboQuaHan;
     }
 }

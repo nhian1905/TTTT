@@ -11,12 +11,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private int maPhieuChuoc;
         private int maHoaDonCam;
         private DateTime ngayChuoc;
-        private float tongTien;
+        private double tongTien;
 
         public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
         public DateTime NgayChuoc { get => ngayChuoc; set => ngayChuoc = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public double TongTien { get => tongTien; set => tongTien = value; }
 
 
         public PhieuChuocDTO(int MaPhieuChuoc, int MaHoaDonCam, DateTime NgayChuoc, float TongTien)

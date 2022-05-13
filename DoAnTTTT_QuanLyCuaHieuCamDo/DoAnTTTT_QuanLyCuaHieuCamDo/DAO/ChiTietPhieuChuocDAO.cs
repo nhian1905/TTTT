@@ -52,7 +52,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
 
 
-        public bool InsertSPtoBillPhieuChuoc(int MaPhieuChuoc, string MaSP, float TienLai , float TongTien)
+        public bool InsertSPtoBillPhieuChuoc(int MaPhieuChuoc, string MaSP, double TienLai , float TongTien)
         {
             string query = string.Format("insert ChiTiet_PhieuChuoc(MaPhieuChuoc,MaSP,TienLai,TongTien) values(N'{0}',N'{1}',N'{2}',N'{3}')", MaPhieuChuoc, MaSP,TienLai,TongTien);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
@@ -77,6 +77,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string query = string.Format("update SanPham set DaChuoc= 0  where MaSP=N'{0}'", MaSP);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
+        }
+        public string LayGiaSP(string MaSP)
+        {
+            string query = string.Format("select DinhGia from SanPham where MaSP =N'{0}'", MaSP);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
+        public double TongTien(int MaPC)
+        {
+            string query = string.Format("select Sum(TongTien) from ChiTiet_PhieuChuoc where MaPhieuChuoc =N'{0}'", MaPC);
+            double kq = Convert.ToDouble(CSDL.Instance.ExecuteScalar(query));
+            return kq;
         }
     }
 }

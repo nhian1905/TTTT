@@ -168,10 +168,34 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void ThemSP_Click(object sender, EventArgs e)
         {
             int MaHDC = (int)Convert.ToInt32(txtMaHDC.Text);
+            DateTime ngaydong = DateTime.Now;
+
+
             int MaPC = (int)Convert.ToInt32(lbMaHDChuoc.Text);
             string MaSP = txtMaSP.Text;
-            float TienLai = (float)Convert.ToDouble(0);
-            float TongTien = (float)Convert.ToDouble(0);
+            double TienLai = 0;
+
+            string connectionStr = CSDL.connectionStr;
+            SqlConnection kn = new SqlConnection(connectionStr);
+            kn.Open();
+            string sql = "select LoaiSP.LaiXuat * SanPham.DinhGia";
+            sql += " from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam";
+            sql += " where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = '" + MaHDC + "' and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam";
+            sql += " and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0 and SanPham.MaSP='"+MaSP+"'";
+            SqlCommand cmdd = new SqlCommand(sql, kn);
+            SqlDataReader kq = cmdd.ExecuteReader();
+            StringBuilder a = new StringBuilder();
+            while (kq.Read())
+            {
+                for (int i = 0; i < kq.FieldCount; i++)
+                {
+                    TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC,ngaydong)) * Convert.ToDouble(kq[i]) / 100;
+                }
+
+            }
+            kn.Close();
+
+            float TongTien = (float)Convert.ToDouble(ChiTietPhieuChuocDAO.Instance.LayGiaSP(MaSP))+(float)TienLai;
             if (ChiTietPhieuChuocDAO.Instance.InsertSPtoBillPhieuChuoc(MaPC, MaSP,TienLai, TongTien))
             {
                 MessageBox.Show("Thêm Thành Công");
@@ -179,6 +203,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 LoadCTPhieuChuoc(MaPC);
                 LoadTongTien();
                 LoadSP(MaHDC);
+                txtTongTien.Text = Convert.ToString(ChiTietPhieuChuocDAO.Instance.TongTien(MaPC));
+                PhieuChuocDAO.Instance.UpdateTongTien(MaPC);
             }
             else
             {
@@ -202,9 +228,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 if (ChiTietPhieuChuocDAO.Instance.DeletetoBillThanhLy(MaSP))
                 {
                     MessageBox.Show("Xóa Thành Công");
+                    ChiTietPhieuChuocDAO.Instance.UpdateXoaSPDaChuoc(MaSP);
                     LoadSP(MaHDC);
                     LoadTongTien();
-                    ChiTietPhieuChuocDAO.Instance.UpdateXoaSPDaChuoc(MaSP);
+                    
                 }
                 else
                 {
