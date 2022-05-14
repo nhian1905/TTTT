@@ -44,9 +44,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq > 0;
         }
 
-        public bool UpdateHDC(int MaHoaDonCam, int MaKH, DateTime NgayLap, DateTime NgayHetHan, float TongTienCam)
+        public bool UpdateHDC(int MaHoaDonCam, int MaKH, DateTime NgayLap, DateTime NgayHetHan,DateTime NgayDongLai)
         {
-            string query = string.Format("update HoaDonCam set MaKH=N'{0}'  ,NgayLap=N'{1}',NgayHetHan=N'{2}' ,TongTienCam=N'{3}' where MaHoaDonCam=N'{4}'", MaKH, NgayLap, NgayHetHan, TongTienCam, MaHoaDonCam);
+            string query = string.Format("update HoaDonCam set MaKH=N'{0}'  ,NgayLap=N'{1}',NgayHetHan=N'{2}',NgayDongLai=N'{4}' where MaHoaDonCam=N'{3}'", MaKH, NgayLap, NgayHetHan, MaHoaDonCam,NgayDongLai);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

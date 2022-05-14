@@ -37,5 +37,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+        public List<BaoCaoCamDTO> LoadListBaoCaoCamTheoNgay(DateTime NgayDau, DateTime NgayCuoi)
+        {
+            List<BaoCaoCamDTO> LoadList = new List<BaoCaoCamDTO>();
+            string query = string.Format("select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang from ChiTiet_HoaDonCam a,SanPham b, LoaiSP c, KhachHang d, HoaDonCam e where b.MaLoai = c.MaLoai and a.MaHoaDonCam = e.MaHoaDonCam and a.MaSP = b.MaSP and e.MaKH = d.MaKH and e.NgayLap >= N'{0}' and e.NgayLap <= N'{1}'",NgayDau,NgayCuoi);
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                BaoCaoCamDTO SP = new BaoCaoCamDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
     }
 }

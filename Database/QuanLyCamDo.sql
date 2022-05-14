@@ -55,7 +55,7 @@ create table ThanhLy
 (
 	MaThanhLy int identity(1,1) primary key,
 	MaKH int not null,
-	NgayLap datetime ,
+	NgayLap date ,
 	TongTienThanhLy float
 	foreign key(MaKH) references KhachHang(MaKH)
 )
@@ -73,9 +73,9 @@ create table HoaDonCam
 (
 	MaHoaDonCam int identity(1,1) primary key,
 	MaKH int not null,
-	NgayLap datetime ,
-	NgayHetHan datetime ,
-	NgayDongLai datetime ,
+	NgayLap date ,
+	NgayHetHan date ,
+	NgayDongLai date ,
 	TongTienCam float,
 	foreign key(MaKH) references KhachHang(MaKH)
 )
@@ -93,7 +93,7 @@ create table PhieuLai
 (
 	MaPhieuLai int identity(1,1) primary key,
 	MaHoaDonCam int not null,
-	NgayDongLai datetime,
+	NgayDongLai date,
 	ThanhTien float
 	foreign key(MaHoaDonCam) references HoaDonCam(MaHoaDonCam),
 )
@@ -101,7 +101,7 @@ create table PhieuChuoc
 (
 	MaPhieuChuoc int identity(1,1) primary key,
 	MaHoaDonCam int not null ,
-	NgayChuoc datetime,
+	NgayChuoc date,
 	TongTien float
 	foreign key(MaHoaDonCam) references HoaDonCam(MaHoaDonCam),
 )
@@ -177,7 +177,7 @@ GO
 
 create proc USP_TinhTienLai
 
- @NgayHienTai Datetime , @MaHDC int
+ @NgayHienTai date , @MaHDC int
 
 as
 	begin
@@ -251,23 +251,35 @@ select c.MaPhieuChuoc, a.MaSP,a.TenSP,a.GiaThanhLy,b.LaiXuat, a.DaThanhLy * b.La
 
 
 /*BaoCaoCam*/
-select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang  
-from ChiTiet_HoaDonCam a,SanPham b,LoaiSP c, KhachHang d,HoaDonCam e
-where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH and b.DaChuoc=0 and b.DaThanhLy=0 and b.QuaHan=0 and b.ThanhLy=0
+select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang 
+from ChiTiet_HoaDonCam a,SanPham b, LoaiSP c, KhachHang d, HoaDonCam e 
+where b.MaLoai = c.MaLoai and a.MaHoaDonCam = e.MaHoaDonCam and a.MaSP = b.MaSP and e.MaKH = d.MaKH
+
+select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang 
+from ChiTiet_HoaDonCam a,SanPham b, LoaiSP c, KhachHang d, HoaDonCam e 
+where b.MaLoai = c.MaLoai and a.MaHoaDonCam = e.MaHoaDonCam and a.MaSP = b.MaSP and e.MaKH = d.MaKH and e.NgayLap>= '5/2/2022' and e.NgayLap <='5/10/2022'
+
 
 
 /*BaoCaoLai*/
 select  c.MaPhieuLai,a.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,c.NgayDongLai,c.ThanhTien from HoaDonCam a,KhachHang b, PhieuLai c  where c.MaHoaDonCam = a.MaHoaDonCam and b.MaKH = a.MaKH
 
+select  c.MaPhieuLai,a.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,c.NgayDongLai,c.ThanhTien 
+from HoaDonCam a,KhachHang b, PhieuLai c  
+where c.MaHoaDonCam = a.MaHoaDonCam and b.MaKH = a.MaKH and c.NgayDongLai>='5/2/2022' and c.NgayDongLai <='5/10/2022'
+
+
 
 /*BaoCaoThanhLy*/
 select  a.MaThanhLy,b.TenKH,b.SDT,b.CMND,a.NgayLap,d.MaSP,e.TenLoai,d.TenSP,d.GiaThanhLy,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang
 from ThanhLy a,KhachHang b, ChiTiet_ThanhLy c ,SanPham d,LoaiSP e
-where a.MaThanhLy=c.MaThanhLy and a.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai
+where a.MaThanhLy=c.MaThanhLy and a.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai and a.NgayLap >=N'{0}' and a.NgayLap <=N'{1}'
 
 /*BaoCaoChuoc*/
 select  a.MaPhieuChuoc,f.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,a.NgayChuoc,d.MaSP,e.TenLoai,d.TenSP,d.DinhGia,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang,c.TienLai,c.TongTien
 from PhieuChuoc a, KhachHang b, ChiTiet_PhieuChuoc c ,SanPham d,LoaiSP e,HoaDonCam f
 where a.MaHoaDonCam=f.MaHoaDonCam and f.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai and a.MaPhieuChuoc=c.MaPhieuChuoc
+
+select  a.MaPhieuChuoc,f.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,a.NgayChuoc,d.MaSP,e.TenLoai,d.TenSP,d.DinhGia,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang,c.TienLai,c.TongTien from PhieuChuoc a, KhachHang b, ChiTiet_PhieuChuoc c ,SanPham d, LoaiSP e,HoaDonCam f where a.MaHoaDonCam = f.MaHoaDonCam and f.MaKH = b.MaKH and c.MaSP = d.MaSP and d.MaLoai = e.MaLoai and a.MaPhieuChuoc = c.MaPhieuChuoc and a.NgayChuoc >=N'{0}' and a.NgayChuoc <=N'{1}'
 
 

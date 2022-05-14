@@ -25,10 +25,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         private BaoCaoThanhLyDAO() { }
 
-        public List<BaoCaoThanhLyDTO> LoadListBaoCaoLai()
+        public List<BaoCaoThanhLyDTO> LoadListBaoCaoThanhLy()
         {
             List<BaoCaoThanhLyDTO> LoadList = new List<BaoCaoThanhLyDTO>();
             string query = "select  a.MaThanhLy,b.TenKH,b.SDT,b.CMND,a.NgayLap,d.MaSP,e.TenLoai,d.TenSP,d.GiaThanhLy,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang from ThanhLy a,KhachHang b, ChiTiet_ThanhLy c ,SanPham d, LoaiSP e  where a.MaThanhLy = c.MaThanhLy and a.MaKH = b.MaKH and c.MaSP = d.MaSP and d.MaLoai = e.MaLoai";
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                BaoCaoThanhLyDTO SP = new BaoCaoThanhLyDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
+        public List<BaoCaoThanhLyDTO> LoadListBaoCaoThanhLyTheoNgay(DateTime NgayDau,DateTime NgayCuoi)
+        {
+            List<BaoCaoThanhLyDTO> LoadList = new List<BaoCaoThanhLyDTO>();
+            string query = string.Format("select  a.MaThanhLy,b.TenKH,b.SDT,b.CMND,a.NgayLap,d.MaSP,e.TenLoai,d.TenSP,d.GiaThanhLy,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang from ThanhLy a, KhachHang b, ChiTiet_ThanhLy c, SanPham d, LoaiSP e where a.MaThanhLy = c.MaThanhLy and a.MaKH = b.MaKH and c.MaSP = d.MaSP and d.MaLoai = e.MaLoai and a.NgayLap >= N'{0}' and a.NgayLap <= N'{1}'",NgayDau,NgayCuoi);
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {

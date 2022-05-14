@@ -101,7 +101,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayCamHD.Value).Date;
                 DateTime NgayHetHan = (DateTime)Convert.ToDateTime(dtpNgayHetHan.Value).Date;
-                DateTime NgayDongLai = (DateTime)Convert.ToDateTime(dtpNgayCamHD.Value).Date;
+                DateTime NgayDongLai = NgayLap;
                 float TongTienCam = (float)Convert.ToDouble(0);
                 int MaKH = (cboKhachHang.SelectedItem as KhachHangDTO).MaKH;
                 if (HoaDonCamDAO.Instance.InsertHDC(MaKH, NgayLap, NgayHetHan,NgayDongLai, TongTienCam))
@@ -128,9 +128,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
                 DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayCamHD.Value).Date;
                 DateTime NgayHetHan = (DateTime)Convert.ToDateTime(dtpNgayHetHan.Value).Date;
-                float TongTienCam = (float)Convert.ToDouble(0);
+                DateTime NgayDongLai = NgayLap;
                 int MaKH = (cboKhachHang.SelectedItem as KhachHangDTO).MaKH;
-                if (HoaDonCamDAO.Instance.UpdateHDC(MaHoaDonCam, MaKH, NgayLap, NgayHetHan, TongTienCam))
+                if (HoaDonCamDAO.Instance.UpdateHDC(MaHoaDonCam, MaKH, NgayLap, NgayHetHan,NgayDongLai))
                 {
                     MessageBox.Show("Sửa Thành Công", "Thông Báo");
                     LoadHoaDonCam();

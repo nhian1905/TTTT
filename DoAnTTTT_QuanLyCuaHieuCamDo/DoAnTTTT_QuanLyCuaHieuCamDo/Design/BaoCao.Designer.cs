@@ -109,12 +109,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayDau = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayCuoi = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
+            this.cbLoc = new System.Windows.Forms.CheckBox();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -161,6 +162,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.guna2TabControl1.Click += new System.EventHandler(this.guna2TabControl1_Click);
             // 
             // tabPage1
             // 
@@ -961,20 +963,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2TextBox3.TabIndex = 2;
             this.guna2TextBox3.Visible = false;
             // 
-            // guna2DateTimePicker1
+            // dtpNgayDau
             // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(306, 28);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(209, 36);
-            this.guna2DateTimePicker1.TabIndex = 1;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
+            this.dtpNgayDau.Checked = true;
+            this.dtpNgayDau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayDau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDau.ForeColor = System.Drawing.Color.White;
+            this.dtpNgayDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayDau.Location = new System.Drawing.Point(306, 28);
+            this.dtpNgayDau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayDau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayDau.Name = "dtpNgayDau";
+            this.dtpNgayDau.Size = new System.Drawing.Size(209, 36);
+            this.dtpNgayDau.TabIndex = 1;
+            this.dtpNgayDau.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
             // 
             // label1
             // 
@@ -998,20 +1000,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label2.TabIndex = 4;
             this.label2.Text = "Ngày kết thúc";
             // 
-            // guna2DateTimePicker2
+            // dtpNgayCuoi
             // 
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker2.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(703, 28);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(209, 36);
-            this.guna2DateTimePicker2.TabIndex = 3;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
+            this.dtpNgayCuoi.Checked = true;
+            this.dtpNgayCuoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCuoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayCuoi.ForeColor = System.Drawing.Color.White;
+            this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCuoi.Location = new System.Drawing.Point(703, 28);
+            this.dtpNgayCuoi.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayCuoi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayCuoi.Name = "dtpNgayCuoi";
+            this.dtpNgayCuoi.Size = new System.Drawing.Size(209, 36);
+            this.dtpNgayCuoi.TabIndex = 3;
+            this.dtpNgayCuoi.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
             // 
             // btnLoc
             // 
@@ -1026,6 +1028,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnLoc.TabIndex = 36;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnTatCa
             // 
@@ -1040,6 +1043,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnTatCa.TabIndex = 35;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            // 
+            // cbLoc
+            // 
+            this.cbLoc.AutoSize = true;
+            this.cbLoc.Location = new System.Drawing.Point(968, 41);
+            this.cbLoc.Name = "cbLoc";
+            this.cbLoc.Size = new System.Drawing.Size(80, 17);
+            this.cbLoc.TabIndex = 37;
+            this.cbLoc.Text = "checkBox1";
+            this.cbLoc.UseVisualStyleBackColor = true;
             // 
             // BaoCao
             // 
@@ -1047,12 +1061,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
+            this.Controls.Add(this.cbLoc);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnTatCa);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2DateTimePicker2);
+            this.Controls.Add(this.dtpNgayCuoi);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.dtpNgayDau);
             this.Controls.Add(this.guna2TabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaoCao";
@@ -1086,10 +1101,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayDau;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayCuoi;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnTatCa;
         private System.Windows.Forms.Button btnXuat;
@@ -1167,5 +1182,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Button btnEXChuoc;
         private System.Windows.Forms.Button btnEXThanhLy;
         private System.Windows.Forms.Button btnEXDongLai;
+        private System.Windows.Forms.CheckBox cbLoc;
     }
 }

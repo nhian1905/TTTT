@@ -45,7 +45,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         }
         public bool UpdateThanhLy(int MaThanhLy, int MaKH, DateTime NgayLap, float TongTienThanhLy)
         {
-            string query = string.Format("update ThanhLy set MaKH=N'{0}'  ,NgayLap=N'{1}' ,TongTienThanhLy=N'{3}' where MaThanhLy=N'{4}'", MaKH, NgayLap, TongTienThanhLy, MaThanhLy);
+            string query = string.Format("update ThanhLy set MaKH=N'{0}'  ,NgayLap=N'{1}' ,TongTienThanhLy=N'{2}' where MaThanhLy=N'{3}'", MaKH, NgayLap, TongTienThanhLy, MaThanhLy);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

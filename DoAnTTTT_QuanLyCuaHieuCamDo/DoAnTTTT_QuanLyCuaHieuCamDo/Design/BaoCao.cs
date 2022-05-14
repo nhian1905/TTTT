@@ -22,6 +22,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         public BaoCao()
         {
             InitializeComponent();
+            
         }
 
         private void BaoCao_Load(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadPhieuChuoc();
             LoadThanhLy();
             LoadHoaDonCamPL();
+            cbLoc.Checked = false;
         }
 
         void LoadHoaDonCam()
@@ -223,52 +225,58 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-            string filePath = "";
-            // tạo SaveFileDialog để lưu file excel
-            SaveFileDialog dialog = new SaveFileDialog();
-
-            // chỉ lọc ra các file có định dạng Excel
-            dialog.Filter = "Excel Workbook|*.xls";
-
-            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
-            if (dialog.ShowDialog() == DialogResult.OK)
+            DateTime NgayDau = dtpNgayDau.Value;
+            DateTime NgayCuoi = dtpNgayCuoi.Value;
+            if (cbLoc.Checked==true)
             {
-                filePath = dialog.FileName;
-            }
 
-            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
-            }
-
-            try
-            {
-                ExcelPackage.LicenseContext = LicenseContext.Commercial;
-                using (ExcelPackage p = new ExcelPackage())
                 {
-                    // đặt tên người tạo file
-                    p.Workbook.Properties.Author = "NhiAn";
+                    string filePath = "";
+                    // tạo SaveFileDialog để lưu file excel
+                    SaveFileDialog dialog = new SaveFileDialog();
 
-                    // đặt tiêu đề cho file
-                    p.Workbook.Properties.Title = "Báo cáo";
+                    // chỉ lọc ra các file có định dạng Excel
+                    dialog.Filter = "Excel Workbook|*.xls";
 
-                    //Tạo một sheet để làm việc trên đó
-                    p.Workbook.Worksheets.Add("NhiAn");
+                    // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = dialog.FileName;
+                    }
 
-                    // lấy sheet vừa add ra để thao tác
-                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
+                    // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                    if (string.IsNullOrEmpty(filePath))
+                    {
+                        MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                        return;
+                    }
 
-                    // đặt tên cho sheet
-                    ws.Name = "NhiAn";
-                    // fontsize mặc định cho cả sheet
-                    ws.Cells.Style.Font.Size = 13;
-                    // font family mặc định cho cả sheet
-                    ws.Cells.Style.Font.Name = "Calibri";
+                    try
+                    {
+                        ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                        using (ExcelPackage p = new ExcelPackage())
+                        {
+                            // đặt tên người tạo file
+                            p.Workbook.Properties.Author = "NhiAn";
 
-                    // Tạo danh sách các column header
-                    string[] arrColumnHeader = {
+                            // đặt tiêu đề cho file
+                            p.Workbook.Properties.Title = "Báo cáo";
+
+                            //Tạo một sheet để làm việc trên đó
+                            p.Workbook.Worksheets.Add("NhiAn");
+
+                            // lấy sheet vừa add ra để thao tác
+                            ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                            // đặt tên cho sheet
+                            ws.Name = "NhiAn";
+                            // fontsize mặc định cho cả sheet
+                            ws.Cells.Style.Font.Size = 13;
+                            // font family mặc định cho cả sheet
+                            ws.Cells.Style.Font.Name = "Calibri";
+
+                            // Tạo danh sách các column header
+                            string[] arrColumnHeader = {
                                                 "Mã hóa đơn",
                                                 "Tên khách hàng",
                                                 "Ngày cầm",
@@ -282,135 +290,282 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                                                 "Hiện trạng"
                 };
 
-                    // lấy ra số lượng cột cần dùng dựa vào số lượng header
-                    var countColHeader = arrColumnHeader.Count();
+                            // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                            var countColHeader = arrColumnHeader.Count();
 
-                    // merge các column lại từ column 1 đến số column header
-                    // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                    ws.Cells[1, 1].Value = "Thống kê thông tin cầm đồ";
-                    ws.Cells[1, 1, 1, countColHeader].Merge = true;
-                    // in đậm
-                    ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
-                    // căn giữa
-                    ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            // merge các column lại từ column 1 đến số column header
+                            // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                            ws.Cells[1, 1].Value = "Thống kê thông tin cầm đồ";
+                            ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                            // in đậm
+                            ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                            // căn giữa
+                            ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    int colIndex = 1;
-                    int rowIndex = 2;
+                            int colIndex = 1;
+                            int rowIndex = 2;
 
-                    //tạo các header từ column header đã tạo từ bên trên
-                    foreach (var item in arrColumnHeader)
-                    {
-                        var cell = ws.Cells[rowIndex, colIndex];
+                            //tạo các header từ column header đã tạo từ bên trên
+                            foreach (var item in arrColumnHeader)
+                            {
+                                var cell = ws.Cells[rowIndex, colIndex];
 
-                        //set màu thành gray
-                        var fill = cell.Style.Fill;
-                        fill.PatternType = ExcelFillStyle.Solid;
-                        fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+                                //set màu thành gray
+                                var fill = cell.Style.Fill;
+                                fill.PatternType = ExcelFillStyle.Solid;
+                                fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
 
-                        //căn chỉnh các border
-                        var border = cell.Style.Border;
-                        border.Bottom.Style =
-                            border.Top.Style =
-                            border.Left.Style =
-                            border.Right.Style = ExcelBorderStyle.Thin;
+                                //căn chỉnh các border
+                                var border = cell.Style.Border;
+                                border.Bottom.Style =
+                                    border.Top.Style =
+                                    border.Left.Style =
+                                    border.Right.Style = ExcelBorderStyle.Thin;
 
-                        //gán giá trị
-                        cell.Value = item;
+                                //gán giá trị
+                                cell.Value = item;
 
-                        colIndex++;
+                                colIndex++;
+                            }
+
+                            // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                            List<BaoCaoCamDTO> ListBBC = BaoCaoCamDAO.Instance.LoadListBaoCaoCamTheoNgay(NgayDau,NgayCuoi);
+                            double? tongtien = 0;
+                            // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                            foreach (var item in ListBBC)
+                            {
+                                // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                                colIndex = 1;
+
+                                // rowIndex tương ứng từng dòng dữ liệu
+                                rowIndex++;
+
+                                //gán giá trị cho từng cell                      
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                                ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
+                                ws.Cells[rowIndex, colIndex++].Value = item.NgayHetHan.ToShortDateString();
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                                ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+                                tongtien = tongtien + item.DinhGia;
+                                // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                            }
+                            ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
+                            ws.Cells[rowIndex + 1, 8].Value = "Tổng tiền cầm: " + tongtien;
+                            //Lưu file lại
+                            Byte[] bin = p.GetAsByteArray();
+                            File.WriteAllBytes(filePath, bin);
+                        }
+                        MessageBox.Show("Xuất excel thành công!");
                     }
-
-                    // lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                    List<BaoCaoCamDTO> ListBBC = BaoCaoCamDAO.Instance.LoadListBaoCaoCam();
-                    double? tongtien = 0;
-                    // với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                    foreach (var item in ListBBC)
+                    catch (Exception ex)
                     {
-                        // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                        colIndex = 1;
-
-                        // rowIndex tương ứng từng dòng dữ liệu
-                        rowIndex++;
-
-                        //gán giá trị cho từng cell                      
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
-                        ws.Cells[rowIndex, colIndex++].Value = item.NgayHetHan.ToShortDateString();
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MauSac; 
-                        ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
-                        tongtien = tongtien + item.DinhGia;
-                        // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-
-
+                        MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
                     }
-                    ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
-                    ws.Cells[rowIndex + 1, 8].Value = "Tổng tiền cầm: " + tongtien;
-                    //Lưu file lại
-                    Byte[] bin = p.GetAsByteArray();
-                    File.WriteAllBytes(filePath, bin);
                 }
-                MessageBox.Show("Xuất excel thành công!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                string filePath = "";
+                // tạo SaveFileDialog để lưu file excel
+                SaveFileDialog dialog = new SaveFileDialog();
+
+                // chỉ lọc ra các file có định dạng Excel
+                dialog.Filter = "Excel Workbook|*.xls";
+
+                // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = dialog.FileName;
+                }
+
+                // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                    return;
+                }
+
+                try
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    using (ExcelPackage p = new ExcelPackage())
+                    {
+                        // đặt tên người tạo file
+                        p.Workbook.Properties.Author = "NhiAn";
+
+                        // đặt tiêu đề cho file
+                        p.Workbook.Properties.Title = "Báo cáo";
+
+                        //Tạo một sheet để làm việc trên đó
+                        p.Workbook.Worksheets.Add("NhiAn");
+
+                        // lấy sheet vừa add ra để thao tác
+                        ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                        // đặt tên cho sheet
+                        ws.Name = "NhiAn";
+                        // fontsize mặc định cho cả sheet
+                        ws.Cells.Style.Font.Size = 13;
+                        // font family mặc định cho cả sheet
+                        ws.Cells.Style.Font.Name = "Calibri";
+
+                        // Tạo danh sách các column header
+                        string[] arrColumnHeader = {
+                                                "Mã hóa đơn",
+                                                "Tên khách hàng",
+                                                "Ngày cầm",
+                                                "Ngày hết hạn",
+                                                "Mã sản phẩm",
+                                                "Tên loại",
+                                                "Tên sản phẩm",
+                                                "Định giá",
+                                                "Mô tả",
+                                                "Màu sắc",
+                                                "Hiện trạng"
+                };
+
+                        // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                        var countColHeader = arrColumnHeader.Count();
+
+                        // merge các column lại từ column 1 đến số column header
+                        // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                        ws.Cells[1, 1].Value = "Thống kê thông tin cầm đồ";
+                        ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                        // in đậm
+                        ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                        // căn giữa
+                        ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                        int colIndex = 1;
+                        int rowIndex = 2;
+
+                        //tạo các header từ column header đã tạo từ bên trên
+                        foreach (var item in arrColumnHeader)
+                        {
+                            var cell = ws.Cells[rowIndex, colIndex];
+
+                            //set màu thành gray
+                            var fill = cell.Style.Fill;
+                            fill.PatternType = ExcelFillStyle.Solid;
+                            fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+                            //căn chỉnh các border
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
+
+                            //gán giá trị
+                            cell.Value = item;
+
+                            colIndex++;
+                        }
+
+                        // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                        List<BaoCaoCamDTO> ListBBC = BaoCaoCamDAO.Instance.LoadListBaoCaoCam();
+                        double? tongtien = 0;
+                        // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                        foreach (var item in ListBBC)
+                        {
+                            // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                            colIndex = 1;
+
+                            // rowIndex tương ứng từng dòng dữ liệu
+                            rowIndex++;
+
+                            //gán giá trị cho từng cell                      
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayHetHan.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                            ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+                            tongtien = tongtien + item.DinhGia;
+                            // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                        }
+                        ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
+                        ws.Cells[rowIndex + 1, 8].Value = "Tổng tiền cầm: " + tongtien;
+                        //Lưu file lại
+                        Byte[] bin = p.GetAsByteArray();
+                        File.WriteAllBytes(filePath, bin);
+                    }
+                    MessageBox.Show("Xuất excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                }
             }
         }
 
         private void btnEXDongLai_Click(object sender, EventArgs e)
         {
-            string filePath = "";
-            // tạo SaveFileDialog để lưu file excel
-            SaveFileDialog dialog = new SaveFileDialog();
-
-            // chỉ lọc ra các file có định dạng Excel
-            dialog.Filter = "Excel Workbook|*.xls";
-
-            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
-            if (dialog.ShowDialog() == DialogResult.OK)
+            DateTime NgayDau = dtpNgayDau.Value;
+            DateTime NgayCuoi = dtpNgayCuoi.Value;
+            if (cbLoc.Checked==true)
             {
-                filePath = dialog.FileName;
-            }
+                string filePath = "";
+                // tạo SaveFileDialog để lưu file excel
+                SaveFileDialog dialog = new SaveFileDialog();
 
-            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
-            }
+                // chỉ lọc ra các file có định dạng Excel
+                dialog.Filter = "Excel Workbook|*.xls";
 
-            try
-            {
-                ExcelPackage.LicenseContext = LicenseContext.Commercial;
-                using (ExcelPackage p = new ExcelPackage())
+                // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    // đặt tên người tạo file
-                    p.Workbook.Properties.Author = "NhiAn";
+                    filePath = dialog.FileName;
+                }
 
-                    // đặt tiêu đề cho file
-                    p.Workbook.Properties.Title = "Báo cáo";
+                // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                    return;
+                }
 
-                    //Tạo một sheet để làm việc trên đó
-                    p.Workbook.Worksheets.Add("NhiAn");
+                try
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    using (ExcelPackage p = new ExcelPackage())
+                    {
+                        // đặt tên người tạo file
+                        p.Workbook.Properties.Author = "NhiAn";
 
-                    // lấy sheet vừa add ra để thao tác
-                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
+                        // đặt tiêu đề cho file
+                        p.Workbook.Properties.Title = "Báo cáo";
 
-                    // đặt tên cho sheet
-                    ws.Name = "NhiAn";
-                    // fontsize mặc định cho cả sheet
-                    ws.Cells.Style.Font.Size = 13;
-                    // font family mặc định cho cả sheet
-                    ws.Cells.Style.Font.Name = "Calibri";
+                        //Tạo một sheet để làm việc trên đó
+                        p.Workbook.Worksheets.Add("NhiAn");
 
-                    // Tạo danh sách các column header
-                    string[] arrColumnHeader = {
+                        // lấy sheet vừa add ra để thao tác
+                        ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                        // đặt tên cho sheet
+                        ws.Name = "NhiAn";
+                        // fontsize mặc định cho cả sheet
+                        ws.Cells.Style.Font.Size = 13;
+                        // font family mặc định cho cả sheet
+                        ws.Cells.Style.Font.Name = "Calibri";
+
+                        // Tạo danh sách các column header
+                        string[] arrColumnHeader = {
                                                 "Mã phiếu lãi",
                                                 "Mã hóa đơn cầm",
                                                 "Tên khách hàng",
@@ -420,131 +575,271 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                                                 "Thành tiền"
                 };
 
-                    // lấy ra số lượng cột cần dùng dựa vào số lượng header
-                    var countColHeader = arrColumnHeader.Count();
+                        // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                        var countColHeader = arrColumnHeader.Count();
 
-                    // merge các column lại từ column 1 đến số column header
-                    // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                    ws.Cells[1, 1].Value = "Thống kê thông tin đóng lãi";
-                    ws.Cells[1, 1, 1, countColHeader].Merge = true;
-                    // in đậm
-                    ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
-                    // căn giữa
-                    ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                        // merge các column lại từ column 1 đến số column header
+                        // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                        ws.Cells[1, 1].Value = "Thống kê thông tin đóng lãi";
+                        ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                        // in đậm
+                        ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                        // căn giữa
+                        ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    int colIndex = 1;
-                    int rowIndex = 2;
+                        int colIndex = 1;
+                        int rowIndex = 2;
 
-                    //tạo các header từ column header đã tạo từ bên trên
-                    foreach (var item in arrColumnHeader)
-                    {
-                        var cell = ws.Cells[rowIndex, colIndex];
+                        //tạo các header từ column header đã tạo từ bên trên
+                        foreach (var item in arrColumnHeader)
+                        {
+                            var cell = ws.Cells[rowIndex, colIndex];
 
-                        //set màu thành gray
-                        var fill = cell.Style.Fill;
-                        fill.PatternType = ExcelFillStyle.Solid;
-                        fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+                            //set màu thành gray
+                            var fill = cell.Style.Fill;
+                            fill.PatternType = ExcelFillStyle.Solid;
+                            fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
 
-                        //căn chỉnh các border
-                        var border = cell.Style.Border;
-                        border.Bottom.Style =
-                            border.Top.Style =
-                            border.Left.Style =
-                            border.Right.Style = ExcelBorderStyle.Thin;
+                            //căn chỉnh các border
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
 
-                        //gán giá trị
-                        cell.Value = item;
+                            //gán giá trị
+                            cell.Value = item;
 
-                        colIndex++;
+                            colIndex++;
+                        }
+
+                        // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                        List<BaoCaoLaiDTO> ListBBC = BaoCaoLaiDAO.Instance.LoadListBaoCaoLaiTheoNgay(NgayDau,NgayCuoi);
+                        double? tongtien = 0;
+                        // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                        foreach (var item in ListBBC)
+                        {
+                            // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                            colIndex = 1;
+
+                            // rowIndex tương ứng từng dòng dữ liệu
+                            rowIndex++;
+
+                            //gán giá trị cho từng cell                      
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuLai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                            ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                            ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayDongLai.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.ThanhTien;
+                            tongtien = tongtien + item.ThanhTien;
+                            // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                        }
+                        //ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
+                        ws.Cells[rowIndex + 1, 7].Value = "Tổng tiền lãi: " + tongtien;
+                        //Lưu file lại
+                        Byte[] bin = p.GetAsByteArray();
+                        File.WriteAllBytes(filePath, bin);
                     }
-
-                    // lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                    List<BaoCaoLaiDTO> ListBBC = BaoCaoLaiDAO.Instance.LoadListBaoCaoLai();
-                    double? tongtien = 0;
-                    // với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                    foreach (var item in ListBBC)
-                    {
-                        // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                        colIndex = 1;
-
-                        // rowIndex tương ứng từng dòng dữ liệu
-                        rowIndex++;
-
-                        //gán giá trị cho từng cell                      
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuLai;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
-                        ws.Cells[rowIndex, colIndex++].Value = item.SDT;
-                        ws.Cells[rowIndex, colIndex++].Value = item.CMND;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NgayDongLai.ToShortDateString();
-                        ws.Cells[rowIndex, colIndex++].Value = item.ThanhTien;
-                        tongtien = tongtien + item.ThanhTien;
-                        // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-
-
-                    }
-                    //ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
-                    ws.Cells[rowIndex + 1, 7].Value = "Tổng tiền lãi: " + tongtien;
-                    //Lưu file lại
-                    Byte[] bin = p.GetAsByteArray();
-                    File.WriteAllBytes(filePath, bin);
+                    MessageBox.Show("Xuất excel thành công!");
                 }
-                MessageBox.Show("Xuất excel thành công!");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(""+ex);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                string filePath = "";
+                // tạo SaveFileDialog để lưu file excel
+                SaveFileDialog dialog = new SaveFileDialog();
+
+                // chỉ lọc ra các file có định dạng Excel
+                dialog.Filter = "Excel Workbook|*.xls";
+
+                // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = dialog.FileName;
+                }
+
+                // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                    return;
+                }
+
+                try
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    using (ExcelPackage p = new ExcelPackage())
+                    {
+                        // đặt tên người tạo file
+                        p.Workbook.Properties.Author = "NhiAn";
+
+                        // đặt tiêu đề cho file
+                        p.Workbook.Properties.Title = "Báo cáo";
+
+                        //Tạo một sheet để làm việc trên đó
+                        p.Workbook.Worksheets.Add("NhiAn");
+
+                        // lấy sheet vừa add ra để thao tác
+                        ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                        // đặt tên cho sheet
+                        ws.Name = "NhiAn";
+                        // fontsize mặc định cho cả sheet
+                        ws.Cells.Style.Font.Size = 13;
+                        // font family mặc định cho cả sheet
+                        ws.Cells.Style.Font.Name = "Calibri";
+
+                        // Tạo danh sách các column header
+                        string[] arrColumnHeader = {
+                                                "Mã phiếu lãi",
+                                                "Mã hóa đơn cầm",
+                                                "Tên khách hàng",
+                                                "SDT",
+                                                "CMND",
+                                                "Ngày đóng lãi",
+                                                "Thành tiền"
+                };
+
+                        // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                        var countColHeader = arrColumnHeader.Count();
+
+                        // merge các column lại từ column 1 đến số column header
+                        // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                        ws.Cells[1, 1].Value = "Thống kê thông tin đóng lãi";
+                        ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                        // in đậm
+                        ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                        // căn giữa
+                        ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                        int colIndex = 1;
+                        int rowIndex = 2;
+
+                        //tạo các header từ column header đã tạo từ bên trên
+                        foreach (var item in arrColumnHeader)
+                        {
+                            var cell = ws.Cells[rowIndex, colIndex];
+
+                            //set màu thành gray
+                            var fill = cell.Style.Fill;
+                            fill.PatternType = ExcelFillStyle.Solid;
+                            fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+                            //căn chỉnh các border
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
+
+                            //gán giá trị
+                            cell.Value = item;
+
+                            colIndex++;
+                        }
+
+                        // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                        List<BaoCaoLaiDTO> ListBBC = BaoCaoLaiDAO.Instance.LoadListBaoCaoLai();
+                        double? tongtien = 0;
+                        // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                        foreach (var item in ListBBC)
+                        {
+                            // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                            colIndex = 1;
+
+                            // rowIndex tương ứng từng dòng dữ liệu
+                            rowIndex++;
+
+                            //gán giá trị cho từng cell                      
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuLai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                            ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                            ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayDongLai.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.ThanhTien;
+                            tongtien = tongtien + item.ThanhTien;
+                            // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                        }
+                        //ws.Cells[rowIndex + 1, 8, rowIndex + 1, countColHeader].Merge = true;
+                        ws.Cells[rowIndex + 1, 7].Value = "Tổng tiền lãi: " + tongtien;
+                        //Lưu file lại
+                        Byte[] bin = p.GetAsByteArray();
+                        File.WriteAllBytes(filePath, bin);
+                    }
+                    MessageBox.Show("Xuất excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                }
             }
         }
 
         private void btnEXThanhLy_Click(object sender, EventArgs e)
         {
-            string filePath = "";
-            // tạo SaveFileDialog để lưu file excel
-            SaveFileDialog dialog = new SaveFileDialog();
-
-            // chỉ lọc ra các file có định dạng Excel
-            dialog.Filter = "Excel Workbook|*.xls";
-
-            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
-            if (dialog.ShowDialog() == DialogResult.OK)
+            DateTime NgayDau = dtpNgayDau.Value;
+            DateTime NgayCuoi = dtpNgayCuoi.Value;
+            if (cbLoc.Checked==true)
             {
-                filePath = dialog.FileName;
-            }
 
-            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
-            }
-
-            try
-            {
-                ExcelPackage.LicenseContext = LicenseContext.Commercial;
-                using (ExcelPackage p = new ExcelPackage())
                 {
-                    // đặt tên người tạo file
-                    p.Workbook.Properties.Author = "NhiAn";
+                    string filePath = "";
+                    // tạo SaveFileDialog để lưu file excel
+                    SaveFileDialog dialog = new SaveFileDialog();
 
-                    // đặt tiêu đề cho file
-                    p.Workbook.Properties.Title = "Báo cáo";
+                    // chỉ lọc ra các file có định dạng Excel
+                    dialog.Filter = "Excel Workbook|*.xls";
 
-                    //Tạo một sheet để làm việc trên đó
-                    p.Workbook.Worksheets.Add("NhiAn");
+                    // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = dialog.FileName;
+                    }
 
-                    // lấy sheet vừa add ra để thao tác
-                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
+                    // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                    if (string.IsNullOrEmpty(filePath))
+                    {
+                        MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                        return;
+                    }
 
-                    // đặt tên cho sheet
-                    ws.Name = "NhiAn";
-                    // fontsize mặc định cho cả sheet
-                    ws.Cells.Style.Font.Size = 13;
-                    // font family mặc định cho cả sheet
-                    ws.Cells.Style.Font.Name = "Calibri";
+                    try
+                    {
+                        ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                        using (ExcelPackage p = new ExcelPackage())
+                        {
+                            // đặt tên người tạo file
+                            p.Workbook.Properties.Author = "NhiAn";
 
-                    // Tạo danh sách các column header
-                    string[] arrColumnHeader = {
+                            // đặt tiêu đề cho file
+                            p.Workbook.Properties.Title = "Báo cáo";
+
+                            //Tạo một sheet để làm việc trên đó
+                            p.Workbook.Worksheets.Add("NhiAn");
+
+                            // lấy sheet vừa add ra để thao tác
+                            ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                            // đặt tên cho sheet
+                            ws.Name = "NhiAn";
+                            // fontsize mặc định cho cả sheet
+                            ws.Cells.Style.Font.Size = 13;
+                            // font family mặc định cho cả sheet
+                            ws.Cells.Style.Font.Name = "Calibri";
+
+                            // Tạo danh sách các column header
+                            string[] arrColumnHeader = {
                                                 "Mã phiếu thanh lý",
                                                 "Tên khách hàng",
                                                 "SDT",
@@ -561,139 +856,293 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
                 };
 
-                    // lấy ra số lượng cột cần dùng dựa vào số lượng header
-                    var countColHeader = arrColumnHeader.Count();
+                            // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                            var countColHeader = arrColumnHeader.Count();
 
-                    // merge các column lại từ column 1 đến số column header
-                    // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                    ws.Cells[1, 1].Value = "Thống kê thông tin thanh lý";
-                    ws.Cells[1, 1, 1, countColHeader].Merge = true;
-                    // in đậm
-                    ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
-                    // căn giữa
-                    ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            // merge các column lại từ column 1 đến số column header
+                            // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                            ws.Cells[1, 1].Value = "Thống kê thông tin thanh lý";
+                            ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                            // in đậm
+                            ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                            // căn giữa
+                            ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    int colIndex = 1;
-                    int rowIndex = 2;
+                            int colIndex = 1;
+                            int rowIndex = 2;
 
-                    //tạo các header từ column header đã tạo từ bên trên
-                    foreach (var item in arrColumnHeader)
-                    {
-                        var cell = ws.Cells[rowIndex, colIndex];
+                            //tạo các header từ column header đã tạo từ bên trên
+                            foreach (var item in arrColumnHeader)
+                            {
+                                var cell = ws.Cells[rowIndex, colIndex];
 
-                        //set màu thành gray
-                        var fill = cell.Style.Fill;
-                        fill.PatternType = ExcelFillStyle.Solid;
-                        fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+                                //set màu thành gray
+                                var fill = cell.Style.Fill;
+                                fill.PatternType = ExcelFillStyle.Solid;
+                                fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
 
-                        //căn chỉnh các border
-                        var border = cell.Style.Border;
-                        border.Bottom.Style =
-                            border.Top.Style =
-                            border.Left.Style =
-                            border.Right.Style = ExcelBorderStyle.Thin;
+                                //căn chỉnh các border
+                                var border = cell.Style.Border;
+                                border.Bottom.Style =
+                                    border.Top.Style =
+                                    border.Left.Style =
+                                    border.Right.Style = ExcelBorderStyle.Thin;
 
-                        //gán giá trị
-                        cell.Value = item;
+                                //gán giá trị
+                                cell.Value = item;
 
-                        colIndex++;
+                                colIndex++;
+                            }
+
+                            // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                            List<BaoCaoThanhLyDTO> ListBBC = BaoCaoThanhLyDAO.Instance.LoadListBaoCaoThanhLyTheoNgay(NgayDau,NgayCuoi);
+                            double? tongtien = 0;
+                            // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                            foreach (var item in ListBBC)
+                            {
+                                // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                                colIndex = 1;
+
+                                // rowIndex tương ứng từng dòng dữ liệu
+                                rowIndex++;
+
+                                //gán giá trị cho từng cell                      
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaThanhLy;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                                ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                                ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                                ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.GiaThanhLy;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                                ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                                ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+
+                                tongtien = tongtien + item.GiaThanhLy;
+                                // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                            }
+                            ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
+                            ws.Cells[rowIndex + 1, 9].Value = "Tổng tiền thanh lý: " + tongtien;
+                            //Lưu file lại
+                            Byte[] bin = p.GetAsByteArray();
+                            File.WriteAllBytes(filePath, bin);
+                        }
+                        MessageBox.Show("Xuất excel thành công!");
                     }
-
-                    // lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                    List<BaoCaoThanhLyDTO> ListBBC = BaoCaoThanhLyDAO.Instance.LoadListBaoCaoLai();
-                    double? tongtien = 0;
-                    // với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                    foreach (var item in ListBBC)
+                    catch (Exception ex)
                     {
-                        // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                        colIndex = 1;
-
-                        // rowIndex tương ứng từng dòng dữ liệu
-                        rowIndex++;
-
-                        //gán giá trị cho từng cell                      
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaThanhLy;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
-                        ws.Cells[rowIndex, colIndex++].Value = item.SDT;
-                        ws.Cells[rowIndex, colIndex++].Value = item.CMND;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.GiaThanhLy;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
-                        ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
-
-                        tongtien = tongtien + item.GiaThanhLy;
-                        // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-
-
+                        MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
                     }
-                    ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
-                    ws.Cells[rowIndex + 1, 9].Value = "Tổng tiền thanh lý: " + tongtien;
-                    //Lưu file lại
-                    Byte[] bin = p.GetAsByteArray();
-                    File.WriteAllBytes(filePath, bin);
                 }
-                MessageBox.Show("Xuất excel thành công!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                string filePath = "";
+                // tạo SaveFileDialog để lưu file excel
+                SaveFileDialog dialog = new SaveFileDialog();
+
+                // chỉ lọc ra các file có định dạng Excel
+                dialog.Filter = "Excel Workbook|*.xls";
+
+                // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = dialog.FileName;
+                }
+
+                // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                    return;
+                }
+
+                try
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    using (ExcelPackage p = new ExcelPackage())
+                    {
+                        // đặt tên người tạo file
+                        p.Workbook.Properties.Author = "NhiAn";
+
+                        // đặt tiêu đề cho file
+                        p.Workbook.Properties.Title = "Báo cáo";
+
+                        //Tạo một sheet để làm việc trên đó
+                        p.Workbook.Worksheets.Add("NhiAn");
+
+                        // lấy sheet vừa add ra để thao tác
+                        ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                        // đặt tên cho sheet
+                        ws.Name = "NhiAn";
+                        // fontsize mặc định cho cả sheet
+                        ws.Cells.Style.Font.Size = 13;
+                        // font family mặc định cho cả sheet
+                        ws.Cells.Style.Font.Name = "Calibri";
+
+                        // Tạo danh sách các column header
+                        string[] arrColumnHeader = {
+                                                "Mã phiếu thanh lý",
+                                                "Tên khách hàng",
+                                                "SDT",
+                                                "CMND",
+                                                "Ngày lập",
+                                                "Mã sản phẩm",
+                                                "Tên loại",
+                                                "Tên sản phẩm",
+                                                "Giá thanh lý",
+                                                "Mô tả",
+                                                "Nhang hiệu",
+                                                "Màu sắc",
+                                                "Hiện trạng"
+
+                };
+
+                        // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                        var countColHeader = arrColumnHeader.Count();
+
+                        // merge các column lại từ column 1 đến số column header
+                        // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                        ws.Cells[1, 1].Value = "Thống kê thông tin thanh lý";
+                        ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                        // in đậm
+                        ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                        // căn giữa
+                        ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                        int colIndex = 1;
+                        int rowIndex = 2;
+
+                        //tạo các header từ column header đã tạo từ bên trên
+                        foreach (var item in arrColumnHeader)
+                        {
+                            var cell = ws.Cells[rowIndex, colIndex];
+
+                            //set màu thành gray
+                            var fill = cell.Style.Fill;
+                            fill.PatternType = ExcelFillStyle.Solid;
+                            fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+                            //căn chỉnh các border
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
+
+                            //gán giá trị
+                            cell.Value = item;
+
+                            colIndex++;
+                        }
+
+                        // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                        List<BaoCaoThanhLyDTO> ListBBC = BaoCaoThanhLyDAO.Instance.LoadListBaoCaoThanhLy();
+                        double? tongtien = 0;
+                        // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                        foreach (var item in ListBBC)
+                        {
+                            // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                            colIndex = 1;
+
+                            // rowIndex tương ứng từng dòng dữ liệu
+                            rowIndex++;
+
+                            //gán giá trị cho từng cell                      
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaThanhLy;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                            ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                            ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayLap.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.GiaThanhLy;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                            ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+
+                            tongtien = tongtien + item.GiaThanhLy;
+                            // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                        }
+                        ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
+                        ws.Cells[rowIndex + 1, 9].Value = "Tổng tiền thanh lý: " + tongtien;
+                        //Lưu file lại
+                        Byte[] bin = p.GetAsByteArray();
+                        File.WriteAllBytes(filePath, bin);
+                    }
+                    MessageBox.Show("Xuất excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                }
             }
         }
 
         private void btnEXChuoc_Click(object sender, EventArgs e)
         {
-            
-            string filePath = "";
-            // tạo SaveFileDialog để lưu file excel
-            SaveFileDialog dialog = new SaveFileDialog();
-
-            // chỉ lọc ra các file có định dạng Excel
-            dialog.Filter = "Excel Workbook|*.xls";
-
-            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
-            if (dialog.ShowDialog() == DialogResult.OK)
+            DateTime NgayDau = dtpNgayDau.Value;
+            DateTime NgayCuoi = dtpNgayCuoi.Value;
+            if (cbLoc.Checked==true)
             {
-                filePath = dialog.FileName;
-            }
 
-            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
-            }
-
-            try
-            {
-                ExcelPackage.LicenseContext = LicenseContext.Commercial;
-                using (ExcelPackage p = new ExcelPackage())
                 {
-                    // đặt tên người tạo file
-                    p.Workbook.Properties.Author = "NhiAn";
+                    string filePath = "";
+                    // tạo SaveFileDialog để lưu file excel
+                    SaveFileDialog dialog = new SaveFileDialog();
 
-                    // đặt tiêu đề cho file
-                    p.Workbook.Properties.Title = "Báo cáo";
+                    // chỉ lọc ra các file có định dạng Excel
+                    dialog.Filter = "Excel Workbook|*.xls";
 
-                    //Tạo một sheet để làm việc trên đó
-                    p.Workbook.Worksheets.Add("NhiAn");
+                    // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = dialog.FileName;
+                    }
 
-                    // lấy sheet vừa add ra để thao tác
-                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
+                    // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                    if (string.IsNullOrEmpty(filePath))
+                    {
+                        MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                        return;
+                    }
 
-                    // đặt tên cho sheet
-                    ws.Name = "NhiAn";
-                    // fontsize mặc định cho cả sheet
-                    ws.Cells.Style.Font.Size = 13;
-                    // font family mặc định cho cả sheet
-                    ws.Cells.Style.Font.Name = "Calibri";
+                    try
+                    {
+                        ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                        using (ExcelPackage p = new ExcelPackage())
+                        {
+                            // đặt tên người tạo file
+                            p.Workbook.Properties.Author = "NhiAn";
 
-                    // Tạo danh sách các column header
-                    string[] arrColumnHeader = {
+                            // đặt tiêu đề cho file
+                            p.Workbook.Properties.Title = "Báo cáo";
+
+                            //Tạo một sheet để làm việc trên đó
+                            p.Workbook.Worksheets.Add("NhiAn");
+
+                            // lấy sheet vừa add ra để thao tác
+                            ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                            // đặt tên cho sheet
+                            ws.Name = "NhiAn";
+                            // fontsize mặc định cho cả sheet
+                            ws.Cells.Style.Font.Size = 13;
+                            // font family mặc định cho cả sheet
+                            ws.Cells.Style.Font.Name = "Calibri";
+
+                            // Tạo danh sách các column header
+                            string[] arrColumnHeader = {
                                                 "Mã phiếu chuộc",
                                                 "Mã phiếu cầm",
                                                 "Tên khách hàng",
@@ -713,97 +1162,274 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
                 };
 
-                    // lấy ra số lượng cột cần dùng dựa vào số lượng header
-                    var countColHeader = arrColumnHeader.Count();
+                            // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                            var countColHeader = arrColumnHeader.Count();
 
-                    // merge các column lại từ column 1 đến số column header
-                    // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                    ws.Cells[1, 1].Value = "Thống kê thông tin chuộc";
-                    ws.Cells[1, 1, 1, countColHeader].Merge = true;
-                    // in đậm
-                    ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
-                    // căn giữa
-                    ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            // merge các column lại từ column 1 đến số column header
+                            // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                            ws.Cells[1, 1].Value = "Thống kê thông tin chuộc";
+                            ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                            // in đậm
+                            ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                            // căn giữa
+                            ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    int colIndex = 1;
-                    int rowIndex = 2;
+                            int colIndex = 1;
+                            int rowIndex = 2;
 
-                    //tạo các header từ column header đã tạo từ bên trên
-                    foreach (var item in arrColumnHeader)
-                    {
-                        var cell = ws.Cells[rowIndex, colIndex];
+                            //tạo các header từ column header đã tạo từ bên trên
+                            foreach (var item in arrColumnHeader)
+                            {
+                                var cell = ws.Cells[rowIndex, colIndex];
 
-                        //set màu thành gray
-                        var fill = cell.Style.Fill;
-                        fill.PatternType = ExcelFillStyle.Solid;
-                        fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+                                //set màu thành gray
+                                var fill = cell.Style.Fill;
+                                fill.PatternType = ExcelFillStyle.Solid;
+                                fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
 
-                        //căn chỉnh các border
-                        var border = cell.Style.Border;
-                        border.Bottom.Style =
-                            border.Top.Style =
-                            border.Left.Style =
-                            border.Right.Style = ExcelBorderStyle.Thin;
+                                //căn chỉnh các border
+                                var border = cell.Style.Border;
+                                border.Bottom.Style =
+                                    border.Top.Style =
+                                    border.Left.Style =
+                                    border.Right.Style = ExcelBorderStyle.Thin;
 
-                        //gán giá trị
-                        cell.Value = item;
+                                //gán giá trị
+                                cell.Value = item;
 
-                        colIndex++;
+                                colIndex++;
+                            }
+
+                            // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                            List<BaoCaoChuocDTO> ListBBC = BaoCaoChuocDAO.Instance.LoadListBaoCaoChuocTheoNgay(NgayDau,NgayCuoi);
+                            double? tongtienlai = 0;
+                            double? tongtienchuoc = 0;
+                            double? tongtiensanpham = 0;
+                            // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                            foreach (var item in ListBBC)
+                            {
+                                // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                                colIndex = 1;
+
+                                // rowIndex tương ứng từng dòng dữ liệu
+                                rowIndex++;
+
+                                //gán giá trị cho từng cell                      
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuChuoc;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                                ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                                ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                                ws.Cells[rowIndex, colIndex++].Value = item.NgayChuoc.ToShortDateString();
+                                ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                                ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                                ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
+                                ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                                ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TienLai;
+                                ws.Cells[rowIndex, colIndex++].Value = item.TongTien;
+
+                                tongtiensanpham = tongtiensanpham + item.DinhGia;
+                                tongtienlai = tongtienlai + item.TienLai;
+                                tongtienchuoc = tongtienchuoc + item.DinhGia;
+                                // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                            }
+                            //ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
+                            ws.Cells[rowIndex + 1, 10].Value = "Tổng tiền sản phẩm: " + tongtiensanpham;
+                            ws.Cells[rowIndex + 1, 15].Value = "Tổng tiền lãi: " + tongtienlai;
+                            ws.Cells[rowIndex + 1, 16].Value = "Tổng tiền chuộc: " + tongtienchuoc;
+                            //Lưu file lại
+                            Byte[] bin = p.GetAsByteArray();
+                            File.WriteAllBytes(filePath, bin);
+                        }
+                        MessageBox.Show("Xuất excel thành công!");
                     }
-
-                    // lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                    List<BaoCaoChuocDTO> ListBBC = BaoCaoChuocDAO.Instance.LoadListBaoCaoChuoc();
-                    double? tongtienlai = 0;
-                    double? tongtienchuoc = 0;
-                    double? tongtiensanpham = 0;
-                    // với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                    foreach (var item in ListBBC)
+                    catch (Exception ex)
                     {
-                        // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                        colIndex = 1;
-
-                        // rowIndex tương ứng từng dòng dữ liệu
-                        rowIndex++;
-
-                        //gán giá trị cho từng cell                      
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuChuoc;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
-                        ws.Cells[rowIndex, colIndex++].Value = item.SDT;
-                        ws.Cells[rowIndex, colIndex++].Value = item.CMND;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NgayChuoc.ToShortDateString();
-                        ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
-                        ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
-                        ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
-                        ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
-                        ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TienLai;
-                        ws.Cells[rowIndex, colIndex++].Value = item.TongTien;
-
-                        tongtiensanpham = tongtiensanpham + item.DinhGia;
-                        tongtienlai = tongtienlai + item.TienLai;
-                        tongtienchuoc = tongtienchuoc + item.DinhGia;
-                        // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-
-
+                        MessageBox.Show("" + ex);
                     }
-                    //ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
-                    ws.Cells[rowIndex + 1, 10].Value = "Tổng tiền sản phẩm: " + tongtiensanpham;
-                    ws.Cells[rowIndex + 1, 15].Value = "Tổng tiền lãi: " + tongtienlai;
-                    ws.Cells[rowIndex + 1, 16].Value = "Tổng tiền chuộc: " + tongtienchuoc;
-                    //Lưu file lại
-                    Byte[] bin = p.GetAsByteArray();
-                    File.WriteAllBytes(filePath, bin);
                 }
-                MessageBox.Show("Xuất excel thành công!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(""+ex);
+                string filePath = "";
+                // tạo SaveFileDialog để lưu file excel
+                SaveFileDialog dialog = new SaveFileDialog();
+
+                // chỉ lọc ra các file có định dạng Excel
+                dialog.Filter = "Excel Workbook|*.xls";
+
+                // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = dialog.FileName;
+                }
+
+                // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                    return;
+                }
+
+                try
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    using (ExcelPackage p = new ExcelPackage())
+                    {
+                        // đặt tên người tạo file
+                        p.Workbook.Properties.Author = "NhiAn";
+
+                        // đặt tiêu đề cho file
+                        p.Workbook.Properties.Title = "Báo cáo";
+
+                        //Tạo một sheet để làm việc trên đó
+                        p.Workbook.Worksheets.Add("NhiAn");
+
+                        // lấy sheet vừa add ra để thao tác
+                        ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                        // đặt tên cho sheet
+                        ws.Name = "NhiAn";
+                        // fontsize mặc định cho cả sheet
+                        ws.Cells.Style.Font.Size = 13;
+                        // font family mặc định cho cả sheet
+                        ws.Cells.Style.Font.Name = "Calibri";
+
+                        // Tạo danh sách các column header
+                        string[] arrColumnHeader = {
+                                                "Mã phiếu chuộc",
+                                                "Mã phiếu cầm",
+                                                "Tên khách hàng",
+                                                "SDT",
+                                                "CMND",
+                                                "Ngày chuộc",
+                                                "Mã sản phẩm",
+                                                "Tên loại",
+                                                "Tên sản phẩm",
+                                                "Định giá",
+                                                "Mô tả",
+                                                "Nhang hiệu",
+                                                "Màu sắc",
+                                                "Hiện trạng",
+                                                "Tiền lãi",
+                                                "Tổng tiền"
+
+                };
+
+                        // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                        var countColHeader = arrColumnHeader.Count();
+
+                        // merge các column lại từ column 1 đến số column header
+                        // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                        ws.Cells[1, 1].Value = "Thống kê thông tin chuộc";
+                        ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                        // in đậm
+                        ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                        // căn giữa
+                        ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                        int colIndex = 1;
+                        int rowIndex = 2;
+
+                        //tạo các header từ column header đã tạo từ bên trên
+                        foreach (var item in arrColumnHeader)
+                        {
+                            var cell = ws.Cells[rowIndex, colIndex];
+
+                            //set màu thành gray
+                            var fill = cell.Style.Fill;
+                            fill.PatternType = ExcelFillStyle.Solid;
+                            fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+                            //căn chỉnh các border
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
+
+                            //gán giá trị
+                            cell.Value = item;
+
+                            colIndex++;
+                        }
+
+                        // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                        List<BaoCaoChuocDTO> ListBBC = BaoCaoChuocDAO.Instance.LoadListBaoCaoChuoc();
+                        double? tongtienlai = 0;
+                        double? tongtienchuoc = 0;
+                        double? tongtiensanpham = 0;
+                        // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                        foreach (var item in ListBBC)
+                        {
+                            // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                            colIndex = 1;
+
+                            // rowIndex tương ứng từng dòng dữ liệu
+                            rowIndex++;
+
+                            //gán giá trị cho từng cell                      
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaPhieuChuoc;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaHoaDonCam;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenKH;
+                            ws.Cells[rowIndex, colIndex++].Value = item.SDT;
+                            ws.Cells[rowIndex, colIndex++].Value = item.CMND;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NgayChuoc.ToShortDateString();
+                            ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                            ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                            ws.Cells[rowIndex, colIndex++].Value = item.NhangHieu;
+                            ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                            ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TienLai;
+                            ws.Cells[rowIndex, colIndex++].Value = item.TongTien;
+
+                            tongtiensanpham = tongtiensanpham + item.DinhGia;
+                            tongtienlai = tongtienlai + item.TienLai;
+                            tongtienchuoc = tongtienchuoc + item.DinhGia;
+                            // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                        }
+                        //ws.Cells[rowIndex + 1, 9, rowIndex + 1, countColHeader].Merge = true;
+                        ws.Cells[rowIndex + 1, 10].Value = "Tổng tiền sản phẩm: " + tongtiensanpham;
+                        ws.Cells[rowIndex + 1, 15].Value = "Tổng tiền lãi: " + tongtienlai;
+                        ws.Cells[rowIndex + 1, 16].Value = "Tổng tiền chuộc: " + tongtienchuoc;
+                        //Lưu file lại
+                        Byte[] bin = p.GetAsByteArray();
+                        File.WriteAllBytes(filePath, bin);
+                    }
+                    MessageBox.Show("Xuất excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
             }
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            cbLoc.Checked = true;
+
+        }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            cbLoc.Checked = false;
+        }
+
+        private void guna2TabControl1_Click(object sender, EventArgs e)
+        {
+            cbLoc.Checked = false;
         }
     }
 }
