@@ -112,6 +112,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
+            this.btnEXChuoc = new System.Windows.Forms.Button();
+            this.btnEXThanhLy = new System.Windows.Forms.Button();
+            this.btnEXDongLai = new System.Windows.Forms.Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -139,7 +142,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 89);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1342, 796);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1342, 828);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -162,13 +165,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage1.Controls.Add(this.btnXuat);
             this.tabPage1.Controls.Add(this.guna2GroupBox1);
             this.tabPage1.Controls.Add(this.guna2GroupBox2);
             this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1154, 788);
+            this.tabPage1.Size = new System.Drawing.Size(1154, 820);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cầm đồ";
             // 
@@ -186,7 +190,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Location = new System.Drawing.Point(8, 6);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1139, 351);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1139, 327);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Hóa Đơn Cầm";
             // 
@@ -207,7 +211,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVHDC.HideSelection = false;
             this.LVHDC.Location = new System.Drawing.Point(0, 45);
             this.LVHDC.Name = "LVHDC";
-            this.LVHDC.Size = new System.Drawing.Size(1139, 306);
+            this.LVHDC.Size = new System.Drawing.Size(1139, 282);
             this.LVHDC.TabIndex = 1;
             this.LVHDC.UseCompatibleStateImageBehavior = false;
             this.LVHDC.View = System.Windows.Forms.View.Details;
@@ -271,7 +275,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(9, 376);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(9, 339);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1139, 406);
             this.guna2GroupBox2.TabIndex = 1;
@@ -351,13 +355,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.btnEXChuoc);
             this.tabPage2.Controls.Add(this.guna2GroupBox3);
             this.tabPage2.Controls.Add(this.guna2GroupBox4);
             this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1154, 788);
+            this.tabPage2.Size = new System.Drawing.Size(1154, 820);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chuộc sản phẩm";
             // 
@@ -372,7 +377,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(8, 376);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(8, 346);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(1139, 406);
             this.guna2GroupBox3.TabIndex = 3;
@@ -469,7 +474,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox4.Location = new System.Drawing.Point(7, 6);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(1139, 351);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(1139, 334);
             this.guna2GroupBox4.TabIndex = 2;
             this.guna2GroupBox4.Text = "Hóa Đơn Chuộc";
             // 
@@ -498,7 +503,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LvPhieuChuoc.HideSelection = false;
             this.LvPhieuChuoc.Location = new System.Drawing.Point(0, 45);
             this.LvPhieuChuoc.Name = "LvPhieuChuoc";
-            this.LvPhieuChuoc.Size = new System.Drawing.Size(1139, 306);
+            this.LvPhieuChuoc.Size = new System.Drawing.Size(1139, 289);
             this.LvPhieuChuoc.TabIndex = 1;
             this.LvPhieuChuoc.UseCompatibleStateImageBehavior = false;
             this.LvPhieuChuoc.View = System.Windows.Forms.View.Details;
@@ -549,12 +554,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage3.Controls.Add(this.btnEXThanhLy);
             this.tabPage3.Controls.Add(this.guna2GroupBox5);
             this.tabPage3.Controls.Add(this.guna2GroupBox6);
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1154, 788);
+            this.tabPage3.Size = new System.Drawing.Size(1154, 820);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thanh lý";
             // 
@@ -569,7 +575,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox5.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox5.Location = new System.Drawing.Point(8, 376);
+            this.guna2GroupBox5.Location = new System.Drawing.Point(8, 351);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.Size = new System.Drawing.Size(1139, 406);
             this.guna2GroupBox5.TabIndex = 5;
@@ -649,7 +655,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox6.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox6.Location = new System.Drawing.Point(7, 6);
             this.guna2GroupBox6.Name = "guna2GroupBox6";
-            this.guna2GroupBox6.Size = new System.Drawing.Size(1139, 351);
+            this.guna2GroupBox6.Size = new System.Drawing.Size(1139, 335);
             this.guna2GroupBox6.TabIndex = 4;
             this.guna2GroupBox6.Text = "Hóa Đơn Thanh Lý";
             // 
@@ -678,7 +684,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVThanhLy.HideSelection = false;
             this.LVThanhLy.Location = new System.Drawing.Point(0, 45);
             this.LVThanhLy.Name = "LVThanhLy";
-            this.LVThanhLy.Size = new System.Drawing.Size(1139, 306);
+            this.LVThanhLy.Size = new System.Drawing.Size(1139, 290);
             this.LVThanhLy.TabIndex = 1;
             this.LVThanhLy.UseCompatibleStateImageBehavior = false;
             this.LVThanhLy.View = System.Windows.Forms.View.Details;
@@ -729,12 +735,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage4.Controls.Add(this.btnEXDongLai);
             this.tabPage4.Controls.Add(this.guna2GroupBox7);
             this.tabPage4.Controls.Add(this.guna2GroupBox8);
             this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1154, 788);
+            this.tabPage4.Size = new System.Drawing.Size(1154, 820);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Đóng lãi";
             // 
@@ -749,7 +756,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox7.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox7.Location = new System.Drawing.Point(8, 376);
+            this.guna2GroupBox7.Location = new System.Drawing.Point(8, 355);
             this.guna2GroupBox7.Name = "guna2GroupBox7";
             this.guna2GroupBox7.Size = new System.Drawing.Size(1139, 406);
             this.guna2GroupBox7.TabIndex = 7;
@@ -811,7 +818,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox8.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox8.Location = new System.Drawing.Point(7, 6);
             this.guna2GroupBox8.Name = "guna2GroupBox8";
-            this.guna2GroupBox8.Size = new System.Drawing.Size(1139, 351);
+            this.guna2GroupBox8.Size = new System.Drawing.Size(1139, 334);
             this.guna2GroupBox8.TabIndex = 6;
             this.guna2GroupBox8.Text = "Hóa Đơn Cầm";
             // 
@@ -841,7 +848,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVPhieuCam.HideSelection = false;
             this.LVPhieuCam.Location = new System.Drawing.Point(0, 45);
             this.LVPhieuCam.Name = "LVPhieuCam";
-            this.LVPhieuCam.Size = new System.Drawing.Size(1139, 306);
+            this.LVPhieuCam.Size = new System.Drawing.Size(1139, 289);
             this.LVPhieuCam.TabIndex = 1;
             this.LVPhieuCam.UseCompatibleStateImageBehavior = false;
             this.LVPhieuCam.View = System.Windows.Forms.View.Details;
@@ -981,7 +988,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1223, 907);
+            this.btnXuat.Location = new System.Drawing.Point(1039, 765);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(99, 38);
             this.btnXuat.TabIndex = 37;
@@ -989,13 +996,56 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
+            // btnEXChuoc
+            // 
+            this.btnEXChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXChuoc.FlatAppearance.BorderSize = 0;
+            this.btnEXChuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXChuoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXChuoc.ForeColor = System.Drawing.Color.White;
+            this.btnEXChuoc.Location = new System.Drawing.Point(1047, 767);
+            this.btnEXChuoc.Name = "btnEXChuoc";
+            this.btnEXChuoc.Size = new System.Drawing.Size(99, 38);
+            this.btnEXChuoc.TabIndex = 38;
+            this.btnEXChuoc.Text = "Xuất";
+            this.btnEXChuoc.UseVisualStyleBackColor = false;
+            // 
+            // btnEXThanhLy
+            // 
+            this.btnEXThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXThanhLy.FlatAppearance.BorderSize = 0;
+            this.btnEXThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXThanhLy.ForeColor = System.Drawing.Color.White;
+            this.btnEXThanhLy.Location = new System.Drawing.Point(1047, 763);
+            this.btnEXThanhLy.Name = "btnEXThanhLy";
+            this.btnEXThanhLy.Size = new System.Drawing.Size(99, 38);
+            this.btnEXThanhLy.TabIndex = 38;
+            this.btnEXThanhLy.Text = "Xuất";
+            this.btnEXThanhLy.UseVisualStyleBackColor = false;
+            this.btnEXThanhLy.Click += new System.EventHandler(this.btnEXThanhLy_Click);
+            // 
+            // btnEXDongLai
+            // 
+            this.btnEXDongLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXDongLai.FlatAppearance.BorderSize = 0;
+            this.btnEXDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXDongLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXDongLai.ForeColor = System.Drawing.Color.White;
+            this.btnEXDongLai.Location = new System.Drawing.Point(1048, 779);
+            this.btnEXDongLai.Name = "btnEXDongLai";
+            this.btnEXDongLai.Size = new System.Drawing.Size(99, 38);
+            this.btnEXDongLai.TabIndex = 38;
+            this.btnEXDongLai.Text = "Xuất";
+            this.btnEXDongLai.UseVisualStyleBackColor = false;
+            this.btnEXDongLai.Click += new System.EventHandler(this.btnEXDongLai_Click);
+            // 
             // BaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
-            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnTatCa);
             this.Controls.Add(this.label2);
@@ -1113,5 +1163,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader50;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private System.Windows.Forms.ColumnHeader columnHeader52;
+        private System.Windows.Forms.Button btnEXChuoc;
+        private System.Windows.Forms.Button btnEXThanhLy;
+        private System.Windows.Forms.Button btnEXDongLai;
     }
 }

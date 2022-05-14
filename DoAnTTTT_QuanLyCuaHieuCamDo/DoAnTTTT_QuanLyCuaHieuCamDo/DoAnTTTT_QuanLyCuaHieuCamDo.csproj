@@ -75,6 +75,9 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BaoCaoCamDAO.cs" />
+    <Compile Include="DAO\BaoCaoChuocDAO.cs" />
+    <Compile Include="DAO\BaoCaoLaiDAO.cs" />
+    <Compile Include="DAO\BaoCaoThanhLyDAO.cs" />
     <Compile Include="DAO\ChiTietHoaDonCamDAO.cs" />
     <Compile Include="DAO\ChiTietPhieuChuocDAO.cs" />
     <Compile Include="DAO\ChiTietThanhLyDAO.cs" />
