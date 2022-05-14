@@ -14,6 +14,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private int sDT;
         private int cMND;
         private DateTime ngayChuoc;
+        private string maSP;
+        private string tenLoai;
+        private string tenSP;
+        private double dinhGia;
+        private string moTa;
+        private string nhangHieu;
+        private string mauSac;
+        private string hienTrang;
+        private float tienLai;
         private float tongTien;
 
         public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
@@ -22,8 +31,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public int SDT { get => sDT; set => sDT = value; }
         public int CMND { get => cMND; set => cMND = value; }
         public DateTime NgayChuoc { get => ngayChuoc; set => ngayChuoc = value; }
+        public float TienLai { get => tienLai; set => tienLai = value; }
         public float TongTien { get => tongTien; set => tongTien = value; }
-        
+        public string MaSP { get => maSP; set => maSP = value; }
+        public string TenLoai { get => tenLoai; set => tenLoai = value; }
+        public string TenSP { get => tenSP; set => tenSP = value; }
+        public double DinhGia { get => dinhGia; set => dinhGia = value; }
+        public string MoTa { get => moTa; set => moTa = value; }
+        public string NhangHieu { get => nhangHieu; set => nhangHieu = value; }
+        public string MauSac { get => mauSac; set => mauSac = value; }
+        public string HienTrang { get => hienTrang; set => hienTrang = value; }
+
 
         public BaoCaoChuocDTO(int MaPhieuChuoc,int MaHoaDonCam, string TenKH, int SDT, int CMND, DateTime NgayChuoc, float TongTien)
         {
@@ -33,6 +51,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.SDT = SDT;
             this.CMND = CMND;
             this.NgayChuoc = NgayChuoc;
+            this.MaSP = MaSP;
+            this.TenLoai = TenLoai;
+            this.TenSP = TenSP;
+            this.DinhGia = DinhGia;
+            this.MoTa = MoTa;
+            this.NhangHieu = NhangHieu;
+            this.MauSac = MauSac;
+            this.HienTrang = HienTrang;
+            this.TienLai = TienLai;
             this.TongTien = TongTien;
         }
 
@@ -44,6 +71,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.SDT = (int)row["SDT"];
             this.CMND = (int)row["CMND"];
             this.NgayChuoc = (DateTime)row["NgayChuoc"];
+            this.MaSP = row["MaSP"].ToString();
+            this.TenLoai = row["TenLoai"].ToString();
+            this.TenSP = row["TenSP"].ToString();
+            this.DinhGia = (float)Convert.ToDouble(row["DinhGia"]);
+            this.MoTa = row["MoTa"].ToString();
+            this.NhangHieu = row["NhangHieu"].ToString();
+            this.MauSac = row["MauSac"].ToString();
+            this.HienTrang = row["HienTrang"].ToString();
+            this.TienLai = (float)Convert.ToDouble(row["TienLai"]);
             this.TongTien = (float)Convert.ToDouble(row["TongTien"]);
         }
     }

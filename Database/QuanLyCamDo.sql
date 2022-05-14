@@ -243,12 +243,16 @@ where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.
 
 /*BaoCaoLai*/
 select  c.MaPhieuLai,a.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,c.NgayDongLai,c.ThanhTien from HoaDonCam a,KhachHang b, PhieuLai c  where c.MaHoaDonCam = a.MaHoaDonCam and b.MaKH = a.MaKH
+
+
 /*BaoCaoThanhLy*/
 select  a.MaThanhLy,b.TenKH,b.SDT,b.CMND,a.NgayLap,d.MaSP,e.TenLoai,d.TenSP,d.GiaThanhLy,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang
 from ThanhLy a,KhachHang b, ChiTiet_ThanhLy c ,SanPham d,LoaiSP e
 where a.MaThanhLy=c.MaThanhLy and a.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai
 
-/*BaoCaoLai*/
-
+/*BaoCaoChuoc*/
+select  a.MaPhieuChuoc,f.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,a.NgayChuoc,d.MaSP,e.TenLoai,d.TenSP,d.DinhGia,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang,c.TienLai,c.TongTien
+from PhieuChuoc a, KhachHang b, ChiTiet_PhieuChuoc c ,SanPham d,LoaiSP e,HoaDonCam f
+where a.MaHoaDonCam=f.MaHoaDonCam and f.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai and a.MaPhieuChuoc=c.MaPhieuChuoc
 
 

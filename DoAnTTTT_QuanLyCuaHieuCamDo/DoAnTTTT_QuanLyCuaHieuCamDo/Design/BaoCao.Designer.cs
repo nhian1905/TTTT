@@ -31,6 +31,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.LVHDC = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,6 +52,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnEXChuoc = new System.Windows.Forms.Button();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.LvCTPhieuChuoc = new System.Windows.Forms.ListView();
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,6 +74,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnEXThanhLy = new System.Windows.Forms.Button();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.LVCTThanhLy = new System.Windows.Forms.ListView();
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -90,6 +93,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnEXDongLai = new System.Windows.Forms.Button();
             this.guna2GroupBox7 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.LVPhieuLai = new System.Windows.Forms.ListView();
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -111,10 +115,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
-            this.btnEXChuoc = new System.Windows.Forms.Button();
-            this.btnEXThanhLy = new System.Windows.Forms.Button();
-            this.btnEXDongLai = new System.Windows.Forms.Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -175,6 +175,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.tabPage1.Size = new System.Drawing.Size(1154, 820);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cầm đồ";
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXuat.FlatAppearance.BorderSize = 0;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Location = new System.Drawing.Point(1039, 765);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(99, 38);
+            this.btnXuat.TabIndex = 37;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // guna2GroupBox1
             // 
@@ -365,6 +380,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.tabPage2.Size = new System.Drawing.Size(1154, 820);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chuộc sản phẩm";
+            // 
+            // btnEXChuoc
+            // 
+            this.btnEXChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXChuoc.FlatAppearance.BorderSize = 0;
+            this.btnEXChuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXChuoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXChuoc.ForeColor = System.Drawing.Color.White;
+            this.btnEXChuoc.Location = new System.Drawing.Point(1047, 767);
+            this.btnEXChuoc.Name = "btnEXChuoc";
+            this.btnEXChuoc.Size = new System.Drawing.Size(99, 38);
+            this.btnEXChuoc.TabIndex = 38;
+            this.btnEXChuoc.Text = "Xuất";
+            this.btnEXChuoc.UseVisualStyleBackColor = false;
+            this.btnEXChuoc.Click += new System.EventHandler(this.btnEXChuoc_Click);
             // 
             // guna2GroupBox3
             // 
@@ -564,6 +594,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thanh lý";
             // 
+            // btnEXThanhLy
+            // 
+            this.btnEXThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXThanhLy.FlatAppearance.BorderSize = 0;
+            this.btnEXThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXThanhLy.ForeColor = System.Drawing.Color.White;
+            this.btnEXThanhLy.Location = new System.Drawing.Point(1047, 763);
+            this.btnEXThanhLy.Name = "btnEXThanhLy";
+            this.btnEXThanhLy.Size = new System.Drawing.Size(99, 38);
+            this.btnEXThanhLy.TabIndex = 38;
+            this.btnEXThanhLy.Text = "Xuất";
+            this.btnEXThanhLy.UseVisualStyleBackColor = false;
+            this.btnEXThanhLy.Click += new System.EventHandler(this.btnEXThanhLy_Click);
+            // 
             // guna2GroupBox5
             // 
             this.guna2GroupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -744,6 +789,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.tabPage4.Size = new System.Drawing.Size(1154, 820);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Đóng lãi";
+            // 
+            // btnEXDongLai
+            // 
+            this.btnEXDongLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEXDongLai.FlatAppearance.BorderSize = 0;
+            this.btnEXDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXDongLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXDongLai.ForeColor = System.Drawing.Color.White;
+            this.btnEXDongLai.Location = new System.Drawing.Point(1048, 779);
+            this.btnEXDongLai.Name = "btnEXDongLai";
+            this.btnEXDongLai.Size = new System.Drawing.Size(99, 38);
+            this.btnEXDongLai.TabIndex = 38;
+            this.btnEXDongLai.Text = "Xuất";
+            this.btnEXDongLai.UseVisualStyleBackColor = false;
+            this.btnEXDongLai.Click += new System.EventHandler(this.btnEXDongLai_Click);
             // 
             // guna2GroupBox7
             // 
@@ -980,65 +1040,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnTatCa.TabIndex = 35;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXuat.FlatAppearance.BorderSize = 0;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1039, 765);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(99, 38);
-            this.btnXuat.TabIndex = 37;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.UseVisualStyleBackColor = false;
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
-            // 
-            // btnEXChuoc
-            // 
-            this.btnEXChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnEXChuoc.FlatAppearance.BorderSize = 0;
-            this.btnEXChuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEXChuoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEXChuoc.ForeColor = System.Drawing.Color.White;
-            this.btnEXChuoc.Location = new System.Drawing.Point(1047, 767);
-            this.btnEXChuoc.Name = "btnEXChuoc";
-            this.btnEXChuoc.Size = new System.Drawing.Size(99, 38);
-            this.btnEXChuoc.TabIndex = 38;
-            this.btnEXChuoc.Text = "Xuất";
-            this.btnEXChuoc.UseVisualStyleBackColor = false;
-            // 
-            // btnEXThanhLy
-            // 
-            this.btnEXThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnEXThanhLy.FlatAppearance.BorderSize = 0;
-            this.btnEXThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEXThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEXThanhLy.ForeColor = System.Drawing.Color.White;
-            this.btnEXThanhLy.Location = new System.Drawing.Point(1047, 763);
-            this.btnEXThanhLy.Name = "btnEXThanhLy";
-            this.btnEXThanhLy.Size = new System.Drawing.Size(99, 38);
-            this.btnEXThanhLy.TabIndex = 38;
-            this.btnEXThanhLy.Text = "Xuất";
-            this.btnEXThanhLy.UseVisualStyleBackColor = false;
-            this.btnEXThanhLy.Click += new System.EventHandler(this.btnEXThanhLy_Click);
-            // 
-            // btnEXDongLai
-            // 
-            this.btnEXDongLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnEXDongLai.FlatAppearance.BorderSize = 0;
-            this.btnEXDongLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEXDongLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEXDongLai.ForeColor = System.Drawing.Color.White;
-            this.btnEXDongLai.Location = new System.Drawing.Point(1048, 779);
-            this.btnEXDongLai.Name = "btnEXDongLai";
-            this.btnEXDongLai.Size = new System.Drawing.Size(99, 38);
-            this.btnEXDongLai.TabIndex = 38;
-            this.btnEXDongLai.Text = "Xuất";
-            this.btnEXDongLai.UseVisualStyleBackColor = false;
-            this.btnEXDongLai.Click += new System.EventHandler(this.btnEXDongLai_Click);
             // 
             // BaoCao
             // 
