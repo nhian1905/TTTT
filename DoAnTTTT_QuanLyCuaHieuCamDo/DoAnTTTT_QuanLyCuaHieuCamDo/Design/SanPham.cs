@@ -37,6 +37,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             cboTenLoai.DisplayMember = "TenLoai";
         }
 
+        void LoadSPQuaHan()
+        {
+
+        }
         void LoadSanPham()
         {
             LVSP.Items.Clear();

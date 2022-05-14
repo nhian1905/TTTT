@@ -115,6 +115,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq > 0;
         }
 
+        public bool UpdateSPQuaHan(DateTime NgayHienTai)
+        {
+            string query = string.Format("exec USP_UpdateQuaHan '{0}'", NgayHienTai);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
 
         public List<SanPhamDTO> TimKiem(bool ThanhLy , bool QuaHan , bool DaChuoc , bool DaThanhLy)
         {

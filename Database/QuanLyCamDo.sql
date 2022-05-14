@@ -204,13 +204,28 @@ as
 go
 
 
+create proc USP_UpdateQuaHan
+@NHT Date
+as
+	begin
+		declare @NgayHetHan Date
+		select @NgayHetHan = NgayHetHan from HoaDonCam 
+		if @NHT > @NgayHetHan
+			update SanPham set QuaHan = 1 from HoaDonCam a , SanPham b , ChiTiet_HoaDonCam c where a.MaHoaDonCam = c.MaHoaDonCam and b.MaSP = c.MaSP and b.DaChuoc = 0 and b.ThanhLy = 0 and b.DaThanhLy = 0
+	end
+go
 
-select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and  a.ThanhLy  LIKE 1 or a.DaThanhLy LIKE 1 or a.QuaHan like 1 or a.DaChuoc Like 1
+create proc USP_TimHoaDonCamByDate
+@datein date , @dateout date
+as
+begin
+	select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang  
+	from ChiTiet_HoaDonCam a,SanPham b,LoaiSP c, KhachHang d,HoaDonCam e
+	where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH and  e.NgayLap between @datein and @dateout
+end
+go
 
 
-select MaPhieuChuoc
-from PhieuChuoc
-where MaHoaDonCam = 4 and NgayChuoc = '2022-05-11 00:00:00.000'
 
 
 select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia

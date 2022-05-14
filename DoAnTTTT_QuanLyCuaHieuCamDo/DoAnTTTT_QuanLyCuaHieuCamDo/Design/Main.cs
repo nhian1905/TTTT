@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
+using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
 namespace DoAnTTTT_QuanLyCuaHieuCamDo
 {
     public partial class Main : Form
@@ -16,5 +18,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             InitializeComponent();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            DateTime NgayHienTai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
+        }
+
     }
 }
