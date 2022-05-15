@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
@@ -366,6 +367,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void LVCTHDC_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInHDCam_Click(object sender, EventArgs e)
+        {
+            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+            if (MessageBox.Show("Bạn có muốn in hóa đơn ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                rptHoaDonCam  rp = new rptHoaDonCam();
+                rp.DataSource = HoaDonCamDAO.Instance.LoadRpHDC(MaHoaDonCam);
+                rp.FilterString = "[MaHoaDonCam] = '" + MaHoaDonCam + "'";
+                rp.CreateDocument();
+                rp.ShowPreviewDialog();
+            }
         }
     }
 }

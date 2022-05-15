@@ -227,6 +227,20 @@ go
 
 
 
+create proc USP_InHoaDonPhieuCam
+ @MaHDC int
+ as
+ begin
+
+	 select a.MaHoaDonCam, c.TenKH ,c.DiaChi,c.SDT,c.CMND,c.NgayCapCMND, a.NgayLap , a.NgayHetHan , d.TenSP, d.DinhGia,e.LaiXuat,a.TongTienCam
+	from HoaDonCam a , ChiTiet_HoaDonCam b , KhachHang c  , SanPham d , LoaiSP e
+	where a.MaHoaDonCam = b.MaHoaDonCam and d.MaSP = b.MaSP and d.MaLoai = e.MaLoai and a.MaKH = c.MaKH and a.MaHoaDonCam = @MaHDC AND B.MaHoaDonCam = @MaHDC
+ end
+ go
+
+exec USP_InHoaDonPhieuCam 5
+
+
 
 select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia
 from ChiTiet_HoaDonCam, SanPham,LoaiSP,HoaDonCam

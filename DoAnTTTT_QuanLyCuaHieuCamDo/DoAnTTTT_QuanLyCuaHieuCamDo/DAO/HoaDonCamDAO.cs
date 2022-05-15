@@ -70,5 +70,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public DataTable LoadRpHDC(int MaHoaDonCam)
+        {
+            string query = string.Format(" exec USP_InHoaDonPhieuCam N'{0}' ", MaHoaDonCam);
+            return CSDL.Instance.ExecuteQuery(query);
+
+        }
     }
 }

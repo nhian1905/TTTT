@@ -273,6 +273,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnInHDCam.TabIndex = 34;
             this.btnInHDCam.Text = "In";
             this.btnInHDCam.UseVisualStyleBackColor = false;
+            this.btnInHDCam.Click += new System.EventHandler(this.btnInHDCam_Click);
             // 
             // LvPhieuCam
             // 
