@@ -140,6 +140,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(39, 32);
             this.cboMaKH.TabIndex = 77;
+            this.cboMaKH.Visible = false;
             this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             // 
             // txtTenKhachHang

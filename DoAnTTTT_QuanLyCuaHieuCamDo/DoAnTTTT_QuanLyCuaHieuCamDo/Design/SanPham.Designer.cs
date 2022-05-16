@@ -78,15 +78,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label4 = new System.Windows.Forms.Label();
             this.cboTenLoai = new System.Windows.Forms.ComboBox();
             this.btnThanhLy = new System.Windows.Forms.Button();
-            this.btnXoaSP = new System.Windows.Forms.Button();
             this.btnSuaSP = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -676,21 +676,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThanhLy.UseVisualStyleBackColor = false;
             this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
-            // btnXoaSP
-            // 
-            this.btnXoaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaSP.FlatAppearance.BorderSize = 0;
-            this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
-            this.btnXoaSP.Location = new System.Drawing.Point(418, 312);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaSP.TabIndex = 36;
-            this.btnXoaSP.Text = "Xóa";
-            this.btnXoaSP.UseVisualStyleBackColor = false;
-            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
-            // 
             // btnSuaSP
             // 
             this.btnSuaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
@@ -698,28 +683,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaSP.ForeColor = System.Drawing.Color.White;
-            this.btnSuaSP.Location = new System.Drawing.Point(276, 312);
+            this.btnSuaSP.Location = new System.Drawing.Point(143, 312);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(99, 38);
             this.btnSuaSP.TabIndex = 35;
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = false;
             this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
-            // 
-            // btnThemSP
-            // 
-            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThemSP.FlatAppearance.BorderSize = 0;
-            this.btnThemSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSP.ForeColor = System.Drawing.Color.White;
-            this.btnThemSP.Location = new System.Drawing.Point(130, 312);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(99, 38);
-            this.btnThemSP.TabIndex = 34;
-            this.btnThemSP.Text = "Thêm ";
-            this.btnThemSP.UseVisualStyleBackColor = false;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // label1
             // 
@@ -797,6 +767,38 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXoaSP.FlatAppearance.BorderSize = 0;
+            this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
+            this.btnXoaSP.Location = new System.Drawing.Point(418, 312);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
+            this.btnXoaSP.TabIndex = 36;
+            this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.UseVisualStyleBackColor = false;
+            this.btnXoaSP.Visible = false;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
+            // 
+            // btnThemSP
+            // 
+            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThemSP.FlatAppearance.BorderSize = 0;
+            this.btnThemSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.ForeColor = System.Drawing.Color.White;
+            this.btnThemSP.Location = new System.Drawing.Point(278, 312);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(99, 38);
+            this.btnThemSP.TabIndex = 34;
+            this.btnThemSP.Text = "Thêm ";
+            this.btnThemSP.UseVisualStyleBackColor = false;
+            this.btnThemSP.Visible = false;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,9 +866,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboTenLoai;
         private System.Windows.Forms.Button btnThanhLy;
-        private System.Windows.Forms.Button btnXoaSP;
         private System.Windows.Forms.Button btnSuaSP;
-        private System.Windows.Forms.Button btnThemSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.Label label3;
@@ -882,5 +882,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private Guna.UI2.WinForms.Guna2RadioButton rboThanhLy;
         private Guna.UI2.WinForms.Guna2RadioButton rboDaChuoc;
         private Guna.UI2.WinForms.Guna2RadioButton rboQuaHan;
+        private System.Windows.Forms.Button btnXoaSP;
+        private System.Windows.Forms.Button btnThemSP;
     }
 }

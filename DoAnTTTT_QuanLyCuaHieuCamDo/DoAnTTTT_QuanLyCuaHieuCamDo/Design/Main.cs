@@ -22,7 +22,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void Main_Load(object sender, EventArgs e)
         {
-            DateTime NgayHienTai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            DateTime NgayHienTai = DateTime.Now;
             SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
 
             cboThang.Items.Add("1");

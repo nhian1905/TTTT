@@ -12,15 +12,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private int tenKH;
         private DateTime ngayLap;
         private DateTime ngayHetHan;
-        private float tongTienCam;
+        private double tongTienCam;
 
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
         public int TenKH { get => tenKH; set => tenKH = value; }
         public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }
         public DateTime NgayHetHan { get => ngayHetHan; set => ngayHetHan = value; }
-        public float TongTienCam { get => tongTienCam; set => tongTienCam = value; }
+        public double TongTienCam { get => tongTienCam; set => tongTienCam = value; }
 
-        public HoaDonCamPCDTO(int MaHoaDonCam, int TenKH, DateTime NgayLap, DateTime NgayHetHan, float TongTienCam)
+        public HoaDonCamPCDTO(int MaHoaDonCam, int TenKH, DateTime NgayLap, DateTime NgayHetHan, double TongTienCam)
         {
             this.MaHoaDonCam = MaHoaDonCam;
             this.TenKH = TenKH;
@@ -35,7 +35,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.TenKH = (int)row["MaKH"];
             this.NgayLap = (DateTime)row["NgayLap"];
             this.NgayHetHan = (DateTime)row["NgayHetHan"];
-            this.TongTienCam = (float)Convert.ToDouble(row["TongTienCam"]);
+            this.TongTienCam = (double)Convert.ToDouble(row["TongTienCam"]);
         }
     }
 }

@@ -530,6 +530,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaThanhLy.Size = new System.Drawing.Size(49, 22);
             this.txtMaThanhLy.TabIndex = 40;
             this.txtMaThanhLy.Tag = "";
+            this.txtMaThanhLy.Visible = false;
             // 
             // txtTongTien
             // 

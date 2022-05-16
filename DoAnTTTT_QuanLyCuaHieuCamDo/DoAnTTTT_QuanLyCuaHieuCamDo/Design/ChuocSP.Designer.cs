@@ -640,6 +640,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.lbMaHDChuoc.Size = new System.Drawing.Size(35, 13);
             this.lbMaHDChuoc.TabIndex = 75;
             this.lbMaHDChuoc.Text = "label8";
+            this.lbMaHDChuoc.Visible = false;
             // 
             // cboMaKH
             // 
@@ -648,6 +649,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(39, 21);
             this.cboMaKH.TabIndex = 76;
+            this.cboMaKH.Visible = false;
             this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             // 
             // txtMaHDC
@@ -663,6 +665,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaHDC.Size = new System.Drawing.Size(28, 22);
             this.txtMaHDC.TabIndex = 77;
             this.txtMaHDC.Tag = "";
+            this.txtMaHDC.Visible = false;
             // 
             // txtMaSP
             // 

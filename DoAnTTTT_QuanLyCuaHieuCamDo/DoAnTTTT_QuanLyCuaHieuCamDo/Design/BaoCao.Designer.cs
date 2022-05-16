@@ -1054,6 +1054,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cbLoc.TabIndex = 37;
             this.cbLoc.Text = "checkBox1";
             this.cbLoc.UseVisualStyleBackColor = true;
+            this.cbLoc.Visible = false;
             // 
             // BaoCao
             // 
