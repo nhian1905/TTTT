@@ -1416,10 +1416,62 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
+        void LoadTimKiemHDC()
+        {
+            DateTime datein = dtpNgayDau.Value;
+            DateTime dateout = dtpNgayCuoi.Value;
+            LVHDC.Items.Clear();
+            List<HoaDonCamDTO> list = BaoCaoCamDAO.Instance.LoadListHDCTheoNgay(datein, dateout);
+            foreach (HoaDonCamDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaHoaDonCam.ToString());
+                lvitem.SubItems.Add(item.TenKH.ToString());
+                lvitem.SubItems.Add(item.NgayLap.ToString());
+                lvitem.SubItems.Add(item.NgayHetHan.ToString());
+                lvitem.SubItems.Add(item.TongTienCam.ToString());
+                LVHDC.Items.Add(lvitem);
+            }
+        }
+
+        void LoadTimKiemHDChuoc()
+        {
+            DateTime datein = dtpNgayDau.Value;
+            DateTime dateout = dtpNgayCuoi.Value;
+            LvPhieuChuoc.Items.Clear();
+            List<PhieuChuocDTO> list = BaoCaoChuocDAO.Instance.LoadListHDChuocTheoNgay(datein, dateout);
+            foreach (PhieuChuocDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaPhieuChuoc.ToString());
+                lvitem.SubItems.Add(item.MaHoaDonCam.ToString());
+                lvitem.SubItems.Add(item.NgayChuoc.ToString());
+                lvitem.SubItems.Add(item.TongTien.ToString());
+                LvPhieuChuoc.Items.Add(lvitem);
+            }
+        }
+
+        void LoadTimKiemHDThanhLy()
+        {
+            DateTime datein = dtpNgayDau.Value;
+            DateTime dateout = dtpNgayCuoi.Value;
+            LVThanhLy.Items.Clear();
+            List<ThanhLyDTO> list = BaoCaoThanhLyDAO.Instance.LoadListHDThanhLyTheoNgay(datein, dateout);
+            foreach (ThanhLyDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaThanhLy.ToString());
+                lvitem.SubItems.Add(item.TenKH.ToString());
+                lvitem.SubItems.Add(item.NgayLap.ToString());
+                lvitem.SubItems.Add(item.TongTienThanhLy.ToString());
+                LVThanhLy.Items.Add(lvitem);
+            }
+        }
+
         private void btnLoc_Click(object sender, EventArgs e)
         {
             cbLoc.Checked = true;
-
+            LVHDC.Items.Clear();
+            LoadTimKiemHDC();
+            LoadTimKiemHDChuoc();
+            LoadTimKiemHDThanhLy();
         }
 
         private void btnTatCa_Click(object sender, EventArgs e)

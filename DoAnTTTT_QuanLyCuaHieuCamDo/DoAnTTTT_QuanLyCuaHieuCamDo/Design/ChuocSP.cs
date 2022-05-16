@@ -191,7 +191,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
             //}
             //kn.Close();
-            string TienLai =PhieuLaiDAO.Instance.TienLai(ngaydong,MaHDC);
+            double TienLai =PhieuLaiDAO.Instance.TienLai(ngaydong,MaHDC);
             float TongTien = (float)Convert.ToDouble(ChiTietPhieuChuocDAO.Instance.LayGiaSP(MaSP))+(float)Convert.ToDouble(TienLai);
             if (ChiTietPhieuChuocDAO.Instance.InsertSPtoBillPhieuChuoc(MaPC, MaSP,Convert.ToDouble(TienLai), TongTien))
             {

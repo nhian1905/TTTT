@@ -50,6 +50,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
-        
+        public List<HoaDonCamDTO> LoadListHDCTheoNgay(DateTime NgayDau, DateTime NgayCuoi)
+        {
+            List<HoaDonCamDTO> LoadList = new List<HoaDonCamDTO>();
+            string query = string.Format("exec USP_TimHoaDonCamByDate '{0}','{1}' ", NgayDau, NgayCuoi);
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                HoaDonCamDTO SP = new HoaDonCamDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
+
     }
 }

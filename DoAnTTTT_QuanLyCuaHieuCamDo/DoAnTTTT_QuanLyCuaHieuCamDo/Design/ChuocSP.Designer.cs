@@ -658,12 +658,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaHDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHDC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHDC.ForeColor = System.Drawing.Color.White;
-            this.txtMaHDC.Location = new System.Drawing.Point(213, 271);
+            this.txtMaHDC.Location = new System.Drawing.Point(195, 271);
             this.txtMaHDC.Name = "txtMaHDC";
-            this.txtMaHDC.Size = new System.Drawing.Size(10, 22);
+            this.txtMaHDC.Size = new System.Drawing.Size(28, 22);
             this.txtMaHDC.TabIndex = 77;
             this.txtMaHDC.Tag = "";
-            this.txtMaHDC.Visible = false;
             // 
             // txtMaSP
             // 

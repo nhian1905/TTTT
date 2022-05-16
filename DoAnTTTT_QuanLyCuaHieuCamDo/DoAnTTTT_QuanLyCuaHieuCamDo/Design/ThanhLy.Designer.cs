@@ -62,6 +62,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.txtMaThanhLy = new System.Windows.Forms.TextBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -95,7 +96,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaThanhLy = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -517,6 +517,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu thanh lý";
             // 
+            // txtMaThanhLy
+            // 
+            this.txtMaThanhLy.AccessibleDescription = "";
+            this.txtMaThanhLy.AccessibleName = "";
+            this.txtMaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaThanhLy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaThanhLy.ForeColor = System.Drawing.Color.White;
+            this.txtMaThanhLy.Location = new System.Drawing.Point(627, 27);
+            this.txtMaThanhLy.Name = "txtMaThanhLy";
+            this.txtMaThanhLy.Size = new System.Drawing.Size(49, 22);
+            this.txtMaThanhLy.TabIndex = 40;
+            this.txtMaThanhLy.Tag = "";
+            // 
             // txtTongTien
             // 
             this.txtTongTien.AccessibleDescription = "";
@@ -877,21 +891,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1.Size = new System.Drawing.Size(142, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tên khách hàng";
-            // 
-            // txtMaThanhLy
-            // 
-            this.txtMaThanhLy.AccessibleDescription = "";
-            this.txtMaThanhLy.AccessibleName = "";
-            this.txtMaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaThanhLy.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaThanhLy.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaThanhLy.ForeColor = System.Drawing.Color.White;
-            this.txtMaThanhLy.Location = new System.Drawing.Point(627, 27);
-            this.txtMaThanhLy.Name = "txtMaThanhLy";
-            this.txtMaThanhLy.Size = new System.Drawing.Size(13, 22);
-            this.txtMaThanhLy.TabIndex = 40;
-            this.txtMaThanhLy.Tag = "";
-            this.txtMaThanhLy.Visible = false;
             // 
             // ThanhLy
             // 

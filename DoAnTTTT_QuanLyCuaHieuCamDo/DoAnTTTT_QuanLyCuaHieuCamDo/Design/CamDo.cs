@@ -313,14 +313,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
                 {
-                    if (ChiTietHoaDonCamDAO.Instance.UpdateSPtoBillHDC(MaHoaDonCam, MaSP))
-                    {
-                        MessageBox.Show("Sửa Thành Công");
-                        LoadCTHoaDonCam(id);
-                        //txtTongTien.Text = Convert.ToString(tongtien);
-                        //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
-                        LoadTongTien();
-                    }
+                    MessageBox.Show("Sửa Thành Công");
+                    LoadCTHoaDonCam(id);
+                    LoadTongTien();
+                    //if (ChiTietHoaDonCamDAO.Instance.UpdateSPtoBillHDC(MaHoaDonCam, MaSP))
+                    //{
+                    //    MessageBox.Show("Sửa Thành Công");
+                    //    LoadCTHoaDonCam(id);
+                    //    //txtTongTien.Text = Convert.ToString(tongtien);
+                    //    //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
+                    //    LoadTongTien();
+                    //}
                 }
                 else
                 {

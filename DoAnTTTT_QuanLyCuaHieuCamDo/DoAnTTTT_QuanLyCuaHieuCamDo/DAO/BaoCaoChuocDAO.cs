@@ -49,5 +49,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             }
             return LoadList;
         }
+
+        public List<PhieuChuocDTO> LoadListHDChuocTheoNgay(DateTime NgayDau, DateTime NgayCuoi)
+        {
+            List<PhieuChuocDTO> LoadList = new List<PhieuChuocDTO>();
+            string query = string.Format(" exec USP_TimHoaDonChuocByDate '{0}' , '{1}' ", NgayDau, NgayCuoi);
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                PhieuChuocDTO SP = new PhieuChuocDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
     }
 }

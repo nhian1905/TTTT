@@ -70,10 +70,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq;
         }
 
-        public string TienLai( DateTime NgayDongLai,int MaHoaDonCam)
+        public double TienLai( DateTime NgayDongLai,int MaHoaDonCam)
         {
             string query = string.Format("exec USP_TinhTienLai '{0}',{1}", NgayDongLai, MaHoaDonCam);
-            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            double kq = Convert.ToDouble(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }
 

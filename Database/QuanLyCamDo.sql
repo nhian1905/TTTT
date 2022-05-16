@@ -189,7 +189,6 @@ as
 	end
 go
 
-exec USP_TinhTienLai '2022-5-12',1
 
 
 create proc USP_UpdateNgayDongLaiHDC
@@ -219,12 +218,31 @@ create proc USP_TimHoaDonCamByDate
 @datein date , @dateout date
 as
 begin
-	select  e.MaHoaDonCam,d.TenKH,e.NgayLap,e.NgayHetHan,b.MaSP,c.TenLoai,b.TenSP,b.DinhGia,b.MoTa,b.MauSac,b.HienTrang  
-	from ChiTiet_HoaDonCam a,SanPham b,LoaiSP c, KhachHang d,HoaDonCam e
-	where b.MaLoai=c.MaLoai and a.MaHoaDonCam=e.MaHoaDonCam and a.MaSP=b.MaSP and e.MaKH=d.MaKH and  e.NgayLap between @datein and @dateout
+	select  a.MaHoaDonCam,b.TenKH,a.NgayLap,a.NgayHetHan,a.TongTienCam
+	from KhachHang b,HoaDonCam a
+	where  a.MaKH=b.MaKH and  a.NgayLap between @datein and @dateout
 end
 go
 
+create proc USP_TimHoaDonChuocByDate
+@datein date , @dateout date
+as
+begin
+	select  a.MaPhieuChuoc , b.MaHoaDonCam , a.NgayChuoc, a.TongTien
+	from PhieuChuoc a,HoaDonCam b
+	where  a.MaHoaDonCam=b.MaHoaDonCam and  b.NgayLap >= @datein and a.NgayChuoc<= @dateout
+end
+go
+
+create proc USP_TimHoaDonTLByDate
+@datein date , @dateout date
+as
+begin
+	select  a.MaThanhLy , b.TenKH , a.NgayLap,a.TongTienThanhLy
+	from ThanhLy a,KhachHang b
+	where  a.MaKH=b.MaKH and  a.NgayLap between @datein and @dateout
+end
+go
 
 
 create proc USP_InHoaDonPhieuCam
@@ -238,7 +256,6 @@ create proc USP_InHoaDonPhieuCam
  end
  go
 
-exec USP_InHoaDonPhieuCam 5
 
 
 

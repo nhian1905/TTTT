@@ -976,7 +976,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayDau.Name = "dtpNgayDau";
             this.dtpNgayDau.Size = new System.Drawing.Size(209, 36);
             this.dtpNgayDau.TabIndex = 1;
-            this.dtpNgayDau.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
+            this.dtpNgayDau.Value = new System.DateTime(2022, 5, 16, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -1004,7 +1004,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             this.dtpNgayCuoi.Checked = true;
             this.dtpNgayCuoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.dtpNgayCuoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayCuoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayCuoi.ForeColor = System.Drawing.Color.White;
             this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCuoi.Location = new System.Drawing.Point(703, 28);
@@ -1013,7 +1013,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCuoi.Name = "dtpNgayCuoi";
             this.dtpNgayCuoi.Size = new System.Drawing.Size(209, 36);
             this.dtpNgayCuoi.TabIndex = 3;
-            this.dtpNgayCuoi.Value = new System.DateTime(2022, 5, 8, 16, 41, 33, 736);
+            this.dtpNgayCuoi.Value = new System.DateTime(2022, 5, 16, 0, 0, 0, 0);
             // 
             // btnLoc
             // 

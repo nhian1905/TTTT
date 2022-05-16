@@ -45,6 +45,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTatCa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rboDaThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboDaChuoc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rboQuaHan = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMaLoai = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,10 +87,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.rboQuaHan = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rboDaChuoc = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rboThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rboDaThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +109,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13});
+            this.LVSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LVSP.ForeColor = System.Drawing.Color.White;
             this.LVSP.FullRowSelect = true;
             this.LVSP.GridLines = true;
@@ -125,64 +126,67 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã SP";
-            this.columnHeader1.Width = 104;
+            this.columnHeader1.Width = 74;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên Loại";
-            this.columnHeader2.Width = 84;
+            this.columnHeader2.Width = 155;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Tên SP";
-            this.columnHeader14.Width = 106;
+            this.columnHeader14.Width = 151;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Định Giá";
-            this.columnHeader3.Width = 75;
+            this.columnHeader3.Width = 114;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Giá Thanh Lý";
-            this.columnHeader4.Width = 111;
+            this.columnHeader4.Width = 147;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Mô Tả";
-            this.columnHeader5.Width = 170;
+            this.columnHeader5.Width = 304;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Màu Sắc";
-            this.columnHeader6.Width = 91;
+            this.columnHeader6.Width = 104;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Hiện Trạng";
-            this.columnHeader7.Width = 217;
+            this.columnHeader7.Width = 284;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Nhãn Hiệu";
-            this.columnHeader8.Width = 84;
+            this.columnHeader8.Width = 154;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Quá Hạn";
+            this.columnHeader10.Width = 103;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Đã Chuộc";
+            this.columnHeader11.Width = 106;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Thanh Lý";
+            this.columnHeader12.Width = 98;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Đã Thanh Lý";
-            this.columnHeader13.Width = 78;
+            this.columnHeader13.Width = 120;
             // 
             // btnTatCa
             // 
@@ -214,6 +218,82 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc sản phẩm";
+            // 
+            // rboDaThanhLy
+            // 
+            this.rboDaThanhLy.AutoSize = true;
+            this.rboDaThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaThanhLy.CheckedState.BorderThickness = 0;
+            this.rboDaThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboDaThanhLy.CheckedState.InnerOffset = -4;
+            this.rboDaThanhLy.Location = new System.Drawing.Point(688, 31);
+            this.rboDaThanhLy.Name = "rboDaThanhLy";
+            this.rboDaThanhLy.Size = new System.Drawing.Size(130, 28);
+            this.rboDaThanhLy.TabIndex = 38;
+            this.rboDaThanhLy.Text = "Đã thanh lý";
+            this.rboDaThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboDaThanhLy.UncheckedState.BorderThickness = 2;
+            this.rboDaThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboDaThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboDaThanhLy.CheckedChanged += new System.EventHandler(this.rboDaThanhLy_CheckedChanged);
+            // 
+            // rboThanhLy
+            // 
+            this.rboThanhLy.AutoSize = true;
+            this.rboThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboThanhLy.CheckedState.BorderThickness = 0;
+            this.rboThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboThanhLy.CheckedState.InnerOffset = -4;
+            this.rboThanhLy.Location = new System.Drawing.Point(454, 31);
+            this.rboThanhLy.Name = "rboThanhLy";
+            this.rboThanhLy.Size = new System.Drawing.Size(105, 28);
+            this.rboThanhLy.TabIndex = 37;
+            this.rboThanhLy.Text = "Thanh lý";
+            this.rboThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboThanhLy.UncheckedState.BorderThickness = 2;
+            this.rboThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboThanhLy.CheckedChanged += new System.EventHandler(this.rboThanhLy_CheckedChanged);
+            // 
+            // rboDaChuoc
+            // 
+            this.rboDaChuoc.AutoSize = true;
+            this.rboDaChuoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaChuoc.CheckedState.BorderThickness = 0;
+            this.rboDaChuoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDaChuoc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboDaChuoc.CheckedState.InnerOffset = -4;
+            this.rboDaChuoc.Location = new System.Drawing.Point(217, 31);
+            this.rboDaChuoc.Name = "rboDaChuoc";
+            this.rboDaChuoc.Size = new System.Drawing.Size(112, 28);
+            this.rboDaChuoc.TabIndex = 36;
+            this.rboDaChuoc.Text = "Đã chuộc";
+            this.rboDaChuoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboDaChuoc.UncheckedState.BorderThickness = 2;
+            this.rboDaChuoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboDaChuoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboDaChuoc.CheckedChanged += new System.EventHandler(this.rboDaChuoc_CheckedChanged);
+            // 
+            // rboQuaHan
+            // 
+            this.rboQuaHan.AutoSize = true;
+            this.rboQuaHan.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboQuaHan.CheckedState.BorderThickness = 0;
+            this.rboQuaHan.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboQuaHan.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboQuaHan.CheckedState.InnerOffset = -4;
+            this.rboQuaHan.Location = new System.Drawing.Point(33, 31);
+            this.rboQuaHan.Name = "rboQuaHan";
+            this.rboQuaHan.Size = new System.Drawing.Size(104, 28);
+            this.rboQuaHan.TabIndex = 35;
+            this.rboQuaHan.Text = "Quá hạn";
+            this.rboQuaHan.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboQuaHan.UncheckedState.BorderThickness = 2;
+            this.rboQuaHan.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboQuaHan.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboQuaHan.CheckedChanged += new System.EventHandler(this.rboQuaHan_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -716,82 +796,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
-            // 
-            // rboQuaHan
-            // 
-            this.rboQuaHan.AutoSize = true;
-            this.rboQuaHan.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboQuaHan.CheckedState.BorderThickness = 0;
-            this.rboQuaHan.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboQuaHan.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rboQuaHan.CheckedState.InnerOffset = -4;
-            this.rboQuaHan.Location = new System.Drawing.Point(33, 31);
-            this.rboQuaHan.Name = "rboQuaHan";
-            this.rboQuaHan.Size = new System.Drawing.Size(104, 28);
-            this.rboQuaHan.TabIndex = 35;
-            this.rboQuaHan.Text = "Quá hạn";
-            this.rboQuaHan.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rboQuaHan.UncheckedState.BorderThickness = 2;
-            this.rboQuaHan.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rboQuaHan.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rboQuaHan.CheckedChanged += new System.EventHandler(this.rboQuaHan_CheckedChanged);
-            // 
-            // rboDaChuoc
-            // 
-            this.rboDaChuoc.AutoSize = true;
-            this.rboDaChuoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboDaChuoc.CheckedState.BorderThickness = 0;
-            this.rboDaChuoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboDaChuoc.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rboDaChuoc.CheckedState.InnerOffset = -4;
-            this.rboDaChuoc.Location = new System.Drawing.Point(217, 31);
-            this.rboDaChuoc.Name = "rboDaChuoc";
-            this.rboDaChuoc.Size = new System.Drawing.Size(112, 28);
-            this.rboDaChuoc.TabIndex = 36;
-            this.rboDaChuoc.Text = "Đã chuộc";
-            this.rboDaChuoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rboDaChuoc.UncheckedState.BorderThickness = 2;
-            this.rboDaChuoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rboDaChuoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rboDaChuoc.CheckedChanged += new System.EventHandler(this.rboDaChuoc_CheckedChanged);
-            // 
-            // rboThanhLy
-            // 
-            this.rboThanhLy.AutoSize = true;
-            this.rboThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboThanhLy.CheckedState.BorderThickness = 0;
-            this.rboThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rboThanhLy.CheckedState.InnerOffset = -4;
-            this.rboThanhLy.Location = new System.Drawing.Point(454, 31);
-            this.rboThanhLy.Name = "rboThanhLy";
-            this.rboThanhLy.Size = new System.Drawing.Size(105, 28);
-            this.rboThanhLy.TabIndex = 37;
-            this.rboThanhLy.Text = "Thanh lý";
-            this.rboThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rboThanhLy.UncheckedState.BorderThickness = 2;
-            this.rboThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rboThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rboThanhLy.CheckedChanged += new System.EventHandler(this.rboThanhLy_CheckedChanged);
-            // 
-            // rboDaThanhLy
-            // 
-            this.rboDaThanhLy.AutoSize = true;
-            this.rboDaThanhLy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboDaThanhLy.CheckedState.BorderThickness = 0;
-            this.rboDaThanhLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rboDaThanhLy.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rboDaThanhLy.CheckedState.InnerOffset = -4;
-            this.rboDaThanhLy.Location = new System.Drawing.Point(688, 31);
-            this.rboDaThanhLy.Name = "rboDaThanhLy";
-            this.rboDaThanhLy.Size = new System.Drawing.Size(130, 28);
-            this.rboDaThanhLy.TabIndex = 38;
-            this.rboDaThanhLy.Text = "Đã thanh lý";
-            this.rboDaThanhLy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rboDaThanhLy.UncheckedState.BorderThickness = 2;
-            this.rboDaThanhLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rboDaThanhLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rboDaThanhLy.CheckedChanged += new System.EventHandler(this.rboDaThanhLy_CheckedChanged);
             // 
             // SanPham
             // 
