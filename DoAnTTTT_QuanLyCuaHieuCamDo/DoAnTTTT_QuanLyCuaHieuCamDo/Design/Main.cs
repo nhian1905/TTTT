@@ -38,14 +38,66 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             cboThang.Items.Add("11");
             cboThang.Items.Add("12");
 
-            int thang = DateTime.Now.Month;
+            int thang = Convert.ToInt32(DateTime.Now.Month);
             cboThang.SelectedIndex = thang-1;
-
-            double doanhthuthang = (double)20/100;
-            DoanhThuThang.Value = Convert.ToInt32(doanhthuthang*100);
+            LoadThongKe();
+            LoadChiTieuThang();
+            LoadChiTieu();
         }
+        public void LoadThongKe()
+        {
+            txtTienVon.Text = ThongKeDAO.Instance.TienVon();
+            txtDongLai.Text = ThongKeDAO.Instance.DongLai();
 
+            txtDaThanhLy.Text = ThongKeDAO.Instance.SPDaThanhLy();
+            txtTienDaThanhLy.Text = ThongKeDAO.Instance.TienDaThanhLy();
 
+            txtThanhLy.Text = ThongKeDAO.Instance.SPThanhLy();
+            txtTienThanhLy.Text = ThongKeDAO.Instance.TienThanhLy();
+
+            txtQuaHan.Text = ThongKeDAO.Instance.SPTQuaHan();
+            txtTienQuaHan.Text = ThongKeDAO.Instance.TienQuaHan();
+
+            txtChuoc.Text = ThongKeDAO.Instance.SPTDaChuoc();
+            txtTienChuoc.Text = ThongKeDAO.Instance.TienDaChuoc();
+
+            txtCam.Text = ThongKeDAO.Instance.SPCam();
+            txtTienCam.Text = ThongKeDAO.Instance.TienCam();
+
+            double TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai());
+            double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi());
+            txtTienLoi.Text = Convert.ToString(TienLoi + TienLai);
+
+            double TienVon = Convert.ToDouble(ThongKeDAO.Instance.TienVon());
+            double TienDaThanhLy = Convert.ToDouble(ThongKeDAO.Instance.TienDaThanhLy());
+            double TienCam = Convert.ToDouble(ThongKeDAO.Instance.TienCam());
+            double TienChuoc = Convert.ToDouble(ThongKeDAO.Instance.TienDaChuoc());
+            txtTienMat.Text = Convert.ToString(TienVon - TienCam + TienLai + TienDaThanhLy + TienChuoc);
+        }
+        public void LoadChiTieu()
+        {
+            double TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai());
+            double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi());
+            double ChiTieu = Convert.ToDouble(ThongKeDAO.Instance.ChiTieu());
+            double DoanhThu = (double)(TienLai + TienLoi) / ChiTieu;
+            TongDoanhThu.Value = Convert.ToInt32(DoanhThu * 100);
+        }
+        public void LoadChiTieuThang()
+        {
+            string TienT = ThongKeDAO.Instance.DoanhThuThang(Convert.ToInt32(cboThang.Text));
+            double ChiTieuT = Convert.ToDouble(ThongKeDAO.Instance.ChiTieuThang());
+            if (TienT == "")
+            {
+
+                DoanhThuThang.Value = 0;
+            }
+            else
+            {
+
+                double DoanhThuT = (double)Convert.ToDouble(TienT) / ChiTieuT;
+                DoanhThuThang.Value = Convert.ToInt32(DoanhThuT* 100);
+            }
+        }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             TongTien f = new TongTien();
@@ -79,6 +131,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             ChiTieuThang f = new ChiTieuThang();
             f.Show();
+        }
+
+        private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

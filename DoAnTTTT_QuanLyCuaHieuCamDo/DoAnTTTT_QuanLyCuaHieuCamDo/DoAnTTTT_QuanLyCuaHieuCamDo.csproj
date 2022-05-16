@@ -104,6 +104,7 @@
     <Compile Include="DAO\PhieuLaiDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\ThanhLyDAO.cs" />
+    <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DAO\TypeAccountDAO.cs" />
     <Compile Include="Design\BaoCao.cs">
       <SubType>Form</SubType>

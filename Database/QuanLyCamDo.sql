@@ -123,6 +123,8 @@ create table Tien
 	DoanhThuThang float,
 	TongDoanhThu float
 )
+ALTER TABLE LoaiSP
+ALTER COLUMN LaiXuat float
 
 insert into Tien values(1,1000000000,50000000,600000000)
 insert into PhieuChuoc values(1,'05/19/2020',0)
@@ -276,6 +278,78 @@ create proc USP_InHoaDonPhieuCam
  end
  go
 
+ /*ThongKeLai*/
+create proc USP_DongLai
+as
+	begin
+		declare @TienPhieuLai float
+		declare @TienPhieuChuoc float
+		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai 
+		select @TienPhieuChuoc = SUM(TienLai) from ChiTiet_PhieuChuoc 
+		select @TienPhieuLai+@TienPhieuChuoc
+	end
+go
+exec USP_DongLai
+
+/*DoanhThu*/
+create proc USP_DoanhThuThang
+ @Thang int
+as
+	begin
+		declare @TienPhieuLai float
+		declare @TienThanhLy float
+		declare @TienLaiChuoc float
+		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=@Thang
+		select @TienLaiChuoc = SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=@Thang and a.MaPhieuChuoc=c.MaPhieuChuoc
+		select @TienThanhLy = SUM(b.GiaThanhLy-b.DinhGia) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c where a.MaSP=b.MaSP and MONTH(c.NgayLap)=@Thang and a.MaThanhLy=c.MaThanhLy
+		select @TienPhieuLai+@TienLaiChuoc+@TienThanhLy
+	end
+go
+exec USP_DoanhThuThang 5
+select  SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=4
+select SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=4 and a.MaPhieuChuoc=c.MaPhieuChuoc
+select SUM(b.GiaThanhLy-b.DinhGia)+SUM(d.ThanhTien) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c, PhieuLai d where a.MaSP=b.MaSP and MONTH(c.NgayLap)=4 and a.MaThanhLy=c.MaThanhLy and MONTH(d.NgayDongLai)=4
+--create proc USP_DoanhThuThang123
+--@Thang int
+--as
+--	begin
+--		declare @TienPhieuLai float
+--		declare @TienThanhLy float
+--		declare @TienLaiChuoc float
+--		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=@Thang
+--		select @TienLaiChuoc = SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=@Thang and a.MaPhieuChuoc=c.MaPhieuChuoc
+--		select @TienThanhLy = SUM(b.GiaThanhLy-b.DinhGia) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c where a.MaSP=b.MaSP and MONTH(c.NgayLap)=@Thang and a.MaThanhLy=c.MaThanhLy
+--		if @TienPhieuLai = ''
+--			select @TienLaiChuoc+@TienThanhLy
+--		else if @TienLaiChuoc = ''
+--			select @TienPhieuLai+@TienThanhLy
+--		else if @TienThanhLy = ''
+--			select @TienPhieuLai+@TienLaiChuoc
+--		else if @TienThanhLy = '' and @TienLaiChuoc=''
+--			select @TienPhieuLai
+--		else if @TienThanhLy = '' and  @TienPhieuLai=''
+--			select @TienLaiChuoc
+--		else if @TienLaiChuoc = '' and  @TienPhieuLai=''
+--			select @TienThanhLy
+--		else if @TienLaiChuoc = '' and  @TienPhieuLai='' and @TienThanhLy=''
+--			select '0'
+--		else 
+--			select @TienPhieuLai+@TienLaiChuoc+@TienThanhLy
+--	end
+--go
+--exec USP_DoanhThuThang123 4
+
+
+exec USP_DoanhThuThang 9
+
+select  a.MaThanhLy , b.TenKH , a.NgayLap,a.TongTienThanhLy
+	from ThanhLy a,KhachHang b
+	where  a.MaKH=b.MaKH and  MONTH(a.NgayLap)=5
+
+
+
+select sum(MaThanhLy) from ChiTiet_ThanhLy
+select SUM(a.GiaThanhLy-a.DinhGia) from ChiTiet_ThanhLy b,SanPham a where b.MaSP=a.MaSP
 
 select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia
 from ChiTiet_HoaDonCam, SanPham,LoaiSP,HoaDonCam
@@ -330,5 +404,4 @@ from PhieuChuoc a, KhachHang b, ChiTiet_PhieuChuoc c ,SanPham d,LoaiSP e,HoaDonC
 where a.MaHoaDonCam=f.MaHoaDonCam and f.MaKH=b.MaKH and c.MaSP=d.MaSP and d.MaLoai=e.MaLoai and a.MaPhieuChuoc=c.MaPhieuChuoc
 
 select  a.MaPhieuChuoc,f.MaHoaDonCam,b.TenKH,b.SDT,b.CMND,a.NgayChuoc,d.MaSP,e.TenLoai,d.TenSP,d.DinhGia,d.MoTa,d.NhangHieu,d.MauSac,d.HienTrang,c.TienLai,c.TongTien from PhieuChuoc a, KhachHang b, ChiTiet_PhieuChuoc c ,SanPham d, LoaiSP e,HoaDonCam f where a.MaHoaDonCam = f.MaHoaDonCam and f.MaKH = b.MaKH and c.MaSP = d.MaSP and d.MaLoai = e.MaLoai and a.MaPhieuChuoc = c.MaPhieuChuoc and a.NgayChuoc >=N'{0}' and a.NgayChuoc <=N'{1}'
-
 

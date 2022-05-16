@@ -11,13 +11,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
     {
         private int maLoai;
         private string tenLoai;
-        private int laiXuat;
+        private double laiXuat;
 
         public int MaLoai { get => maLoai; set => maLoai = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
-        public int LaiXuat { get => laiXuat; set => laiXuat = value; }
+        public double LaiXuat { get => laiXuat; set => laiXuat = value; }
 
-        public LoaiSPDTO(int MaLoai, string TenLoai, int LaiXuat)
+        public LoaiSPDTO(int MaLoai, string TenLoai, double LaiXuat)
         {
             this.MaLoai = MaLoai;
             this.TenLoai = TenLoai;
@@ -28,7 +28,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         {
             this.MaLoai = (int)row["MaLoai"];
             this.TenLoai = row["TenLoai"].ToString();
-            this.LaiXuat = (int)row["LaiXuat"];
+            this.LaiXuat = (double)Convert.ToDouble(row["LaiXuat"]);
         }
     }
 }

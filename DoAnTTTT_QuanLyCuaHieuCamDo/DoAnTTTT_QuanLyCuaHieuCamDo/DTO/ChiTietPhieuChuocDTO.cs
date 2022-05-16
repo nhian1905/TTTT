@@ -12,7 +12,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string maSP;
         private string tenSP;
         private double dinhGia;
-        private int laiXuat;
+        private double laiXuat;
         private double tienLai;
         private string moTa;
         private string mauSac;
@@ -25,7 +25,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public string TenSP { get => tenSP; set => tenSP = value; }
         public double DinhGia { get => dinhGia; set => dinhGia = value; }
 
-        public int LaiXuat { get => laiXuat; set => laiXuat = value; }
+        public double LaiXuat { get => laiXuat; set => laiXuat = value; }
         public double TienLai { get => tienLai; set => tienLai = value; }
         public string MoTa { get => moTa; set => moTa = value; }
         public string MauSac { get => mauSac; set => mauSac = value; }
@@ -34,7 +34,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public double TongTien { get => tongTien; set => tongTien = value; }
        
 
-        public ChiTietPhieuChuocDTO(/*int MaPhieuChuoc,*/ string MaSP, string TenSP, double DinhGia,int LaiXuat, double TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, double TongTien)
+        public ChiTietPhieuChuocDTO(/*int MaPhieuChuoc,*/ string MaSP, string TenSP, double DinhGia, double LaiXuat, double TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, double TongTien)
         {
             //this.MaPhieuChuoc = MaPhieuChuoc;
             this.MaSP = MaSP;
@@ -55,7 +55,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.MaSP = row["MaSP"].ToString();
             this.TenSP = row["TenSP"].ToString();
             this.DinhGia = (float)Convert.ToDouble(row["DinhGia"]);
-            this.LaiXuat = (int)row["LaiXuat"];
+            this.LaiXuat = (double)Convert.ToDouble(row["LaiXuat"]);
             this.TienLai = (float)Convert.ToDouble(row["TienLai"]);
             this.MoTa = row["MoTa"].ToString();
             this.MauSac = row["MauSac"].ToString();

@@ -33,6 +33,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -87,7 +88,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rboDangCam = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -140,63 +141,58 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader14.Text = "Tên SP";
             this.columnHeader14.Width = 151;
             // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Lãi Xuất";
+            this.columnHeader17.Width = 105;
+            // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 4;
             this.columnHeader3.Text = "Định Giá";
             this.columnHeader3.Width = 114;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 5;
             this.columnHeader4.Text = "Giá Thanh Lý";
             this.columnHeader4.Width = 147;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 6;
             this.columnHeader5.Text = "Mô Tả";
             this.columnHeader5.Width = 304;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.DisplayIndex = 7;
             this.columnHeader6.Text = "Màu Sắc";
             this.columnHeader6.Width = 104;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.DisplayIndex = 8;
             this.columnHeader7.Text = "Hiện Trạng";
             this.columnHeader7.Width = 284;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 9;
             this.columnHeader8.Text = "Nhãn Hiệu";
             this.columnHeader8.Width = 154;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.DisplayIndex = 10;
             this.columnHeader10.Text = "Quá Hạn";
             this.columnHeader10.Width = 103;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.DisplayIndex = 11;
             this.columnHeader11.Text = "Đã Chuộc";
             this.columnHeader11.Width = 106;
             // 
             // columnHeader12
             // 
-            this.columnHeader12.DisplayIndex = 12;
             this.columnHeader12.Text = "Thanh Lý";
             this.columnHeader12.Width = 98;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.DisplayIndex = 13;
             this.columnHeader13.Text = "Đã Thanh Lý";
             this.columnHeader13.Width = 120;
             // 
@@ -217,6 +213,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rboDangCam);
             this.groupBox1.Controls.Add(this.rboDaThanhLy);
             this.groupBox1.Controls.Add(this.rboThanhLy);
             this.groupBox1.Controls.Add(this.rboDaChuoc);
@@ -811,11 +808,24 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
-            // columnHeader17
+            // rboDangCam
             // 
-            this.columnHeader17.DisplayIndex = 3;
-            this.columnHeader17.Text = "Lãi Xuất";
-            this.columnHeader17.Width = 105;
+            this.rboDangCam.AutoSize = true;
+            this.rboDangCam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDangCam.CheckedState.BorderThickness = 0;
+            this.rboDangCam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rboDangCam.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rboDangCam.CheckedState.InnerOffset = -4;
+            this.rboDangCam.Location = new System.Drawing.Point(899, 31);
+            this.rboDangCam.Name = "rboDangCam";
+            this.rboDangCam.Size = new System.Drawing.Size(119, 28);
+            this.rboDangCam.TabIndex = 39;
+            this.rboDangCam.Text = "Đang cầm";
+            this.rboDangCam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rboDangCam.UncheckedState.BorderThickness = 2;
+            this.rboDangCam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rboDangCam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rboDangCam.CheckedChanged += new System.EventHandler(this.rboDangCam_CheckedChanged);
             // 
             // SanPham
             // 
@@ -903,5 +913,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Button btnXoaSP;
         private System.Windows.Forms.Button btnThemSP;
         private System.Windows.Forms.ColumnHeader columnHeader17;
+        private Guna.UI2.WinForms.Guna2RadioButton rboDangCam;
     }
 }

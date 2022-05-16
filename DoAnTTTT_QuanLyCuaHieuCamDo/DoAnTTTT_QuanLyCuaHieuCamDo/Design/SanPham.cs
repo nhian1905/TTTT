@@ -914,6 +914,148 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     }
                 }
             }
+            else if (rboDangCam.Checked == true)
+            {
+
+                {
+
+                    {
+                        string filePath = "";
+                        // tạo SaveFileDialog để lưu file excel
+                        SaveFileDialog dialog = new SaveFileDialog();
+
+                        // chỉ lọc ra các file có định dạng Excel
+                        dialog.Filter = "Excel Workbook|*.xls";
+
+                        // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+                        if (dialog.ShowDialog() == DialogResult.OK)
+                        {
+                            filePath = dialog.FileName;
+                        }
+
+                        // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+                        if (string.IsNullOrEmpty(filePath))
+                        {
+                            MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                            return;
+                        }
+
+                        try
+                        {
+                            ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                            using (ExcelPackage p = new ExcelPackage())
+                            {
+                                // đặt tên người tạo file
+                                p.Workbook.Properties.Author = "NhiAn";
+
+                                // đặt tiêu đề cho file
+                                p.Workbook.Properties.Title = "Báo cáo";
+
+                                //Tạo một sheet để làm việc trên đó
+                                p.Workbook.Worksheets.Add("NhiAn");
+
+                                // lấy sheet vừa add ra để thao tác
+                                ExcelWorksheet ws = p.Workbook.Worksheets[0];
+
+                                // đặt tên cho sheet
+                                ws.Name = "NhiAn";
+                                // fontsize mặc định cho cả sheet
+                                ws.Cells.Style.Font.Size = 13;
+                                // font family mặc định cho cả sheet
+                                ws.Cells.Style.Font.Name = "Calibri";
+
+                                // Tạo danh sách các column header
+                                string[] arrColumnHeader = {
+                                                "Mã sản phẩm",
+                                                "Tên loại",
+                                                "Tên sản phẩm",
+                                                "Định giá",
+                                                "Giá thanh lý",
+                                                "Mô tả",
+                                                "Màu sắc",
+                                                "Hiện trạng",
+                                                "Nhãn hiệu"
+                };
+
+                                // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                                var countColHeader = arrColumnHeader.Count();
+
+                                // merge các column lại từ column 1 đến số column header
+                                // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
+                                ws.Cells[1, 1].Value = "Thống kê thông tin sản phẩm đang cầm";
+                                ws.Cells[1, 1, 1, countColHeader].Merge = true;
+                                // in đậm
+                                ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
+                                // căn giữa
+                                ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                                int colIndex = 1;
+                                int rowIndex = 2;
+
+                                //tạo các header từ column header đã tạo từ bên trên
+                                foreach (var item in arrColumnHeader)
+                                {
+                                    var cell = ws.Cells[rowIndex, colIndex];
+
+                                    //set màu thành gray
+                                    var fill = cell.Style.Fill;
+                                    fill.PatternType = ExcelFillStyle.Solid;
+                                    fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+                                    //căn chỉnh các border
+                                    var border = cell.Style.Border;
+                                    border.Bottom.Style =
+                                        border.Top.Style =
+                                        border.Left.Style =
+                                        border.Right.Style = ExcelBorderStyle.Thin;
+
+                                    //gán giá trị
+                                    cell.Value = item;
+
+                                    colIndex++;
+                                }
+
+                                // lấy ra danh sách UserInfo từ ItemSource của DataGrid
+                                List<SanPhamDTO> ListBC = SanPhamDAO.Instance.LoadListSPDangCam();
+                                double? tongtien = 0;
+                                // với mỗi item trong danh sách sẽ ghi trên 1 dòng
+                                foreach (var item in ListBC)
+                                {
+                                    // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
+                                    colIndex = 1;
+
+                                    // rowIndex tương ứng từng dòng dữ liệu
+                                    rowIndex++;
+
+                                    //gán giá trị cho từng cell                      
+                                    ws.Cells[rowIndex, colIndex++].Value = item.MaSP;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.TenLoai;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.TenSP;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.DinhGia;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.GiaThanhLy;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.MoTa;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.MauSac;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.HienTrang;
+                                    ws.Cells[rowIndex, colIndex++].Value = item.NhanHieu;
+                                    tongtien = tongtien + item.DinhGia;
+                                    // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
+
+
+                                }
+                                ws.Cells[rowIndex + 1, 4, rowIndex + 1, countColHeader].Merge = true;
+                                //Lưu file lại
+                                Byte[] bin = p.GetAsByteArray();
+                                File.WriteAllBytes(filePath, bin);
+                            }
+                            MessageBox.Show("Xuất excel thành công!");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Có lỗi luôn, mà chưa biết lỗi gì");
+                        }
+                    }
+                }
+            }
             else
             {
                 string filePath = "";
@@ -1059,6 +1201,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             rboDaThanhLy.Checked = false;
             rboQuaHan.Checked = false;
             rboThanhLy.Checked = false;
+            rboDangCam.Checked = false;
             LoadSanPham();
         }
 
@@ -1071,6 +1214,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
@@ -1094,6 +1238,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
@@ -1117,6 +1262,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
@@ -1140,6 +1286,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
+                lvitem.SubItems.Add(item.DinhGia.ToString());
+                lvitem.SubItems.Add(item.GiaThanhLy.ToString());
+                lvitem.SubItems.Add(item.MoTa.ToString());
+                lvitem.SubItems.Add(item.MauSac.ToString());
+                lvitem.SubItems.Add(item.HienTrang.ToString());
+                lvitem.SubItems.Add(item.NhanHieu.ToString());
+                lvitem.SubItems.Add(item.QuaHan.ToString());
+                lvitem.SubItems.Add(item.DaChuoc.ToString());
+                lvitem.SubItems.Add(item.ThanhLy.ToString());
+                lvitem.SubItems.Add(item.DaThanhLy.ToString());
+                LVSP.Items.Add(lvitem);
+            }
+        }
+
+        private void rboDangCam_CheckedChanged(object sender, EventArgs e)
+        {
+            LVSP.Items.Clear();
+            List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPDangCam();
+            foreach (SanPhamDTO item in list)
+            {
+                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                lvitem.SubItems.Add(item.TenLoai.ToString());
+                lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());

@@ -31,9 +31,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             this.components = new System.ComponentModel.Container();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.txtTienLai = new System.Windows.Forms.TextBox();
+            this.txtTienVon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLoc = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.SuspendLayout();
             // 
@@ -47,19 +47,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 0;
             // 
-            // txtTienLai
+            // txtTienVon
             // 
-            this.txtTienLai.AccessibleDescription = "";
-            this.txtTienLai.AccessibleName = "";
-            this.txtTienLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtTienLai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTienLai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienLai.ForeColor = System.Drawing.Color.White;
-            this.txtTienLai.Location = new System.Drawing.Point(121, 54);
-            this.txtTienLai.Name = "txtTienLai";
-            this.txtTienLai.Size = new System.Drawing.Size(296, 28);
-            this.txtTienLai.TabIndex = 45;
-            this.txtTienLai.Tag = "";
+            this.txtTienVon.AccessibleDescription = "";
+            this.txtTienVon.AccessibleName = "";
+            this.txtTienVon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtTienVon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTienVon.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienVon.ForeColor = System.Drawing.Color.White;
+            this.txtTienVon.Location = new System.Drawing.Point(121, 54);
+            this.txtTienVon.Name = "txtTienVon";
+            this.txtTienVon.Size = new System.Drawing.Size(296, 28);
+            this.txtTienVon.TabIndex = 45;
+            this.txtTienVon.Tag = "";
             // 
             // label1
             // 
@@ -72,19 +72,20 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1.TabIndex = 46;
             this.label1.Text = "Tiền vốn";
             // 
-            // btnLoc
+            // btnUpdate
             // 
-            this.btnLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(306, 88);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(111, 36);
-            this.btnLoc.TabIndex = 57;
-            this.btnLoc.Text = "Thay đổi";
-            this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(306, 88);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(111, 36);
+            this.btnUpdate.TabIndex = 57;
+            this.btnUpdate.Text = "Thay đổi";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // guna2DragControl1
             // 
@@ -98,13 +99,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(429, 134);
-            this.Controls.Add(this.btnLoc);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTienLai);
+            this.Controls.Add(this.txtTienVon);
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TongTien";
             this.Text = "TongTien";
+            this.Load += new System.EventHandler(this.TongTien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,9 +115,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         #endregion
 
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.TextBox txtTienLai;
+        private System.Windows.Forms.TextBox txtTienVon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLoc;
+        private System.Windows.Forms.Button btnUpdate;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

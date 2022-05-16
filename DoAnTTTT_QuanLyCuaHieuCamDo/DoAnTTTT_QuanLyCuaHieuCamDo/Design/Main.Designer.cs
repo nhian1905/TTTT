@@ -31,11 +31,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             this.panel7 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.txtTienCam = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtCam = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label41 = new System.Windows.Forms.Label();
@@ -44,49 +44,49 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtTienVon = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtTienMat = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.txtTienQuaHan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtQuaHan = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.txtTienChuoc = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtChuoc = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
+            this.txtTienThanhLy = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.txtThanhLy = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
+            this.txtDongLai = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
+            this.txtTienDaThanhLy = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.txtDaThanhLy = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.TongDoanhThu = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label13 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cboThang = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -107,10 +107,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.DoanhThuThang = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label22 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
+            this.txtTienLoi = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
+            this.txt = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -142,11 +142,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel7.Controls.Add(this.label38);
-            this.panel7.Controls.Add(this.label39);
+            this.panel7.Controls.Add(this.txtTienCam);
             this.panel7.Controls.Add(this.label46);
             this.panel7.Controls.Add(this.label27);
             this.panel7.Controls.Add(this.pictureBox8);
-            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.txtCam);
             this.panel7.Controls.Add(this.label16);
             this.panel7.Location = new System.Drawing.Point(967, 753);
             this.panel7.Name = "panel7";
@@ -164,16 +164,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label38.TabIndex = 56;
             this.label38.Text = "Giá trị";
             // 
-            // label39
+            // txtTienCam
             // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label39.Location = new System.Drawing.Point(83, 150);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(168, 26);
-            this.label39.TabIndex = 55;
-            this.label39.Text = "1500000000000";
+            this.txtTienCam.AutoSize = true;
+            this.txtTienCam.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienCam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienCam.Location = new System.Drawing.Point(83, 150);
+            this.txtTienCam.Name = "txtTienCam";
+            this.txtTienCam.Size = new System.Drawing.Size(168, 26);
+            this.txtTienCam.TabIndex = 55;
+            this.txtTienCam.Text = "1500000000000";
             // 
             // label46
             // 
@@ -206,16 +206,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox8.TabIndex = 2;
             this.pictureBox8.TabStop = false;
             // 
-            // label15
+            // txtCam
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label15.Location = new System.Drawing.Point(16, 68);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 26);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "150";
+            this.txtCam.AutoSize = true;
+            this.txtCam.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtCam.Location = new System.Drawing.Point(16, 68);
+            this.txtCam.Name = "txtCam";
+            this.txtCam.Size = new System.Drawing.Size(48, 26);
+            this.txtCam.TabIndex = 1;
+            this.txtCam.Text = "150";
             // 
             // label16
             // 
@@ -257,7 +257,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtTienVon);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(69, 86);
             this.panel1.Name = "panel1";
@@ -306,16 +306,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // txtTienVon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label2.Location = new System.Drawing.Point(85, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "150000000";
+            this.txtTienVon.AutoSize = true;
+            this.txtTienVon.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienVon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienVon.Location = new System.Drawing.Point(85, 86);
+            this.txtTienVon.Name = "txtTienVon";
+            this.txtTienVon.Size = new System.Drawing.Size(120, 26);
+            this.txtTienVon.TabIndex = 1;
+            this.txtTienVon.Text = "150000000";
             // 
             // label9
             // 
@@ -333,7 +333,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.pictureBox9);
-            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.txtTienMat);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Location = new System.Drawing.Point(68, 329);
             this.panel3.Name = "panel3";
@@ -360,16 +360,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
             // 
-            // label14
+            // txtTienMat
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label14.Location = new System.Drawing.Point(85, 86);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 26);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "15600000";
+            this.txtTienMat.AutoSize = true;
+            this.txtTienMat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienMat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienMat.Location = new System.Drawing.Point(85, 86);
+            this.txtTienMat.Name = "txtTienMat";
+            this.txtTienMat.Size = new System.Drawing.Size(108, 26);
+            this.txtTienMat.TabIndex = 1;
+            this.txtTienMat.Text = "15600000";
             // 
             // label17
             // 
@@ -386,11 +386,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel4.Controls.Add(this.label43);
-            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.txtTienQuaHan);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label31);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.txtQuaHan);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(68, 753);
             this.panel4.Name = "panel4";
@@ -408,16 +408,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label43.TabIndex = 53;
             this.label43.Text = "Giá trị";
             // 
-            // label30
+            // txtTienQuaHan
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label30.Location = new System.Drawing.Point(81, 150);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(168, 26);
-            this.label30.TabIndex = 52;
-            this.label30.Text = "1500000000000";
+            this.txtTienQuaHan.AutoSize = true;
+            this.txtTienQuaHan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienQuaHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienQuaHan.Location = new System.Drawing.Point(81, 150);
+            this.txtTienQuaHan.Name = "txtTienQuaHan";
+            this.txtTienQuaHan.Size = new System.Drawing.Size(168, 26);
+            this.txtTienQuaHan.TabIndex = 52;
+            this.txtTienQuaHan.Text = "1500000000000";
             // 
             // label3
             // 
@@ -450,16 +450,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // txtQuaHan
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label5.Location = new System.Drawing.Point(16, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 26);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "150";
+            this.txtQuaHan.AutoSize = true;
+            this.txtQuaHan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuaHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtQuaHan.Location = new System.Drawing.Point(16, 68);
+            this.txtQuaHan.Name = "txtQuaHan";
+            this.txtQuaHan.Size = new System.Drawing.Size(48, 26);
+            this.txtQuaHan.TabIndex = 1;
+            this.txtQuaHan.Text = "150";
             // 
             // label6
             // 
@@ -476,11 +476,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel5.Controls.Add(this.label36);
-            this.panel5.Controls.Add(this.label37);
+            this.panel5.Controls.Add(this.txtTienChuoc);
             this.panel5.Controls.Add(this.label47);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.txtChuoc);
             this.panel5.Controls.Add(this.label18);
             this.panel5.Location = new System.Drawing.Point(535, 753);
             this.panel5.Name = "panel5";
@@ -498,16 +498,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label36.TabIndex = 56;
             this.label36.Text = "Giá trị";
             // 
-            // label37
+            // txtTienChuoc
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label37.Location = new System.Drawing.Point(85, 150);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(168, 26);
-            this.label37.TabIndex = 55;
-            this.label37.Text = "1500000000000";
+            this.txtTienChuoc.AutoSize = true;
+            this.txtTienChuoc.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienChuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienChuoc.Location = new System.Drawing.Point(85, 150);
+            this.txtTienChuoc.Name = "txtTienChuoc";
+            this.txtTienChuoc.Size = new System.Drawing.Size(168, 26);
+            this.txtTienChuoc.TabIndex = 55;
+            this.txtTienChuoc.Text = "1500000000000";
             // 
             // label47
             // 
@@ -540,16 +540,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // label8
+            // txtChuoc
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label8.Location = new System.Drawing.Point(16, 68);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 26);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "150";
+            this.txtChuoc.AutoSize = true;
+            this.txtChuoc.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtChuoc.Location = new System.Drawing.Point(16, 68);
+            this.txtChuoc.Name = "txtChuoc";
+            this.txtChuoc.Size = new System.Drawing.Size(48, 26);
+            this.txtChuoc.TabIndex = 1;
+            this.txtChuoc.Text = "150";
             // 
             // label18
             // 
@@ -566,11 +566,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel6.Controls.Add(this.label32);
-            this.panel6.Controls.Add(this.label35);
+            this.panel6.Controls.Add(this.txtTienThanhLy);
             this.panel6.Controls.Add(this.label44);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.pictureBox4);
-            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.txtThanhLy);
             this.panel6.Controls.Add(this.label21);
             this.panel6.Location = new System.Drawing.Point(535, 547);
             this.panel6.Name = "panel6";
@@ -588,16 +588,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label32.TabIndex = 56;
             this.label32.Text = "Giá trị";
             // 
-            // label35
+            // txtTienThanhLy
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label35.Location = new System.Drawing.Point(84, 154);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(168, 26);
-            this.label35.TabIndex = 55;
-            this.label35.Text = "1500000000000";
+            this.txtTienThanhLy.AutoSize = true;
+            this.txtTienThanhLy.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienThanhLy.Location = new System.Drawing.Point(84, 154);
+            this.txtTienThanhLy.Name = "txtTienThanhLy";
+            this.txtTienThanhLy.Size = new System.Drawing.Size(168, 26);
+            this.txtTienThanhLy.TabIndex = 55;
+            this.txtTienThanhLy.Text = "1500000000000";
             // 
             // label44
             // 
@@ -630,16 +630,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // label20
+            // txtThanhLy
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label20.Location = new System.Drawing.Point(16, 68);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(48, 26);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "150";
+            this.txtThanhLy.AutoSize = true;
+            this.txtThanhLy.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtThanhLy.Location = new System.Drawing.Point(16, 68);
+            this.txtThanhLy.Name = "txtThanhLy";
+            this.txtThanhLy.Size = new System.Drawing.Size(48, 26);
+            this.txtThanhLy.TabIndex = 1;
+            this.txtThanhLy.Text = "150";
             // 
             // label21
             // 
@@ -655,7 +655,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel8.Controls.Add(this.label23);
+            this.panel8.Controls.Add(this.txtDongLai);
             this.panel8.Controls.Add(this.pictureBox10);
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.label25);
@@ -664,17 +664,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel8.Size = new System.Drawing.Size(362, 94);
             this.panel8.TabIndex = 50;
             // 
-            // label23
+            // txtDongLai
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label23.Location = new System.Drawing.Point(89, 49);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(168, 26);
-            this.label23.TabIndex = 47;
-            this.label23.Text = "1500000000000";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
+            this.txtDongLai.AutoSize = true;
+            this.txtDongLai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDongLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtDongLai.Location = new System.Drawing.Point(89, 49);
+            this.txtDongLai.Name = "txtDongLai";
+            this.txtDongLai.Size = new System.Drawing.Size(168, 26);
+            this.txtDongLai.TabIndex = 47;
+            this.txtDongLai.Text = "1500000000000";
+            this.txtDongLai.Click += new System.EventHandler(this.label23_Click);
             // 
             // pictureBox10
             // 
@@ -713,11 +713,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel9.Controls.Add(this.label40);
-            this.panel9.Controls.Add(this.label42);
+            this.panel9.Controls.Add(this.txtTienDaThanhLy);
             this.panel9.Controls.Add(this.label45);
             this.panel9.Controls.Add(this.label26);
             this.panel9.Controls.Add(this.pictureBox11);
-            this.panel9.Controls.Add(this.label28);
+            this.panel9.Controls.Add(this.txtDaThanhLy);
             this.panel9.Controls.Add(this.label29);
             this.panel9.Location = new System.Drawing.Point(967, 547);
             this.panel9.Name = "panel9";
@@ -735,16 +735,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label40.TabIndex = 56;
             this.label40.Text = "Giá trị";
             // 
-            // label42
+            // txtTienDaThanhLy
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label42.Location = new System.Drawing.Point(83, 154);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(168, 26);
-            this.label42.TabIndex = 55;
-            this.label42.Text = "1500000000000";
+            this.txtTienDaThanhLy.AutoSize = true;
+            this.txtTienDaThanhLy.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienDaThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienDaThanhLy.Location = new System.Drawing.Point(83, 154);
+            this.txtTienDaThanhLy.Name = "txtTienDaThanhLy";
+            this.txtTienDaThanhLy.Size = new System.Drawing.Size(168, 26);
+            this.txtTienDaThanhLy.TabIndex = 55;
+            this.txtTienDaThanhLy.Text = "1500000000000";
             // 
             // label45
             // 
@@ -777,16 +777,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox11.TabIndex = 2;
             this.pictureBox11.TabStop = false;
             // 
-            // label28
+            // txtDaThanhLy
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label28.Location = new System.Drawing.Point(16, 68);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(48, 26);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "150";
+            this.txtDaThanhLy.AutoSize = true;
+            this.txtDaThanhLy.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDaThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtDaThanhLy.Location = new System.Drawing.Point(16, 68);
+            this.txtDaThanhLy.Name = "txtDaThanhLy";
+            this.txtDaThanhLy.Size = new System.Drawing.Size(48, 26);
+            this.txtDaThanhLy.TabIndex = 1;
+            this.txtDaThanhLy.Text = "150";
             // 
             // label29
             // 
@@ -901,7 +901,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.guna2CircleProgressBar1);
+            this.panel2.Controls.Add(this.TongDoanhThu);
             this.panel2.Controls.Add(this.label13);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel2.Location = new System.Drawing.Point(7, 42);
@@ -931,26 +931,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // guna2CircleProgressBar1
+            // TongDoanhThu
             // 
-            this.guna2CircleProgressBar1.AnimationSpeed = 0.5F;
-            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.FillThickness = 25;
-            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(91, 58);
-            this.guna2CircleProgressBar1.Minimum = 0;
-            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.Red;
-            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.Lime;
-            this.guna2CircleProgressBar1.ProgressThickness = 25;
-            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.ShowText = true;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(231, 231);
-            this.guna2CircleProgressBar1.TabIndex = 8;
-            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.Value = 10;
+            this.TongDoanhThu.AnimationSpeed = 0.5F;
+            this.TongDoanhThu.BackColor = System.Drawing.Color.Transparent;
+            this.TongDoanhThu.FillColor = System.Drawing.Color.White;
+            this.TongDoanhThu.FillThickness = 25;
+            this.TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.TongDoanhThu.Location = new System.Drawing.Point(91, 58);
+            this.TongDoanhThu.Minimum = 0;
+            this.TongDoanhThu.Name = "TongDoanhThu";
+            this.TongDoanhThu.ProgressColor = System.Drawing.Color.Red;
+            this.TongDoanhThu.ProgressColor2 = System.Drawing.Color.Lime;
+            this.TongDoanhThu.ProgressThickness = 25;
+            this.TongDoanhThu.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.TongDoanhThu.ShowText = true;
+            this.TongDoanhThu.Size = new System.Drawing.Size(231, 231);
+            this.TongDoanhThu.TabIndex = 8;
+            this.TongDoanhThu.Text = "guna2CircleProgressBar1";
+            this.TongDoanhThu.Value = 10;
             // 
             // label13
             // 
@@ -994,6 +994,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.cboThang.Name = "cboThang";
             this.cboThang.Size = new System.Drawing.Size(65, 36);
             this.cboThang.TabIndex = 12;
+            this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -1051,25 +1052,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel10.Controls.Add(this.label48);
+            this.panel10.Controls.Add(this.txtTienLoi);
             this.panel10.Controls.Add(this.pictureBox12);
             this.panel10.Controls.Add(this.label49);
-            this.panel10.Controls.Add(this.label50);
+            this.panel10.Controls.Add(this.txt);
             this.panel10.Location = new System.Drawing.Point(69, 647);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(361, 91);
             this.panel10.TabIndex = 51;
             // 
-            // label48
+            // txtTienLoi
             // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label48.Location = new System.Drawing.Point(89, 49);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(168, 26);
-            this.label48.TabIndex = 47;
-            this.label48.Text = "1500000000000";
+            this.txtTienLoi.AutoSize = true;
+            this.txtTienLoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienLoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtTienLoi.Location = new System.Drawing.Point(89, 49);
+            this.txtTienLoi.Name = "txtTienLoi";
+            this.txtTienLoi.Size = new System.Drawing.Size(168, 26);
+            this.txtTienLoi.TabIndex = 47;
+            this.txtTienLoi.Text = "1500000000000";
             // 
             // pictureBox12
             // 
@@ -1092,16 +1093,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label49.TabIndex = 1;
             this.label49.Text = "VND";
             // 
-            // label50
+            // txt
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(80, 15);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(116, 28);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "TIỀN LỜI";
+            this.txt.AutoSize = true;
+            this.txt.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt.ForeColor = System.Drawing.Color.White;
+            this.txt.Location = new System.Drawing.Point(80, 15);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(116, 28);
+            this.txt.TabIndex = 0;
+            this.txt.Text = "TIỀN LỜI";
             // 
             // Main
             // 
@@ -1175,7 +1176,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         #endregion
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label txtCam;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -1185,53 +1186,53 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtTienVon;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label txtTienMat;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtQuaHan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label txtChuoc;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label txtThanhLy;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label txtDongLai;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label txtDaThanhLy;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label txtTienCam;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label txtTienQuaHan;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label txtTienChuoc;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label txtTienThanhLy;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label txtTienDaThanhLy;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnTatCa;
@@ -1243,7 +1244,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar TongDoanhThu;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel11;
         private Guna.UI2.WinForms.Guna2ComboBox cboThang;
@@ -1252,9 +1253,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private Guna.UI2.WinForms.Guna2CircleProgressBar DoanhThuThang;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label txtTienLoi;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label txt;
     }
 }

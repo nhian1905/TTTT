@@ -52,7 +52,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<SanPhamDTO> LoadListSPDaThanhLy()
         {
             List<SanPhamDTO> LoadList = new List<SanPhamDTO>();
-            string query = "select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 1 and a.QuaHan = 1 and a.DaChuoc = 0";
+            string query = "select a.MaSP,b.TenLoai,a.TenSP,b.LaiXuat,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 1 and a.QuaHan = 0 and a.DaChuoc = 0";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
@@ -64,7 +64,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<SanPhamDTO> LoadListSPQuaHan()
         {
             List<SanPhamDTO> LoadList = new List<SanPhamDTO>();
-            string query = "select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 0 and a.QuaHan = 1 and a.DaChuoc = 0";
+            string query = "select a.MaSP,b.TenLoai,a.TenSP,b.LaiXuat,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 0 and a.QuaHan = 1 and a.DaChuoc = 0";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
@@ -76,7 +76,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<SanPhamDTO> LoadListSPDaChuoc()
         {
             List<SanPhamDTO> LoadList = new List<SanPhamDTO>();
-            string query = "select a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 0 and a.QuaHan = 0 and a.DaChuoc = 1";
+            string query = "select a.MaSP,b.TenLoai,a.TenSP,b.LaiXuat,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 0 and a.QuaHan = 0 and a.DaChuoc = 1";
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                SanPhamDTO SP = new SanPhamDTO(item);
+                LoadList.Add(SP);
+            }
+            return LoadList;
+        }
+        public List<SanPhamDTO> LoadListSPDangCam()
+        {
+            List<SanPhamDTO> LoadList = new List<SanPhamDTO>();
+            string query = "select a.MaSP,b.TenLoai,a.TenSP,b.LaiXuat,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang,a.NhangHieu,a.QuaHan,a.DaChuoc,a.ThanhLy,a.DaThanhLy from SanPham a , LoaiSP b where a.MaLoai = b.MaLoai and a.ThanhLy = 0 and a.DaThanhLy = 0 and a.QuaHan = 0 and a.DaChuoc = 0";
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
@@ -110,7 +122,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
 
         public bool ThanhLySP(string MaSP,bool ThanhLy)
         {
-            string query = string.Format("update SanPham set ThanhLy = N'{0}' where MaSP = N'{1}'", ThanhLy, MaSP);
+            string query = string.Format("update SanPham set ThanhLy = N'{0}', QuaHan=0 where MaSP = N'{1}'", ThanhLy, MaSP);
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
