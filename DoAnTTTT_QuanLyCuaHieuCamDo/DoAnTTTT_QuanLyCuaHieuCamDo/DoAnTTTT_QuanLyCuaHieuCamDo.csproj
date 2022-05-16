@@ -159,6 +159,24 @@
     <Compile Include="Design\ThanhLy.Designer.cs">
       <DependentUpon>ThanhLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\ChiTieuThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ChiTieuThang.Designer.cs">
+      <DependentUpon>ChiTieuThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\ChiTieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ChiTieu.Designer.cs">
+      <DependentUpon>ChiTieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\TongTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\TongTien.Designer.cs">
+      <DependentUpon>TongTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BaoCaoCamDTO.cs" />
     <Compile Include="DTO\BaoCaoChuocDTO.cs" />
@@ -221,6 +239,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\ThanhLy.resx">
       <DependentUpon>ThanhLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ChiTieuThang.resx">
+      <DependentUpon>ChiTieuThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ChiTieu.resx">
+      <DependentUpon>ChiTieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\TongTien.resx">
+      <DependentUpon>TongTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -333,6 +360,8 @@
   <ItemGroup>
     <None Include="Resources\icons8_estimates_30px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_brightness_30px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

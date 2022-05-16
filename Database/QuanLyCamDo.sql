@@ -116,6 +116,14 @@ create table ChiTiet_PhieuChuoc
 	foreign key(MaPhieuChuoc) references PhieuChuoc(MaPhieuChuoc)
 )
 
+create table Tien
+(
+	ID int primary key,
+	TongTien float,
+	DoanhThuThang float,
+	TongDoanhThu float
+)
+insert into Tien values(1,1000000000,50000000,600000000)
 insert into PhieuChuoc values(1,'05/19/2020',0)
 insert into ChiTiet_PhieuChuoc values(1,'IP01',0,0)
 insert into PhieuChuoc values(2,'05/19/2020',0)
