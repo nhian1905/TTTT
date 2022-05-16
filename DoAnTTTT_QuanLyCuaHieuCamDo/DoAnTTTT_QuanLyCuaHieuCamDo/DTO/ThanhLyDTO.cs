@@ -11,14 +11,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private int maThanhLy;
         private string tenKH;
         private DateTime ngayLap;
-        private float tongTienThanhLy;
+        private double tongTienThanhLy;
 
         public int MaThanhLy { get => maThanhLy; set => maThanhLy = value; }
         public string TenKH { get => tenKH; set => tenKH = value; }
         public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }
-        public float TongTienThanhLy { get => tongTienThanhLy; set => tongTienThanhLy = value; }
+        public double TongTienThanhLy { get => tongTienThanhLy; set => tongTienThanhLy = value; }
 
-        public ThanhLyDTO(int MaThanhLy, string TenKH, DateTime NgayLap, float TongTienThanhLy)
+        public ThanhLyDTO(int MaThanhLy, string TenKH, DateTime NgayLap, double TongTienThanhLy)
         {
             this.MaThanhLy = MaThanhLy;
             this.TenKH = TenKH;

@@ -198,7 +198,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             btnChuoSP.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+            DateTime NgayHienTai = DateTime.Now;
+            SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
+        }
     }
 }
 

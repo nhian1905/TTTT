@@ -11,6 +11,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string maSP;
         private string tenLoai;
         private string tenSP;
+        private int laiXuat;
         private double dinhGia;
         private double giaThanhLy;
         private string moTa;
@@ -25,6 +26,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
+        public int LaiXuat { get => laiXuat; set => laiXuat = value; }
         public double DinhGia { get => dinhGia; set => dinhGia = value; }
         public double GiaThanhLy { get => giaThanhLy; set => giaThanhLy = value; }
         public string MoTa { get => moTa; set => moTa = value; }
@@ -37,11 +39,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public bool DaThanhLy { get => daThanhLy; set => daThanhLy = value; }
         
 
-        public SanPhamDTO(string MaSP, string TenLoai, string TenSP, double DinhGia, double GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
+        public SanPhamDTO(string MaSP, string TenLoai, string TenSP, int LaiXuat,double DinhGia, double GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
         {
             this.MaSP = MaSP;
             this.TenLoai = TenLoai;
             this.TenSP = TenSP;
+            this.LaiXuat = LaiXuat;
             this.DinhGia = DinhGia;
             this.GiaThanhLy = GiaThanhLy;
             this.MoTa = MoTa;
@@ -59,6 +62,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.MaSP = row["MaSP"].ToString();
             this.TenLoai = row["TenLoai"].ToString();
             this.TenSP = row["TenSP"].ToString();
+            this.LaiXuat =(int)row["LaiXuat"];
             this.DinhGia = (double)Convert.ToDouble(row["DinhGia"]);
             this.GiaThanhLy = (double)Convert.ToDouble(row["GiaThanhLy"]);
             this.MoTa = row["MoTa"].ToString();

@@ -22,8 +22,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string nhangHieu;
         private string mauSac;
         private string hienTrang;
-        private float tienLai;
-        private float tongTien;
+        private double tienLai;
+        private double tongTien;
 
         public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
@@ -31,8 +31,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public int SDT { get => sDT; set => sDT = value; }
         public int CMND { get => cMND; set => cMND = value; }
         public DateTime NgayChuoc { get => ngayChuoc; set => ngayChuoc = value; }
-        public float TienLai { get => tienLai; set => tienLai = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public double TienLai { get => tienLai; set => tienLai = value; }
+        public double TongTien { get => tongTien; set => tongTien = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
@@ -43,7 +43,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public string HienTrang { get => hienTrang; set => hienTrang = value; }
 
 
-        public BaoCaoChuocDTO(int MaPhieuChuoc,int MaHoaDonCam, string TenKH, int SDT, int CMND, DateTime NgayChuoc, float TongTien)
+        public BaoCaoChuocDTO(int MaPhieuChuoc,int MaHoaDonCam, string TenKH, int SDT, int CMND, DateTime NgayChuoc, double TongTien)
         {
             this.MaPhieuChuoc = MaPhieuChuoc;
             this.MaHoaDonCam = MaHoaDonCam;

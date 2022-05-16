@@ -29,17 +29,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadSanPham();
             LoadLoaiSP();
             LoadCboLoaiSP();
-        }
-
-        void LoadCboLoaiSP()
-        {
-            cboTenLoai.DataSource = LoaiSPDAO.Instance.LoadListLoaiSP();
-            cboTenLoai.DisplayMember = "TenLoai";
+            LoadSPQuaHan();
         }
 
         void LoadSPQuaHan()
         {
-
+            DateTime NgayHienTai = DateTime.Now;
+            SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
+            LoadSanPham();
+        }
+        void LoadCboLoaiSP()
+        {
+            cboTenLoai.DataSource = LoaiSPDAO.Instance.LoadListLoaiSP();
+            cboTenLoai.DisplayMember = "TenLoai";
         }
         void LoadSanPham()
         {
@@ -50,6 +52,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
+                lvitem.SubItems.Add(item.LaiXuat.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.GiaThanhLy.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
@@ -99,37 +102,41 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void LVSP_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-                ListView.SelectedListViewItemCollection lv = this.LVSP.SelectedItems;
-                string masp = "";
-                string maloai = "";
-                string tensp = "";
-                string dinhgia = "";
-                string giathanhly = "";
-                string mota = "";
-                string mausac = "";
-                string hientrang = "";
-                string nhanhieu = "";
-                foreach (ListViewItem item in lv)
-                {
-                    masp += item.SubItems[0].Text;
-                    maloai += item.SubItems[1].Text;
-                    tensp += item.SubItems[2].Text;
-                    dinhgia += item.SubItems[3].Text;
-                    giathanhly += item.SubItems[4].Text;
-                    mota += item.SubItems[5].Text;
-                    mausac += item.SubItems[6].Text;
-                    hientrang += item.SubItems[7].Text;
-                    nhanhieu += item.SubItems[8].Text;
-                }
-                txtMaSP.Text = masp.ToString();
-                txtTenSP.Text = tensp.ToString();
-                txtDinhGia.Text = dinhgia.ToString();
-                txtGiaThanhLy.Text = giathanhly.ToString();
-                cboTenLoai.Text = maloai.ToString();
-                txtMoTa.Text = mota.ToString();
-                txtMauSac.Text = mausac.ToString();
-                txtHienTrang.Text = hientrang.ToString();
-                txtNhanHieu.Text = nhanhieu.ToString();
+            ListView.SelectedListViewItemCollection lv = this.LVSP.SelectedItems;
+            string masp = "";
+            string maloai = "";
+            string tensp = "";
+            string laixuat = "";
+            string dinhgia = "";
+            string giathanhly = "";
+            string mota = "";
+            string mausac = "";
+            string hientrang = "";
+            string nhanhieu = "";
+            foreach (ListViewItem item in lv)
+            {
+                masp += item.SubItems[0].Text;
+                maloai += item.SubItems[1].Text;
+                tensp += item.SubItems[2].Text;
+                laixuat += item.SubItems[3].Text;
+                dinhgia += item.SubItems[4].Text;
+                giathanhly += item.SubItems[5].Text;
+                mota += item.SubItems[6].Text;
+                mausac += item.SubItems[7].Text;
+                hientrang += item.SubItems[8].Text;
+                nhanhieu += item.SubItems[9].Text;
+            }
+            txtMaSP.Text = masp.ToString();
+            txtTenSP.Text = tensp.ToString();
+            txtTenLoai.Text = maloai.ToString();
+            txtLaiSuat.Text = laixuat.ToString();
+            txtDinhGia.Text = dinhgia.ToString();
+            txtGiaThanhLy.Text = giathanhly.ToString();
+            cboTenLoai.Text = maloai.ToString();
+            txtMoTa.Text = mota.ToString();
+            txtMauSac.Text = mausac.ToString();
+            txtHienTrang.Text = hientrang.ToString();
+            txtNhanHieu.Text = nhanhieu.ToString();
         }
        
 

@@ -40,6 +40,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
+        void ClearThongTin()
+        {
+            txtTenSP.Clear();
+            txtGiaThanhLy.Clear();
+            txtMauSac.Clear();
+            txtHienTrang.Clear();
+            txtMoTa.Clear();
+            txtNhanHieu.Clear();
+            LoadCboSP();
+        }
         void LoadCTThanhLy(int MaThanhLy)
         {
             LVCTThanhLy.Items.Clear();
@@ -267,6 +277,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     LoadCTThanhLy(id);
                     LoadTongTien();
                     LoadCboSP();
+                    ClearThongTin();
                 }
                 else
                 {

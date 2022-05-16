@@ -45,6 +45,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             DoanhThuThang.Value = Convert.ToInt32(doanhthuthang*100);
         }
 
+
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             TongTien f = new TongTien();

@@ -78,15 +78,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label4 = new System.Windows.Forms.Label();
             this.cboTenLoai = new System.Windows.Forms.ComboBox();
             this.btnThanhLy = new System.Windows.Forms.Button();
+            this.btnXoaSP = new System.Windows.Forms.Button();
             this.btnSuaSP = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.btnXoaSP = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -99,6 +100,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader14,
+            this.columnHeader17,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
@@ -140,51 +142,61 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // columnHeader3
             // 
+            this.columnHeader3.DisplayIndex = 4;
             this.columnHeader3.Text = "Định Giá";
             this.columnHeader3.Width = 114;
             // 
             // columnHeader4
             // 
+            this.columnHeader4.DisplayIndex = 5;
             this.columnHeader4.Text = "Giá Thanh Lý";
             this.columnHeader4.Width = 147;
             // 
             // columnHeader5
             // 
+            this.columnHeader5.DisplayIndex = 6;
             this.columnHeader5.Text = "Mô Tả";
             this.columnHeader5.Width = 304;
             // 
             // columnHeader6
             // 
+            this.columnHeader6.DisplayIndex = 7;
             this.columnHeader6.Text = "Màu Sắc";
             this.columnHeader6.Width = 104;
             // 
             // columnHeader7
             // 
+            this.columnHeader7.DisplayIndex = 8;
             this.columnHeader7.Text = "Hiện Trạng";
             this.columnHeader7.Width = 284;
             // 
             // columnHeader8
             // 
+            this.columnHeader8.DisplayIndex = 9;
             this.columnHeader8.Text = "Nhãn Hiệu";
             this.columnHeader8.Width = 154;
             // 
             // columnHeader10
             // 
+            this.columnHeader10.DisplayIndex = 10;
             this.columnHeader10.Text = "Quá Hạn";
             this.columnHeader10.Width = 103;
             // 
             // columnHeader11
             // 
+            this.columnHeader11.DisplayIndex = 11;
             this.columnHeader11.Text = "Đã Chuộc";
             this.columnHeader11.Width = 106;
             // 
             // columnHeader12
             // 
+            this.columnHeader12.DisplayIndex = 12;
             this.columnHeader12.Text = "Thanh Lý";
             this.columnHeader12.Width = 98;
             // 
             // columnHeader13
             // 
+            this.columnHeader13.DisplayIndex = 13;
             this.columnHeader13.Text = "Đã Thanh Lý";
             this.columnHeader13.Width = 120;
             // 
@@ -676,6 +688,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThanhLy.UseVisualStyleBackColor = false;
             this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXoaSP.FlatAppearance.BorderSize = 0;
+            this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
+            this.btnXoaSP.Location = new System.Drawing.Point(418, 312);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
+            this.btnXoaSP.TabIndex = 36;
+            this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.UseVisualStyleBackColor = false;
+            this.btnXoaSP.Visible = false;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
+            // 
             // btnSuaSP
             // 
             this.btnSuaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
@@ -690,6 +718,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = false;
             this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
+            // 
+            // btnThemSP
+            // 
+            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThemSP.FlatAppearance.BorderSize = 0;
+            this.btnThemSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.ForeColor = System.Drawing.Color.White;
+            this.btnThemSP.Location = new System.Drawing.Point(278, 312);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(99, 38);
+            this.btnThemSP.TabIndex = 34;
+            this.btnThemSP.Text = "Thêm ";
+            this.btnThemSP.UseVisualStyleBackColor = false;
+            this.btnThemSP.Visible = false;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // label1
             // 
@@ -767,37 +811,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
-            // btnXoaSP
+            // columnHeader17
             // 
-            this.btnXoaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnXoaSP.FlatAppearance.BorderSize = 0;
-            this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
-            this.btnXoaSP.Location = new System.Drawing.Point(418, 312);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaSP.TabIndex = 36;
-            this.btnXoaSP.Text = "Xóa";
-            this.btnXoaSP.UseVisualStyleBackColor = false;
-            this.btnXoaSP.Visible = false;
-            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
-            // 
-            // btnThemSP
-            // 
-            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnThemSP.FlatAppearance.BorderSize = 0;
-            this.btnThemSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSP.ForeColor = System.Drawing.Color.White;
-            this.btnThemSP.Location = new System.Drawing.Point(278, 312);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(99, 38);
-            this.btnThemSP.TabIndex = 34;
-            this.btnThemSP.Text = "Thêm ";
-            this.btnThemSP.UseVisualStyleBackColor = false;
-            this.btnThemSP.Visible = false;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            this.columnHeader17.DisplayIndex = 3;
+            this.columnHeader17.Text = "Lãi Xuất";
+            this.columnHeader17.Width = 105;
             // 
             // SanPham
             // 
@@ -884,5 +902,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private Guna.UI2.WinForms.Guna2RadioButton rboQuaHan;
         private System.Windows.Forms.Button btnXoaSP;
         private System.Windows.Forms.Button btnThemSP;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
     }
 }

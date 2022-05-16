@@ -123,6 +123,7 @@ create table Tien
 	DoanhThuThang float,
 	TongDoanhThu float
 )
+
 insert into Tien values(1,1000000000,50000000,600000000)
 insert into PhieuChuoc values(1,'05/19/2020',0)
 insert into ChiTiet_PhieuChuoc values(1,'IP01',0,0)
@@ -133,18 +134,18 @@ insert into Quyen values ('admin')
 insert into TaiKhoan values ('admin',123,1)
 
 insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
-insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
-insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
-insert into KhachHang values(N'Trần Nhị Ân',0919059069,381909647,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Nguyễn Chí Đang',0835629645,381000111,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Trần Nhất Phương',0947366755,381222333,'05/19/2020',N'Cà Mau','05/19/2020','1')
+insert into KhachHang values(N'Lý Tấn Ngọc',0919599595,381987345,'05/19/2020',N'Cần Thơ','05/19/2020','1')
 
 insert into LoaiSP values (N'DT',5)
 insert into LoaiSP values (N'MT',3)
 
-insert into SanPham values ('IP',N'Điện Thoại',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N'iphone 10',0,0,0,0)
-insert into SanPham values ('LT',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,0,0)
-insert into SanPham values ('LT1',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,1,0,0)
-insert into SanPham values ('LT2',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',1,0,0,0)
-insert into SanPham values ('LT3',N'Máy Tính',2345.2,3456.3,1,N'Nguyên vẹn',N'Màu đỏ',N'có trầy',N' Asus',0,0,0,1)
+insert into SanPham values ('IMEI1602',N'IPHONE 12',1602,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu đỏ',N'có trầy ở lưng',N'IPHONE',0,0,0,0)
+insert into SanPham values ('IMEI111',N'SAMSUNG A12',1111,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Hồng',N'có trầy viền',N' SAMSUNG',0,0,0,0)
+insert into SanPham values ('IMEI1789',N'OPPO A95',1789,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Xanh',N'100%',N' OPPO',0,0,0,0)
+insert into SanPham values ('IMEI1666',N'OPPO FIND X',1666,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Tím',N'100%',N' OPPO',0,0,0,0)
+insert into SanPham values ('IMEI1323',N'IPHONE X',1323,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Vàng',N'có trầy ở kính',N' IPHONE',0,0,0,0)
 
 
 
@@ -258,13 +259,22 @@ create proc USP_InHoaDonPhieuCam
  as
  begin
 
-	 select a.MaHoaDonCam, c.TenKH ,c.DiaChi,c.SDT,c.CMND,c.NgayCapCMND, a.NgayLap , a.NgayHetHan , d.TenSP, d.DinhGia,e.LaiXuat,a.TongTienCam
+	 select a.MaHoaDonCam, c.TenKH ,c.DiaChi,c.SDT,c.CMND,c.NgayCapCMND, a.NgayLap , a.NgayHetHan , d.TenSP, d.DinhGia,e.LaiXuat,d.MauSac,d.HienTrang, a.TongTienCam
 	from HoaDonCam a , ChiTiet_HoaDonCam b , KhachHang c  , SanPham d , LoaiSP e
 	where a.MaHoaDonCam = b.MaHoaDonCam and d.MaSP = b.MaSP and d.MaLoai = e.MaLoai and a.MaKH = c.MaKH and a.MaHoaDonCam = @MaHDC AND B.MaHoaDonCam = @MaHDC
  end
  go
 
+ create proc USP_InHoaDonPhieuChuoc
+ @MaPC int
+ as
+ begin
 
+	 select a.MaHoaDonCam, c.TenKH ,c.DiaChi,c.SDT,c.CMND,c.NgayCapCMND, a.NgayLap , a.NgayHetHan , d.TenSP, d.DinhGia,e.LaiXuat,d.MauSac,d.HienTrang, a.TongTienCam
+	from HoaDonCam a ,PhieuChuoc b, KhachHang c  , SanPham d , LoaiSP e , ChiTiet_PhieuChuoc f
+	where a.MaHoaDonCam = b.MaHoaDonCam and d.MaLoai = e.MaLoai and a.MaKH = c.MaKH and b.MaPhieuChuoc = @MaPC and f.MaSP = d.MaSP
+ end
+ go
 
 
 select ChiTiet_HoaDonCam.MaSP,SanPham.MaLoai,LoaiSP.LaiXuat,SanPham.DinhGia

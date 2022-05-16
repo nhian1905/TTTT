@@ -11,30 +11,30 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         //private int maPhieuChuoc;
         private string maSP;
         private string tenSP;
-        private float dinhGia;
+        private double dinhGia;
         private int laiXuat;
-        private float tienLai;
+        private double tienLai;
         private string moTa;
         private string mauSac;
         private string hienTrang;
         private string nhanHieu;
-        private float tongTien;
+        private double tongTien;
 
         //public int MaPhieuChuoc { get => maPhieuChuoc; set => maPhieuChuoc = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
-        public float DinhGia { get => dinhGia; set => dinhGia = value; }
+        public double DinhGia { get => dinhGia; set => dinhGia = value; }
 
         public int LaiXuat { get => laiXuat; set => laiXuat = value; }
-        public float TienLai { get => tienLai; set => tienLai = value; }
+        public double TienLai { get => tienLai; set => tienLai = value; }
         public string MoTa { get => moTa; set => moTa = value; }
         public string MauSac { get => mauSac; set => mauSac = value; }
         public string HienTrang { get => hienTrang; set => hienTrang = value; }
         public string NhanHieu { get => nhanHieu; set => nhanHieu = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public double TongTien { get => tongTien; set => tongTien = value; }
        
 
-        public ChiTietPhieuChuocDTO(/*int MaPhieuChuoc,*/ string MaSP, string TenSP, float DinhGia,int LaiXuat,float TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, float TongTien)
+        public ChiTietPhieuChuocDTO(/*int MaPhieuChuoc,*/ string MaSP, string TenSP, double DinhGia,int LaiXuat, double TienLai, string MoTa, string MauSac, string HienTrang, string NhangHieu, double TongTien)
         {
             //this.MaPhieuChuoc = MaPhieuChuoc;
             this.MaSP = MaSP;
