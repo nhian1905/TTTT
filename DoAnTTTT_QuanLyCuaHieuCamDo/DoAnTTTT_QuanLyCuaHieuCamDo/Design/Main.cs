@@ -23,23 +23,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void Main_Load(object sender, EventArgs e)
         {
             DateTime NgayHienTai = DateTime.Now;
-            SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
-
-            cboThang.Items.Add("1");
-            cboThang.Items.Add("2");
-            cboThang.Items.Add("3");
-            cboThang.Items.Add("4");
-            cboThang.Items.Add("5");
-            cboThang.Items.Add("6");
-            cboThang.Items.Add("7");
-            cboThang.Items.Add("8");
-            cboThang.Items.Add("9");
-            cboThang.Items.Add("10");
-            cboThang.Items.Add("11");
-            cboThang.Items.Add("12");
-
             int thang = Convert.ToInt32(DateTime.Now.Month);
-            cboThang.SelectedIndex = thang-1;
+            
+            SanPhamDAO.Instance.UpdateSPQuaHan(NgayHienTai);
+            for(int i=1;i<=thang;i++)
+            {
+                cboThang.Items.Add(i);
+            }
+            cboThang.SelectedIndex = thang - 1;
+
             LoadThongKe();
             LoadChiTieuThang();
             LoadChiTieu();
@@ -135,7 +127,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            LoadChiTieuThang();
+        }
+
+        private void cboThang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //LoadChiTieuThang();
         }
     }
 }

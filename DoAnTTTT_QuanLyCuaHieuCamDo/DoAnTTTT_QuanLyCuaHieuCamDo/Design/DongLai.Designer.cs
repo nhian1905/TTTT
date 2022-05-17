@@ -90,7 +90,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // gbKhachHang
             // 
-            this.gbKhachHang.Controls.Add(this.cboMaKH);
             this.gbKhachHang.Controls.Add(this.txtTenKhachHang);
             this.gbKhachHang.Controls.Add(this.btnDongLai);
             this.gbKhachHang.Controls.Add(this.txtTienLai);
@@ -124,6 +123,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.Controls.Add(this.label3);
             this.gbKhachHang.Controls.Add(this.pictureBox3);
             this.gbKhachHang.Controls.Add(this.label1);
+            this.gbKhachHang.Controls.Add(this.cboMaKH);
             this.gbKhachHang.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbKhachHang.ForeColor = System.Drawing.Color.White;
             this.gbKhachHang.Location = new System.Drawing.Point(12, 12);
@@ -136,7 +136,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // cboMaKH
             // 
             this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(33, 474);
+            this.cboMaKH.Location = new System.Drawing.Point(1220, 468);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(39, 32);
             this.cboMaKH.TabIndex = 77;
@@ -149,6 +149,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTenKhachHang.AccessibleName = "";
             this.txtTenKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtTenKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKhachHang.Enabled = false;
             this.txtTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhachHang.ForeColor = System.Drawing.Color.White;
             this.txtTenKhachHang.Location = new System.Drawing.Point(212, 38);
@@ -178,6 +179,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTienLai.AccessibleName = "";
             this.txtTienLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtTienLai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTienLai.Enabled = false;
             this.txtTienLai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienLai.ForeColor = System.Drawing.Color.White;
             this.txtTienLai.Location = new System.Drawing.Point(213, 444);
@@ -199,6 +201,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Enabled = false;
             this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox7.Location = new System.Drawing.Point(173, 436);
             this.pictureBox7.Name = "pictureBox7";
@@ -212,6 +215,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaHDC.AccessibleName = "";
             this.txtMaHDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtMaHDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHDC.Enabled = false;
             this.txtMaHDC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHDC.ForeColor = System.Drawing.Color.White;
             this.txtMaHDC.Location = new System.Drawing.Point(378, 223);
@@ -224,6 +228,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayCamHD
             // 
             this.dtpNgayCamHD.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayCamHD.Enabled = false;
             this.dtpNgayCamHD.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCamHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayCamHD.Location = new System.Drawing.Point(212, 311);
@@ -244,6 +249,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox11
             // 
+            this.pictureBox11.Enabled = false;
             this.pictureBox11.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox11.Location = new System.Drawing.Point(174, 310);
             this.pictureBox11.Name = "pictureBox11";
@@ -257,6 +263,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTongTien.AccessibleName = "";
             this.txtTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.ForeColor = System.Drawing.Color.White;
             this.txtTongTien.Location = new System.Drawing.Point(212, 402);
@@ -278,6 +285,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Enabled = false;
             this.pictureBox9.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox9.Location = new System.Drawing.Point(173, 394);
             this.pictureBox9.Name = "pictureBox9";
@@ -288,6 +296,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayHetHan
             // 
             this.dtpNgayHetHan.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayHetHan.Enabled = false;
             this.dtpNgayHetHan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayHetHan.Location = new System.Drawing.Point(213, 350);
@@ -354,6 +363,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox1.Location = new System.Drawing.Point(174, 349);
             this.pictureBox1.Name = "pictureBox1";
@@ -363,6 +373,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Enabled = false;
             this.pictureBox8.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox8.Location = new System.Drawing.Point(175, 34);
             this.pictureBox8.Name = "pictureBox8";
@@ -373,6 +384,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(212, 169);
@@ -387,6 +399,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.Enabled = false;
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(212, 266);
@@ -407,6 +420,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox2.Location = new System.Drawing.Point(174, 265);
             this.pictureBox2.Name = "pictureBox2";
@@ -420,6 +434,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtCMND.AccessibleName = "";
             this.txtCMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCMND.Enabled = false;
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.ForeColor = System.Drawing.Color.White;
             this.txtCMND.Location = new System.Drawing.Point(212, 223);
@@ -441,6 +456,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Enabled = false;
             this.pictureBox5.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox5.Location = new System.Drawing.Point(174, 218);
             this.pictureBox5.Name = "pictureBox5";
@@ -461,6 +477,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Enabled = false;
             this.pictureBox6.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox6.Location = new System.Drawing.Point(174, 168);
             this.pictureBox6.Name = "pictureBox6";
@@ -474,6 +491,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDiaChi.AccessibleName = "";
             this.txtDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.White;
             this.txtDiaChi.Location = new System.Drawing.Point(212, 130);
@@ -495,6 +513,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox4.Location = new System.Drawing.Point(175, 126);
             this.pictureBox4.Name = "pictureBox4";
@@ -508,6 +527,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtSDT.AccessibleName = "";
             this.txtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSDT.Enabled = false;
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.ForeColor = System.Drawing.Color.White;
             this.txtSDT.Location = new System.Drawing.Point(212, 83);
@@ -529,6 +549,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
             this.pictureBox3.Location = new System.Drawing.Point(175, 79);
             this.pictureBox3.Name = "pictureBox3";

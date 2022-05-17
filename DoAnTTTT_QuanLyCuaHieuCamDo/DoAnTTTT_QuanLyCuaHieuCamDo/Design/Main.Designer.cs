@@ -990,11 +990,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.cboThang.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboThang.ForeColor = System.Drawing.Color.White;
             this.cboThang.ItemHeight = 30;
-            this.cboThang.Location = new System.Drawing.Point(306, 16);
+            this.cboThang.Location = new System.Drawing.Point(300, 16);
             this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(65, 36);
+            this.cboThang.Size = new System.Drawing.Size(71, 36);
             this.cboThang.TabIndex = 12;
             this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
+            this.cboThang.SelectedValueChanged += new System.EventHandler(this.cboThang_SelectedValueChanged);
             // 
             // label11
             // 
@@ -1043,7 +1044,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(67, 20);
+            this.label22.Location = new System.Drawing.Point(59, 20);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(245, 28);
             this.label22.TabIndex = 0;

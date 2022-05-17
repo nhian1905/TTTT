@@ -26,10 +26,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void SanPham_Load(object sender, EventArgs e)
         {
-            LoadSanPham();
+            
             LoadLoaiSP();
             LoadCboLoaiSP();
             LoadSPQuaHan();
+            LoadSanPham();
         }
 
         void LoadSPQuaHan()
