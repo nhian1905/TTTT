@@ -510,6 +510,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIN.TabIndex = 68;
             this.btnIN.Text = "In";
             this.btnIN.UseVisualStyleBackColor = false;
+            this.btnIN.Click += new System.EventHandler(this.btnIN_Click);
             // 
             // LvSanPham
             // 

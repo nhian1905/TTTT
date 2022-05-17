@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlVTUF9JbkhvYURvblBoaWV1Q2h1b2MiPjxGaWVsZCBOYW1lPSJNYVBoaWV1Q2h1b2MiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJNYUhvYURvbkNhbSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRlbktIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNEVCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkNNTkQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEaWFDaGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmdheUxhcCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9Ik5nYXlDaHVvYyIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9Ik1hU1AiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVuTG9haSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5TUCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEaW5oR2lhIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IkxhaVh1YXQiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVGllbkxhaSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJUaGFuaFRpZW4iIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG9uZ1RpZW4iIFR5cGU9IkRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <data name="$this.ScriptsSource" xml:space="preserve">
+    <value>private long _currentRowNumber = 1;
+private void calculatedField1_GetValue(object sender, DevExpress.XtraReports.UI.GetValueEventArgs e) {
+e.Value = _currentRowNumber.ToString();
+_currentRowNumber++;
+}
+
+</value>
+  </data>
 </root>

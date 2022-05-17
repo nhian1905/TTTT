@@ -267,16 +267,31 @@ create proc USP_InHoaDonPhieuCam
  end
  go
 
- create proc USP_InHoaDonPhieuChuoc
+
+create proc USP_InHoaDonPhieuChuoc
  @MaPC int
  as
  begin
 
-	 select a.MaHoaDonCam, c.TenKH ,c.DiaChi,c.SDT,c.CMND,c.NgayCapCMND, a.NgayLap , a.NgayHetHan , d.TenSP, d.DinhGia,e.LaiXuat,d.MauSac,d.HienTrang, a.TongTienCam
-	from HoaDonCam a ,PhieuChuoc b, KhachHang c  , SanPham d , LoaiSP e , ChiTiet_PhieuChuoc f
-	where a.MaHoaDonCam = b.MaHoaDonCam and d.MaLoai = e.MaLoai and a.MaKH = c.MaKH and b.MaPhieuChuoc = @MaPC and f.MaSP = d.MaSP
+	 select a.MaPhieuChuoc , c.MaHoaDonCam, f.TenKH , f.SDT,f.CMND,f.DiaChi,c.NgayLap ,a.NgayChuoc,d.MaSP,e.TenLoai,d.TenSP,d.DinhGia,e.LaiXuat,b.TienLai,b.TongTien as ThanhTien,a.TongTien
+	from PhieuChuoc a , ChiTiet_PhieuChuoc b , HoaDonCam c , SanPham d , LoaiSP e , KhachHang f
+	where a.MaHoaDonCam = c.MaHoaDonCam and b.MaSP = d.MaSP and b.MaPhieuChuoc = a.MaPhieuChuoc and d.MaLoai = e.MaLoai and c.MaKH = f.MaKH and a.MaPhieuChuoc = @MaPC
  end
  go
+
+create proc USP_InHoaDonPhieuTL
+ @MaTL int
+ as
+ begin
+
+	 select a.MaThanhLy ,  f.TenKH , f.SDT,f.CMND,f.DiaChi,a.NgayLap ,d.MaSP,e.TenLoai,d.TenSP,d.GiaThanhLy,a.TongTienThanhLy
+	from ThanhLy a , ChiTiet_ThanhLy b  , SanPham d , LoaiSP e , KhachHang f
+	where a.MaThanhLy = b.MaThanhLy and b.MaSP = d.MaSP and d.MaLoai = e.MaLoai and a.MaKH = f.MaKH and a.MaThanhLy=@MaTL
+ end
+ go
+
+
+
 
  /*ThongKeLai*/
 create proc USP_DongLai

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
+using DevExpress.XtraReports.UI;
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     public partial class ThanhLy : Form
@@ -316,6 +317,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
 
             LoadCTThanhLy(id);
+        }
+
+        private void btnInHDCam_Click(object sender, EventArgs e)
+        {
+            int MaThanhLy = (int)Convert.ToInt32(txtMaThanhLy.Text);
+            if (MessageBox.Show("Bạn có muốn in hóa đơn ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                rptThanhLy rp = new rptThanhLy();
+                rp.DataSource = ThanhLyDAO.Instance.LoadRpHDTL(MaThanhLy);
+                rp.FilterString = "[MaThanhLy] = '" + MaThanhLy + "'";
+                rp.CreateDocument();
+                rp.ShowPreviewDialog();
+            }
         }
     }
 }

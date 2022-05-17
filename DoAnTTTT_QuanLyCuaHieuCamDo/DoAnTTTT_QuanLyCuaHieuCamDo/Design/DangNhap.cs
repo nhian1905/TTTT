@@ -47,5 +47,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 MessageBox.Show("VUI LÒNG NHẬP ĐẦY ĐỦ THÔNG TIN", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

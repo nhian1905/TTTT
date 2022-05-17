@@ -405,7 +405,7 @@ C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\Do
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.ChiTieu.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Design.TongTien.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.exe.licenses
-C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Report.rptPhieuChuoc.resources
-C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Report.rptThanhLy.resources
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Report.rptPhieuChuoc.resources
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Report.rptThanhLy.resources
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.rptPhieuChuoc.resources
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.rptThanhLy.resources

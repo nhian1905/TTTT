@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
+using DevExpress.XtraReports.UI;
+
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     public partial class ChuocSP : Form
@@ -237,6 +239,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
 
             LoadCTPhieuChuoc(MaHDChuoc);
+        }
+
+        private void btnIN_Click(object sender, EventArgs e)
+        {
+            int MaPhieuChuoc = (int)Convert.ToInt32(lbMaHDChuoc.Text);
+            if (MessageBox.Show("Bạn có muốn in hóa đơn ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                rptPhieuChuoc rp = new rptPhieuChuoc();
+                rp.DataSource = PhieuChuocDAO.Instance.LoadRpHDChuoc(MaPhieuChuoc);
+                rp.FilterString = "[MaPhieuChuoc] = '" + MaPhieuChuoc + "'";
+                rp.CreateDocument();
+                rp.ShowPreviewDialog();
+            }
         }
     }
 }
