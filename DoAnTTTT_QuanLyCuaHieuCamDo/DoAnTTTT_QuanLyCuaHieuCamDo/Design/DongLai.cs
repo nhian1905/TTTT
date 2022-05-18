@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
-
+using DevExpress.XtraReports.UI;
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
     public partial class DongLai : Form
@@ -89,7 +89,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtTongTien.Text = tongtiencam.ToString();
             cboMaKH.Text = PhieuLaiDAO.Instance.MaKH(mahoadoncam);
             int MaHoaDonCam = int.Parse(txtMaHDC.Text);
-            DateTime NgayHienTai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            DateTime NgayHienTai = DateTime.Now;
             txtTienLai.Text =Convert.ToString(PhieuLaiDAO.Instance.TienLai( NgayHienTai, MaHoaDonCam));
             LoadPhieuLai(MaHoaDonCam);
         }
@@ -131,6 +131,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 LoadNgayDongLaiHDC();
                 txtTienLai.Clear();
             }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            int MaPhieuLai = (int)Convert.ToInt32(txtMaPL.Text);
+            if (MessageBox.Show("Bạn có muốn in hóa đơn ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                rptPhieuLai rp = new rptPhieuLai();
+                rp.DataSource = PhieuLaiDAO.Instance.LoadRpHDDL(MaPhieuLai);
+                rp.FilterString = "[MaPhieuLai] = '" + MaPhieuLai + "'";
+                rp.CreateDocument();
+                rp.ShowPreviewDialog();
+            }
+        }
+
+        private void LVPhieuLai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection lv = this.LVPhieuLai.SelectedItems;
+            int MaPhieuLai = 0;
+            
+            foreach (ListViewItem item in lv)
+            {
+                MaPhieuLai += Int32.Parse(item.SubItems[0].Text);
+            }
+            txtMaPL.Text = MaPhieuLai.ToString();
         }
     }
 }

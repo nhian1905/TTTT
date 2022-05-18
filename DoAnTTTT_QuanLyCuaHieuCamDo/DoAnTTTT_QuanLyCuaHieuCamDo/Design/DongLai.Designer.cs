@@ -30,7 +30,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
-            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.btnDongLai = new System.Windows.Forms.Button();
             this.txtTienLai = new System.Windows.Forms.TextBox();
@@ -69,12 +68,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.LVPhieuLai = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnIn = new System.Windows.Forms.Button();
+            this.txtMaPL = new System.Windows.Forms.TextBox();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -90,6 +91,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // gbKhachHang
             // 
+            this.gbKhachHang.Controls.Add(this.txtMaPL);
             this.gbKhachHang.Controls.Add(this.txtTenKhachHang);
             this.gbKhachHang.Controls.Add(this.btnDongLai);
             this.gbKhachHang.Controls.Add(this.txtTienLai);
@@ -132,16 +134,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabIndex = 12;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu cầm";
-            // 
-            // cboMaKH
-            // 
-            this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(1220, 468);
-            this.cboMaKH.Name = "cboMaKH";
-            this.cboMaKH.Size = new System.Drawing.Size(39, 32);
-            this.cboMaKH.TabIndex = 77;
-            this.cboMaKH.Visible = false;
-            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             // 
             // txtTenKhachHang
             // 
@@ -568,6 +560,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1.TabIndex = 5;
             this.label1.Text = "Tên khách hàng";
             // 
+            // cboMaKH
+            // 
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(1220, 468);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(39, 32);
+            this.cboMaKH.TabIndex = 77;
+            this.cboMaKH.Visible = false;
+            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
+            // 
             // LVPhieuLai
             // 
             this.LVPhieuLai.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -586,6 +588,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVPhieuLai.TabIndex = 48;
             this.LVPhieuLai.UseCompatibleStateImageBehavior = false;
             this.LVPhieuLai.View = System.Windows.Forms.View.Details;
+            this.LVPhieuLai.SelectedIndexChanged += new System.EventHandler(this.LVPhieuLai_SelectedIndexChanged);
             // 
             // columnHeader6
             // 
@@ -620,6 +623,23 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIn.TabIndex = 48;
             this.btnIn.Text = "In phiếu";
             this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // txtMaPL
+            // 
+            this.txtMaPL.AccessibleDescription = "";
+            this.txtMaPL.AccessibleName = "";
+            this.txtMaPL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaPL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaPL.Enabled = false;
+            this.txtMaPL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPL.ForeColor = System.Drawing.Color.White;
+            this.txtMaPL.Location = new System.Drawing.Point(378, 265);
+            this.txtMaPL.Name = "txtMaPL";
+            this.txtMaPL.Size = new System.Drawing.Size(10, 22);
+            this.txtMaPL.TabIndex = 78;
+            this.txtMaPL.Tag = "";
+            this.txtMaPL.Visible = false;
             // 
             // DongLai
             // 
@@ -698,5 +718,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.TextBox txtMaPL;
     }
 }

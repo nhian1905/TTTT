@@ -409,3 +409,4 @@ E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\Do
 E:\GIT\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.Report.rptThanhLy.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.rptPhieuChuoc.resources
 C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.rptThanhLy.resources
+C:\Users\admin\OneDrive\Tài liệu\GitHub\TTTT\DoAnTTTT_QuanLyCuaHieuCamDo\DoAnTTTT_QuanLyCuaHieuCamDo\obj\Debug\DoAnTTTT_QuanLyCuaHieuCamDo.rptPhieuLai.resources

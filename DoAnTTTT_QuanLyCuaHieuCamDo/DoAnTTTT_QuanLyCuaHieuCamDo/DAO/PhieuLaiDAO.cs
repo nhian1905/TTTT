@@ -83,5 +83,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public DataTable LoadRpHDDL(int MaPhieuLai)
+        {
+            string query = string.Format(" exec USP_InHoaDonPhieuDL N'{0}' ", MaPhieuLai);
+            return CSDL.Instance.ExecuteQuery(query);
+
+        }
     }
 }

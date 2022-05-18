@@ -215,6 +215,12 @@
     <Compile Include="Report\rptPhieuChuoc.Designer.cs">
       <DependentUpon>rptPhieuChuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptPhieuLai.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptPhieuLai.Designer.cs">
+      <DependentUpon>rptPhieuLai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptThanhLy.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptPhieuChuoc.resx">
       <DependentUpon>rptPhieuChuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptPhieuLai.resx">
+      <DependentUpon>rptPhieuLai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptThanhLy.resx">
       <DependentUpon>rptThanhLy.cs</DependentUpon>
