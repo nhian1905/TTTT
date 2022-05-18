@@ -57,7 +57,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         void LoadNgayDongLaiHDC()
         {
             int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
-            DateTime NgayDongLai = (DateTime)Convert.ToDateTime(DateTime.Now);
+            DateTime NgayDongLai =(DateTime)Convert.ToDateTime(DateTime.Now);
             PhieuLaiDAO.Instance.UpdateNgayLap(NgayDongLai, MaHoaDonCam);
             LoadHoaDonCam();
         }
