@@ -193,14 +193,16 @@ create proc USP_TinhTienLai
 as
 	begin
 		declare @SoNgayDaCam int 
-		 select @SoNgayDaCam =  DATEDIFF(day,a.NgayDongLai,@NgayHienTai) from HoaDonCam a 
-			where  a.MaHoaDonCam = @MaHDC
-		 select  @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d 
-			where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam and d.MaHoaDonCam = @MaHDC and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0
+		 select @SoNgayDaCam =  DATEDIFF(day,NgayLap,@NgayHienTai) from HoaDonCam  where  MaHoaDonCam = @MaHDC
+		 select  @SoNgayDaCam * (c.LaiXuat * b.DinhGia) / 100 from ChiTiet_HoaDonCam a, SanPham b , LoaiSP c ,HoaDonCam d where a.MaSP =b.MaSP and b.MaLoai = c.MaLoai and a.MaHoaDonCam = d.MaHoaDonCam  and b.DaChuoc = 0 and b.DaThanhLy= 0 and b.QuaHan = 0 and b.ThanhLy = 0 and d.MaHoaDonCam = @MaHDC
 	end
 go
 
+exec USP_TinhTienLai '5-18-2022', 12
 
+
+
+select  DATEDIFF(day,a.NgayLap,'5-18-2022') from HoaDonCam a where MaHoaDonCam = 12
 
 create proc USP_UpdateNgayDongLaiHDC
 @MaHDC int
@@ -290,6 +292,19 @@ create proc USP_InHoaDonPhieuTL
  end
  go
 
+
+ create proc USP_InHoaDonPhieuDL
+ @MaPL int
+ as
+ begin
+
+	 select a.MaPhieuLai, b.MaHoaDonCam , c.TenKH, c.SDT,c.CMND,c.DiaChi,b.NgayLap,a.NgayDongLai,a.ThanhTien,b.TongTienCam
+	from PhieuLai a,HoaDonCam b, KhachHang c
+	where a.MaHoaDonCam = b.MaHoaDonCam and b.MaKH = c.MaKH and a.MaPhieuLai = @MaPL
+ end
+ go
+
+ exec USP_InHoaDonPhieuDL 1
 
 
 
