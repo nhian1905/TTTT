@@ -69,6 +69,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }
+
+        public string TKDongLai(DateTime NgayDau, DateTime NgayCuoi)
+        {
+            string query = string.Format("exec USP_DongLaiTheoNgay N'{0}',N'{1}' ",NgayDau,NgayCuoi);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
         //DaThanhLy
         public string SPDaThanhLy()
         {
@@ -213,6 +220,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
             return kq;
         }
+
+        public string TKTienLoi(DateTime NgayDau, DateTime NgayCuoi)
+        {
+            string query = string.Format("select SUM(a.GiaThanhLy-a.DinhGia) from ChiTiet_ThanhLy b,SanPham a,ThanhLy c where b.MaSP=a.MaSP and c.MaThanhLy=b.MaThanhLy and c.NgayLap between N'{0}' and N'{1}' ", NgayDau, NgayCuoi);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
+
+
         //DoanhThuThang
         public string DoanhThuThang(int Thang)
         {

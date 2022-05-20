@@ -139,6 +139,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             DateTime ngaydau =(DateTime)Convert.ToDateTime(dtpNgayDau.Text);
             DateTime ngaycuoi = (DateTime)Convert.ToDateTime(dtpNgayCuoi.Text);
+
+            txtDongLai.Text = ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi);
+
+            double TienLai = Convert.ToDouble(ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi));
+            double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TKTienLoi(ngaydau, ngaycuoi));
+            txtTienLoi.Text = Convert.ToString(TienLoi + TienLai);
+
             txtDaThanhLy.Text = ThongKeDAO.Instance.TKSPDaThanhLy(ngaydau,ngaycuoi);
             txtTienDaThanhLy.Text = ThongKeDAO.Instance.TKTienDaThanhLy(ngaydau, ngaycuoi);
 
