@@ -346,6 +346,7 @@ go
 exec USP_DongLaiTheoNgay '2022-05-15', '2022-05-16'
 
 
+
 select SUM(a.GiaThanhLy-a.DinhGia) from ChiTiet_ThanhLy b,SanPham a,ThanhLy c where b.MaSP=a.MaSP and c.MaThanhLy=b.MaThanhLy and c.NgayLap between '2022-05-15'and '2022-05-16'
 
 --create proc USP_DoanhThuThang123
