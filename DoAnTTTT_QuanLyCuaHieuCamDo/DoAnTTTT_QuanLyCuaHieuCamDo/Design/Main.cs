@@ -134,5 +134,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             //LoadChiTieuThang();
         }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

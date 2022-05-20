@@ -30,7 +30,7 @@ create table LoaiSP
 (
 	MaLoai int identity(1,1) primary key,
 	TenLoai nvarchar(100) not null,
-	LaiXuat int not null
+	LaiXuat float not null
 )
 
 create table SanPham
@@ -123,14 +123,9 @@ create table Tien
 	DoanhThuThang float,
 	TongDoanhThu float
 )
-ALTER TABLE LoaiSP
-ALTER COLUMN LaiXuat float
+
 
 insert into Tien values(1,1000000000,50000000,600000000)
-insert into PhieuChuoc values(1,'05/19/2020',0)
-insert into ChiTiet_PhieuChuoc values(1,'IP01',0,0)
-insert into PhieuChuoc values(2,'05/19/2020',0)
-insert into ChiTiet_PhieuChuoc values(2,'IP02',0,0)
 
 insert into Quyen values ('admin')
 insert into TaiKhoan values ('admin',123,1)
@@ -149,9 +144,16 @@ insert into SanPham values ('IMEI1789',N'OPPO A95',1789,0,1,N'ĐIỆN THOẠI C�
 insert into SanPham values ('IMEI1666',N'OPPO FIND X',1666,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Tím',N'100%',N' OPPO',0,0,0,0)
 insert into SanPham values ('IMEI1323',N'IPHONE X',1323,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Vàng',N'có trầy ở kính',N' IPHONE',0,0,0,0)
 
+insert into HoaDonCam values (1,'2022-04-16','2022-05-16','2022-04-16','0')
+insert into HoaDonCam values (2,'2022-04-16','2022-05-16','2022-04-16','0')
+
+insert into PhieuChuoc values(1,'05/19/2020',0)
+insert into ChiTiet_PhieuChuoc values(1,'IMEI1602',0,0)
+insert into PhieuChuoc values(2,'05/19/2020',0)
+insert into ChiTiet_PhieuChuoc values(2,'IMEI111',0,0)
 
 
-
+go
 create proc USP_UpdateTienPhieuChuoc
 @MaPC int
 as
@@ -300,9 +302,6 @@ create proc USP_InHoaDonPhieuTL
  go
 
 
-
-
-
  /*ThongKeLai*/
 create proc USP_DongLai
 as
@@ -314,7 +313,7 @@ as
 		select @TienPhieuLai+@TienPhieuChuoc
 	end
 go
-exec USP_DongLai
+
 
 /*DoanhThu*/
 create proc USP_DoanhThuThang
@@ -330,7 +329,8 @@ as
 		select @TienPhieuLai+@TienLaiChuoc+@TienThanhLy
 	end
 go
-exec USP_DoanhThuThang 5
+
+
 select  SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=4
 select SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=4 and a.MaPhieuChuoc=c.MaPhieuChuoc
 select SUM(b.GiaThanhLy-b.DinhGia)+SUM(d.ThanhTien) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c, PhieuLai d where a.MaSP=b.MaSP and MONTH(c.NgayLap)=4 and a.MaThanhLy=c.MaThanhLy and MONTH(d.NgayDongLai)=4
@@ -365,7 +365,7 @@ select SUM(b.GiaThanhLy-b.DinhGia)+SUM(d.ThanhTien) from ChiTiet_ThanhLy a,SanPh
 --exec USP_DoanhThuThang123 4
 
 
-exec USP_DoanhThuThang 9
+
 
 select  a.MaThanhLy , b.TenKH , a.NgayLap,a.TongTienThanhLy
 	from ThanhLy a,KhachHang b

@@ -812,6 +812,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnLoc.TabIndex = 56;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnTatCa
             // 
