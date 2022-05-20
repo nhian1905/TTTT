@@ -331,9 +331,6 @@ as
 go
 
 
-select  SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=4
-select SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=4 and a.MaPhieuChuoc=c.MaPhieuChuoc
-select SUM(b.GiaThanhLy-b.DinhGia)+SUM(d.ThanhTien) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c, PhieuLai d where a.MaSP=b.MaSP and MONTH(c.NgayLap)=4 and a.MaThanhLy=c.MaThanhLy and MONTH(d.NgayDongLai)=4
 --create proc USP_DoanhThuThang123
 --@Thang int
 --as
@@ -366,10 +363,6 @@ select SUM(b.GiaThanhLy-b.DinhGia)+SUM(d.ThanhTien) from ChiTiet_ThanhLy a,SanPh
 
 
 
-
-select  a.MaThanhLy , b.TenKH , a.NgayLap,a.TongTienThanhLy
-	from ThanhLy a,KhachHang b
-	where  a.MaKH=b.MaKH and  MONTH(a.NgayLap)=5
 
 
 

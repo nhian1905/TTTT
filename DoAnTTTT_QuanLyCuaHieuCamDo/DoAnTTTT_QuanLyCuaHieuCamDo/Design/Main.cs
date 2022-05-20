@@ -137,7 +137,27 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
+            DateTime ngaydau =(DateTime)Convert.ToDateTime(dtpNgayDau.Text);
+            DateTime ngaycuoi = (DateTime)Convert.ToDateTime(dtpNgayCuoi.Text);
+            txtDaThanhLy.Text = ThongKeDAO.Instance.TKSPDaThanhLy(ngaydau,ngaycuoi);
+            txtTienDaThanhLy.Text = ThongKeDAO.Instance.TKTienDaThanhLy(ngaydau, ngaycuoi);
 
+            txtThanhLy.Text = ThongKeDAO.Instance.TKSPThanhLy(ngaydau, ngaycuoi);
+            txtTienThanhLy.Text = ThongKeDAO.Instance.TKTienSPThanhLy(ngaydau, ngaycuoi);
+
+            txtQuaHan.Text = ThongKeDAO.Instance.TKSPQuaHan(ngaydau, ngaycuoi);
+            txtTienQuaHan.Text = ThongKeDAO.Instance.TKTienSPQuaHan(ngaydau, ngaycuoi);
+
+            txtChuoc.Text = ThongKeDAO.Instance.TKSPDaChuoc(ngaydau, ngaycuoi);
+            txtTienChuoc.Text = ThongKeDAO.Instance.TKTienSPDaChuoc(ngaydau, ngaycuoi);
+
+            txtCam.Text = ThongKeDAO.Instance.TKSPCam(ngaydau, ngaycuoi);
+            txtTienCam.Text = ThongKeDAO.Instance.TKTienSPCam(ngaydau, ngaycuoi);
+        }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            LoadThongKe();
         }
     }
 }
