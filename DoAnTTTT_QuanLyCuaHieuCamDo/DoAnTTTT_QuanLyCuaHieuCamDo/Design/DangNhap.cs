@@ -55,7 +55,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
-            btnThoat.Enabled = false;
+           
         }
     }
 }
