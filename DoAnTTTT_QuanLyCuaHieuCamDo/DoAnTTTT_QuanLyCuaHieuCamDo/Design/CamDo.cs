@@ -25,7 +25,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadHoaDonCam();
             LoadCboKhachHang();
             LoadCboLoaiSP();
-            btnSuaSP.Enabled = false;
+            HienThiThongTin(false);
         }
 
         void LoadCboKhachHang()
@@ -62,6 +62,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtNhanHieu.Enabled = hien;
             this.txtMoTa.Enabled = hien;
             this.txtMauSac.Enabled = hien;
+            this.cboLoaiSP.Enabled = hien;
         }
         void LoadHoaDonCam()
         {
@@ -100,6 +101,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         
         private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string connectionStr = CSDL.connectionStr;
             SqlConnection kn = new SqlConnection(connectionStr);
             kn.Open();
@@ -203,6 +205,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         
         private void LvPhieuCam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnSuaHoaDonCam.Enabled = true;
+            btnSuaHoaDonCam.BackColor= Color.FromArgb(0, 126, 249);
+            btnSuaHoaDonCam.ForeColor = Color.White;
+
+            btnXoaHoaDonCam.Enabled = true;
+            btnXoaHoaDonCam.BackColor = Color.FromArgb(0, 126, 249);
+            btnXoaHoaDonCam.ForeColor = Color.White;
+
+            btnThemHoaDonCam.Enabled = true;
+            btnThemHoaDonCam.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemHoaDonCam.ForeColor = Color.White;
+
+            btnInHDCam.Enabled = true;
+            btnInHDCam.BackColor = Color.FromArgb(0, 126, 249);
+            btnInHDCam.ForeColor = Color.White;
+            ResetButtonCTHDC();
+            btnThemSP.Enabled = true;
+            btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemSP.ForeColor = Color.White;
+
             ListView.SelectedListViewItemCollection lv = this.LvPhieuCam.SelectedItems;
             int mahoadoncam = 0;
             string tenkh = "";
@@ -268,9 +290,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
-            btnThemSP.Enabled = true;
+            ResetButtonCTHDC();
+
             btnSuaSP.Enabled = true;
+            btnSuaSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnSuaSP.ForeColor = Color.White;
+
             btnXoaSP.Enabled = true;
+            btnXoaSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnXoaSP.ForeColor = Color.White;
+            HienThiThongTin(false);
         }
         void LoadTongTien()
         {
@@ -279,17 +308,48 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadHoaDonCam();
         }
         private void btnThemSP_Click(object sender, EventArgs e)
-        {
-            btnSuaSP.Enabled = false;
-            btnXoaSP.Enabled = false;
+        {            
+            ResetButtonCTHDC();
+
+            btnThemSP.Enabled = true;
+            btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemSP.ForeColor = Color.White;
+
+            btnLuuSP.Enabled = true;
+            btnLuuSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuuSP.ForeColor = Color.White;
             ResetThongTin();
             HienThiThongTin(true);
             txtMaSP.Focus();
         }
+        private void ResetButtonCTHDC()
+        {
+            btnSuaSP.Enabled = true;
+            btnSuaSP.BackColor = Color.Gray;
+            btnSuaSP.ForeColor = Color.Black;
 
+            btnThemSP.Enabled = true;
+            btnThemSP.BackColor = Color.Gray;
+            btnThemSP.ForeColor = Color.Black;
+
+            btnXoaSP.Enabled = true;
+            btnXoaSP.BackColor = Color.Gray;
+            btnXoaSP.ForeColor = Color.Black;
+
+            btnLuuSP.Enabled = true;
+            btnLuuSP.BackColor = Color.Gray;
+            btnLuuSP.ForeColor = Color.Black;
+        }
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            btnThemSP.Enabled = true;
+
+            btnXoaSP.Enabled = true;
+            btnXoaSP.BackColor = Color.Gray;
+            btnXoaSP.ForeColor = Color.Black;
+
+            btnLuuSP.Enabled = true;
+            btnLuuSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuuSP.ForeColor = Color.White;
             HienThiThongTin(true);
         }
 
@@ -426,6 +486,18 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 txtMaSP.Enabled = true;
                 btnThemSP.Enabled = true;
             }
+        }
+
+        private void LvPhieuCam_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            btnThemHoaDonCam.Enabled = true;
+            btnThemHoaDonCam.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemHoaDonCam.ForeColor = Color.White;
         }
     }
 }

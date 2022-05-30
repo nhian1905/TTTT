@@ -497,9 +497,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox4.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox4.BorderRadius = 5;
             this.guna2GroupBox4.BorderThickness = 2;
-            this.guna2GroupBox4.Controls.Add(this.txtMaPhieuChuoc);
             this.guna2GroupBox4.Controls.Add(this.LvPhieuChuoc);
             this.guna2GroupBox4.Controls.Add(this.guna2TextBox1);
+            this.guna2GroupBox4.Controls.Add(this.txtMaPhieuChuoc);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -693,9 +693,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox6.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox6.BorderRadius = 5;
             this.guna2GroupBox6.BorderThickness = 2;
-            this.guna2GroupBox6.Controls.Add(this.txtMaThanhLy);
             this.guna2GroupBox6.Controls.Add(this.LVThanhLy);
             this.guna2GroupBox6.Controls.Add(this.guna2TextBox2);
+            this.guna2GroupBox6.Controls.Add(this.txtMaThanhLy);
             this.guna2GroupBox6.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.guna2GroupBox6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1048,7 +1048,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // cbLoc
             // 
             this.cbLoc.AutoSize = true;
-            this.cbLoc.Location = new System.Drawing.Point(968, 41);
+            this.cbLoc.Location = new System.Drawing.Point(1092, 40);
             this.cbLoc.Name = "cbLoc";
             this.cbLoc.Size = new System.Drawing.Size(80, 17);
             this.cbLoc.TabIndex = 37;
@@ -1062,7 +1062,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
-            this.Controls.Add(this.cbLoc);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnTatCa);
             this.Controls.Add(this.label2);
@@ -1070,6 +1069,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpNgayDau);
             this.Controls.Add(this.guna2TabControl1);
+            this.Controls.Add(this.cbLoc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaoCao";
             this.Text = "BaoCao";
