@@ -26,6 +26,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadCboKhachHang();
             LoadCboLoaiSP();
             HienThiThongTin(false);
+            ResetButtonHDC();
         }
 
         void LoadCboKhachHang()
@@ -324,26 +325,44 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         }
         private void ResetButtonCTHDC()
         {
-            btnSuaSP.Enabled = true;
+            btnSuaSP.Enabled = false;
             btnSuaSP.BackColor = Color.Gray;
             btnSuaSP.ForeColor = Color.Black;
 
-            btnThemSP.Enabled = true;
+            btnThemSP.Enabled = false;
             btnThemSP.BackColor = Color.Gray;
             btnThemSP.ForeColor = Color.Black;
 
-            btnXoaSP.Enabled = true;
+            btnXoaSP.Enabled = false;
             btnXoaSP.BackColor = Color.Gray;
             btnXoaSP.ForeColor = Color.Black;
 
-            btnLuuSP.Enabled = true;
+            btnLuuSP.Enabled = false;
             btnLuuSP.BackColor = Color.Gray;
             btnLuuSP.ForeColor = Color.Black;
+        }
+        private void ResetButtonHDC()
+        {
+            btnSuaHoaDonCam.Enabled = false;
+            btnSuaHoaDonCam.BackColor = Color.Gray;
+            btnSuaHoaDonCam.ForeColor = Color.Black;
+
+            btnThemHoaDonCam.Enabled = false;
+            btnThemHoaDonCam.BackColor = Color.Gray;
+            btnThemHoaDonCam.ForeColor = Color.Black;
+
+            btnXoaHoaDonCam.Enabled = false;
+            btnXoaHoaDonCam.BackColor = Color.Gray;
+            btnXoaHoaDonCam.ForeColor = Color.Black;
+
+            btnInHDCam.Enabled = false;
+            btnInHDCam.BackColor = Color.Gray;
+            btnInHDCam.ForeColor = Color.Black;
         }
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
 
-            btnXoaSP.Enabled = true;
+            btnXoaSP.Enabled = false;
             btnXoaSP.BackColor = Color.Gray;
             btnXoaSP.ForeColor = Color.Black;
 
@@ -403,9 +422,23 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             if (btnThemSP.Enabled == true)
             {
+                
                 int id = int.Parse(txtMaHDC.Text);
                 if (txtTenSP.Text != "" && txtMaSP.Text != "")
                 {
+                    string connectionStr = CSDL.connectionStr;
+                    SqlConnection kn = new SqlConnection(connectionStr);
+                    kn.Open();
+                    string sql = "Select count(*) from SanPham where MaSP='" + txtMaSP.Text + "'";
+                    SqlCommand cmdd = new SqlCommand(sql, kn);
+                    int val = (int)cmdd.ExecuteScalar();
+                    if (val > 0)
+                    {
+                        MessageBox.Show("Mã sản phẩm đã tồn tại");
+                        errorProvider1.SetError(txtMaSP, "Mã sản phẩm đã tồn tại");
+                        return;
+                    }
+
                     int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
                     string MaSP = txtMaSP.Text;
                     int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
