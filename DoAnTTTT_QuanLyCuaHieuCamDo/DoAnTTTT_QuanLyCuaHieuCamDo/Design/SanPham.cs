@@ -31,6 +31,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadCboLoaiSP();
             LoadSPQuaHan();
             LoadSanPham();
+            btnSuaSP.Enabled = false;
+            HienThiThongTin(false);
         }
 
         void LoadSPQuaHan()
@@ -68,7 +70,29 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
 
         }
+        void ResetThongTin()
+        {
+            txtMaSP.Clear();
+            txtTenSP.Clear();
+            txtDinhGia.Clear();
+            txtGiaThanhLy.Clear();
+            txtHienTrang.Clear();
+            txtNhanHieu.Clear();
+            txtMoTa.Clear();
+            txtMauSac.Clear();
+        }
 
+        void HienThiThongTin(Boolean hien)
+        {
+            this.txtMaSP.Enabled = hien;
+            this.txtTenSP.Enabled = hien;
+            this.txtDinhGia.Enabled = hien;
+            this.txtGiaThanhLy.Enabled = hien;
+            this.txtHienTrang.Enabled = hien;
+            this.txtNhanHieu.Enabled = hien;
+            this.txtMoTa.Enabled = hien;
+            this.txtMauSac.Enabled = hien;
+        }
         void ResetSP()
         {
             txtMaSP.Clear();
@@ -138,75 +162,26 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
+
+            btnThemSP.Enabled = true;
+            btnSuaSP.Enabled = true;
+            btnXoaSP.Enabled = true;
         }
        
 
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-            if (txtMaSP.Text != "")
-            {
-                string MaSP = txtTenSP.Text;
-                int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
-                string TenSP = txtTenSP.Text;
-                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-                float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
-                string MoTa = txtMoTa.Text;
-                string MauSac = txtMauSac.Text;
-                string HienTrang = txtHienTrang.Text;
-                string NhanHieu = txtNhanHieu.Text;
-                bool QuaHan = (bool)Convert.ToBoolean(0);
-                bool DaChuoc = (bool)Convert.ToBoolean(0);
-                bool ThanhLy = (bool)Convert.ToBoolean(0);
-                bool DaThanhLy = (bool)Convert.ToBoolean(0);
-                
-                if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
-                {
-                    MessageBox.Show("Thêm Sản Phẩm Thành Công", "Thông Báo");
-                    ResetSP();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm Thất Bại! Vui Lòng Nhập Lại", "Thông Báo");
-                }
-                LoadSanPham();
-            }
-            else
-            {
-                MessageBox.Show("Không được để trống Tên", "thông báo");
-                txtTenSP.Focus();
-            }
+            btnSuaSP.Enabled = false;
+            btnXoaSP.Enabled = false;
+            ResetThongTin();
+            HienThiThongTin(true);
+            txtMaSP.Focus();
         }
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            string MaSP = txtMaSP.Text;
-            int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
-            string TenSP = txtTenSP.Text;
-            float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-            float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
-            string MoTa = txtMoTa.Text;
-            string MauSac = txtMauSac.Text;
-            string HienTrang = txtHienTrang.Text;
-            string NhanHieu = txtNhanHieu.Text;
-            if (MaSP != "")
-            {
-
-                if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang,NhanHieu))
-                {
-                    MessageBox.Show("Sửa Thành Công");
-                    LoadSanPham();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa Thất bại, Vui lòng nhập lại !", "thông Báo");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin");
-                return;
-            }
+            btnThemSP.Enabled = true;
+            HienThiThongTin(true);
         }
 
         private void btnXoaSP_Click(object sender, EventArgs e)
@@ -229,19 +204,102 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadSanPham();
             
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if(btnThemSP.Enabled == true)
+            {
+                if (txtMaSP.Text != "" && txtTenSP.Text !="")
+                {
+                    string MaSP = txtTenSP.Text;
+                    int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
+                    string TenSP = txtTenSP.Text;
+                    float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                    float GiaThanhLy = (float)Convert.ToDouble(0);
+                    string MoTa = txtMoTa.Text;
+                    string MauSac = txtMauSac.Text;
+                    string HienTrang = txtHienTrang.Text;
+                    string NhanHieu = txtNhanHieu.Text;
+                    bool QuaHan = (bool)Convert.ToBoolean(0);
+                    bool DaChuoc = (bool)Convert.ToBoolean(0);
+                    bool ThanhLy = (bool)Convert.ToBoolean(0);
+                    bool DaThanhLy = (bool)Convert.ToBoolean(0);
+
+                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
+                    {
+                        MessageBox.Show("Thêm Sản Phẩm Thành Công", "Thông Báo");
+                        ResetSP();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Thất Bại! Vui Lòng Nhập Lại", "Thông Báo");
+                    }
+                    LoadSanPham();
+                }
+                else
+                {
+                    MessageBox.Show("Không được để trống Tên", "thông báo");
+                    txtTenSP.Focus();
+                }
+                ResetThongTin();
+            }
+            else if(btnSuaSP.Enabled == true)
+            {
+                string MaSP = txtMaSP.Text;
+                int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
+                string TenSP = txtTenSP.Text;
+                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+                string MoTa = txtMoTa.Text;
+                string MauSac = txtMauSac.Text;
+                string HienTrang = txtHienTrang.Text;
+                string NhanHieu = txtNhanHieu.Text;
+                if (MaSP != "" && TenSP !=""  )
+                {
+
+                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
+                    {
+                        MessageBox.Show("Sửa Thành Công");
+                        LoadSanPham();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa Thất bại, Vui lòng nhập lại !", "thông Báo");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui Lòng Sửa Đầy Đủ Thông Tin");
+                    return;
+                }
+                btnThemSP.Enabled = true;
+            }
+        }
         private void btnThanhLy_Click(object sender, EventArgs e)
         {
             string MaSP = txtMaSP.Text;
+            float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
             bool ThanhLy = (bool)Convert.ToBoolean(1);
-            if (SanPhamDAO.Instance.ThanhLySP(MaSP,ThanhLy))
+            if(txtGiaThanhLy.Text != "0")
             {
-                MessageBox.Show("Đã Thanh Lý Thành Công");
-                LoadSanPham();
+                if (SanPhamDAO.Instance.UpdateTienTL(MaSP, GiaThanhLy))
+                {
+                    if (SanPhamDAO.Instance.ThanhLySP(MaSP,ThanhLy))
+                    {
+                        MessageBox.Show("Đã Thanh Lý Thành Công");
+                        LoadSanPham();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thanh Lý Thất Bại", "thông Báo");
+                        return;
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Thanh Lý Thất Bại", "thông Báo");
-                return;
+                MessageBox.Show("Vui Lòng Thêm Giá Thanh Lý");
             }
         }
 
@@ -1325,5 +1383,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 LVSP.Items.Add(lvitem);
             }
         }
+
+        
     }
 }

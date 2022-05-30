@@ -25,7 +25,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadHoaDonCam();
             LoadCboKhachHang();
             LoadCboLoaiSP();
-            
+            btnSuaSP.Enabled = false;
         }
 
         void LoadCboKhachHang()
@@ -40,6 +40,28 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             cboLoaiSP.DataSource = LoaiSPDAO.Instance.LoadListLoaiSP();
             cboLoaiSP.DisplayMember = "TenLoai";
             cboLoaiSP.ValueMember = "MaLoai";
+        }
+
+        void ResetThongTin()
+        {
+            txtMaSP.Clear();
+            txtTenSP.Clear();
+            txtDinhGia.Clear();
+            txtHienTrang.Clear();
+            txtNhanHieu.Clear();
+            txtMoTa.Clear();
+            txtMauSac.Clear();
+        }
+
+        void HienThiThongTin(Boolean hien)
+        {
+            this.txtMaSP.Enabled = hien;
+            this.txtTenSP.Enabled = hien;
+            this.txtDinhGia.Enabled = hien;
+            this.txtHienTrang.Enabled = hien;
+            this.txtNhanHieu.Enabled = hien;
+            this.txtMoTa.Enabled = hien;
+            this.txtMauSac.Enabled = hien;
         }
         void LoadHoaDonCam()
         {
@@ -246,6 +268,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
+            btnThemSP.Enabled = true;
+            btnSuaSP.Enabled = true;
+            btnXoaSP.Enabled = true;
         }
         void LoadTongTien()
         {
@@ -255,88 +280,17 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         }
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-            
-            int id = int.Parse(txtMaHDC.Text);
-            if (txtTenSP.Text != "" && txtMaSP.Text != "")
-            {
-                int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
-                string MaSP = txtMaSP.Text;
-                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
-                string TenSP = txtTenSP.Text;
-                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-                float GiaThanhLy = (float)Convert.ToDouble(0);
-                string MoTa = txtMoTa.Text;
-                string MauSac = txtMauSac.Text;
-                string HienTrang = txtHienTrang.Text;
-                string NhanHieu = txtNhanHieu.Text;
-                bool QuaHan = (bool)Convert.ToBoolean(0);
-                bool DaChuoc = (bool)Convert.ToBoolean(0);
-                bool ThanhLy = (bool)Convert.ToBoolean(0);
-                bool DaThanhLy = (bool)Convert.ToBoolean(0);
-                double tongtien = DinhGia+Convert.ToDouble(txtTongTien.Text);
-                if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
-                {
-                    if (ChiTietHoaDonCamDAO.Instance.InsertSPtoBillHDC(MaHoaDonCam, MaSP))
-                    {
-                        MessageBox.Show("Thêm Thành Công");
-                        LoadCTHoaDonCam(id);
-                        LoadTongTien();
-                        //txtTongTien.Text = Convert.ToString(tongtien);
-                        //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam,tongtien);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm thất bại");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
-            }
+            btnSuaSP.Enabled = false;
+            btnXoaSP.Enabled = false;
+            ResetThongTin();
+            HienThiThongTin(true);
+            txtMaSP.Focus();
         }
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtMaHDC.Text);
-            int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
-            string MaSP = txtMaSP.Text;
-            int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
-            string TenSP = txtTenSP.Text;
-            float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
-            float GiaThanhLy = (float)Convert.ToDouble(0);
-            string MoTa = txtMoTa.Text;
-            string MauSac = txtMauSac.Text;
-            string HienTrang = txtHienTrang.Text;
-            string NhanHieu = txtNhanHieu.Text;
-            if (MaSP != "")
-            {
-                if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
-                {
-                    MessageBox.Show("Sửa Thành Công");
-                    LoadCTHoaDonCam(id);
-                    LoadTongTien();
-                    //if (ChiTietHoaDonCamDAO.Instance.UpdateSPtoBillHDC(MaHoaDonCam, MaSP))
-                    //{
-                    //    MessageBox.Show("Sửa Thành Công");
-                    //    LoadCTHoaDonCam(id);
-                    //    //txtTongTien.Text = Convert.ToString(tongtien);
-                    //    //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
-                    //    LoadTongTien();
-                    //}
-                }
-                else
-                {
-                    MessageBox.Show("Sửa Thất bại, Vui lòng nhập lại !", "thông Báo");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin");
-                return;
-            }
-            txtMaSP.Enabled = true;
+            btnThemSP.Enabled = true;
+            HienThiThongTin(true);
         }
 
         private void btnXoaSP_Click(object sender, EventArgs e)
@@ -382,6 +336,95 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 rp.FilterString = "[MaHoaDonCam] = '" + MaHoaDonCam + "'";
                 rp.CreateDocument();
                 rp.ShowPreviewDialog();
+            }
+        }
+
+        private void btnLuuSP_Click(object sender, EventArgs e)
+        {
+            if (btnThemSP.Enabled == true)
+            {
+                int id = int.Parse(txtMaHDC.Text);
+                if (txtTenSP.Text != "" && txtMaSP.Text != "")
+                {
+                    int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+                    string MaSP = txtMaSP.Text;
+                    int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                    string TenSP = txtTenSP.Text;
+                    float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                    float GiaThanhLy = (float)Convert.ToDouble(0);
+                    string MoTa = txtMoTa.Text;
+                    string MauSac = txtMauSac.Text;
+                    string HienTrang = txtHienTrang.Text;
+                    string NhanHieu = txtNhanHieu.Text;
+                    bool QuaHan = (bool)Convert.ToBoolean(0);
+                    bool DaChuoc = (bool)Convert.ToBoolean(0);
+                    bool ThanhLy = (bool)Convert.ToBoolean(0);
+                    bool DaThanhLy = (bool)Convert.ToBoolean(0);
+                    double tongtien = DinhGia + Convert.ToDouble(txtTongTien.Text);
+                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
+                    {
+                        if (ChiTietHoaDonCamDAO.Instance.InsertSPtoBillHDC(MaHoaDonCam, MaSP))
+                        {
+                            MessageBox.Show("Thêm Thành Công");
+                            LoadCTHoaDonCam(id);
+                            LoadTongTien();
+                            //txtTongTien.Text = Convert.ToString(tongtien);
+                            //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam,tongtien);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm thất bại");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
+                }
+                ResetThongTin();
+            }
+            else if (btnSuaSP.Enabled == true)
+            {
+                int id = int.Parse(txtMaHDC.Text);
+                int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
+                string MaSP = txtMaSP.Text;
+                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                string TenSP = txtTenSP.Text;
+                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                float GiaThanhLy = (float)Convert.ToDouble(0);
+                string MoTa = txtMoTa.Text;
+                string MauSac = txtMauSac.Text;
+                string HienTrang = txtHienTrang.Text;
+                string NhanHieu = txtNhanHieu.Text;
+                if (MaSP != "")
+                {
+                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
+                    {
+                        MessageBox.Show("Sửa Thành Công");
+                        LoadCTHoaDonCam(id);
+                        LoadTongTien();
+                        //if (ChiTietHoaDonCamDAO.Instance.UpdateSPtoBillHDC(MaHoaDonCam, MaSP))
+                        //{
+                        //    MessageBox.Show("Sửa Thành Công");
+                        //    LoadCTHoaDonCam(id);
+                        //    //txtTongTien.Text = Convert.ToString(tongtien);
+                        //    //HoaDonCamDAO.Instance.UpdateMoney(MaHoaDonCam, tongtien);
+                        //    LoadTongTien();
+                        //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa Thất bại, Vui lòng nhập lại !", "thông Báo");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin");
+                    return;
+                }
+                txtMaSP.Enabled = true;
+                btnThemSP.Enabled = true;
             }
         }
     }

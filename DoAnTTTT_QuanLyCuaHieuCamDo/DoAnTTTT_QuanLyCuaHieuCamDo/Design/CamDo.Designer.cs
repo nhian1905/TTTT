@@ -106,6 +106,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnLuuSP = new System.Windows.Forms.Button();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -227,7 +228,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTongTien.Location = new System.Drawing.Point(211, 308);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(296, 22);
-            this.txtTongTien.TabIndex = 37;
+            this.txtTongTien.TabIndex = 7;
             this.txtTongTien.Tag = "";
             // 
             // label8
@@ -350,7 +351,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cboKhachHang.Location = new System.Drawing.Point(212, 25);
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(296, 30);
-            this.cboKhachHang.TabIndex = 32;
+            this.cboKhachHang.TabIndex = 1;
             this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
             // 
             // pictureBox8
@@ -372,7 +373,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXoaHoaDonCam.Location = new System.Drawing.Point(864, 315);
             this.btnXoaHoaDonCam.Name = "btnXoaHoaDonCam";
             this.btnXoaHoaDonCam.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaHoaDonCam.TabIndex = 13;
+            this.btnXoaHoaDonCam.TabIndex = 10;
             this.btnXoaHoaDonCam.Text = "Xóa";
             this.btnXoaHoaDonCam.UseVisualStyleBackColor = false;
             this.btnXoaHoaDonCam.Click += new System.EventHandler(this.btnXoaHoaDonCam_Click);
@@ -387,7 +388,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaHoaDonCam.Location = new System.Drawing.Point(759, 315);
             this.btnSuaHoaDonCam.Name = "btnSuaHoaDonCam";
             this.btnSuaHoaDonCam.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaHoaDonCam.TabIndex = 12;
+            this.btnSuaHoaDonCam.TabIndex = 9;
             this.btnSuaHoaDonCam.Text = "Sửa";
             this.btnSuaHoaDonCam.UseVisualStyleBackColor = false;
             this.btnSuaHoaDonCam.Click += new System.EventHandler(this.btnSuaHoaDonCam_Click);
@@ -402,7 +403,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThemHoaDonCam.Location = new System.Drawing.Point(654, 315);
             this.btnThemHoaDonCam.Name = "btnThemHoaDonCam";
             this.btnThemHoaDonCam.Size = new System.Drawing.Size(99, 38);
-            this.btnThemHoaDonCam.TabIndex = 11;
+            this.btnThemHoaDonCam.TabIndex = 8;
             this.btnThemHoaDonCam.Text = "Thêm ";
             this.btnThemHoaDonCam.UseVisualStyleBackColor = false;
             this.btnThemHoaDonCam.Click += new System.EventHandler(this.btnThemHoaDonCam_Click);
@@ -415,7 +416,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgaySinh.Location = new System.Drawing.Point(212, 162);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(145, 29);
-            this.dtpNgaySinh.TabIndex = 28;
+            this.dtpNgaySinh.TabIndex = 4;
             // 
             // dtpNgayCapCMND
             // 
@@ -429,7 +430,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(212, 259);
             this.dtpNgayCapCMND.Name = "dtpNgayCapCMND";
             this.dtpNgayCapCMND.Size = new System.Drawing.Size(145, 29);
-            this.dtpNgayCapCMND.TabIndex = 27;
+            this.dtpNgayCapCMND.TabIndex = 6;
             // 
             // label2
             // 
@@ -462,7 +463,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtCMND.Location = new System.Drawing.Point(212, 216);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(145, 22);
-            this.txtCMND.TabIndex = 19;
+            this.txtCMND.TabIndex = 5;
             this.txtCMND.Tag = "";
             // 
             // label5
@@ -516,7 +517,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDiaChi.Location = new System.Drawing.Point(212, 123);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(296, 22);
-            this.txtDiaChi.TabIndex = 13;
+            this.txtDiaChi.TabIndex = 3;
             this.txtDiaChi.Tag = "";
             // 
             // label4
@@ -550,7 +551,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtSDT.Location = new System.Drawing.Point(212, 76);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(296, 22);
-            this.txtSDT.TabIndex = 10;
+            this.txtSDT.TabIndex = 2;
             this.txtSDT.Tag = "";
             // 
             // label3
@@ -598,6 +599,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.LVCTHDC);
             this.groupBox1.Controls.Add(this.pictureBox12);
+            this.groupBox1.Controls.Add(this.btnLuuSP);
             this.groupBox1.Controls.Add(this.btnXoaSP);
             this.groupBox1.Controls.Add(this.btnSuaSP);
             this.groupBox1.Controls.Add(this.btnThemSP);
@@ -634,7 +636,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTenSP.Location = new System.Drawing.Point(212, 119);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(296, 22);
-            this.txtTenSP.TabIndex = 46;
+            this.txtTenSP.TabIndex = 13;
             this.txtTenSP.Tag = "";
             // 
             // txtMoTa
@@ -649,7 +651,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(296, 114);
-            this.txtMoTa.TabIndex = 43;
+            this.txtMoTa.TabIndex = 18;
             this.txtMoTa.Tag = "";
             // 
             // label17
@@ -683,7 +685,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMauSac.Location = new System.Drawing.Point(213, 211);
             this.txtMauSac.Name = "txtMauSac";
             this.txtMauSac.Size = new System.Drawing.Size(295, 22);
-            this.txtMauSac.TabIndex = 42;
+            this.txtMauSac.TabIndex = 15;
             this.txtMauSac.Tag = "";
             // 
             // cboLoaiSP
@@ -696,7 +698,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cboLoaiSP.Location = new System.Drawing.Point(212, 72);
             this.cboLoaiSP.Name = "cboLoaiSP";
             this.cboLoaiSP.Size = new System.Drawing.Size(296, 30);
-            this.cboLoaiSP.TabIndex = 41;
+            this.cboLoaiSP.TabIndex = 12;
             // 
             // txtMaSP
             // 
@@ -709,7 +711,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP.Location = new System.Drawing.Point(212, 30);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(296, 22);
-            this.txtMaSP.TabIndex = 40;
+            this.txtMaSP.TabIndex = 11;
             this.txtMaSP.Tag = "";
             // 
             // txtHienTrang
@@ -724,7 +726,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtHienTrang.Multiline = true;
             this.txtHienTrang.Name = "txtHienTrang";
             this.txtHienTrang.Size = new System.Drawing.Size(297, 114);
-            this.txtHienTrang.TabIndex = 37;
+            this.txtHienTrang.TabIndex = 17;
             this.txtHienTrang.Tag = "";
             // 
             // label9
@@ -833,10 +835,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaSP.ForeColor = System.Drawing.Color.White;
-            this.btnXoaSP.Location = new System.Drawing.Point(1189, 490);
+            this.btnXoaSP.Location = new System.Drawing.Point(1017, 490);
             this.btnXoaSP.Name = "btnXoaSP";
             this.btnXoaSP.Size = new System.Drawing.Size(99, 38);
-            this.btnXoaSP.TabIndex = 13;
+            this.btnXoaSP.TabIndex = 21;
             this.btnXoaSP.Text = "Xóa";
             this.btnXoaSP.UseVisualStyleBackColor = false;
             this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
@@ -848,10 +850,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnSuaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaSP.ForeColor = System.Drawing.Color.White;
-            this.btnSuaSP.Location = new System.Drawing.Point(990, 490);
+            this.btnSuaSP.Location = new System.Drawing.Point(884, 490);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(99, 38);
-            this.btnSuaSP.TabIndex = 12;
+            this.btnSuaSP.TabIndex = 20;
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = false;
             this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
@@ -866,7 +868,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnThemSP.Location = new System.Drawing.Point(731, 490);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(99, 38);
-            this.btnThemSP.TabIndex = 11;
+            this.btnThemSP.TabIndex = 19;
             this.btnThemSP.Text = "Thêm ";
             this.btnThemSP.UseVisualStyleBackColor = false;
             this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
@@ -902,7 +904,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtNhanHieu.Location = new System.Drawing.Point(212, 260);
             this.txtNhanHieu.Name = "txtNhanHieu";
             this.txtNhanHieu.Size = new System.Drawing.Size(296, 22);
-            this.txtNhanHieu.TabIndex = 19;
+            this.txtNhanHieu.TabIndex = 16;
             this.txtNhanHieu.Tag = "";
             // 
             // label12
@@ -956,7 +958,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDinhGia.Location = new System.Drawing.Point(211, 166);
             this.txtDinhGia.Name = "txtDinhGia";
             this.txtDinhGia.Size = new System.Drawing.Size(296, 22);
-            this.txtDinhGia.TabIndex = 13;
+            this.txtDinhGia.TabIndex = 14;
             this.txtDinhGia.Tag = "";
             // 
             // label14
@@ -1009,6 +1011,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label16.Size = new System.Drawing.Size(121, 22);
             this.label16.TabIndex = 5;
             this.label16.Text = "Mã sản phẩm";
+            // 
+            // btnLuuSP
+            // 
+            this.btnLuuSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLuuSP.FlatAppearance.BorderSize = 0;
+            this.btnLuuSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuSP.ForeColor = System.Drawing.Color.White;
+            this.btnLuuSP.Location = new System.Drawing.Point(1144, 490);
+            this.btnLuuSP.Name = "btnLuuSP";
+            this.btnLuuSP.Size = new System.Drawing.Size(99, 38);
+            this.btnLuuSP.TabIndex = 21;
+            this.btnLuuSP.Text = "Lưu";
+            this.btnLuuSP.UseVisualStyleBackColor = false;
+            this.btnLuuSP.Click += new System.EventHandler(this.btnLuuSP_Click);
             // 
             // CamDo
             // 
@@ -1126,5 +1143,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.TextBox txtMaHDC;
+        private System.Windows.Forms.Button btnLuuSP;
     }
 }

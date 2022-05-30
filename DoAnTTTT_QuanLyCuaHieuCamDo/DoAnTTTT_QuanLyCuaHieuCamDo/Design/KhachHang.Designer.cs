@@ -90,7 +90,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtTenKhachHang.Size = new System.Drawing.Size(362, 22);
             this.txtTenKhachHang.TabIndex = 0;
             this.txtTenKhachHang.Tag = "";
-            this.txtTenKhachHang.Text = "QSADASD";
             this.txtTenKhachHang.Click += new System.EventHandler(this.textBox1_Click);
             this.txtTenKhachHang.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -156,7 +155,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtMaKH.Size = new System.Drawing.Size(362, 22);
             this.txtMaKH.TabIndex = 29;
             this.txtMaKH.Tag = "";
-            this.txtMaKH.Text = "QSADASD";
             // 
             // label7
             // 
@@ -259,7 +257,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtCMND.Size = new System.Drawing.Size(145, 22);
             this.txtCMND.TabIndex = 19;
             this.txtCMND.Tag = "";
-            this.txtCMND.Text = "QSADASD";
             // 
             // label5
             // 
@@ -344,7 +341,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtDiaChi.Size = new System.Drawing.Size(362, 22);
             this.txtDiaChi.TabIndex = 13;
             this.txtDiaChi.Tag = "";
-            this.txtDiaChi.Text = "QSADASD";
             // 
             // btnSuaKH
             // 
@@ -409,7 +405,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtSDT.Size = new System.Drawing.Size(362, 22);
             this.txtSDT.TabIndex = 10;
             this.txtSDT.Tag = "";
-            this.txtSDT.Text = "QSADASD";
             // 
             // label3
             // 

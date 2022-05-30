@@ -134,6 +134,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return kq > 0;
         }
 
+        public bool UpdateTienTL(string MaSP, float GiaThanhLy)
+        {
+            string query = string.Format("update SanPham set  GiaThanhLy=N'{0}'  where MaSP=N'{1}'", GiaThanhLy, MaSP);
+            int kq = CSDL.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
         public List<SanPhamDTO> TimKiem(bool ThanhLy , bool QuaHan , bool DaChuoc , bool DaThanhLy)
         {
             List<SanPhamDTO> ListSP = new List<SanPhamDTO>();
