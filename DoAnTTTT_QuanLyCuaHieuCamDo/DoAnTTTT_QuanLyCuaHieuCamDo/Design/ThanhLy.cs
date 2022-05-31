@@ -25,6 +25,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadThanhLy();
             LoadCboKhachHang();
             LoadCboSP();
+            HienThiThongTin(false);
         }
 
         void LoadThanhLy()
@@ -84,6 +85,40 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             int MaThanhLy = Convert.ToInt32(txtMaThanhLy.Text);
             ThanhLyDAO.Instance.UpdateTongTien(MaThanhLy);
             LoadThanhLy();
+        }
+        void HienThiThongTin(Boolean hien)
+        {
+            this.txtSDT.Enabled = hien;
+            this.txtDiaChi.Enabled = hien;
+            this.txtCMND.Enabled = hien;
+            this.txtTongTien.Enabled = hien;
+            this.dtpNgaySinh.Enabled = hien;
+            this.dtpNgayCapCMND.Enabled = hien;
+            this.dtpNgayLap.Enabled = hien;
+            this.txtGiaThanhLy.Enabled = hien;
+            this.txtHienTrang.Enabled = hien;
+            this.txtMauSac.Enabled = hien;
+            this.txtMoTa.Enabled = hien;
+            this.txtNhanHieu.Enabled = hien;
+            this.txtTenSP.Enabled = hien;
+        }
+        public void ResetBtnTL()
+        {
+            btnThemHDTL.Enabled = false;
+            btnThemHDTL.BackColor = Color.Gray;
+            btnThemHDTL.ForeColor = Color.Black;
+
+            btnSuaDHTL.Enabled = false;
+            btnSuaDHTL.BackColor = Color.Gray;
+            btnSuaDHTL.ForeColor = Color.Black;
+
+            btnXoaHDTL.Enabled = false;
+            btnXoaHDTL.BackColor = Color.Gray;
+            btnXoaHDTL.ForeColor = Color.Black;
+
+            btnInHDCam.Enabled = false;
+            btnInHDCam.BackColor = Color.Gray;
+            btnInHDCam.ForeColor = Color.Black;
         }
         private void cbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {

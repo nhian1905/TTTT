@@ -356,6 +356,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // btnXoaHoaDonCam
             // 
             this.btnXoaHoaDonCam.BackColor = System.Drawing.Color.Gray;
+            this.btnXoaHoaDonCam.Enabled = false;
             this.btnXoaHoaDonCam.FlatAppearance.BorderSize = 0;
             this.btnXoaHoaDonCam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaHoaDonCam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

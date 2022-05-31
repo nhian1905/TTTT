@@ -25,7 +25,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void KhachHang_Load(object sender, EventArgs e)
         {
             txtTenKhachHang.Text = "Tên khách hàng";
-            btnSuaKH.Enabled = false;
+            ResetBtnKH();
+            btnThemKH.Enabled = true;
+            btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemKH.ForeColor = Color.White;
+            HienThiThongTin(false);
             LoadKhachHang();
         }
         string imagelocation = @"";
@@ -48,9 +52,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            txtTenKhachHang.Text = "";
         }
-
+        public void ResetBtnKH()
+        {
+            btnThemKH.Enabled = false;
+            btnThemKH.BackColor = Color.Gray;
+            btnThemKH.ForeColor = Color.Black;
+            btnAnhKH.Enabled = false;
+            btnAnhKH.BackColor = Color.Gray;
+            btnAnhKH.ForeColor = Color.Black;
+            btnXoaKH.Enabled = false;
+            btnXoaKH.BackColor = Color.Gray;
+            btnXoaKH.ForeColor = Color.Black;
+            btnSuaKH.Enabled = false;
+            btnSuaKH.BackColor = Color.Gray;
+            btnSuaKH.ForeColor = Color.Black;
+            btnLuu.Enabled = false;
+            btnLuu.BackColor = Color.Gray;
+            btnLuu.ForeColor = Color.Black;
+        }
         void ResetThongTin()
         {
             txtMaKH.Clear();
@@ -96,6 +116,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void LVKH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ResetBtnKH();
+            btnSuaKH.Enabled = true;
+            btnSuaKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnSuaKH.ForeColor = Color.White;
+
+            btnXoaKH.Enabled = true;
+            btnXoaKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnXoaKH.ForeColor = Color.White;
+
             try
             {
                 ListView.SelectedListViewItemCollection lv = this.LVKH.SelectedItems;
@@ -135,12 +164,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             {
 
             }
-            btnThemKH.Enabled = true;
-            btnSuaKH.Enabled = true;
         }
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
+            
             if (txtMaKH.Text == null)
             {
                 MessageBox.Show("Vui Lòng Chọn Khách Hàng Cần Xóa");
@@ -157,21 +185,48 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             {
                 return;
             }
+            ResetBtnKH();
+            btnThemKH.Enabled = true;
+            btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemKH.ForeColor = Color.White;
             LoadKhachHang();
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            btnSuaKH.Enabled = false;
-            btnXoaKH.Enabled = false;
+            ResetBtnKH();
+            btnThemKH.Enabled = true;
+            btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemKH.ForeColor = Color.White;
+
+            btnLuu.Enabled = true;
+            btnLuu.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuu.ForeColor = Color.White;
+
+            btnAnhKH.Enabled = true;
+            btnAnhKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnAnhKH.ForeColor = Color.White;
             ResetThongTin();
             HienThiThongTin(true);
+            this.txtMaKH.Enabled = false;
         }
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
-            btnThemKH.Enabled = false;
+            ResetBtnKH();
+            btnSuaKH.Enabled = true;
+            btnSuaKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnSuaKH.ForeColor = Color.White;
+
+            btnLuu.Enabled = true;
+            btnLuu.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuu.ForeColor = Color.White;
+
+            btnAnhKH.Enabled = true;
+            btnAnhKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnAnhKH.ForeColor = Color.White;
             HienThiThongTin(true);
+            this.txtMaKH.Enabled = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -233,7 +288,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                     MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin");
                     return;
                 }
+                ResetBtnKH();
                 btnThemKH.Enabled = true;
+                btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+                btnThemKH.ForeColor = Color.White;
             }
         }
 

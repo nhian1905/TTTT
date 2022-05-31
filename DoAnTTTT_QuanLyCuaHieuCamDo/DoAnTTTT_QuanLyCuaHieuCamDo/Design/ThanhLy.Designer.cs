@@ -904,7 +904,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Controls.Add(this.gbKhachHang);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThanhLy";
-            this.Text = "ThanhLy";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.ThanhLy_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -184,6 +184,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                         if (HoaDonCamDAO.Instance.DeleteHDC(MaHDC))
                         {
                             MessageBox.Show("Xóa Thành Công", "Thông báo");
+                            ResetButtonHDC();
                             LoadHoaDonCam();
                         }
                         else
@@ -196,7 +197,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                         MessageBox.Show("Chọn Hóa Đơn Cần Xóa");
                     }
                 }
-
+                
                 catch
                 {
                     MessageBox.Show("Có lỗi Không Thể Xóa Do Sản Phẩm Đã Được Xuất ");
@@ -396,7 +397,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     return;
                 }
             }
-
+            ResetButtonCTHDC();
+            btnThemSP.Enabled = true;
+            btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemSP.ForeColor = Color.White;
             LoadCTHoaDonCam(id);
         }
 

@@ -360,6 +360,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // btnThemKH
             // 
             this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThemKH.Enabled = false;
             this.btnThemKH.FlatAppearance.BorderSize = 0;
             this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

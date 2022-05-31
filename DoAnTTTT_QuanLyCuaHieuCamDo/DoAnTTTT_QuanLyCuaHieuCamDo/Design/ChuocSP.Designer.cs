@@ -104,6 +104,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTenKH.AccessibleName = "";
             this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKH.Enabled = false;
             this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.White;
             this.txtTenKH.Location = new System.Drawing.Point(1002, 75);
@@ -200,6 +201,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(1002, 205);
@@ -214,6 +216,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.Enabled = false;
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(1002, 302);
@@ -247,6 +250,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtCMND.AccessibleName = "";
             this.txtCMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCMND.Enabled = false;
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.ForeColor = System.Drawing.Color.White;
             this.txtCMND.Location = new System.Drawing.Point(1002, 259);
@@ -301,6 +305,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDiaChi.AccessibleName = "";
             this.txtDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.White;
             this.txtDiaChi.Location = new System.Drawing.Point(1002, 166);
@@ -335,6 +340,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtSDT.AccessibleName = "";
             this.txtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSDT.Enabled = false;
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.ForeColor = System.Drawing.Color.White;
             this.txtSDT.Location = new System.Drawing.Point(1002, 119);
@@ -636,7 +642,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             this.lbMaHDChuoc.AutoSize = true;
             this.lbMaHDChuoc.ForeColor = System.Drawing.Color.White;
-            this.lbMaHDChuoc.Location = new System.Drawing.Point(52, 276);
+            this.lbMaHDChuoc.Location = new System.Drawing.Point(654, 290);
             this.lbMaHDChuoc.Name = "lbMaHDChuoc";
             this.lbMaHDChuoc.Size = new System.Drawing.Size(35, 13);
             this.lbMaHDChuoc.TabIndex = 75;
@@ -646,7 +652,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // cboMaKH
             // 
             this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(244, 278);
+            this.cboMaKH.Location = new System.Drawing.Point(657, 287);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(39, 21);
             this.cboMaKH.TabIndex = 76;
@@ -661,7 +667,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaHDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHDC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHDC.ForeColor = System.Drawing.Color.White;
-            this.txtMaHDC.Location = new System.Drawing.Point(195, 271);
+            this.txtMaHDC.Location = new System.Drawing.Point(695, 285);
             this.txtMaHDC.Name = "txtMaHDC";
             this.txtMaHDC.Size = new System.Drawing.Size(28, 22);
             this.txtMaHDC.TabIndex = 77;
@@ -676,7 +682,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.ForeColor = System.Drawing.Color.White;
-            this.txtMaSP.Location = new System.Drawing.Point(299, 276);
+            this.txtMaSP.Location = new System.Drawing.Point(702, 285);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(10, 22);
             this.txtMaSP.TabIndex = 53;
@@ -690,9 +696,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1327, 957);
             this.Controls.Add(this.btnThemHDChuoc);
-            this.Controls.Add(this.cboMaKH);
-            this.Controls.Add(this.txtMaHDC);
-            this.Controls.Add(this.lbMaHDChuoc);
             this.Controls.Add(this.XoaSP);
             this.Controls.Add(this.ThemSP);
             this.Controls.Add(this.groupBox2);
@@ -716,10 +719,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.dtpNgayCapCMND);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lbMaHDChuoc);
+            this.Controls.Add(this.cboMaKH);
+            this.Controls.Add(this.txtMaSP);
+            this.Controls.Add(this.txtMaHDC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChuocSP";
             this.Text = "ChuocSP";
