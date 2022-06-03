@@ -24,7 +24,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            txtTenKhachHang.Text = "Tên khách hàng";
+            //txtTenKhachHang.Text = "Tên khách hàng";
             ResetBtnKH();
             btnThemKH.Enabled = true;
             btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
@@ -125,6 +125,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             btnXoaKH.BackColor = Color.FromArgb(0, 126, 249);
             btnXoaKH.ForeColor = Color.White;
 
+            btnThemKH.Enabled = true;
+            btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemKH.ForeColor = Color.White;
+
             try
             {
                 ListView.SelectedListViewItemCollection lv = this.LVKH.SelectedItems;
@@ -168,28 +172,34 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            
-            if (txtMaKH.Text == null)
+            try
             {
-                MessageBox.Show("Vui Lòng Chọn Khách Hàng Cần Xóa");
-                return;
+                if (txtMaKH.Text == null)
+                {
+                    MessageBox.Show("Vui Lòng Chọn Khách Hàng Cần Xóa");
+                    return;
+                }
+                int ID_KhachHang = Convert.ToInt32(txtMaKH.Text);
+                DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Khách Hàng Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (tb == DialogResult.Yes)
+                {
+                    KhachHangDAO.Instance.DeleteCustomer(ID_KhachHang);
+                    btnSuaKH.Enabled = false;
+                }
+                else
+                {
+                    return;
+                }
+                ResetBtnKH();
+                btnThemKH.Enabled = true;
+                btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
+                btnThemKH.ForeColor = Color.White;
+                LoadKhachHang();
             }
-            int ID_KhachHang = Convert.ToInt32(txtMaKH.Text);
-            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Khách Hàng Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (tb == DialogResult.Yes)
+            catch
             {
-                KhachHangDAO.Instance.DeleteCustomer(ID_KhachHang);
-                btnSuaKH.Enabled = false;
+                MessageBox.Show("Không Thể Xóa Khách Hàng Khi Đã Có Hóa Đơn");
             }
-            else
-            {
-                return;
-            }
-            ResetBtnKH();
-            btnThemKH.Enabled = true;
-            btnThemKH.BackColor = Color.FromArgb(0, 126, 249);
-            btnThemKH.ForeColor = Color.White;
-            LoadKhachHang();
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
@@ -209,6 +219,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             ResetThongTin();
             HienThiThongTin(true);
             this.txtMaKH.Enabled = false;
+            txtTenKhachHang.Focus();
         }
 
         private void btnSuaKH_Click(object sender, EventArgs e)
@@ -233,7 +244,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         {
             if (btnThemKH.Enabled == true)
             {
-                if (txtTenKhachHang.Text != "")
+                if (txtTenKhachHang.Text != "" )
                 {
                     string TenKH = txtTenKhachHang.Text;
                     int SDT = Convert.ToInt32(txtSDT.Text);
@@ -254,7 +265,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                 }
                 else
                 {
-                    MessageBox.Show("Không được để trống Tên", "thông báo");
+                    MessageBox.Show("Không được để trống Tên ", "thông báo");
                     txtTenKhachHang.Focus();
                 }
                 ResetThongTin();

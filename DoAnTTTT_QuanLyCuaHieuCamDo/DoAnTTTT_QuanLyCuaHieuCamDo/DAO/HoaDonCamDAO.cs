@@ -37,6 +37,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             return LoadList;
         }
 
+        public List<HoaDonCamDTO> LoadListHoaDonCam1()
+        {
+            List<HoaDonCamDTO> LoadList = new List<HoaDonCamDTO>();
+            string query = "select a.MaHoaDonCam , b.TenKH , a.NgayLap , a.NgayHetHan ,a.TongTienCam from HoaDonCam a , KhachHang b , ChiTiet_HoaDonCam c , SanPham d where a.MaKH = b.MaKH and a.MaHoaDonCam = c.MaHoaDonCam and c.MaSP = d.MaSP and d.DaChuoc = 0 and d.ThanhLy = 0 and d.QuaHan = 0 and d.DaThanhLy = 0 ";
+            DataTable dta = CSDL.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dta.Rows)
+            {
+                HoaDonCamDTO HDC = new HoaDonCamDTO(item);
+                LoadList.Add(HDC);
+            }
+            return LoadList;
+        }
+
         public bool InsertHDC(int MaKH, DateTime NgayLap, DateTime NgayHetHan, DateTime NgayDongLai, float TongTienCam)
         {
             string query = string.Format("insert HoaDonCam( MaKH ,NgayLap,NgayHetHan,NgayDongLai ,TongTienCam) values (N'{0}',N'{1}',N'{2}',N'{3}',N'{4}')", MaKH, NgayLap, NgayHetHan,NgayDongLai, TongTienCam);

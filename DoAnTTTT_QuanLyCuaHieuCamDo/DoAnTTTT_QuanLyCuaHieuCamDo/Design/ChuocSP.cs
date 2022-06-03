@@ -31,7 +31,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         void LoadHoaDonCam()
         {
             LvHoaDonCam.Items.Clear();
-            List<HoaDonCamDTO> list = HoaDonCamDAO.Instance.LoadListHoaDonCam();
+            List<HoaDonCamDTO> list = HoaDonCamDAO.Instance.LoadListHoaDonCam1();
             foreach (HoaDonCamDTO item in list)
             {
                 ListViewItem lvitem = new ListViewItem(item.MaHoaDonCam.ToString());
@@ -169,45 +169,52 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void ThemSP_Click(object sender, EventArgs e)
         {
-            int MaHDC = (int)Convert.ToInt32(txtMaHDC.Text);
-            DateTime ngaydong =(DateTime)Convert.ToDateTime(DateTime.Now);
-            int MaPC = (int)Convert.ToInt32(lbMaHDChuoc.Text);
-            string MaSP = txtMaSP.Text;
+            try
+            { 
+                int MaHDC = (int)Convert.ToInt32(txtMaHDC.Text);
+                DateTime ngaydong =(DateTime)Convert.ToDateTime(DateTime.Now);
+                int MaPC = (int)Convert.ToInt32(lbMaHDChuoc.Text);
+                string MaSP = txtMaSP.Text;
 
-            //string connectionStr = CSDL.connectionStr;
-            //SqlConnection kn = new SqlConnection(connectionStr);
-            //kn.Open();
-            //string sql = "select LoaiSP.LaiXuat * SanPham.DinhGia";
-            //sql += " from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam";
-            //sql += " where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = '" + MaHDC + "' and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam";
-            //sql += " and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0 and SanPham.MaSP='"+MaSP+"'";
-            //SqlCommand cmdd = new SqlCommand(sql, kn);
-            //SqlDataReader kq = cmdd.ExecuteReader();
-            //StringBuilder a = new StringBuilder();
-            //while (kq.Read())
-            //{
-            //    for (int i = 0; i < kq.FieldCount; i++)
-            //    {
-            //        TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC,ngaydong)) * Convert.ToDouble(kq[i]) / 100;
-            //    }
+                //string connectionStr = CSDL.connectionStr;
+                //SqlConnection kn = new SqlConnection(connectionStr);
+                //kn.Open();
+                //string sql = "select LoaiSP.LaiXuat * SanPham.DinhGia";
+                //sql += " from ChiTiet_HoaDonCam, SanPham, LoaiSP, HoaDonCam";
+                //sql += " where ChiTiet_HoaDonCam.MaSP = SanPham.MaSP and SanPham.MaLoai = LoaiSP.MaLoai and HoaDonCam.MaHoaDonCam = '" + MaHDC + "' and ChiTiet_HoaDonCam.MaHoaDonCam=HoaDonCam.MaHoaDonCam";
+                //sql += " and SanPham.ThanhLy=0 and SanPham.DaThanhLy=0 and SanPham.DaChuoc=0 and SanPham.QuaHan=0 and SanPham.MaSP='"+MaSP+"'";
+                //SqlCommand cmdd = new SqlCommand(sql, kn);
+                //SqlDataReader kq = cmdd.ExecuteReader();
+                //StringBuilder a = new StringBuilder();
+                //while (kq.Read())
+                //{
+                //    for (int i = 0; i < kq.FieldCount; i++)
+                //    {
+                //        TienLai = TienLai + Convert.ToDouble(PhieuLaiDAO.Instance.Ngay(MaHDC,ngaydong)) * Convert.ToDouble(kq[i]) / 100;
+                //    }
 
-            //}
-            //kn.Close();
-            double TienLai =PhieuLaiDAO.Instance.TienLai(ngaydong,MaHDC);
-            float TongTien = (float)Convert.ToDouble(ChiTietPhieuChuocDAO.Instance.LayGiaSP(MaSP))+(float)Convert.ToDouble(TienLai);
-            if (ChiTietPhieuChuocDAO.Instance.InsertSPtoBillPhieuChuoc(MaPC, MaSP,Convert.ToDouble(TienLai), TongTien))
-            {
-                MessageBox.Show("Thêm Thành Công");
-                ChiTietPhieuChuocDAO.Instance.UpdateSPDaChuoc(MaSP);
-                LoadCTPhieuChuoc(MaPC);
-                LoadTongTien();
-                LoadSP(MaHDC);
-                txtTongTien.Text = Convert.ToString(ChiTietPhieuChuocDAO.Instance.TongTien(MaPC));
-                PhieuChuocDAO.Instance.UpdateTongTien(MaPC);
+                //}
+                //kn.Close();
+                double TienLai =PhieuLaiDAO.Instance.TienLai(ngaydong,MaHDC);
+                float TongTien = (float)Convert.ToDouble(ChiTietPhieuChuocDAO.Instance.LayGiaSP(MaSP))+(float)Convert.ToDouble(TienLai);
+                if (ChiTietPhieuChuocDAO.Instance.InsertSPtoBillPhieuChuoc(MaPC, MaSP,Convert.ToDouble(TienLai), TongTien))
+                {
+                    MessageBox.Show("Thêm Thành Công");
+                    ChiTietPhieuChuocDAO.Instance.UpdateSPDaChuoc(MaSP);
+                    LoadCTPhieuChuoc(MaPC);
+                    LoadTongTien();
+                    LoadSP(MaHDC);
+                    txtTongTien.Text = Convert.ToString(ChiTietPhieuChuocDAO.Instance.TongTien(MaPC));
+                    PhieuChuocDAO.Instance.UpdateTongTien(MaPC);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Thêm thất bại");
+                MessageBox.Show("Vui Lòng Thêm Hóa Đơn Trước Khi Thêm SP");
             }
         }
 

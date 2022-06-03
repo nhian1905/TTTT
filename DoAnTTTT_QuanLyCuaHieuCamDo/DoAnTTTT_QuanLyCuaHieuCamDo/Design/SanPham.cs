@@ -33,6 +33,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadSanPham();
             btnSuaSP.Enabled = false;
             HienThiThongTin(false);
+            ResetButtonSP();
         }
 
         void LoadSPQuaHan()
@@ -93,6 +94,25 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMoTa.Enabled = hien;
             this.txtMauSac.Enabled = hien;
         }
+        private void ResetButtonSP()
+        {
+            btnSuaSP.Enabled = false;
+            btnSuaSP.BackColor = Color.Gray;
+            btnSuaSP.ForeColor = Color.Black;
+
+            btnThanhLy.Enabled = false;
+            btnThanhLy.BackColor = Color.Gray;
+            btnThanhLy.ForeColor = Color.Black;
+
+            btnXoaSP.Enabled = false;
+            btnXoaSP.BackColor = Color.Gray;
+            btnXoaSP.ForeColor = Color.Black;
+
+            btnLuu.Enabled = false;
+            btnLuu.BackColor = Color.Gray;
+            btnLuu.ForeColor = Color.Black;
+        }
+
         void ResetSP()
         {
             txtMaSP.Clear();
@@ -164,44 +184,92 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtNhanHieu.Text = nhanhieu.ToString();
 
             btnThemSP.Enabled = true;
+            btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnThemSP.ForeColor = Color.White;
+
             btnSuaSP.Enabled = true;
+            btnSuaSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnSuaSP.ForeColor = Color.White;
+
             btnXoaSP.Enabled = true;
+            btnXoaSP.BackColor = Color.FromArgb(0, 126, 249);
+            btnXoaSP.ForeColor = Color.White;
+
+            btnThanhLy.Enabled = true;
+            btnThanhLy.BackColor = Color.FromArgb(0, 126, 249);
+            btnThanhLy.ForeColor = Color.White;
+
+            btnLuu.Enabled = false;
+            btnLuu.BackColor = Color.Gray;
+            btnLuu.ForeColor = Color.Black;
         }
        
 
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-            btnSuaSP.Enabled = false;
-            btnXoaSP.Enabled = false;
+            //btnSuaSP.Enabled = false;
+            //btnXoaSP.Enabled = false;
             ResetThongTin();
             HienThiThongTin(true);
             txtMaSP.Focus();
+            //btnThemSP.Enabled = true;
+            //btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+            //btnThemSP.ForeColor = Color.White;
+            btnSuaSP.Enabled = false;
+            btnSuaSP.BackColor = Color.Gray;
+            btnSuaSP.ForeColor = Color.Black;
+
+            btnXoaSP.Enabled = false;
+            btnXoaSP.BackColor = Color.Gray;
+            btnXoaSP.ForeColor = Color.Black;
+
+            btnLuu.Enabled = true;
+            btnLuu.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuu.ForeColor = Color.White;
         }
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            btnThemSP.Enabled = true;
+            btnXoaSP.Enabled = false;
+            btnXoaSP.BackColor = Color.Gray;
+            btnXoaSP.ForeColor = Color.Black;
+
+            btnThemSP.Enabled = false;
+            btnThemSP.BackColor = Color.Gray;
+            btnThemSP.ForeColor = Color.Black;
+
+            btnLuu.Enabled = true;
+            btnLuu.BackColor = Color.FromArgb(0, 126, 249);
+            btnLuu.ForeColor = Color.White;
             HienThiThongTin(true);
         }
 
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
-            if (txtMaSP.Text == null)
+            try
             {
-                MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
-                return;
+                if (txtMaSP.Text == null)
+                {
+                    MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
+                    return;
+                }
+                string MaSP = txtMaSP.Text;
+                DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (tb == DialogResult.Yes)
+                {
+                    SanPhamDAO.Instance.DeleteSP(MaSP);
+                }
+                else
+                {
+                    return;
+                }
+                LoadSanPham();
+                ResetThongTin();
             }
-            string MaSP = txtMaSP.Text;
-            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (tb == DialogResult.Yes)
+            catch
             {
-                SanPhamDAO.Instance.DeleteSP(MaSP);
+                MessageBox.Show("Sản Phẩm Đang Câm Không Thể Xóa !!!");
             }
-            else
-            {
-                return;
-            }
-            LoadSanPham();
             
         }
 
@@ -375,22 +443,29 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void btnXoaLoaiSP_Click(object sender, EventArgs e)
         {
-            if (txtMaLoai.Text == null)
+            try
             {
-                MessageBox.Show("Vui Lòng Chọn Loại Sản Phẩm Cần Xóa");
-                return;
+                if (txtMaLoai.Text == null)
+                {
+                    MessageBox.Show("Vui Lòng Chọn Loại Sản Phẩm Cần Xóa");
+                    return;
+                }
+                int LoaiSP =(int)Convert.ToInt32(txtMaLoai.Text);
+                DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Loại Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (tb == DialogResult.Yes)
+                {
+                    LoaiSPDAO.Instance.DeleteLoaiSP(LoaiSP);
+                }
+                else
+                {
+                    return;
+                }
+                LoadLoaiSP();
             }
-            int LoaiSP =(int)Convert.ToInt32(txtMaLoai.Text);
-            DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Loại Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (tb == DialogResult.Yes)
+            catch
             {
-                LoaiSPDAO.Instance.DeleteLoaiSP(LoaiSP);
+                MessageBox.Show("Không Thể Xóa !!");
             }
-            else
-            {
-                return;
-            }
-            LoadLoaiSP();
         }
 
         //private void btnLoc_Click(object sender, EventArgs e)
