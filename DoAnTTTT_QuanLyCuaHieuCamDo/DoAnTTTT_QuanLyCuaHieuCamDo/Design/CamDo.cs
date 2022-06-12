@@ -428,7 +428,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 
                 int id = int.Parse(txtMaHDC.Text);
-                if (txtTenSP.Text != "" && txtMaSP.Text != "")
+                if (txtTenSP.Text != "" && txtMaSP.Text != "" && cboLoaiSP.Text!="")
                 {
                     string connectionStr = CSDL.connectionStr;
                     SqlConnection kn = new SqlConnection(connectionStr);
@@ -476,7 +476,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 }
                 else
                 {
-                    MessageBox.Show("Vui Lòng Chọn Sản Phẩm");
+                    MessageBox.Show("Vui lòng nhập đủ thông tin sản phấm");
                 }
                 ResetThongTin();
             }

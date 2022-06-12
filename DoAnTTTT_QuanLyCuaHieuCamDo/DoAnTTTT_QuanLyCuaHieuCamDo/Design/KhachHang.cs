@@ -154,7 +154,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                 }
                 txtMaKH.Text = id.ToString();
                 txtTenKhachHang.Text = tenkh.ToString();
-                txtSDT.Text = sdt.ToString();
+                txtSDT.Text = 0+sdt.ToString();
                 txtCMND.Text = cmnd.ToString();
                 dtpNgaySinh.Text = namsinh.ToString();
                 txtDiaChi.Text = diachi.ToString();

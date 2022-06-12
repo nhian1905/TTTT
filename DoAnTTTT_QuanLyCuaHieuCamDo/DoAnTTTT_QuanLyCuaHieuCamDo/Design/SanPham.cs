@@ -838,7 +838,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
                             // merge các column lại từ column 1 đến số column header
                             // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                            ws.Cells[1, 1].Value = "Thống kê thông tin sản phẩm đã chuộc";
+                            ws.Cells[1, 1].Value = "Thống kê thông tin sản phẩm đã quá hạn";
                             ws.Cells[1, 1, 1, countColHeader].Merge = true;
                             // in đậm
                             ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
