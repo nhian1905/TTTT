@@ -27,6 +27,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadCboLoaiSP();
             HienThiThongTin(false);
             ResetButtonHDC();
+            txtHienTrang.Items.Add("99%");
+            txtHienTrang.Items.Add("Trung bình (85%-95%)");
+            txtHienTrang.Items.Add("Cũ (75%-80%)");
         }
 
         void LoadCboKhachHang()
@@ -48,7 +51,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMaSP.Clear();
             txtTenSP.Clear();
             txtDinhGia.Clear();
-            txtHienTrang.Clear();
+            txtHienTrang.SelectedIndex=-1;
             txtNhanHieu.Clear();
             txtMoTa.Clear();
             txtMauSac.Clear();
