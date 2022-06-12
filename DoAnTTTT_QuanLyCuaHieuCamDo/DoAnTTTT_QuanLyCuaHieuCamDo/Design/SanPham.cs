@@ -310,6 +310,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     txtTenSP.Focus();
                 }
                 ResetThongTin();
+                
             }
             else if(btnSuaSP.Enabled == true)
             {
@@ -341,7 +342,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     MessageBox.Show("Vui Lòng Sửa Đầy Đủ Thông Tin");
                     return;
                 }
+                ResetButtonSP();
                 btnThemSP.Enabled = true;
+                btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
+                btnThemSP.ForeColor = Color.White;
             }
         }
         private void btnThanhLy_Click(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             LoadCboKhachHang();
             LoadCboSP();
             HienThiThongTin(false);
+            dtpNgayLap.Enabled = true;
         }
 
         void LoadThanhLy()
@@ -250,7 +251,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             {
                 int MaThanhLy = (int)Convert.ToInt32(txtMaThanhLy.Text);
                 DateTime NgayLap = (DateTime)Convert.ToDateTime(dtpNgayLap.Value).Date;
-                float TongTienThanhLy = (float)Convert.ToDouble(0);
+                float TongTienThanhLy = (float)Convert.ToDouble(txtTongTien.Text);
                 int MaKH = (cbKhachHang.SelectedItem as KhachHangDTO).MaKH;
                 if (ThanhLyDAO.Instance.UpdateThanhLy(MaThanhLy, MaKH, NgayLap, TongTienThanhLy))
                 {
