@@ -125,9 +125,6 @@ create table Tien
 	TongDoanhThu float
 )
 
-
-insert into Tien values(1,1000000000,50000000,600000000)
-
 insert into Quyen values ('admin')
 insert into TaiKhoan values ('admin',123,1)
 
@@ -136,8 +133,9 @@ insert into KhachHang values(N'Nguyễn Chí Đang',0835629645,381000111,'05/19/
 insert into KhachHang values(N'Trần Nhất Phương',0947366755,381222333,'05/19/2020',N'Cà Mau','05/19/2020','1')
 insert into KhachHang values(N'Lý Tấn Ngọc',0919599595,381987345,'05/19/2020',N'Cần Thơ','05/19/2020','1')
 
-insert into LoaiSP values (N'DT',5)
-insert into LoaiSP values (N'MT',3)
+insert into LoaiSP values (N'Điện Thoại',5)
+insert into LoaiSP values (N'Máy Tính',3)
+insert into LoaiSP values (N'Xe Máy',0.6)
 
 insert into SanPham values ('DT01','IMEI1602',N'IPHONE 12',1602,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu đỏ',N'có trầy ở lưng',N'IPHONE',0,0,0,0)
 insert into SanPham values ('DT02','IMEI111',N'SAMSUNG A12',1111,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Hồng',N'có trầy viền',N' SAMSUNG',0,0,0,0)
@@ -147,13 +145,22 @@ insert into SanPham values ('DT05','IMEI1323',N'IPHONE X',1323,0,1,N'ĐIỆN THO
 
 insert into HoaDonCam values (1,'2022-04-16','2022-05-16','2022-04-16','0')
 insert into HoaDonCam values (2,'2022-04-16','2022-05-16','2022-04-16','0')
+insert into ChiTiet_HoaDonCam values(1,'IMEI1602')
+insert into ChiTiet_HoaDonCam values(1,'IMEI111')
 
 insert into PhieuChuoc values(1,'05/19/2020',0)
-insert into ChiTiet_PhieuChuoc values(1,'IMEI1602',0,0)
 insert into PhieuChuoc values(2,'05/19/2020',0)
+insert into ChiTiet_PhieuChuoc values(1,'IMEI1602',0,0)
 insert into ChiTiet_PhieuChuoc values(2,'IMEI111',0,0)
 
+insert into PhieuLai values(1,'2022-04-16',1111)
+insert into PhieuLai values(2,'2022-04-16',2222)
 
+
+insert into ThanhLy values(1,'2022-05-17',0)
+insert into ChiTiet_ThanhLy values(1,'IMEI1789')
+
+insert into Tien values(1,1000000000,50000000,600000000)
 go
 create proc USP_UpdateTienPhieuChuoc
 @MaPC int

@@ -549,21 +549,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         private void cboLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboLoaiSP.Text=="Điện thoại")
+            if(cboLoaiSP.Text=="Điện Thoại")
             {
                 int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                 int soluong=Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai))+1;
                 string SL = "DT" + soluong;
                 txtID.Text = Convert.ToString(SL);
             }
-            if (cboLoaiSP.Text == "Máy tính")
+            if (cboLoaiSP.Text == "Máy Tính")
             {
                 int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                 int soluong = Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai)) + 1;
                 string SL = "MT" + soluong;
                 txtID.Text = Convert.ToString(SL);
             }
-            if (cboLoaiSP.Text == "Xe máy")
+            if (cboLoaiSP.Text == "Xe Máy")
             {
                 int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                 int soluong = Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai)) + 1;

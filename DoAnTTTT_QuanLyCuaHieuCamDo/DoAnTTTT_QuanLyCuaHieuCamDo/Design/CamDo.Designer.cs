@@ -659,7 +659,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(212, 118);
+            this.txtID.Location = new System.Drawing.Point(212, 77);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(296, 22);
             this.txtID.TabIndex = 48;
@@ -668,7 +668,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox7.Location = new System.Drawing.Point(175, 115);
+            this.pictureBox7.Location = new System.Drawing.Point(175, 74);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 30);
             this.pictureBox7.TabIndex = 49;
@@ -679,7 +679,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(25, 119);
+            this.label18.Location = new System.Drawing.Point(25, 78);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(121, 22);
             this.label18.TabIndex = 47;
@@ -695,7 +695,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtHienTrang.Location = new System.Drawing.Point(211, 358);
             this.txtHienTrang.Name = "txtHienTrang";
             this.txtHienTrang.Size = new System.Drawing.Size(296, 30);
-            this.txtHienTrang.TabIndex = 46;
+            this.txtHienTrang.TabIndex = 17;
+            this.txtHienTrang.Text = "99%";
             // 
             // txtTenSP
             // 
@@ -767,10 +768,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.cboLoaiSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoaiSP.ForeColor = System.Drawing.Color.White;
             this.cboLoaiSP.FormattingEnabled = true;
-            this.cboLoaiSP.Location = new System.Drawing.Point(212, 72);
+            this.cboLoaiSP.Location = new System.Drawing.Point(212, 31);
             this.cboLoaiSP.Name = "cboLoaiSP";
             this.cboLoaiSP.Size = new System.Drawing.Size(296, 30);
-            this.cboLoaiSP.TabIndex = 12;
+            this.cboLoaiSP.TabIndex = 10;
             this.cboLoaiSP.SelectedIndexChanged += new System.EventHandler(this.cboLoaiSP_SelectedIndexChanged);
             // 
             // txtMaSP
@@ -781,10 +782,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.ForeColor = System.Drawing.Color.White;
-            this.txtMaSP.Location = new System.Drawing.Point(212, 30);
+            this.txtMaSP.Location = new System.Drawing.Point(211, 115);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(296, 22);
-            this.txtMaSP.TabIndex = 11;
+            this.txtMaSP.TabIndex = 12;
             this.txtMaSP.Tag = "";
             // 
             // label9
@@ -886,7 +887,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // pictureBox12
             // 
             this.pictureBox12.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox12.Location = new System.Drawing.Point(175, 27);
+            this.pictureBox12.Location = new System.Drawing.Point(174, 112);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(31, 30);
             this.pictureBox12.TabIndex = 31;
@@ -1065,7 +1066,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(29, 75);
+            this.label15.Location = new System.Drawing.Point(29, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 22);
             this.label15.TabIndex = 11;
@@ -1074,7 +1075,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // pictureBox18
             // 
             this.pictureBox18.Image = global::DoAnTTTT_QuanLyCuaHieuCamDo.Properties.Resources.icons8_male_user_30px;
-            this.pictureBox18.Location = new System.Drawing.Point(175, 72);
+            this.pictureBox18.Location = new System.Drawing.Point(175, 31);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(31, 30);
             this.pictureBox18.TabIndex = 12;
@@ -1085,7 +1086,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(25, 31);
+            this.label16.Location = new System.Drawing.Point(28, 114);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 22);
             this.label16.TabIndex = 5;
