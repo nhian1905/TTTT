@@ -516,6 +516,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabIndex = 41;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu thanh lý";
+            this.gbKhachHang.Enter += new System.EventHandler(this.gbKhachHang_Enter);
             // 
             // txtMaThanhLy
             // 
@@ -569,6 +570,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayLap
             // 
             this.dtpNgayLap.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayLap.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayLap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayLap.Location = new System.Drawing.Point(1167, 24);
@@ -720,6 +722,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(229, 162);
@@ -734,6 +737,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(229, 259);

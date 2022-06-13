@@ -66,13 +66,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtMaPhieuChuoc = new System.Windows.Forms.TextBox();
             this.LvPhieuChuoc = new System.Windows.Forms.ListView();
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaPhieuChuoc = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnEXThanhLy = new System.Windows.Forms.Button();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -85,13 +85,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2GroupBox6 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtMaThanhLy = new System.Windows.Forms.TextBox();
             this.LVThanhLy = new System.Windows.Forms.ListView();
             this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaThanhLy = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnEXDongLai = new System.Windows.Forms.Button();
             this.guna2GroupBox7 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -510,15 +510,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox4.TabIndex = 2;
             this.guna2GroupBox4.Text = "Hóa Đơn Chuộc";
             // 
-            // txtMaPhieuChuoc
-            // 
-            this.txtMaPhieuChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaPhieuChuoc.Location = new System.Drawing.Point(1104, 6);
-            this.txtMaPhieuChuoc.Name = "txtMaPhieuChuoc";
-            this.txtMaPhieuChuoc.Size = new System.Drawing.Size(10, 33);
-            this.txtMaPhieuChuoc.TabIndex = 3;
-            this.txtMaPhieuChuoc.Visible = false;
-            // 
             // LvPhieuChuoc
             // 
             this.LvPhieuChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -582,6 +573,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2TextBox1.Size = new System.Drawing.Size(10, 36);
             this.guna2TextBox1.TabIndex = 2;
             this.guna2TextBox1.Visible = false;
+            // 
+            // txtMaPhieuChuoc
+            // 
+            this.txtMaPhieuChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaPhieuChuoc.Location = new System.Drawing.Point(1104, 6);
+            this.txtMaPhieuChuoc.Name = "txtMaPhieuChuoc";
+            this.txtMaPhieuChuoc.Size = new System.Drawing.Size(10, 33);
+            this.txtMaPhieuChuoc.TabIndex = 3;
+            this.txtMaPhieuChuoc.Visible = false;
             // 
             // tabPage3
             // 
@@ -706,15 +706,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2GroupBox6.TabIndex = 4;
             this.guna2GroupBox6.Text = "Hóa Đơn Thanh Lý";
             // 
-            // txtMaThanhLy
-            // 
-            this.txtMaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaThanhLy.Location = new System.Drawing.Point(1104, 6);
-            this.txtMaThanhLy.Name = "txtMaThanhLy";
-            this.txtMaThanhLy.Size = new System.Drawing.Size(10, 33);
-            this.txtMaThanhLy.TabIndex = 3;
-            this.txtMaThanhLy.Visible = false;
-            // 
             // LVThanhLy
             // 
             this.LVThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -778,6 +769,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.guna2TextBox2.Size = new System.Drawing.Size(10, 36);
             this.guna2TextBox2.TabIndex = 2;
             this.guna2TextBox2.Visible = false;
+            // 
+            // txtMaThanhLy
+            // 
+            this.txtMaThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaThanhLy.Location = new System.Drawing.Point(1104, 6);
+            this.txtMaThanhLy.Name = "txtMaThanhLy";
+            this.txtMaThanhLy.Size = new System.Drawing.Size(10, 33);
+            this.txtMaThanhLy.TabIndex = 3;
+            this.txtMaThanhLy.Visible = false;
             // 
             // tabPage4
             // 
@@ -966,10 +966,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayDau
             // 
             this.dtpNgayDau.Checked = true;
+            this.dtpNgayDau.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayDau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayDau.ForeColor = System.Drawing.Color.White;
-            this.dtpNgayDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDau.Location = new System.Drawing.Point(306, 28);
             this.dtpNgayDau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayDau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -1003,10 +1004,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayCuoi
             // 
             this.dtpNgayCuoi.Checked = true;
+            this.dtpNgayCuoi.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCuoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCuoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayCuoi.ForeColor = System.Drawing.Color.White;
-            this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayCuoi.Location = new System.Drawing.Point(703, 28);
             this.dtpNgayCuoi.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayCuoi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);

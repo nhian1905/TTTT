@@ -111,6 +111,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
             this.txt = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbQuy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -806,7 +808,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(950, 490);
+            this.btnLoc.Location = new System.Drawing.Point(615, 490);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(99, 38);
             this.btnLoc.TabIndex = 56;
@@ -834,7 +836,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label33.Location = new System.Drawing.Point(443, 499);
+            this.label33.Location = new System.Drawing.Point(339, 499);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(106, 20);
             this.label33.TabIndex = 54;
@@ -843,15 +845,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // dtpNgayCuoi
             // 
             this.dtpNgayCuoi.Checked = true;
+            this.dtpNgayCuoi.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCuoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCuoi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpNgayCuoi.ForeColor = System.Drawing.Color.White;
-            this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayCuoi.Location = new System.Drawing.Point(561, 490);
+            this.dtpNgayCuoi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayCuoi.Location = new System.Drawing.Point(457, 490);
             this.dtpNgayCuoi.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayCuoi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayCuoi.Name = "dtpNgayCuoi";
-            this.dtpNgayCuoi.Size = new System.Drawing.Size(209, 36);
+            this.dtpNgayCuoi.Size = new System.Drawing.Size(142, 36);
             this.dtpNgayCuoi.TabIndex = 53;
             this.dtpNgayCuoi.Value = new System.DateTime(2022, 5, 16, 0, 0, 0, 0);
             // 
@@ -860,7 +863,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label34.Location = new System.Drawing.Point(46, 499);
+            this.label34.Location = new System.Drawing.Point(70, 499);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(103, 20);
             this.label34.TabIndex = 52;
@@ -869,15 +872,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // dtpNgayDau
             // 
             this.dtpNgayDau.Checked = true;
+            this.dtpNgayDau.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayDau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayDau.ForeColor = System.Drawing.Color.White;
-            this.dtpNgayDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayDau.Location = new System.Drawing.Point(164, 490);
+            this.dtpNgayDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDau.Location = new System.Drawing.Point(188, 490);
             this.dtpNgayDau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayDau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayDau.Name = "dtpNgayDau";
-            this.dtpNgayDau.Size = new System.Drawing.Size(209, 36);
+            this.dtpNgayDau.Size = new System.Drawing.Size(137, 36);
             this.dtpNgayDau.TabIndex = 51;
             this.dtpNgayDau.Value = new System.DateTime(2022, 5, 16, 0, 0, 0, 0);
             // 
@@ -992,9 +996,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.cboThang.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboThang.ForeColor = System.Drawing.Color.White;
             this.cboThang.ItemHeight = 30;
-            this.cboThang.Location = new System.Drawing.Point(300, 16);
+            this.cboThang.Location = new System.Drawing.Point(295, 16);
             this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(71, 36);
+            this.cboThang.Size = new System.Drawing.Size(76, 36);
             this.cboThang.TabIndex = 12;
             this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
             this.cboThang.SelectedValueChanged += new System.EventHandler(this.cboThang_SelectedValueChanged);
@@ -1046,7 +1050,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(59, 20);
+            this.label22.Location = new System.Drawing.Point(56, 20);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(245, 28);
             this.label22.TabIndex = 0;
@@ -1107,13 +1111,44 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txt.TabIndex = 0;
             this.txt.Text = "TIỀN LỜI";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(801, 493);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 28);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "DOANH THU QUÝ";
+            // 
+            // cbQuy
+            // 
+            this.cbQuy.BackColor = System.Drawing.Color.Transparent;
+            this.cbQuy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.cbQuy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbQuy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.cbQuy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbQuy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbQuy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbQuy.ForeColor = System.Drawing.Color.White;
+            this.cbQuy.ItemHeight = 30;
+            this.cbQuy.Location = new System.Drawing.Point(1017, 490);
+            this.cbQuy.Name = "cbQuy";
+            this.cbQuy.Size = new System.Drawing.Size(72, 36);
+            this.cbQuy.TabIndex = 59;
+            this.cbQuy.SelectedIndexChanged += new System.EventHandler(this.cbQuy_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
+            this.Controls.Add(this.cbQuy);
             this.Controls.Add(this.panel10);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnTatCa);
@@ -1260,5 +1295,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label txt;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbQuy;
     }
 }

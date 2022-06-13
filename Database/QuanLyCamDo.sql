@@ -35,6 +35,7 @@ create table LoaiSP
 
 create table SanPham
 (
+	ID_SP nvarchar(50) null,
 	MaSP nvarchar(50) primary key,
 	TenSP nvarchar(100) not null,
 	DinhGia float not null,
@@ -138,11 +139,11 @@ insert into KhachHang values(N'Lý Tấn Ngọc',0919599595,381987345,'05/19/202
 insert into LoaiSP values (N'DT',5)
 insert into LoaiSP values (N'MT',3)
 
-insert into SanPham values ('IMEI1602',N'IPHONE 12',1602,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu đỏ',N'có trầy ở lưng',N'IPHONE',0,0,0,0)
-insert into SanPham values ('IMEI111',N'SAMSUNG A12',1111,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Hồng',N'có trầy viền',N' SAMSUNG',0,0,0,0)
-insert into SanPham values ('IMEI1789',N'OPPO A95',1789,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Xanh',N'100%',N' OPPO',0,0,0,0)
-insert into SanPham values ('IMEI1666',N'OPPO FIND X',1666,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Tím',N'100%',N' OPPO',0,0,0,0)
-insert into SanPham values ('IMEI1323',N'IPHONE X',1323,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Vàng',N'có trầy ở kính',N' IPHONE',0,0,0,0)
+insert into SanPham values ('DT01','IMEI1602',N'IPHONE 12',1602,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu đỏ',N'có trầy ở lưng',N'IPHONE',0,0,0,0)
+insert into SanPham values ('DT02','IMEI111',N'SAMSUNG A12',1111,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Hồng',N'có trầy viền',N' SAMSUNG',0,0,0,0)
+insert into SanPham values ('DT03','IMEI1789',N'OPPO A95',1789,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Xanh',N'100%',N' OPPO',0,0,0,0)
+insert into SanPham values ('DT04','IMEI1666',N'OPPO FIND X',1666,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Tím',N'100%',N' OPPO',0,0,0,0)
+insert into SanPham values ('DT05','IMEI1323',N'IPHONE X',1323,0,1,N'ĐIỆN THOẠI CẦM TAY',N'Màu Vàng',N'có trầy ở kính',N' IPHONE',0,0,0,0)
 
 insert into HoaDonCam values (1,'2022-04-16','2022-05-16','2022-04-16','0')
 insert into HoaDonCam values (2,'2022-04-16','2022-05-16','2022-04-16','0')
@@ -344,3 +345,6 @@ as
 go
 
 
+select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.DaChuoc=1
+
+exec USP_DongLaiTheoNgay N'4/1/2022',N'6/30/2022' 

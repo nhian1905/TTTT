@@ -29,10 +29,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayCapCMND = new System.Windows.Forms.DateTimePicker();
             this.btnAnhKH = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label4 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.LVKH = new System.Windows.Forms.ListView();
             this.đâsd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,8 +59,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTenKhachHang
@@ -119,24 +128,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin khách hàng";
             // 
-            // txtMaKH
-            // 
-            this.txtMaKH.AccessibleDescription = "";
-            this.txtMaKH.AccessibleName = "";
-            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.ForeColor = System.Drawing.Color.White;
-            this.txtMaKH.Location = new System.Drawing.Point(302, 256);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(10, 22);
-            this.txtMaKH.TabIndex = 29;
-            this.txtMaKH.Tag = "";
-            this.txtMaKH.Visible = false;
-            // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(731, 53);
@@ -151,6 +146,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(731, 175);
@@ -206,6 +202,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtCMND.Size = new System.Drawing.Size(145, 22);
             this.txtCMND.TabIndex = 4;
             this.txtCMND.Tag = "";
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // label5
             // 
@@ -328,6 +325,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.txtSDT.Size = new System.Drawing.Size(362, 22);
             this.txtSDT.TabIndex = 1;
             this.txtSDT.Tag = "";
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label3
             // 
@@ -339,6 +338,21 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.label3.Size = new System.Drawing.Size(116, 22);
             this.label3.TabIndex = 11;
             this.label3.Text = "Số điện thoại";
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.AccessibleDescription = "";
+            this.txtMaKH.AccessibleName = "";
+            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.ForeColor = System.Drawing.Color.White;
+            this.txtMaKH.Location = new System.Drawing.Point(302, 256);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(10, 22);
+            this.txtMaKH.TabIndex = 29;
+            this.txtMaKH.Tag = "";
+            this.txtMaKH.Visible = false;
             // 
             // LVKH
             // 
@@ -406,6 +420,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader6.Text = "Hình Ảnh";
             this.columnHeader6.Width = 192;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +452,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.gbKhachHang.ResumeLayout(false);
             this.gbKhachHang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,5 +491,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }

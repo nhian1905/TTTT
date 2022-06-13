@@ -8,6 +8,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 {
     public class SanPhamDTO
     {
+        private string idSP;
         private string maSP;
         private string tenLoai;
         private string tenSP;
@@ -23,6 +24,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private bool thanhLy;
         private bool daThanhLy;
 
+        public string IDSP { get => idSP; set => idSP = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
@@ -39,8 +41,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public bool DaThanhLy { get => daThanhLy; set => daThanhLy = value; }
         
 
-        public SanPhamDTO(string MaSP, string TenLoai, string TenSP, double LaiXuat,double DinhGia, double GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
+        public SanPhamDTO(string IDSP, string MaSP, string TenLoai, string TenSP, double LaiXuat,double DinhGia, double GiaThanhLy, string MoTa, string MauSac , string HienTrang, string NhangHieu , bool QuaHan , bool DaChuoc , bool ThanhLy,bool DaThanhLy)
         {
+            this.IDSP = IDSP;
             this.MaSP = MaSP;
             this.TenLoai = TenLoai;
             this.TenSP = TenSP;
@@ -59,6 +62,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
 
         public SanPhamDTO(DataRow row)
         {
+            this.idSP = row["ID_SP"].ToString();
             this.MaSP = row["MaSP"].ToString();
             this.TenLoai = row["TenLoai"].ToString();
             this.TenSP = row["TenSP"].ToString();

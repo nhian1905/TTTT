@@ -27,7 +27,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<ChiTietHoaDonCamDTO> LoadListCTHDC(int MaHoaDonCam)
         {
             List<ChiTietHoaDonCamDTO> LoadList = new List<ChiTietHoaDonCamDTO>();
-            string query = "select c.MaHoaDonCam, a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu from SanPham a , LoaiSP b , ChiTiet_HoaDonCam c, HoaDonCam d where a.MaLoai = b.MaLoai and a.MaSP = c.MaSP and c.MaHoaDonCam = d.MaHoaDonCam and c.MaHoaDonCam  = " + MaHoaDonCam;
+            string query = "select c.MaHoaDonCam, a.MaSP,b.TenLoai,a.ID_SP,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu from SanPham a , LoaiSP b , ChiTiet_HoaDonCam c, HoaDonCam d where a.MaLoai = b.MaLoai and a.MaSP = c.MaSP and c.MaHoaDonCam = d.MaHoaDonCam and c.MaHoaDonCam  = " + MaHoaDonCam;
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
@@ -45,7 +45,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
         public List<ChiTietHoaDonCamDTO> LoadListSP(int MaHoaDonCam)
         {
             List<ChiTietHoaDonCamDTO> LoadListSp = new List<ChiTietHoaDonCamDTO>();
-            string query = "select c.MaHoaDonCam, a.MaSP,b.TenLoai,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu from SanPham a , LoaiSP b , ChiTiet_HoaDonCam c, HoaDonCam d where a.MaLoai = b.MaLoai and a.MaSP = c.MaSP and c.MaHoaDonCam = d.MaHoaDonCam and a.DaChuoc=0 and a.ThanhLy=0 and a.DaThanhLy=0 and a.QuaHan=0 and c.MaHoaDonCam  = " + MaHoaDonCam;
+            string query = "select c.MaHoaDonCam, a.MaSP,b.TenLoai,a.ID_SP,a.TenSP,a.DinhGia,a.GiaThanhLy,a.MoTa,a.MauSac,a.HienTrang, a.NhangHieu from SanPham a , LoaiSP b , ChiTiet_HoaDonCam c, HoaDonCam d where a.MaLoai = b.MaLoai and a.MaSP = c.MaSP and c.MaHoaDonCam = d.MaHoaDonCam and a.DaChuoc=0 and a.ThanhLy=0 and a.DaThanhLy=0 and a.QuaHan=0 and c.MaHoaDonCam  = " + MaHoaDonCam;
             DataTable dta = CSDL.Instance.ExecuteQuery(query);
             foreach (DataRow item in dta.Rows)
             {
@@ -74,6 +74,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DAO
             int kq = CSDL.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
-        
+        public string SoLuong(int MaLoai)
+        {
+            string query = string.Format("select count(ID_SP) from SanPham where MaLoai=N'{0}'", MaLoai);
+            string kq = Convert.ToString(CSDL.Instance.ExecuteScalar(query));
+            return kq;
+        }
     }
 }

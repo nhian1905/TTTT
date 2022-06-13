@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DTO;
 using DoAnTTTT_QuanLyCuaHieuCamDo.DAO;
-using System.Data.SqlClient;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.IO;
 using LicenseContext = OfficeOpenXml.LicenseContext;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 {
@@ -34,6 +33,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             btnSuaSP.Enabled = false;
             HienThiThongTin(false);
             ResetButtonSP();
+
+            
         }
 
         void LoadSPQuaHan()
@@ -53,7 +54,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSP();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -73,7 +75,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         }
         void ResetThongTin()
         {
-            txtMaSP.Clear();
+            txtId.Clear();
             txtTenSP.Clear();
             txtDinhGia.Clear();
             txtGiaThanhLy.Clear();
@@ -85,7 +87,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         void HienThiThongTin(Boolean hien)
         {
-            this.txtMaSP.Enabled = hien;
+            this.txtId.Enabled = hien;
             this.txtTenSP.Enabled = hien;
             this.txtDinhGia.Enabled = hien;
             this.txtGiaThanhLy.Enabled = hien;
@@ -115,7 +117,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
         void ResetSP()
         {
-            txtMaSP.Clear();
+            txtId.Clear();
             txtTenSP.Clear();
             txtDinhGia.Clear();
             txtGiaThanhLy.Clear();
@@ -148,6 +150,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
            
             ListView.SelectedListViewItemCollection lv = this.LVSP.SelectedItems;
+            string id = "";
             string masp = "";
             string maloai = "";
             string tensp = "";
@@ -160,17 +163,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             string nhanhieu = "";
             foreach (ListViewItem item in lv)
             {
-                masp += item.SubItems[0].Text;
-                maloai += item.SubItems[1].Text;
-                tensp += item.SubItems[2].Text;
-                laixuat += item.SubItems[3].Text;
-                dinhgia += item.SubItems[4].Text;
-                giathanhly += item.SubItems[5].Text;
-                mota += item.SubItems[6].Text;
-                mausac += item.SubItems[7].Text;
-                hientrang += item.SubItems[8].Text;
-                nhanhieu += item.SubItems[9].Text;
+                id += item.SubItems[0].Text;
+                masp += item.SubItems[1].Text;
+                maloai += item.SubItems[2].Text;
+                tensp += item.SubItems[3].Text;
+                laixuat += item.SubItems[4].Text;
+                dinhgia += item.SubItems[5].Text;
+                giathanhly += item.SubItems[6].Text;
+                mota += item.SubItems[7].Text;
+                mausac += item.SubItems[8].Text;
+                hientrang += item.SubItems[9].Text;
+                nhanhieu += item.SubItems[10].Text;
             }
+            txtId.Text = id.ToString();
             txtMaSP.Text = masp.ToString();
             txtTenSP.Text = tensp.ToString();
             txtTenLoai.Text = maloai.ToString();
@@ -211,7 +216,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             //btnXoaSP.Enabled = false;
             ResetThongTin();
             HienThiThongTin(true);
-            txtMaSP.Focus();
+            txtId.Focus();
             //btnThemSP.Enabled = true;
             //btnThemSP.BackColor = Color.FromArgb(0, 126, 249);
             //btnThemSP.ForeColor = Color.White;
@@ -248,12 +253,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             try
             {
-                if (txtMaSP.Text == null)
+                if (txtId.Text == null)
                 {
                     MessageBox.Show("Vui Lòng Chọn Sản Phẩm Cần Xóa");
                     return;
                 }
-                string MaSP = txtMaSP.Text;
+                string MaSP = txtId.Text;
                 DialogResult tb = MessageBox.Show("Bạn Có Muốn Xóa Sản Phẩm Này Không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (tb == DialogResult.Yes)
                 {
@@ -277,9 +282,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             if(btnThemSP.Enabled == true)
             {
-                if (txtMaSP.Text != "" && txtTenSP.Text !="")
+                if (txtId.Text != "" && txtTenSP.Text !="")
                 {
-                    string MaSP = txtTenSP.Text;
+                    string MaSP = txtMaSP.Text;
+                    string IDSP = txtId.Text;
                     int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
                     string TenSP = txtTenSP.Text;
                     float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
@@ -293,7 +299,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     bool ThanhLy = (bool)Convert.ToBoolean(0);
                     bool DaThanhLy = (bool)Convert.ToBoolean(0);
 
-                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
+                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy,IDSP))
                     {
                         MessageBox.Show("Thêm Sản Phẩm Thành Công", "Thông Báo");
                         ResetSP();
@@ -315,6 +321,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             else if(btnSuaSP.Enabled == true)
             {
                 string MaSP = txtMaSP.Text;
+                string IDSP = txtId.Text;
                 int MaLoai = (cboTenLoai.SelectedItem as LoaiSPDTO).MaLoai;
                 string TenSP = txtTenSP.Text;
                 float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
@@ -326,7 +333,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 if (MaSP != "" && TenSP !=""  )
                 {
 
-                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
+                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu,IDSP))
                     {
                         MessageBox.Show("Sửa Thành Công");
                         LoadSanPham();
@@ -351,7 +358,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void btnThanhLy_Click(object sender, EventArgs e)
         {
             string MaSP = txtMaSP.Text;
-            float GiaThanhLy = (float)Convert.ToDouble(txtGiaThanhLy.Text);
+            double GiaThanhLy = (double)Convert.ToDouble(txtGiaThanhLy.Text);
             bool ThanhLy = (bool)Convert.ToBoolean(1);
             if(txtGiaThanhLy.Text != "0")
             {
@@ -503,6 +510,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             if(rboDaChuoc.Checked==true)
             {
+                
                 string filePath = "";
                 // tạo SaveFileDialog để lưu file excel
                 SaveFileDialog dialog = new SaveFileDialog();
@@ -1349,7 +1357,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPDaChuoc();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -1373,7 +1382,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPQuaHan();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -1397,7 +1407,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPThanhLy();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -1421,7 +1432,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPDaThanhLy();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -1445,7 +1457,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             List<SanPhamDTO> list = SanPhamDAO.Instance.LoadListSPDangCam();
             foreach (SanPhamDTO item in list)
             {
-                ListViewItem lvitem = new ListViewItem(item.MaSP.ToString());
+                ListViewItem lvitem = new ListViewItem(item.IDSP.ToString());
+                lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.LaiXuat.ToString());
@@ -1463,6 +1476,563 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             }
         }
 
-        
+        private void btnXuatPDF_Click(object sender, EventArgs e)
+        {
+            if (rboDaChuoc.Checked == true)
+            {
+                SqlConnection sqlCon;
+                string conString = null;
+                string sqlQuery = null;
+
+                conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                sqlCon = new SqlConnection(conString);
+                sqlCon.Open();
+                sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.DaChuoc=1";
+                SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                DataTable dtData = new DataTable();
+                dscmd.Fill(dtData);
+                dataGridView1.DataSource = dtData;
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "PDF (*.pdf)|*.pdf";
+                    sfd.FileName = "Output.pdf";
+                    bool fileError = false;
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        if (File.Exists(sfd.FileName))
+                        {
+                            try
+                            {
+                                File.Delete(sfd.FileName);
+                            }
+                            catch (IOException ex)
+                            {
+                                fileError = true;
+                            }
+                        }
+                        if (!fileError)
+                        {
+                            try
+                            {
+                                PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                pdfTable.DefaultCell.Padding = 3;
+                                pdfTable.WidthPercentage = 100;
+                                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                {
+                                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                    pdfTable.AddCell(cell);
+                                }
+
+                                foreach (DataGridViewRow row in dataGridView1.Rows)
+                                {
+                                    foreach (DataGridViewCell cell in row.Cells)
+                                    {
+                                        pdfTable.AddCell(cell.Value.ToString());
+                                    }
+                                }
+
+                                using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                {
+                                    Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                    PdfWriter.GetInstance(pdfDoc, stream);
+                                    pdfDoc.Open();
+                                    pdfDoc.Add(new Paragraph("Bao cao san pham da chuoc"));
+                                    pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                    //pdfDoc.Close();
+                                    //pdfDoc.Open();
+                                    //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                    //pdfDoc.Close();
+                                    //pdfDoc.Open();
+                                    pdfDoc.Add(pdfTable);
+                                    pdfDoc.Close();
+                                    stream.Close();
+                                }
+
+                                MessageBox.Show("Xuất PDF thành công");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error :" + ex.Message);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Xuất lỗi");
+                }
+            }
+            else if (rboDangCam.Checked == true)
+            {
+                {
+                    SqlConnection sqlCon;
+                    string conString = null;
+                    string sqlQuery = null;
+
+                    conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                    sqlCon = new SqlConnection(conString);
+                    sqlCon.Open();
+                    sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.DaChuoc=0 and a.DaThanhLy=0 and a.ThanhLy=0 and a.QuaHan=0";
+                    SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                    DataTable dtData = new DataTable();
+                    dscmd.Fill(dtData);
+                    dataGridView1.DataSource = dtData;
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        SaveFileDialog sfd = new SaveFileDialog();
+                        sfd.Filter = "PDF (*.pdf)|*.pdf";
+                        sfd.FileName = "Output.pdf";
+                        bool fileError = false;
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            if (File.Exists(sfd.FileName))
+                            {
+                                try
+                                {
+                                    File.Delete(sfd.FileName);
+                                }
+                                catch (IOException ex)
+                                {
+                                    fileError = true;
+                                }
+                            }
+                            if (!fileError)
+                            {
+                                try
+                                {
+                                    PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                    pdfTable.DefaultCell.Padding = 3;
+                                    pdfTable.WidthPercentage = 100;
+                                    pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                    foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                    {
+                                        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                        pdfTable.AddCell(cell);
+                                    }
+
+                                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                                    {
+                                        foreach (DataGridViewCell cell in row.Cells)
+                                        {
+                                            pdfTable.AddCell(cell.Value.ToString());
+                                        }
+                                    }
+
+                                    using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                    {
+                                        Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                        PdfWriter.GetInstance(pdfDoc, stream);
+                                        pdfDoc.Open();
+                                        pdfDoc.Add(new Paragraph("Bao cao san pham dang cam"));
+                                        pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                        //pdfDoc.Close();
+                                        //pdfDoc.Open();
+                                        //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                        //pdfDoc.Close();
+                                        //pdfDoc.Open();
+                                        pdfDoc.Add(pdfTable);
+                                        pdfDoc.Close();
+                                        stream.Close();
+                                    }
+
+                                    MessageBox.Show("Xuất PDF thành công");
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Error :" + ex.Message);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xuất lỗi");
+                    }
+                }
+            }
+            else if (rboDaThanhLy.Checked == true)
+            {
+
+                {
+                    {
+                        SqlConnection sqlCon;
+                        string conString = null;
+                        string sqlQuery = null;
+
+                        conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                        sqlCon = new SqlConnection(conString);
+                        sqlCon.Open();
+                        sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.DaThanhLy=1";
+                        SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                        DataTable dtData = new DataTable();
+                        dscmd.Fill(dtData);
+                        dataGridView1.DataSource = dtData;
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            SaveFileDialog sfd = new SaveFileDialog();
+                            sfd.Filter = "PDF (*.pdf)|*.pdf";
+                            sfd.FileName = "Output.pdf";
+                            bool fileError = false;
+                            if (sfd.ShowDialog() == DialogResult.OK)
+                            {
+                                if (File.Exists(sfd.FileName))
+                                {
+                                    try
+                                    {
+                                        File.Delete(sfd.FileName);
+                                    }
+                                    catch (IOException ex)
+                                    {
+                                        fileError = true;
+                                    }
+                                }
+                                if (!fileError)
+                                {
+                                    try
+                                    {
+                                        PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                        pdfTable.DefaultCell.Padding = 3;
+                                        pdfTable.WidthPercentage = 100;
+                                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                        {
+                                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                            pdfTable.AddCell(cell);
+                                        }
+
+                                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                                        {
+                                            foreach (DataGridViewCell cell in row.Cells)
+                                            {
+                                                pdfTable.AddCell(cell.Value.ToString());
+                                            }
+                                        }
+
+                                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                        {
+                                            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                            PdfWriter.GetInstance(pdfDoc, stream);
+                                            pdfDoc.Open();
+                                            pdfDoc.Add(new Paragraph("Bao cao san pham da thanh ly"));
+                                            pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                            //pdfDoc.Close();
+                                            //pdfDoc.Open();
+                                            //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                            //pdfDoc.Close();
+                                            //pdfDoc.Open();
+                                            pdfDoc.Add(pdfTable);
+                                            pdfDoc.Close();
+                                            stream.Close();
+                                        }
+
+                                        MessageBox.Show("Xuất PDF thành công");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error :" + ex.Message);
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xuất lỗi");
+                        }
+                    }
+                }
+            }
+            else if (rboThanhLy.Checked == true)
+            {
+
+                {
+
+                    {
+                        {
+                            SqlConnection sqlCon;
+                            string conString = null;
+                            string sqlQuery = null;
+
+                            conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                            sqlCon = new SqlConnection(conString);
+                            sqlCon.Open();
+                            sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.ThanhLy=1";
+                            SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                            DataTable dtData = new DataTable();
+                            dscmd.Fill(dtData);
+                            dataGridView1.DataSource = dtData;
+                            if (dataGridView1.Rows.Count > 0)
+                            {
+                                SaveFileDialog sfd = new SaveFileDialog();
+                                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                                sfd.FileName = "Output.pdf";
+                                bool fileError = false;
+                                if (sfd.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (File.Exists(sfd.FileName))
+                                    {
+                                        try
+                                        {
+                                            File.Delete(sfd.FileName);
+                                        }
+                                        catch (IOException ex)
+                                        {
+                                            fileError = true;
+                                        }
+                                    }
+                                    if (!fileError)
+                                    {
+                                        try
+                                        {
+                                            PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                            pdfTable.DefaultCell.Padding = 3;
+                                            pdfTable.WidthPercentage = 100;
+                                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                            {
+                                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                                pdfTable.AddCell(cell);
+                                            }
+
+                                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                                            {
+                                                foreach (DataGridViewCell cell in row.Cells)
+                                                {
+                                                    pdfTable.AddCell(cell.Value.ToString());
+                                                }
+                                            }
+
+                                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                            {
+                                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                                PdfWriter.GetInstance(pdfDoc, stream);
+                                                pdfDoc.Open();
+                                                pdfDoc.Add(new Paragraph("Bao cao san pham thanh ly"));
+                                                pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                pdfDoc.Add(pdfTable);
+                                                pdfDoc.Close();
+                                                stream.Close();
+                                            }
+
+                                            MessageBox.Show("Xuất PDF thành công");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show("Error :" + ex.Message);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xuất lỗi");
+                            }
+                        }
+                    }
+                }
+            }
+            else if (rboQuaHan.Checked == true)
+            {
+
+                {
+
+                    {
+                        {
+                            SqlConnection sqlCon;
+                            string conString = null;
+                            string sqlQuery = null;
+
+                            conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                            sqlCon = new SqlConnection(conString);
+                            sqlCon.Open();
+                            sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai and a.QuaHan=1";
+                            SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                            DataTable dtData = new DataTable();
+                            dscmd.Fill(dtData);
+                            dataGridView1.DataSource = dtData;
+                            if (dataGridView1.Rows.Count > 0)
+                            {
+                                SaveFileDialog sfd = new SaveFileDialog();
+                                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                                sfd.FileName = "Output.pdf";
+                                bool fileError = false;
+                                if (sfd.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (File.Exists(sfd.FileName))
+                                    {
+                                        try
+                                        {
+                                            File.Delete(sfd.FileName);
+                                        }
+                                        catch (IOException ex)
+                                        {
+                                            fileError = true;
+                                        }
+                                    }
+                                    if (!fileError)
+                                    {
+                                        try
+                                        {
+                                            PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                            pdfTable.DefaultCell.Padding = 3;
+                                            pdfTable.WidthPercentage = 100;
+                                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                            {
+                                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                                pdfTable.AddCell(cell);
+                                            }
+
+                                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                                            {
+                                                foreach (DataGridViewCell cell in row.Cells)
+                                                {
+                                                    pdfTable.AddCell(cell.Value.ToString());
+                                                }
+                                            }
+
+                                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                            {
+                                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                                PdfWriter.GetInstance(pdfDoc, stream);
+                                                pdfDoc.Open();
+                                                pdfDoc.Add(new Paragraph("Bao cao san pham qua han"));
+                                                pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                pdfDoc.Add(pdfTable);
+                                                pdfDoc.Close();
+                                                stream.Close();
+                                            }
+
+                                            MessageBox.Show("Xuất PDF thành công");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show("Error :" + ex.Message);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xuất lỗi");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+
+                {
+
+                    {
+                        {
+                            SqlConnection sqlCon;
+                            string conString = null;
+                            string sqlQuery = null;
+
+                            conString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyCamDo;Integrated Security=True";
+                            sqlCon = new SqlConnection(conString);
+                            sqlCon.Open();
+                            sqlQuery = "select a.ID_SP,a.MaSP,a.TenSP,b.TenLoai,a.DinhGia,a.MauSac,a.MoTa,a.NhangHieu,a.HienTrang from SanPham a,LoaiSP b where a.MaLoai=b.MaLoai";
+                            SqlDataAdapter dscmd = new SqlDataAdapter(sqlQuery, sqlCon);
+                            DataTable dtData = new DataTable();
+                            dscmd.Fill(dtData);
+                            dataGridView1.DataSource = dtData;
+                            if (dataGridView1.Rows.Count > 0)
+                            {
+                                SaveFileDialog sfd = new SaveFileDialog();
+                                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                                sfd.FileName = "Output.pdf";
+                                bool fileError = false;
+                                if (sfd.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (File.Exists(sfd.FileName))
+                                    {
+                                        try
+                                        {
+                                            File.Delete(sfd.FileName);
+                                        }
+                                        catch (IOException ex)
+                                        {
+                                            fileError = true;
+                                        }
+                                    }
+                                    if (!fileError)
+                                    {
+                                        try
+                                        {
+                                            PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                                            pdfTable.DefaultCell.Padding = 3;
+                                            pdfTable.WidthPercentage = 100;
+                                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                                            {
+                                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                                pdfTable.AddCell(cell);
+                                            }
+
+                                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                                            {
+                                                foreach (DataGridViewCell cell in row.Cells)
+                                                {
+                                                    pdfTable.AddCell(cell.Value.ToString());
+                                                }
+                                            }
+
+                                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                                            {
+                                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                                PdfWriter.GetInstance(pdfDoc, stream);
+
+                                                pdfDoc.Open();
+                                                
+                                                pdfDoc.Add(new Paragraph("Bao cao tat ca san pham"));
+                                                pdfDoc.Add(new Paragraph("                                                                                                                         "));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                //pdfDoc.Add(new Paragraph(" "/*+rboDaChuoc.Text*/));
+                                                //pdfDoc.Close();
+                                                //pdfDoc.Open();
+                                                pdfDoc.Add(pdfTable);
+                                                pdfDoc.Close();
+                                                stream.Close();
+                                            }
+
+                                            MessageBox.Show("Xuất PDF thành công");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show("Error :" + ex.Message);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xuất lỗi");
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -116,6 +116,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayChuoc
             // 
             this.dtpNgayChuoc.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayChuoc.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayChuoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayChuoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayChuoc.Location = new System.Drawing.Point(1002, 21);
@@ -201,6 +202,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -216,9 +218,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCapCMND.Enabled = false;
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(1002, 302);
             this.dtpNgayCapCMND.Name = "dtpNgayCapCMND";
             this.dtpNgayCapCMND.Size = new System.Drawing.Size(145, 29);

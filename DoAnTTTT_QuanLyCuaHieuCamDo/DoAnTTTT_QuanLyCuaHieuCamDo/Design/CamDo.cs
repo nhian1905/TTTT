@@ -66,6 +66,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtNhanHieu.Enabled = hien;
             this.txtMoTa.Enabled = hien;
             this.txtMauSac.Enabled = hien;
+            this.txtID.Enabled = hien;
             this.cboLoaiSP.Enabled = hien;
         }
         void LoadHoaDonCam()
@@ -92,6 +93,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 ListViewItem lvitem = new ListViewItem(item.MaHoaDonCam.ToString());
                 lvitem.SubItems.Add(item.MaSP.ToString());
                 lvitem.SubItems.Add(item.TenLoai.ToString());
+                lvitem.SubItems.Add(item.IDSP.ToString());
                 lvitem.SubItems.Add(item.TenSP.ToString());
                 lvitem.SubItems.Add(item.DinhGia.ToString());
                 lvitem.SubItems.Add(item.MoTa.ToString());
@@ -266,6 +268,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         {
             ListView.SelectedListViewItemCollection lv = this.LVCTHDC.SelectedItems;
             int mahdc = 0;
+            string idsp = "";
             string masp = "";
             string maloai = "";
             string tensp = "";
@@ -279,12 +282,13 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 mahdc += Int32.Parse(item.SubItems[0].Text);
                 masp += item.SubItems[1].Text;
                 maloai += item.SubItems[2].Text;
-                tensp += item.SubItems[3].Text;
-                dinhgia += item.SubItems[4].Text;
-                mota += item.SubItems[5].Text;
-                mausac += item.SubItems[6].Text;
-                hientrang += item.SubItems[7].Text;
-                nhanhieu += item.SubItems[8].Text;
+                idsp += item.SubItems[3].Text;
+                tensp += item.SubItems[4].Text;
+                dinhgia += item.SubItems[5].Text;
+                mota += item.SubItems[6].Text;
+                mausac += item.SubItems[7].Text;
+                hientrang += item.SubItems[8].Text;
+                nhanhieu += item.SubItems[9].Text;
             }
             txtMaHDC.Text = mahdc.ToString();
             txtMaSP.Text = masp.ToString();
@@ -295,6 +299,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             txtMauSac.Text = mausac.ToString();
             txtHienTrang.Text = hientrang.ToString();
             txtNhanHieu.Text = nhanhieu.ToString();
+            txtID.Text = idsp.ToString();
             ResetButtonCTHDC();
 
             btnSuaSP.Enabled = true;
@@ -448,6 +453,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
 
                     int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
                     string MaSP = txtMaSP.Text;
+                    string IDSP = txtID.Text;
                     int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                     string TenSP = txtTenSP.Text;
                     float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
@@ -461,7 +467,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                     bool ThanhLy = (bool)Convert.ToBoolean(0);
                     bool DaThanhLy = (bool)Convert.ToBoolean(0);
                     double tongtien = DinhGia + Convert.ToDouble(txtTongTien.Text);
-                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy))
+                    if (SanPhamDAO.Instance.InsertSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu, QuaHan, DaChuoc, ThanhLy, DaThanhLy,IDSP))
                     {
                         if (ChiTietHoaDonCamDAO.Instance.InsertSPtoBillHDC(MaHoaDonCam, MaSP))
                         {
@@ -488,9 +494,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 int id = int.Parse(txtMaHDC.Text);
                 int MaHoaDonCam = (int)Convert.ToInt32(txtMaHDC.Text);
                 string MaSP = txtMaSP.Text;
+                string IDSP = txtID.Text;
                 int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
                 string TenSP = txtTenSP.Text;
-                float DinhGia = (float)Convert.ToDouble(txtDinhGia.Text);
+                double DinhGia = (double)Convert.ToDouble(txtDinhGia.Text);
                 float GiaThanhLy = (float)Convert.ToDouble(0);
                 string MoTa = txtMoTa.Text;
                 string MauSac = txtMauSac.Text;
@@ -498,7 +505,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 string NhanHieu = txtNhanHieu.Text;
                 if (MaSP != "")
                 {
-                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu))
+                    if (SanPhamDAO.Instance.UpdateSP(MaSP, MaLoai, TenSP, DinhGia, GiaThanhLy, MoTa, MauSac, HienTrang, NhanHieu,IDSP))
                     {
                         MessageBox.Show("Sửa Thành Công");
                         LoadCTHoaDonCam(id);
@@ -538,6 +545,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             btnThemHoaDonCam.Enabled = true;
             btnThemHoaDonCam.BackColor = Color.FromArgb(0, 126, 249);
             btnThemHoaDonCam.ForeColor = Color.White;
+        }
+
+        private void cboLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboLoaiSP.Text=="Điện thoại")
+            {
+                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                int soluong=Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai))+1;
+                string SL = "DT" + soluong;
+                txtID.Text = Convert.ToString(SL);
+            }
+            if (cboLoaiSP.Text == "Máy tính")
+            {
+                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                int soluong = Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai)) + 1;
+                string SL = "MT" + soluong;
+                txtID.Text = Convert.ToString(SL);
+            }
+            if (cboLoaiSP.Text == "Xe máy")
+            {
+                int MaLoai = (cboLoaiSP.SelectedItem as LoaiSPDTO).MaLoai;
+                int soluong = Convert.ToInt32(ChiTietHoaDonCamDAO.Instance.SoLuong(MaLoai)) + 1;
+                string SL = "XM" + soluong;
+                txtID.Text = Convert.ToString(SL);
+            }
         }
     }
 }

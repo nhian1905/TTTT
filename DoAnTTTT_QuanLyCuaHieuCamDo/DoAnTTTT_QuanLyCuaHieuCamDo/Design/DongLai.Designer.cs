@@ -30,6 +30,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.txtMaPL = new System.Windows.Forms.TextBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.btnDongLai = new System.Windows.Forms.Button();
             this.txtTienLai = new System.Windows.Forms.TextBox();
@@ -75,7 +76,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnIn = new System.Windows.Forms.Button();
-            this.txtMaPL = new System.Windows.Forms.TextBox();
             this.gbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -134,6 +134,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.gbKhachHang.TabIndex = 12;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin phiếu cầm";
+            // 
+            // txtMaPL
+            // 
+            this.txtMaPL.AccessibleDescription = "";
+            this.txtMaPL.AccessibleName = "";
+            this.txtMaPL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaPL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaPL.Enabled = false;
+            this.txtMaPL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPL.ForeColor = System.Drawing.Color.White;
+            this.txtMaPL.Location = new System.Drawing.Point(378, 265);
+            this.txtMaPL.Name = "txtMaPL";
+            this.txtMaPL.Size = new System.Drawing.Size(10, 22);
+            this.txtMaPL.TabIndex = 78;
+            this.txtMaPL.Tag = "";
+            this.txtMaPL.Visible = false;
             // 
             // txtTenKhachHang
             // 
@@ -220,6 +236,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayCamHD
             // 
             this.dtpNgayCamHD.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayCamHD.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCamHD.Enabled = false;
             this.dtpNgayCamHD.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCamHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -288,6 +305,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgayHetHan
             // 
             this.dtpNgayHetHan.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgayHetHan.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayHetHan.Enabled = false;
             this.dtpNgayHetHan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -376,6 +394,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -391,9 +410,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.dtpNgayCapCMND.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.dtpNgayCapCMND.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpNgayCapCMND.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayCapCMND.Enabled = false;
             this.dtpNgayCapCMND.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayCapCMND.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayCapCMND.Location = new System.Drawing.Point(212, 266);
             this.dtpNgayCapCMND.Name = "dtpNgayCapCMND";
             this.dtpNgayCapCMND.Size = new System.Drawing.Size(145, 29);
@@ -624,22 +644,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnIn.Text = "In phiếu";
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
-            // 
-            // txtMaPL
-            // 
-            this.txtMaPL.AccessibleDescription = "";
-            this.txtMaPL.AccessibleName = "";
-            this.txtMaPL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaPL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaPL.Enabled = false;
-            this.txtMaPL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPL.ForeColor = System.Drawing.Color.White;
-            this.txtMaPL.Location = new System.Drawing.Point(378, 265);
-            this.txtMaPL.Name = "txtMaPL";
-            this.txtMaPL.Size = new System.Drawing.Size(10, 22);
-            this.txtMaPL.TabIndex = 78;
-            this.txtMaPL.Tag = "";
-            this.txtMaPL.Visible = false;
             // 
             // DongLai
             // 

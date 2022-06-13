@@ -30,6 +30,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void InitializeComponent()
         {
             this.LVSP = new System.Windows.Forms.ListView();
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,6 +67,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtHienTrang = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
@@ -87,18 +90,22 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
+            this.btnXuatPDF = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // LVSP
             // 
             this.LVSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.LVSP.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader18,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader14,
@@ -113,7 +120,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13});
-            this.LVSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LVSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LVSP.ForeColor = System.Drawing.Color.White;
             this.LVSP.FullRowSelect = true;
             this.LVSP.GridLines = true;
@@ -127,9 +134,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.LVSP.View = System.Windows.Forms.View.Details;
             this.LVSP.SelectedIndexChanged += new System.EventHandler(this.LVSP_SelectedIndexChanged);
             // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Mã SP";
+            this.columnHeader18.Width = 106;
+            // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã SP";
+            this.columnHeader1.Text = "Mã riêng";
             this.columnHeader1.Width = 202;
             // 
             // columnHeader2
@@ -220,6 +232,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox1.Controls.Add(this.rboDaChuoc);
             this.groupBox1.Controls.Add(this.rboQuaHan);
             this.groupBox1.Controls.Add(this.btnTatCa);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 372);
@@ -499,6 +512,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtMaSP);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txtHienTrang);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txtMoTa);
@@ -520,7 +535,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtTenSP);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtMaSP);
+            this.groupBox3.Controls.Add(this.txtId);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
@@ -530,6 +545,31 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sản Phẩm";
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.AccessibleDescription = "";
+            this.txtMaSP.AccessibleName = "";
+            this.txtMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSP.ForeColor = System.Drawing.Color.White;
+            this.txtMaSP.Location = new System.Drawing.Point(122, 138);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(182, 22);
+            this.txtMaSP.TabIndex = 50;
+            this.txtMaSP.Tag = "";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(29, 138);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 22);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "Mã riêng";
             // 
             // txtHienTrang
             // 
@@ -666,9 +706,9 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.txtDinhGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDinhGia.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDinhGia.ForeColor = System.Drawing.Color.White;
-            this.txtDinhGia.Location = new System.Drawing.Point(122, 139);
+            this.txtDinhGia.Location = new System.Drawing.Point(500, 149);
             this.txtDinhGia.Name = "txtDinhGia";
-            this.txtDinhGia.Size = new System.Drawing.Size(182, 22);
+            this.txtDinhGia.Size = new System.Drawing.Size(172, 22);
             this.txtDinhGia.TabIndex = 4;
             this.txtDinhGia.Tag = "";
             // 
@@ -677,7 +717,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(29, 139);
+            this.label4.Location = new System.Drawing.Point(367, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 22);
             this.label4.TabIndex = 39;
@@ -802,19 +842,19 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label3.TabIndex = 30;
             this.label3.Text = "Tên SP";
             // 
-            // txtMaSP
+            // txtId
             // 
-            this.txtMaSP.AccessibleDescription = "";
-            this.txtMaSP.AccessibleName = "";
-            this.txtMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSP.ForeColor = System.Drawing.Color.White;
-            this.txtMaSP.Location = new System.Drawing.Point(122, 30);
-            this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(182, 22);
-            this.txtMaSP.TabIndex = 1;
-            this.txtMaSP.Tag = "";
+            this.txtId.AccessibleDescription = "";
+            this.txtId.AccessibleName = "";
+            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(122, 30);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(182, 22);
+            this.txtId.TabIndex = 1;
+            this.txtId.Tag = "";
             // 
             // label2
             // 
@@ -834,13 +874,38 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1215, 907);
+            this.btnXuat.Location = new System.Drawing.Point(1164, 907);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(99, 38);
+            this.btnXuat.Size = new System.Drawing.Size(132, 38);
             this.btnXuat.TabIndex = 35;
-            this.btnXuat.Text = "Xuất";
+            this.btnXuat.Text = "Xuất Excel";
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
+            // btnXuatPDF
+            // 
+            this.btnXuatPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnXuatPDF.FlatAppearance.BorderSize = 0;
+            this.btnXuatPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatPDF.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatPDF.ForeColor = System.Drawing.Color.White;
+            this.btnXuatPDF.Location = new System.Drawing.Point(1000, 907);
+            this.btnXuatPDF.Name = "btnXuatPDF";
+            this.btnXuatPDF.Size = new System.Drawing.Size(131, 38);
+            this.btnXuatPDF.TabIndex = 36;
+            this.btnXuatPDF.Text = "Xuất PDF";
+            this.btnXuatPDF.UseVisualStyleBackColor = false;
+            this.btnXuatPDF.Click += new System.EventHandler(this.btnXuatPDF_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1130, -31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(73, 25);
+            this.dataGridView1.TabIndex = 37;
+            this.dataGridView1.Visible = false;
             // 
             // SanPham
             // 
@@ -848,9 +913,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1343, 957);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnXuatPDF);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LVSP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -863,6 +929,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -913,7 +980,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader15;
@@ -930,5 +997,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private Guna.UI2.WinForms.Guna2RadioButton rboDangCam;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnXuatPDF;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

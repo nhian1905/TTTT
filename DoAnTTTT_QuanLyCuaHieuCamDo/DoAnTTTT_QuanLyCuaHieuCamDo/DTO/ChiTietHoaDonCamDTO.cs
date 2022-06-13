@@ -10,6 +10,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
     {
         private int maHoaDonCam;
         private string maSP;
+        private string idSP;
         private string tenLoai;
         private string tenSP;
         private double dinhGia;
@@ -19,6 +20,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         private string hienTrang;
         private string nhanHieu;
 
+        public string IDSP { get => idSP; set => idSP = value; }
         public int MaHoaDonCam { get => maHoaDonCam; set => maHoaDonCam = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
@@ -31,11 +33,12 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
         public string NhanHieu { get => nhanHieu; set => nhanHieu = value; }
 
 
-        public ChiTietHoaDonCamDTO(int MaHoaDonCam, string MaSP, string TenLoai, string TenSP, double DinhGia, double GiaThanhLy, string MoTa, string MauSac, string HienTrang, string NhangHieu)
+        public ChiTietHoaDonCamDTO(int MaHoaDonCam, string MaSP, string TenLoai,string IDSP, string TenSP, double DinhGia, double GiaThanhLy, string MoTa, string MauSac, string HienTrang, string NhangHieu)
         {
             this.MaHoaDonCam = MaHoaDonCam;
             this.MaSP = MaSP;
             this.TenLoai = TenLoai;
+            this.IDSP = IDSP;
             this.TenSP = TenSP;
             this.DinhGia = DinhGia;
             this.GiaThanhLy = GiaThanhLy;
@@ -50,6 +53,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.DTO
             this.MaHoaDonCam = (int)row["MaHoaDonCam"];
             this.MaSP = row["MaSP"].ToString();
             this.TenLoai = row["TenLoai"].ToString();
+            this.idSP = row["ID_SP"].ToString();
             this.TenSP = row["TenSP"].ToString();
             this.DinhGia = (double)Convert.ToDouble(row["DinhGia"]);
             this.GiaThanhLy = (double)Convert.ToDouble(row["GiaThanhLy"]);

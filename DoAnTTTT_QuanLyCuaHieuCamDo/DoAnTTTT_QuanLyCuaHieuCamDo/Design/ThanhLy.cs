@@ -176,7 +176,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             string connectionStr = CSDL.connectionStr;
             SqlConnection kn = new SqlConnection(connectionStr);
             kn.Open();
-            string sql = "select * from SanPham where MaSP = '" + cboMaSP.SelectedValue.ToString() + "'";
+            string sql = "select MaSP,TenSP,DinhGia,GiaThanhLy,MaLoai,MoTa,MauSac,HienTrang,NhangHieu from SanPham where MaSP = '" + cboMaSP.SelectedValue.ToString() + "'";
             SqlCommand cmdd = new SqlCommand(sql, kn);
             SqlDataReader kq = cmdd.ExecuteReader();
             if (kq.HasRows)
@@ -366,6 +366,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
                 rp.CreateDocument();
                 rp.ShowPreviewDialog();
             }
+        }
+
+        private void gbKhachHang_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

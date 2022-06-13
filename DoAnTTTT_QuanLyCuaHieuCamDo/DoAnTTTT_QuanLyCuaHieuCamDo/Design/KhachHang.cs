@@ -242,13 +242,37 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txtSDT.TextLength != 10)
+            {
+                errorProvider1.SetError(txtSDT, "Số điện thoại là 10 số");
+                return;
+            }
+            else errorProvider1.Clear();
+            if (txtCMND.TextLength != 9 && txtCMND.TextLength != 12)
+            {
+                errorProvider2.SetError(txtCMND, "Vui lòng nhập đầy đủ số CMND");
+                return;
+            }
+            else errorProvider2.Clear();
+            if (txtTenKhachHang.TextLength <= 4 )
+            {
+                errorProvider3.SetError(txtTenKhachHang, "Vui lòng nhập tên đầy đủ");
+                return;
+            }
+            else errorProvider3.Clear();
+            if (txtDiaChi.TextLength <= 15)
+            {
+                errorProvider4.SetError(txtDiaChi, "Vui lòng nhập đầy đủ thông tin địa chỉ");
+                return;
+            }
+            else errorProvider4.Clear();
             if (btnThemKH.Enabled == true)
             {
                 if (txtTenKhachHang.Text != "" )
                 {
                     string TenKH = txtTenKhachHang.Text;
-                    int SDT = Convert.ToInt32(txtSDT.Text);
-                    int CMND = Convert.ToInt32(txtCMND.Text);
+                    long SDT = Convert.ToInt64(txtSDT.Text);
+                    long CMND = Convert.ToInt64(txtCMND.Text);
                     DateTime NamSinh = (DateTime)Convert.ToDateTime(dtpNgaySinh.Value);
                     string DiaChi = txtDiaChi.Text;
                     DateTime NgayCapCMND = (DateTime)Convert.ToDateTime(dtpNgayCapCMND.Value);
@@ -274,8 +298,8 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             {
                 int MaKH = Convert.ToInt32(txtMaKH.Text);
                 string TenKH = txtTenKhachHang.Text;
-                int SDT = Convert.ToInt32(txtSDT.Text);
-                int CMND = Convert.ToInt32(txtCMND.Text);
+                long SDT = Convert.ToInt64(txtSDT.Text);
+                long CMND = Convert.ToInt64(txtCMND.Text);
                 DateTime NamSinh = (DateTime)Convert.ToDateTime(dtpNgaySinh.Value);
                 string DiaChi = txtDiaChi.Text;
                 DateTime NgayCapCMND = (DateTime)Convert.ToDateTime(dtpNgayCapCMND.Value);
@@ -309,6 +333,23 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         private void btnAnhKH_Click(object sender, EventArgs e)
         {
             OpenImage();
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
