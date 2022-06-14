@@ -44,40 +44,87 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
         }
         public void LoadThongKe()
         {
-            txtTienVon.Text = ThongKeDAO.Instance.TienVon();
-            txtDongLai.Text = ThongKeDAO.Instance.DongLai();
+            double TienLai;
+            double TienLoi;
+            double TienVon;
+            double TienDaThanhLy;
+            double TienCam;
+            double TienChuoc;
+            try { txtTienVon.Text = ThongKeDAO.Instance.TienVon(); }
+            catch{ txtTienVon.Text = "0"; }
 
-            txtDaThanhLy.Text = ThongKeDAO.Instance.SPDaThanhLy();
-            txtTienDaThanhLy.Text = ThongKeDAO.Instance.TienDaThanhLy();
+            try { txtDongLai.Text = ThongKeDAO.Instance.DongLai(); }
+            catch { txtDongLai.Text = "0"; }
 
-            txtThanhLy.Text = ThongKeDAO.Instance.SPThanhLy();
-            txtTienThanhLy.Text = ThongKeDAO.Instance.TienThanhLy();
+            try { txtDaThanhLy.Text = ThongKeDAO.Instance.SPDaThanhLy(); }
+            catch { txtDaThanhLy.Text = "0"; }
 
-            txtQuaHan.Text = ThongKeDAO.Instance.SPTQuaHan();
-            txtTienQuaHan.Text = ThongKeDAO.Instance.TienQuaHan();
+            try { txtTienDaThanhLy.Text = ThongKeDAO.Instance.TienDaThanhLy(); }
+            catch { txtTienDaThanhLy.Text = "0"; }
 
-            txtChuoc.Text = ThongKeDAO.Instance.SPTDaChuoc();
-            txtTienChuoc.Text = ThongKeDAO.Instance.TienDaChuoc();
+            try { txtThanhLy.Text = ThongKeDAO.Instance.SPThanhLy(); }
+            catch { txtThanhLy.Text = "0"; }
 
-            txtCam.Text = ThongKeDAO.Instance.SPCam();
-            txtTienCam.Text = ThongKeDAO.Instance.TienCam();
+            try { txtTienThanhLy.Text = ThongKeDAO.Instance.TienThanhLy(); }
+            catch { txtTienThanhLy.Text = "0"; }
 
-            double TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai());
-            double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi());
+            try { txtQuaHan.Text = ThongKeDAO.Instance.SPTQuaHan(); }
+            catch { txtQuaHan.Text = "0"; }
+
+            try { txtTienQuaHan.Text = ThongKeDAO.Instance.TienQuaHan(); }
+            catch { txtTienQuaHan.Text = "0"; }
+
+            try { txtChuoc.Text = ThongKeDAO.Instance.SPTDaChuoc(); }
+            catch { txtChuoc.Text = "0"; }
+
+            try { txtTienChuoc.Text = ThongKeDAO.Instance.TienDaChuoc(); }
+            catch { txtTienChuoc.Text = "0"; }
+
+            try { txtCam.Text = ThongKeDAO.Instance.SPCam(); }
+            catch { txtCam.Text = "0"; }
+
+            try { txtTienCam.Text = ThongKeDAO.Instance.TienCam(); }
+            catch { txtTienCam.Text = "0"; }
+
+            try { TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai()); }
+            catch { TienLai = Convert.ToDouble(0); }
+
+            try {  TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi()); }
+            catch { TienLoi = Convert.ToDouble(0); }
+
             txtTienLoi.Text = Convert.ToString(TienLoi + TienLai);
 
-            double TienVon = Convert.ToDouble(ThongKeDAO.Instance.TienVon());
-            double TienDaThanhLy = Convert.ToDouble(ThongKeDAO.Instance.TienDaThanhLy());
-            double TienCam = Convert.ToDouble(ThongKeDAO.Instance.TienCam());
-            double TienChuoc = Convert.ToDouble(ThongKeDAO.Instance.TienDaChuoc());
+            try {  TienVon = Convert.ToDouble(ThongKeDAO.Instance.TienVon()); }
+            catch {  TienVon = Convert.ToDouble(0); }
+
+            try { TienDaThanhLy = Convert.ToDouble(ThongKeDAO.Instance.TienDaThanhLy()); }
+            catch { TienDaThanhLy = Convert.ToDouble(0); }
+
+            try { TienCam = Convert.ToDouble(ThongKeDAO.Instance.TienCam()); }
+            catch { TienCam = Convert.ToDouble(0); }
+
+            try { TienChuoc = Convert.ToDouble(ThongKeDAO.Instance.TienDaChuoc()); }
+            catch { TienChuoc = Convert.ToDouble(0); }
+
             txtTienMat.Text = Convert.ToString(TienVon - TienCam + TienLai + TienDaThanhLy + TienChuoc);
         }
         public void LoadChiTieu()
         {
-            double TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai());
-            double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi());
-            double ChiTieu = Convert.ToDouble(ThongKeDAO.Instance.ChiTieu());
-            double DoanhThu = (double)(TienLai + TienLoi) / ChiTieu;
+            double TienLai;
+            double TienLoi;
+            double ChiTieu;
+            double DoanhThu;
+
+            try { TienLai = Convert.ToDouble(ThongKeDAO.Instance.DongLai()); }
+            catch { TienLai = Convert.ToDouble(0); }
+
+            try { TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TienLoi()); }
+            catch { TienLoi = Convert.ToDouble(0); }
+
+            try { ChiTieu = Convert.ToDouble(ThongKeDAO.Instance.ChiTieu()); }
+            catch { ChiTieu = Convert.ToDouble(0); }
+
+            DoanhThu = (double)(TienLai + TienLoi) / ChiTieu;
             TongDoanhThu.Value = Convert.ToInt32(DoanhThu * 100);
         }
         public void LoadChiTieuThang()
@@ -86,12 +133,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             double ChiTieuT = Convert.ToDouble(ThongKeDAO.Instance.ChiTieuThang());
             if (TienT == "")
             {
-
                 DoanhThuThang.Value = 0;
             }
             else
             {
-
                 double DoanhThuT = (double)Convert.ToDouble(TienT) / ChiTieuT;
                 DoanhThuThang.Value = Convert.ToInt32(DoanhThuT* 100);
             }
@@ -143,52 +188,75 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
+            DateTime ngaydau = dtpNgayDau.Value;
+            DateTime ngaycuoi = dtpNgayCuoi.Value;
+            double TienLai=0;
+            double TienLoi=0;
             try
             {
-                
-                DateTime ngaydau = (DateTime)Convert.ToDateTime(dtpNgayDau.Text);
-                DateTime ngaycuoi = (DateTime)Convert.ToDateTime(dtpNgayCuoi.Text);
-
                 txtDongLai.Text = ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi);
-
-                double TienLai = Convert.ToDouble(ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi));
-                double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TKTienLoi(ngaydau, ngaycuoi));
+            }
+            catch
+            {
+                txtDongLai.Text = Convert.ToString(0);
+            }
+            try
+            {
+                TienLai = Convert.ToDouble(ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi));
+                TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TKTienLoi(ngaydau, ngaycuoi));
                 txtTienLoi.Text = Convert.ToString(TienLoi + TienLai);
-
+            }
+            catch
+            {
+                txtTienLoi.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtDaThanhLy.Text = ThongKeDAO.Instance.TKSPDaThanhLy(ngaydau, ngaycuoi);
                 txtTienDaThanhLy.Text = ThongKeDAO.Instance.TKTienDaThanhLy(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtDaThanhLy.Text = Convert.ToString(0);
+                txtTienDaThanhLy.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtThanhLy.Text = ThongKeDAO.Instance.TKSPThanhLy(ngaydau, ngaycuoi);
                 txtTienThanhLy.Text = ThongKeDAO.Instance.TKTienSPThanhLy(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtThanhLy.Text = Convert.ToString(0);
+                txtTienThanhLy.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtQuaHan.Text = ThongKeDAO.Instance.TKSPQuaHan(ngaydau, ngaycuoi);
                 txtTienQuaHan.Text = ThongKeDAO.Instance.TKTienSPQuaHan(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtQuaHan.Text = Convert.ToString(0);
+                txtTienQuaHan.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtChuoc.Text = ThongKeDAO.Instance.TKSPDaChuoc(ngaydau, ngaycuoi);
                 txtTienChuoc.Text = ThongKeDAO.Instance.TKTienSPDaChuoc(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtChuoc.Text = Convert.ToString(0);
+                txtTienChuoc.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtCam.Text = ThongKeDAO.Instance.TKSPCam(ngaydau, ngaycuoi);
                 txtTienCam.Text = ThongKeDAO.Instance.TKTienSPCam(ngaydau, ngaycuoi);
             }
             catch
             {
-                txtDongLai.Text = Convert.ToString(0);
-
-               
-                txtTienLoi.Text = Convert.ToString(0);
-
-                txtDaThanhLy.Text = Convert.ToString(0);
-                txtTienDaThanhLy.Text = Convert.ToString(0);
-
-                txtThanhLy.Text = Convert.ToString(0);
-                txtTienThanhLy.Text = Convert.ToString(0);
-
-                txtQuaHan.Text = Convert.ToString(0);
-                txtTienQuaHan.Text = Convert.ToString(0);
-
-                txtChuoc.Text = Convert.ToString(0);
-                txtTienChuoc.Text = Convert.ToString(0);
-
                 txtCam.Text = Convert.ToString(0);
                 txtTienCam.Text = Convert.ToString(0);
             }
@@ -201,74 +269,96 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
 
         private void cbQuy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string nam = Convert.ToString(DateTime.Now.Year);
+            string timein ;
+            string timeout;
+            if (cbQuy.SelectedIndex == 0)
+            {
+                timein = "1/1/" + nam;
+                timeout = "3/31/" + nam;
+            }
+            else if (cbQuy.SelectedIndex == 1)
+            {
+                timein = "4/1/" + nam;
+                timeout = "6/30/" + nam;
+            }
+            else if (cbQuy.SelectedIndex == 2)
+            {
+                timein = "7/1/" + nam;
+                timeout = "9/30/" + nam;
+            }
+            else
+            {
+                timein = "10/1/" + nam;
+                timeout = "12/31/" + nam;
+            }
+            DateTime ngaydau = (DateTime)Convert.ToDateTime(timein);
+            DateTime ngaycuoi = (DateTime)Convert.ToDateTime(timeout);
             try 
             {
-                string nam = Convert.ToString(DateTime.Now.Year);
-                string timein = "";
-                string timeout = "";
-                if(cbQuy.SelectedIndex==0)
-                {
-                    timein = "1//1"+nam;
-                    timeout = "3/31/" + nam;
-                }
-                else if (cbQuy.SelectedIndex == 1)
-                {
-                    timein = "4/1/" + nam;
-                    timeout = "6/30/"+nam;
-                }
-                else if (cbQuy.SelectedIndex == 2)
-                {
-                    timein = "7/1/" + nam;
-                    timeout = "9/30/" + nam;
-                }
-                else
-                {
-                    timein = "10/1/" + nam;
-                    timeout = "12/31/" + nam;
-                }
-                DateTime ngaydau = (DateTime)Convert.ToDateTime(timein);
-                DateTime ngaycuoi = (DateTime)Convert.ToDateTime(timeout);
-
                 txtDongLai.Text = ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtDongLai.Text = Convert.ToString(0);
+            }
+            try
+            {
                 double TienLai = Convert.ToDouble(ThongKeDAO.Instance.TKDongLai(ngaydau, ngaycuoi));
                 double TienLoi = Convert.ToDouble(ThongKeDAO.Instance.TKTienLoi(ngaydau, ngaycuoi));
                 txtTienLoi.Text = Convert.ToString(TienLoi + TienLai);
-
+            }
+            catch
+            {
+                txtTienLoi.Text = Convert.ToString(0);
+            }
+            try
+            {   
                 txtDaThanhLy.Text = ThongKeDAO.Instance.TKSPDaThanhLy(ngaydau, ngaycuoi);
                 txtTienDaThanhLy.Text = ThongKeDAO.Instance.TKTienDaThanhLy(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtDaThanhLy.Text = Convert.ToString(0);
+                txtTienDaThanhLy.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtThanhLy.Text = ThongKeDAO.Instance.TKSPThanhLy(ngaydau, ngaycuoi);
                 txtTienThanhLy.Text = ThongKeDAO.Instance.TKTienSPThanhLy(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtThanhLy.Text = Convert.ToString(0);
+                txtTienThanhLy.Text = Convert.ToString(0);
+            }
+            try
+            {   
                 txtQuaHan.Text = ThongKeDAO.Instance.TKSPQuaHan(ngaydau, ngaycuoi);
                 txtTienQuaHan.Text = ThongKeDAO.Instance.TKTienSPQuaHan(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtQuaHan.Text = Convert.ToString(0);
+                txtTienQuaHan.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtChuoc.Text = ThongKeDAO.Instance.TKSPDaChuoc(ngaydau, ngaycuoi);
                 txtTienChuoc.Text = ThongKeDAO.Instance.TKTienSPDaChuoc(ngaydau, ngaycuoi);
-
+            }
+            catch
+            {
+                txtChuoc.Text = Convert.ToString(0);
+                txtTienChuoc.Text = Convert.ToString(0);
+            }
+            try
+            {
                 txtCam.Text = ThongKeDAO.Instance.TKSPCam(ngaydau, ngaycuoi);
                 txtTienCam.Text = ThongKeDAO.Instance.TKTienSPCam(ngaydau, ngaycuoi);
             }
             catch
             {
-                txtDongLai.Text = Convert.ToString(0);
-
-
-                txtTienLoi.Text = Convert.ToString(0);
-
-                txtDaThanhLy.Text = Convert.ToString(0);
-                txtTienDaThanhLy.Text = Convert.ToString(0);
-
-                txtThanhLy.Text = Convert.ToString(0);
-                txtTienThanhLy.Text = Convert.ToString(0);
-
-                txtQuaHan.Text = Convert.ToString(0);
-                txtTienQuaHan.Text = Convert.ToString(0);
-
-                txtChuoc.Text = Convert.ToString(0);
-                txtTienChuoc.Text = Convert.ToString(0);
-
                 txtCam.Text = Convert.ToString(0);
                 txtTienCam.Text = Convert.ToString(0);
             }

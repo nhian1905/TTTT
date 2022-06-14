@@ -345,7 +345,7 @@ as
 	begin
 		declare @TienPhieuLai float
 		declare @TienPhieuChuoc float
-		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai where PhieuLai.NgayDongLai between @NgayDau and @NgayCuoi
+		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai where PhieuLai.NgayDongLai>=@NgayDau and PhieuLai.NgayDongLai<=@NgayCuoi
 		select @TienPhieuChuoc = SUM(b.TienLai) from PhieuChuoc a,ChiTiet_PhieuChuoc b where a.MaPhieuChuoc=b.MaPhieuChuoc and a.NgayChuoc between @NgayDau and @NgayCuoi
 		select @TienPhieuLai+@TienPhieuChuoc
 	end
