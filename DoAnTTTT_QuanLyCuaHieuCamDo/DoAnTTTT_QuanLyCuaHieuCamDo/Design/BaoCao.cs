@@ -1477,6 +1477,10 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             cbLoc.Checked = false;
+            LoadHoaDonCam();
+            LoadThanhLy();
+            LoadHoaDonCamPL();
+            LoadPhieuChuoc();
         }
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
