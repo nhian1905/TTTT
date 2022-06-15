@@ -356,7 +356,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             // 
             // LVKH
             // 
-            this.LVKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.LVKH.BackColor = System.Drawing.Color.White;
             this.LVKH.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.đâsd,
             this.columnHeader2,
@@ -367,7 +367,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader5,
             this.columnHeader6});
             this.LVKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LVKH.ForeColor = System.Drawing.Color.White;
+            this.LVKH.ForeColor = System.Drawing.Color.Black;
             this.LVKH.FullRowSelect = true;
             this.LVKH.GridLines = true;
             this.LVKH.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;

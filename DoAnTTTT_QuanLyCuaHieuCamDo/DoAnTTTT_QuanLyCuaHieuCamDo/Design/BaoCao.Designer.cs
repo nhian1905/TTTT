@@ -213,7 +213,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVHDC
             // 
-            this.LVHDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVHDC.BackColor = System.Drawing.Color.White;
             this.LVHDC.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -221,7 +221,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader4,
             this.columnHeader5});
             this.LVHDC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVHDC.ForeColor = System.Drawing.Color.White;
+            this.LVHDC.ForeColor = System.Drawing.Color.Black;
             this.LVHDC.FullRowSelect = true;
             this.LVHDC.GridLines = true;
             this.LVHDC.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -300,7 +300,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVCTHDC
             // 
-            this.LVCTHDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVCTHDC.BackColor = System.Drawing.Color.White;
             this.LVCTHDC.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader7,
@@ -312,7 +312,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader13,
             this.columnHeader14});
             this.LVCTHDC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVCTHDC.ForeColor = System.Drawing.Color.White;
+            this.LVCTHDC.ForeColor = System.Drawing.Color.Black;
             this.LVCTHDC.FullRowSelect = true;
             this.LVCTHDC.GridLines = true;
             this.LVCTHDC.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -417,7 +417,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LvCTPhieuChuoc
             // 
-            this.LvCTPhieuChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LvCTPhieuChuoc.BackColor = System.Drawing.Color.White;
             this.LvCTPhieuChuoc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader15,
             this.columnHeader16,
@@ -430,7 +430,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader23,
             this.columnHeader28});
             this.LvCTPhieuChuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LvCTPhieuChuoc.ForeColor = System.Drawing.Color.White;
+            this.LvCTPhieuChuoc.ForeColor = System.Drawing.Color.Black;
             this.LvCTPhieuChuoc.FullRowSelect = true;
             this.LvCTPhieuChuoc.GridLines = true;
             this.LvCTPhieuChuoc.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -512,14 +512,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LvPhieuChuoc
             // 
-            this.LvPhieuChuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LvPhieuChuoc.BackColor = System.Drawing.Color.White;
             this.LvPhieuChuoc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader24,
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader27});
             this.LvPhieuChuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LvPhieuChuoc.ForeColor = System.Drawing.Color.White;
+            this.LvPhieuChuoc.ForeColor = System.Drawing.Color.Black;
             this.LvPhieuChuoc.FullRowSelect = true;
             this.LvPhieuChuoc.GridLines = true;
             this.LvPhieuChuoc.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -630,7 +630,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVCTThanhLy
             // 
-            this.LVCTThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVCTThanhLy.BackColor = System.Drawing.Color.White;
             this.LVCTThanhLy.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader29,
             this.columnHeader30,
@@ -640,7 +640,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader36,
             this.columnHeader37});
             this.LVCTThanhLy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVCTThanhLy.ForeColor = System.Drawing.Color.White;
+            this.LVCTThanhLy.ForeColor = System.Drawing.Color.Black;
             this.LVCTThanhLy.FullRowSelect = true;
             this.LVCTThanhLy.GridLines = true;
             this.LVCTThanhLy.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -708,14 +708,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVThanhLy
             // 
-            this.LVThanhLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVThanhLy.BackColor = System.Drawing.Color.White;
             this.LVThanhLy.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader39,
             this.columnHeader40,
             this.columnHeader41,
             this.columnHeader42});
             this.LVThanhLy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVThanhLy.ForeColor = System.Drawing.Color.White;
+            this.LVThanhLy.ForeColor = System.Drawing.Color.Black;
             this.LVThanhLy.FullRowSelect = true;
             this.LVThanhLy.GridLines = true;
             this.LVThanhLy.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -826,14 +826,14 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVPhieuLai
             // 
-            this.LVPhieuLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVPhieuLai.BackColor = System.Drawing.Color.White;
             this.LVPhieuLai.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader32,
             this.columnHeader33,
             this.columnHeader38,
             this.columnHeader43});
             this.LVPhieuLai.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVPhieuLai.ForeColor = System.Drawing.Color.White;
+            this.LVPhieuLai.ForeColor = System.Drawing.Color.Black;
             this.LVPhieuLai.FullRowSelect = true;
             this.LVPhieuLai.GridLines = true;
             this.LVPhieuLai.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -895,7 +895,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             // 
             // LVPhieuCam
             // 
-            this.LVPhieuCam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.LVPhieuCam.BackColor = System.Drawing.Color.White;
             this.LVPhieuCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader47,
             this.columnHeader48,
@@ -903,7 +903,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader50,
             this.columnHeader52});
             this.LVPhieuCam.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LVPhieuCam.ForeColor = System.Drawing.Color.White;
+            this.LVPhieuCam.ForeColor = System.Drawing.Color.Black;
             this.LVPhieuCam.FullRowSelect = true;
             this.LVPhieuCam.GridLines = true;
             this.LVPhieuCam.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
