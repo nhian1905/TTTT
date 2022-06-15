@@ -366,7 +366,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             this.columnHeader7,
             this.columnHeader5,
             this.columnHeader6});
-            this.LVKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LVKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LVKH.ForeColor = System.Drawing.Color.Black;
             this.LVKH.FullRowSelect = true;
             this.LVKH.GridLines = true;
