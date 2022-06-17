@@ -331,12 +331,15 @@ as
 		declare @TienPhieuLai float
 		declare @TienThanhLy float
 		declare @TienLaiChuoc float
-		select @TienPhieuLai = SUM(ThanhTien) from PhieuLai where MONTH(NgayDongLai)=@Thang
-		select @TienLaiChuoc = SUM(a.TienLai) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=@Thang and a.MaPhieuChuoc=c.MaPhieuChuoc
-		select @TienThanhLy = SUM(b.GiaThanhLy-b.DinhGia) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c where a.MaSP=b.MaSP and MONTH(c.NgayLap)=@Thang and a.MaThanhLy=c.MaThanhLy
+		select @TienPhieuLai = ISNULL(SUM(ThanhTien),0) from PhieuLai where MONTH(NgayDongLai)=@Thang
+		select @TienLaiChuoc = ISNULL(SUM(a.TienLai),0) from ChiTiet_PhieuChuoc a,SanPham b,PhieuChuoc c where a.MaSP=b.MaSP and MONTH(c.NgayChuoc)=@Thang and a.MaPhieuChuoc=c.MaPhieuChuoc
+		select @TienThanhLy = ISNULL(SUM(b.GiaThanhLy-b.DinhGia),0) from ChiTiet_ThanhLy a,SanPham b,ThanhLy c where a.MaSP=b.MaSP and MONTH(c.NgayLap)=@Thang and a.MaThanhLy=c.MaThanhLy
 		select @TienPhieuLai+@TienLaiChuoc+@TienThanhLy
 	end
 go
+
+
+
 /*ThongKeLaiTheoNgay*/
 create proc USP_DongLaiTheoNgay
 @NgayDau date,

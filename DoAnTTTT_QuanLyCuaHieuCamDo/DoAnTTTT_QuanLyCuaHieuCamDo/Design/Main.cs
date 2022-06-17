@@ -181,10 +181,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
             LoadChiTieuThang();
         }
 
-        private void cboThang_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //LoadChiTieuThang();
-        }
+        
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
@@ -362,6 +359,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo
                 txtCam.Text = Convert.ToString(0);
                 txtTienCam.Text = Convert.ToString(0);
             }
+        }
+
+        private void cboThang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //LoadChiTieuThang();
         }
     }
 }
