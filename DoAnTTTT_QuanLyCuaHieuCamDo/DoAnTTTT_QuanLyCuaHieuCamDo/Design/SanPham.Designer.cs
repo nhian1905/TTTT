@@ -52,6 +52,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.rboThanhLy = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rboDaChuoc = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rboQuaHan = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMaLoai = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -94,16 +95,15 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnXuatPDF = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // LVSP
             // 
-            this.LVSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.LVSP.BackColor = System.Drawing.Color.White;
             this.LVSP.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader18,
             this.columnHeader1,
@@ -121,7 +121,7 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.columnHeader12,
             this.columnHeader13});
             this.LVSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LVSP.ForeColor = System.Drawing.Color.White;
+            this.LVSP.ForeColor = System.Drawing.Color.Black;
             this.LVSP.FullRowSelect = true;
             this.LVSP.GridLines = true;
             this.LVSP.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -336,6 +336,16 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.rboQuaHan.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rboQuaHan.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rboQuaHan.CheckedChanged += new System.EventHandler(this.rboQuaHan_CheckedChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1130, -31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(73, 25);
+            this.dataGridView1.TabIndex = 37;
+            this.dataGridView1.Visible = false;
             // 
             // groupBox2
             // 
@@ -897,16 +907,6 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.btnXuatPDF.UseVisualStyleBackColor = false;
             this.btnXuatPDF.Click += new System.EventHandler(this.btnXuatPDF_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1130, -31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(73, 25);
-            this.dataGridView1.TabIndex = 37;
-            this.dataGridView1.Visible = false;
-            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -925,11 +925,11 @@ namespace DoAnTTTT_QuanLyCuaHieuCamDo.Design
             this.Load += new System.EventHandler(this.SanPham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
